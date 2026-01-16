@@ -23,6 +23,20 @@ theme:
 
 nav:
   - Home: index.md
+  - Reasoners:
+      - Overview: reasoners/index.md
+      - Vision 2026: reasoners/vision-2026.md
+  - Philosophy: philosophy/index.md
+  - brModel™ Methodology: methodology/index.md
+  - Services: services/index.md
+  - Case Studies:
+      - Overview: case-studies/index.md
+      - Biomedicine: case-studies/biomedicine.md
+      - Finance: case-studies/finance.md
+      - Legal: case-studies/legal.md
+  - Projects: projects/index.md
+  - About: about/index.md
+  - Contact: contact/index.md
   - Blog: blog/index.md
   - Diagram Gallery: diagrams/index.md
 
