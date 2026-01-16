@@ -1,0 +1,7 @@
+flowchart TB
+  Q[Question] --> S[Select start nodes]
+  S --> P[Constrained path search]
+  P --> V[Validate shapes/constraints]
+  V -->|Pass| T[Generate trace object]
+  T --> A[Answer with evidence]
+  V -->|Fail| X[Abstain / Escalate]

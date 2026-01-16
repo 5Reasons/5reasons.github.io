@@ -25,6 +25,16 @@ flowchart LR
   T --> A[Answer or abstain]
 ```
 
+## Diagram: why this beats chunk retrieval
+
+```mermaid
+flowchart LR
+  RAG[RAG\nretrieves chunks] --> TXT[Text synthesis]
+  CG[Causal graph\nretrieves paths] --> PATH[Mechanism chain]
+  PATH --> TRACE[Trace object]
+  TRACE --> AUDIT[Auditable decision]
+```
+
 ## What you get
 
 - a mechanistic chain (A → B → C)

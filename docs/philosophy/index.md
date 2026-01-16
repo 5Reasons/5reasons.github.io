@@ -34,6 +34,9 @@ To trust AI with critical decisions, it needs a memory that can represent:
 
 ## Where this goes next
 
+- Two framing distinctions:
+	- [AI Agent vs Agentic AI](ai-agent-vs-agentic-ai.md)
+	- [Correlation vs Causality](correlation-vs-causality.md)
 - How we operationalize this: [brModel™ Methodology](../methodology/index.md)
 - What it looks like commercially: [Services](../services/index.md)
 - Proof in practice: [Case Studies](../case-studies/index.md)

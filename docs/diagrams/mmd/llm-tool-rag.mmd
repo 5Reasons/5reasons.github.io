@@ -1,0 +1,7 @@
+flowchart LR
+  U[User] --> L[LLM]
+  L -->|Search/Retrieve| R[RAG]
+  R --> L
+  L -->|Call tools| T[Tools / APIs]
+  T --> L
+  L --> A[Answer]

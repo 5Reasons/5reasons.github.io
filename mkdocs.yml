@@ -35,10 +35,15 @@ nav:
     - Overview: philosophy/index.md
     - Why Probabilistic AI Fails: philosophy/probabilistic-ai.md
     - The Three Laws: philosophy/three-laws.md
+    - AI Agent vs Agentic AI: philosophy/ai-agent-vs-agentic-ai.md
+    - Correlation vs Causality: philosophy/correlation-vs-causality.md
   - Methodology:
     - Overview: methodology/index.md
     - Core Primitives: methodology/core-primitives.md
+    - Property Graphs & Knowledge Graphs: methodology/property-and-knowledge-graphs.md
+    - LLM + Tool + RAG: methodology/llm-tool-rag.md
     - CausalGraphRAG: methodology/causalgraphrag.md
+    - brCausalGraphRAG: methodology/brcausalgraphrag.md
     - Constraints & SHACL: methodology/constraints.md
   - Services:
     - Overview: services/index.md
@@ -97,4 +102,5 @@ extra_css:
 
 extra_javascript:
   - assets/js/lightbox.js
+  - assets/js/diagram-modal.js
   - assets/js/mathjax.js

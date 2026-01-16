@@ -78,3 +78,63 @@ body.local-lightbox-open {
   padding: 8px 10px;
   border-radius: 8px;
 }
+
+/* Mermaid diagram modals */
+.diagram-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  background: rgba(128, 128, 128, 0.06);
+}
+
+.diagram-open:hover {
+  background: rgba(128, 128, 128, 0.12);
+}
+
+dialog.diagram-modal {
+  width: min(1100px, 94vw);
+  max-height: 86vh;
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  border-radius: 14px;
+  padding: 0;
+}
+
+dialog.diagram-modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.diagram-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.22);
+}
+
+.diagram-modal__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.diagram-modal__close {
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  background: rgba(128, 128, 128, 0.06);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.diagram-modal__body {
+  padding: 14px;
+  overflow: auto;
+}
+
+.diagram-modal__body .mermaid {
+  overflow: visible;
+}

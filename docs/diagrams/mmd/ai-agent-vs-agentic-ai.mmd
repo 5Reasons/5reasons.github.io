@@ -1,0 +1,19 @@
+flowchart TB
+  subgraph ToolUse["AI Agent (tool-using)"]
+    U[User] --> Q[Question]
+    Q --> L[LLM]
+    L --> T[Tools]
+    T --> L
+    L --> A[Answer]
+  end
+
+  subgraph Agentic["Agentic AI (system property)"]
+    G[Goal] --> P[Plan]
+    P --> X[Act]
+    X --> O[Observe]
+    O --> M[Memory]
+    M --> P
+    O --> V[Validate constraints]
+    V -->|Fail| S[Stop / Abstain / Escalate]
+    V -->|Pass| P
+  end
