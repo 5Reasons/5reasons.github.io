@@ -37,17 +37,41 @@ jobs:
       - name: Build site
         shell: bash
         run: |
+          set -euo pipefail
+
           python -m zensical serve --config-file mkdocs.yml --dev-addr 127.0.0.1:8000 &
           PID=$!
+
+          # Wait until server is up
           for i in {1..60}; do
-            if [ -f site/index.html ]; then
+            if curl -fsS http://127.0.0.1:8000/ >/dev/null 2>&1; then
               break
             fi
             sleep 1
           done
-          kill $PID
-          wait $PID || true
+
+          # Force-render every Markdown page by requesting its URL
+          while IFS= read -r md; do
+            rel="${md#docs/}"
+            base="${rel%.md}"
+            if [[ "$base" == "index" ]]; then
+              url="/"
+            elif [[ "$base" == */index ]]; then
+              url="/${base%/index}/"
+            else
+              url="/$base/"
+            fi
+            curl -fsS "http://127.0.0.1:8000${url}" >/dev/null
+          done < <(find docs -type f -name '*.md' | sort)
+
+          # Stop server
+          kill "$PID"
+          wait "$PID" || true
+
+          # Sanity checks for Pages
           test -f site/index.html
+          test -f site/blog/index.html
+          test -f site/diagrams/index.html
 
       - uses: actions/upload-pages-artifact@v4
         with:
