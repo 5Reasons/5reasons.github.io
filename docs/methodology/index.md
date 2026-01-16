@@ -165,10 +165,7 @@ flowchart LR
   <div class="diagram-modal__body">
     <div class="mermaid">
 flowchart LR
-  Q[Question] --> S[Start node(s)]
-  S --> P[Path search with constraints]
-  P --> T[Trace + evidence]
-  T --> A[Answer or abstain]
+  Q["Question"] --> S["Start node(s)"]; S --> P["Path search with constraints"]; P --> T["Trace + evidence"]; T --> A["Answer or abstain"];
     </div>
   </div>
 </dialog>

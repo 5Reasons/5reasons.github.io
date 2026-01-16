@@ -19,20 +19,15 @@ A paragraph is not.
 
 ```mermaid
 flowchart LR
-  Q[Question] --> S[Start node(s)]
-  S --> P[Path search with constraints]
-  P --> T[Trace + evidence]
-  T --> A[Answer or abstain]
+  Q["Question"] --> S["Start node(s)"]; S --> P["Path search with constraints"]; P --> T["Trace + evidence"]; T --> A["Answer or abstain"];
 ```
 
 ## Diagram: why this beats chunk retrieval
 
 ```mermaid
 flowchart LR
-  RAG["RAG retrieves chunks"] --> TXT["Text synthesis"]
-  CG["Causal graph retrieves paths"] --> PATH["Mechanism chain"]
-  PATH --> TRACE[Trace object]
-  TRACE --> AUDIT[Auditable decision]
+  RAG["RAG retrieves chunks"] --> TXT["Text synthesis"];
+  CG["Causal graph retrieves paths"] --> PATH["Mechanism chain"]; PATH --> TRACE["Trace object"]; TRACE --> AUDIT["Auditable decision"];
 ```
 
 ## What you get
