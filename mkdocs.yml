@@ -35,7 +35,18 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+    generic: true
   - pymdownx.details
+  - pymdownx.highlight:
+    anchor_linenums: true
+    pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+    custom_checkbox: true
+  - pymdownx.tabbed:
+    alternate_style: true
+    combine_header_slug: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -47,3 +58,4 @@ extra_css:
 
 extra_javascript:
   - assets/js/lightbox.js
+  - assets/js/mathjax.js
