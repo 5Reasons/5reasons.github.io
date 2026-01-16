@@ -27,4 +27,4 @@ We are **logic-first**:
 - **No lock-in**: open standards where possible; portability over vendor dependence.
 - **Design for audits**: production systems must explain themselves.
 
-If you want to discuss fit, go to [Contact](../contact/index.md).
+If you want to discuss fit, go to [Start a Conversation](../services/start.md).

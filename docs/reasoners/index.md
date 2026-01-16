@@ -30,7 +30,7 @@ One shared core (brModel™) applied across three reinforcing lanes:
 - See the technical core: [brModel™ Methodology](../methodology/index.md)
 - Browse outcomes: [Case Studies](../case-studies/index.md)
 - Explore engagement models: [Services](../services/index.md)
-- If you’re ready: [Contact & Collaboration](../contact/index.md)
+- If you’re ready: [Start a Conversation](../services/start.md)
 
 ---
 

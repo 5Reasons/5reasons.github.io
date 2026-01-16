@@ -47,4 +47,4 @@ We act as an external office of AI architecture: reviewing new models, auditing 
 
 ---
 
-Ready to discuss fit? [Contact & Collaboration](../contact/index.md)
+Ready to discuss fit? [Start a Conversation](start.md)

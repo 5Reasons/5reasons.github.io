@@ -38,7 +38,7 @@ Each post follows a consistent structure:
 5. Evidence & uncertainty
 6. Interventions & leverage points
 
-## Contact / contributions
+## Start a conversation / contributions
 
-- If you want to work with us: [Contact & Collaboration](contact/index.md)
+- If you want to work with us: [Start a Conversation](services/start.md)
 - If you want to critique or contribute: open an issue/PR in the repo

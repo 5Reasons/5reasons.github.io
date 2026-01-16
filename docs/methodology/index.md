@@ -60,4 +60,4 @@ flowchart TB
 
 - Engagement patterns: [Services](../services/index.md)
 - Applied outcomes: [Case Studies](../case-studies/index.md)
-- Real project example: [SK Biomedicine](../projects/index.md)
+- Real example: [SK Biomedicine](../case-studies/biomedicine.md)

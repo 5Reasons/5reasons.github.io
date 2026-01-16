@@ -22,23 +22,45 @@ theme:
     repo: fontawesome/brands/github
 
 nav:
-  - Home: index.md
+  - Home:
+    - Overview: index.md
+    - Start Here: home/start-here.md
+    - How This Site Works: home/how-this-site-works.md
   - Reasoners:
-      - Overview: reasoners/index.md
-      - Vision 2026: reasoners/vision-2026.md
-  - Philosophy: philosophy/index.md
-  - brModel™ Methodology: methodology/index.md
-  - Services: services/index.md
+    - Overview: reasoners/index.md
+    - Vision 2026: reasoners/vision-2026.md
+    - Operating Model: reasoners/operating-model.md
+    - Governance Approach: reasoners/governance.md
+  - Philosophy:
+    - Overview: philosophy/index.md
+    - Why Probabilistic AI Fails: philosophy/probabilistic-ai.md
+    - The Three Laws: philosophy/three-laws.md
+  - Methodology:
+    - Overview: methodology/index.md
+    - Core Primitives: methodology/core-primitives.md
+    - CausalGraphRAG: methodology/causalgraphrag.md
+    - Constraints & SHACL: methodology/constraints.md
+  - Services:
+    - Overview: services/index.md
+    - Epistemic Audit: services/epistemic-audit.md
+    - Architecture Blueprint: services/blueprint.md
+    - Implementation: services/implementation.md
+    - Ongoing Partnership: services/partnership.md
+    - Start a Conversation: services/start.md
   - Case Studies:
-      - Overview: case-studies/index.md
-      - Biomedicine: case-studies/biomedicine.md
-      - Finance: case-studies/finance.md
-      - Legal: case-studies/legal.md
-  - Projects: projects/index.md
-  - About: about/index.md
-  - Contact: contact/index.md
-  - Blog: blog/index.md
-  - Diagram Gallery: diagrams/index.md
+    - Overview: case-studies/index.md
+    - Biomedicine: case-studies/biomedicine.md
+    - Finance: case-studies/finance.md
+    - Legal: case-studies/legal.md
+  - About:
+    - Overview: about/index.md
+    - Team & Philosophy: about/team.md
+    - FAQ: about/faq.md
+  - Blog:
+    - Blog: blog/index.md
+    - How to Read Posts: blog/how-to-read.md
+    - Topics: blog/topics.md
+    - Diagram Gallery: diagrams/index.md
 
 # Zensical note:
 # Start with no third-party MkDocs plugins to avoid incompatibilities.

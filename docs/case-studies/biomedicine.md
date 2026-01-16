@@ -37,4 +37,4 @@ flowchart LR
 - hypothesis candidates ranked by mechanism plausibility
 - a model that can be iterated as new studies arrive
 
-Next: [Contact](../contact/index.md) or explore [Methodology](../methodology/index.md).
+Next: [Start a Conversation](../services/start.md) or explore [Methodology](../methodology/index.md).

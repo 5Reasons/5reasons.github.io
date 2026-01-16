@@ -7,6 +7,8 @@ description: "Talk to Reasoners about deploying deterministic, auditable AI: epi
 
 # Contact & Collaboration
 
+Note: this page is being replaced by a simpler entry point. Use [Start a Conversation](../services/start.md).
+
 If hallucination is unacceptable in your domain, we should talk.
 
 We work with partners solving **high-stakes problems** in:

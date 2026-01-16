@@ -9,6 +9,8 @@ description: "A growing portfolio of applied work across biomedicine and enterpr
 
 This section tracks the real work that informs the methodology and the service offerings.
 
+If you’re looking for public-facing examples, start with [Case Studies](../case-studies/index.md).
+
 ## SK Biomedicine
 
 A proof-of-quality domain where errors are unacceptable and mechanisms matter.
@@ -29,4 +31,4 @@ We aim to turn recurring patterns into reusable building blocks:
 - governance templates
 - trace visualization
 
-If you want to collaborate on a project page, start with [Contact](../contact/index.md).
+If you want to collaborate, start with [Start a Conversation](../services/start.md).
