@@ -194,19 +194,80 @@ Incidents cost attention. Attention scarcity prevents the deeper fixes. The next
 
 ### Sources from workspace
 
-- `requirements.txt` — confirms MkDocs Material + Mermaid/RSS/GLightbox plugins are available.
-- `mkdocs.yml` — site configuration enabling search, Mermaid, RSS, and a diagram gallery.
+- `requirements.txt` — documents the build toolchain (Zensical).
+- `mkdocs.yml` — site configuration (navigation, Markdown extensions, Mermaid fence, extra assets).
 
 ### Assumptions log
 
 - Assumption: this site is meant as an analytic blog with many future posts; navigation is kept minimal and discovery relies on blog index + search.
-- Assumption: we’re not yet automating Mermaid `.mmd -> .svg` rendering; gallery SVG is a placeholder until CI rendering is added.
+- Assumption: diagram rendering is automated in CI from `docs/diagrams/mmd/` to `docs/diagrams/img/`.
 
 ### Glossary
 
 - **Friction**: small recurring costs in workflows (time, uncertainty, coordination, tool impedance).
 - **Workaround**: a local bypass that achieves progress while increasing hidden complexity.
 - **Hidden complexity**: system behaviors that exist in practice but are not modeled, instrumented, or documented.
+
+### Rendering smoke tests
+
+This section exists to test the site’s authoring features (tabs, task lists, math parsing, code highlighting, and image lightbox).
+
+??? note "Admonition + Details (collapsible)"
+  This is a collapsible note.
+
+  It’s useful for optional caveats, assumptions, or implementation details.
+
+#### Tabs
+
+=== "Mechanism"
+
+  The core causal chain is: friction → delayed feedback → workarounds → hidden complexity → brittleness → failure.
+
+=== "Intervention"
+
+  The fastest lever is often shortening feedback loops (observability) before removing frictions.
+
+#### Task list
+
+- [x] Mermaid diagrams render
+- [x] Local lightbox works on opt-in images
+- [ ] Math typesetting runtime enabled (requires MathJax runtime)
+
+#### Code highlighting
+
+```python linenums="1" hl_lines="2 5"
+def classify_workaround(risk, visibility):
+  if visibility == "hidden":
+    return "high-risk"
+  if risk > 0.7:
+    return "high-risk"
+  return "acceptable"
+```
+
+Inline code highlighting (via InlineHilite): `#!python print("hello")`
+
+#### Math parsing
+
+Inline math: \(Y = f(X, M, Z, C)\).
+
+Block math:
+
+\[
+\mathbb{E}[Y \mid do(X=x)] - \mathbb{E}[Y \mid do(X=x')]\
+\]
+
+!!! info
+  Math parsing is enabled via `pymdownx.arithmatex`. Rendering requires a MathJax runtime script. We currently only include a local configuration file.
+
+#### Lightbox (opt-in)
+
+![System failure diagram preview](../../diagrams/img/why-small-frictions-cascade-into-system-failure.svg){ .glightbox }
+
+<div markdown="1">
+
+This paragraph is rendered **inside HTML** to confirm `md_in_html` works.
+
+</div>
 
 ---
 
