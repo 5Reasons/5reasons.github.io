@@ -30,9 +30,24 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: pip install zensical
+      - run: pip install -r requirements.txt
 
-      - run: zensical build --clean
+      # Workaround: `zensical build` currently produces only theme assets on CI.
+      # `zensical serve` performs a full render to `site/` before starting.
+      - name: Build site
+        shell: bash
+        run: |
+          python -m zensical serve --config-file mkdocs.yml --dev-addr 127.0.0.1:8000 &
+          PID=$!
+          for i in {1..60}; do
+            if [ -f site/index.html ]; then
+              break
+            fi
+            sleep 1
+          done
+          kill $PID
+          wait $PID || true
+          test -f site/index.html
 
       - uses: actions/upload-pages-artifact@v4
         with:
