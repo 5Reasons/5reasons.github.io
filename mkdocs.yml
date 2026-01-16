@@ -24,22 +24,9 @@ nav:
   - Blog: blog/index.md
   - Diagram Gallery: diagrams/index.md
 
-plugins:
-  - search
-  - mermaid2:
-      version: 10.0.2
-      arguments:
-        securityLevel: strict
-  - glightbox
-  - rss:
-      match_path: "blog/posts/.*"
-      date_from_meta:
-        as_creation: date
-        datetime_format: "%Y-%m-%d"
-        default_time: "00:00"
-        default_timezone: UTC
-  - git-revision-date-localized:
-      type: date
+# Zensical note:
+# Start with no third-party MkDocs plugins to avoid incompatibilities.
+plugins: []
 
 markdown_extensions:
   - admonition
@@ -53,7 +40,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid_custom
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_css:
   - assets/css/extra.css

@@ -8,3 +8,6 @@ A curated library of causal diagrams (SVG) with fast preview and search.
 
 !!! note
     The SVGs in this gallery are preview assets. The source of truth lives in the corresponding Mermaid blocks inside posts.
+
+!!! note
+    Lightbox behavior is currently a placeholder. If we stay on Zensical without MkDocs plugins, we can add a small, privacy-safe custom JS lightbox later.
