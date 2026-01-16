@@ -1,0 +1,52 @@
+# --- MkDocs build output ---
+site/
+
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+pip-wheel-metadata/
+*.egg-info/
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# --- GitHub Copilot / Agents (not published) ---
+.github/agents/
+
+# --- Secrets / sensitive ---
+**/*secret*
+**/*secrets*
+**/*password*
+**/*apikey*
+**/*api_key*
+**/*token*
+**/*tokens*
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+
+# --- Notes / drafts (optional) ---
+# Uncomment if you keep private notes in repo (better: keep them outside this repo)
+# private/
+# drafts/
+# inputs/
+
+# --- Caches / local tooling (safe to ignore) ---
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+.coverage
+htmlcov/
+node_modules/
