@@ -1,25 +1,33 @@
-# 5Reasons
+# Reasoners × 5Reasons
 
-Decision-grade causal analysis for product, operations, and organizations.
+We build **decision-grade cognitive infrastructure** and publish **causal analysis** you can argue with.
 
-Most writing explains *what happened*. 5Reasons is about *why it happened* — and which levers change the outcome.
+--8<-- "includes/quicknav.html"
 
-## Start here
+## Two complementary tracks
 
-- Read the [Blog](blog/index.md) for causal walkthroughs, intervention maps, and uncertainty audits.
-- Browse the [Diagram Gallery](diagrams/index.md) for visual models you can reuse.
+### Reasoners (consulting & infrastructure)
 
-## What you’ll find
+For organizations where hallucination is unacceptable.
 
-- **Causal models you can argue with**: explicit variables, confounders, and counterfactuals.
-- **Mechanisms, not slogans**: step-by-step chains that survive scrutiny.
-- **Interventions with measurement plans**: levers, risks, prerequisites, and how to tell if it worked.
+- Start with [Reasoners](reasoners/index.md)
+- The technical core: [brModel™ Methodology](methodology/index.md)
+- What we offer: [Services](services/index.md)
+
+### 5Reasons (writing & diagrams)
+
+Public-facing causal posts and reusable models.
+
+- Read the [Blog](blog/index.md)
+- Browse the [Diagram Gallery](diagrams/index.md)
 
 ## Featured
 
 - [Why Small Frictions Cascade into System Failure](blog/posts/2026-01-16_why-small-frictions-cascade-into-system-failure.md)
 
-## How to read these posts
+## How the blog works
+
+Most writing explains *what happened*. 5Reasons is about *why it happened* — and which levers change the outcome.
 
 Each post follows a consistent structure:
 
@@ -32,4 +40,5 @@ Each post follows a consistent structure:
 
 ## Contact / contributions
 
-Open an issue or PR in the repository if you want to suggest topics, critique models, or contribute diagrams.
+- If you want to work with us: [Contact & Collaboration](contact/index.md)
+- If you want to critique or contribute: open an issue/PR in the repo

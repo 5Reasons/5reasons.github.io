@@ -1,5 +1,7 @@
 # Diagram Gallery
 
+--8<-- "includes/quicknav.html"
+
 A curated library of causal diagrams (SVG) with fast preview and search.
 
 ## Featured

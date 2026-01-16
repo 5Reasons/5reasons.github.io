@@ -1,7 +1,11 @@
 # Blog
 
+--8<-- "includes/quicknav.html"
+
 Welcome to the archive.
 Use tags and search to navigate across mechanisms, domains, and interventions.
+
+If you’re here for the infrastructure work behind the writing, start at [Reasoners](../reasoners/index.md).
 
 ## Posts
 
