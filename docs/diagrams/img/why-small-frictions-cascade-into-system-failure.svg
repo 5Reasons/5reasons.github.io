@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="180" viewBox="0 0 980 180" role="img" aria-label="Placeholder diagram: Small frictions cascade">
+  <rect x="0" y="0" width="980" height="180" fill="#0b1020" />
+  <text x="24" y="56" fill="#e6edf3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="22">Small frictions cascade into system failure</text>
+  <text x="24" y="92" fill="#9fb0c0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14">Placeholder SVG for the gallery.</text>
+  <text x="24" y="114" fill="#9fb0c0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14">Render from: docs/diagrams/mmd/why-small-frictions-cascade-into-system-failure.mmd</text>
+  <text x="24" y="136" fill="#9fb0c0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14">Source of truth: Mermaid blocks in the post.</text>
+</svg>

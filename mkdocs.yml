@@ -1,0 +1,59 @@
+site_name: 5Reasons
+site_url: https://5reasons.github.io/
+repo_url: https://github.com/5Reasons/5reasons.github.io
+repo_name: 5Reasons/5reasons.github.io
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Blog: blog/index.md
+  - Diagram Gallery: diagrams/index.md
+
+plugins:
+  - search
+  - mermaid2:
+      version: 10.0.2
+      arguments:
+        securityLevel: strict
+  - glightbox
+  - rss:
+      match_path: "blog/posts/.*"
+      date_from_meta:
+        as_creation: date
+        datetime_format: "%Y-%m-%d"
+        default_time: "00:00"
+        default_timezone: UTC
+  - git-revision-date-localized:
+      type: date
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+
+extra_css:
+  - assets/css/extra.css

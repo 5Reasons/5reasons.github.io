@@ -1,0 +1,5 @@
+mkdocs-material==9.*
+mkdocs-mermaid2-plugin==1.*
+mkdocs-rss-plugin==1.*
+mkdocs-glightbox==0.*
+mkdocs-git-revision-date-localized-plugin==1.*
