@@ -133,7 +133,7 @@ graph LR
   <div class="diagram-modal__body">
     <div class="mermaid">
 flowchart LR
-  PG[Property Graph\n(nodes/edges + properties)] --> KG[Knowledge Graph\n(ontology + constraints + meaning)]
+  PG["Property Graph (nodes/edges + properties)"] --> KG["Knowledge Graph (ontology + constraints + meaning)"]
   KG --> Q[Queries with validity guarantees]
     </div>
   </div>

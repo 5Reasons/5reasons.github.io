@@ -34,9 +34,9 @@ graph LR
 
 ```mermaid
 flowchart LR
-  Obs[Observational data\nlearns P(Y|X)] --> Pred[Good prediction (sometimes)]
-  Int[Intervention\nneeds P(Y|do(X))] --> Dec[Good decisions]
-  Obs -."not equal".-> Int
+  Obs["Observational data learns P(Y|X)"] --> Pred["Good prediction (sometimes)"]
+  Int["Intervention needs P(Y|do(X))"] --> Dec["Good decisions"]
+  Obs -. "not equal" .-> Int
 ```
 
 ## Common failure mode

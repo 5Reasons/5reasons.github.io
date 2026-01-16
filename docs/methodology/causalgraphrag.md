@@ -29,8 +29,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  RAG[RAG\nretrieves chunks] --> TXT[Text synthesis]
-  CG[Causal graph\nretrieves paths] --> PATH[Mechanism chain]
+  RAG["RAG retrieves chunks"] --> TXT["Text synthesis"]
+  CG["Causal graph retrieves paths"] --> PATH["Mechanism chain"]
   PATH --> TRACE[Trace object]
   TRACE --> AUDIT[Auditable decision]
 ```

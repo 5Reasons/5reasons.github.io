@@ -24,7 +24,7 @@ It cares about ontology, validity, and inferencing.
 
 ```mermaid
 flowchart LR
-  PG[Property Graph\n(nodes/edges + properties)] --> KG[Knowledge Graph\n(ontology + constraints + meaning)]
+  PG["Property Graph (nodes/edges + properties)"] --> KG["Knowledge Graph (ontology + constraints + meaning)"]
   KG --> Q[Queries with validity guarantees]
 ```
 

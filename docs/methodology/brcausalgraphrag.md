@@ -33,10 +33,10 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-  T[Trace] --> P[Path\n(nodes + edges)]
-  T --> E[Evidence\n(citations)]
-  T --> R[Rules applied\n(constraints)]
-  T --> D[Decision\n(answer/abstain)]
+  T[Trace] --> P["Path (nodes + edges)"]
+  T --> E["Evidence (citations)"]
+  T --> R["Rules applied (constraints)"]
+  T --> D["Decision (answer/abstain)"]
 ```
 
 ## Why this is different from “better prompts”
