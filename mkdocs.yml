@@ -36,17 +36,17 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.arithmatex:
-    generic: true
+      generic: true
   - pymdownx.details
   - pymdownx.highlight:
-    anchor_linenums: true
-    pygments_lang_class: true
+      anchor_linenums: true
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.tasklist:
-    custom_checkbox: true
+      custom_checkbox: true
   - pymdownx.tabbed:
-    alternate_style: true
-    combine_header_slug: true
+      alternate_style: true
+      combine_header_slug: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
