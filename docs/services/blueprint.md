@@ -7,16 +7,90 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 
 # Architecture Blueprint
 
-This phase turns domain knowledge into a durable structure.
+<div class="landing-hero">
+	<div class="landing-hero__grid">
+		<div>
+			<p class="landing-kicker">Services → design</p>
+			<h2 class="landing-title">Turn domain knowledge into a system you can own.</h2>
+			<p class="landing-subtitle">
+				The Blueprint phase converts scattered expertise into durable semantics, enforceable constraints, and a reference architecture.
+				The goal is straightforward: make reliability a property of the system, not a hope inside prompts.
+			</p>
+			<div class="landing-cta">
+				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
+				<a class="md-button" href="implementation.md">Implementation</a>
+				<a class="md-button" href="../methodology/core-primitives.md">Core primitives</a>
+			</div>
+		</div>
+		<div class="landing-visual" aria-hidden="true">
+			<img src="../assets/img/hero-brmodel.svg" alt="" />
+		</div>
+	</div>
+</div>
 
-## Outputs
+<div class="landing-section">
+	<h2>Outputs</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Domain model</h3>
+			<p>Concepts + relations that describe what exists, what happens, and what matters in decisions.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Constraint model</h3>
+			<p>Rules the system must enforce: what must never happen, what must be proven, what must be escalated.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Ingestion strategy</h3>
+			<p>How facts and sources enter: provenance, versioning, extraction methods, and validation gates.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Reference architecture</h3>
+			<p>Components and responsibilities: retrieval, traversal, constraint gate, trace store, evaluation, monitoring.</p>
+		</div>
+	</div>
+</div>
 
-- domain model (concepts + relations)
-- constraint model (what must never happen)
-- ingestion strategy (how facts and sources enter)
-- reference architecture (components + responsibilities)
+<div class="landing-section">
+	<h2>Diagram: blueprint layers</h2>
 
-## Why clients like this phase
+```mermaid
+flowchart TB;
+	D["Domain semantics\n(ontology + meaning)"] --> C["Constraints\n(what must never happen)"];
+	C --> I["Ingestion\n(provenance + validation)"];
+	I --> S["System architecture\n(services + responsibilities)"];
+	S --> O["Operational metrics\n(reliability + drift)"];
+```
 
-Because it reduces vendor lock-in.
-You own the semantics and constraints, even if models change.
+</div>
+
+<div class="landing-section">
+	<h2>Why clients like this phase</h2>
+	<div class="landing-callout">
+		<p><strong>Because it reduces vendor lock-in.</strong></p>
+		<p class="landing-mini">You own the semantics and constraints even when models change.</p>
+	</div>
+
+```mermaid
+flowchart LR;
+	SEM["Your semantics + constraints"] --> M1["Model A"];
+	SEM --> M2["Model B"];
+	SEM --> M3["Model C"];
+	M1 --> OUT["Decision-grade outputs"];
+	M2 --> OUT;
+	M3 --> OUT;
+```
+
+</div>
+
+<div class="landing-section">
+	<h2>What happens next</h2>
+	<div class="landing-card">
+		<p>
+			The Blueprint becomes the build plan for a glass-box implementation: enforceable gates, traces, monitoring, and a team-ready handover.
+		</p>
+		<p>
+			<a class="md-button md-button--primary" href="implementation.md">Implementation</a>
+			<a class="md-button" href="partnership.md">Ongoing Partnership</a>
+		</p>
+	</div>
+</div>

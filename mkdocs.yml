@@ -54,7 +54,7 @@ nav:
   - Methodology:
     - Overview: methodology/index.md
     - Core Primitives: methodology/core-primitives.md
-    - Property Graphs & Knowledge Graphs: methodology/property-and-knowledge-graphs.md
+    - Property-Knowledge Graph: methodology/property-and-knowledge-graphs.md
     - LLM + Tool + RAG: methodology/llm-tool-rag.md
     - CausalGraphRAG: methodology/causalgraphrag.md
     - brCausalGraphRAG: methodology/brcausalgraphrag.md
@@ -71,6 +71,12 @@ nav:
     - Biomedicine: case-studies/biomedicine.md
     - Finance: case-studies/finance.md
     - Legal: case-studies/legal.md
+    - Insurance: case-studies/insurance.md
+    - Cybersecurity: case-studies/cybersecurity.md
+    - Manufacturing: case-studies/manufacturing.md
+    - Energy & Utilities: case-studies/energy-utilities.md
+    - Pharma & Clinical Ops: case-studies/pharma-clinical-ops.md
+    - Enterprise Central Memory: case-studies/enterprise-central-memory.md
   - About:
     - Overview: about/index.md
     - Team & Philosophy: about/team.md
@@ -80,7 +86,11 @@ nav:
     - Blog: blog/index.md
     - How to Read Posts: blog/how-to-read.md
     - Topics: blog/topics.md
-    - Diagram Gallery: diagrams/index.md
+    - "2026-01-17 · Agent Memory Needs Identity, Governance, and Decay": blog/posts/2026-01-17_memory-needs-identity-governance-and-decay.md
+    - "2026-01-17 · AI Coding Assistants: A Causal Framework": blog/posts/2026-01-17_ai-coding-assistants-a-causal-framework.md
+    - "2026-01-17 · From SWOT to Testable Causal Hypotheses": blog/posts/2026-01-17_from-swot-to-testable-hypotheses.md
+    - "2026-01-16 · Why Small Frictions Cascade into System Failure": blog/posts/2026-01-16_why-small-frictions-cascade-into-system-failure.md
+
 
 # Zensical note:
 # Start with no third-party MkDocs plugins to avoid incompatibilities.
@@ -119,4 +129,5 @@ extra_css:
 extra_javascript:
   - assets/js/lightbox.js
   - assets/js/diagram-modal.js
+  - assets/js/link-fixes.js
   - assets/js/mathjax.js

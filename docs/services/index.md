@@ -7,44 +7,87 @@ description: "From epistemic audit to causal architecture blueprints to producti
 
 # Services
 
-We don’t sell licenses. We sell **epistemic safety**: the ability to trust what an AI system says and does.
+<div class="landing-hero">
+	<div class="landing-hero__grid">
+		<div>
+			<p class="landing-kicker">Services → engagements</p>
+			<h2 class="landing-title">We don’t sell licenses. We sell epistemic safety.</h2>
+			<p class="landing-subtitle">
+				You can only trust an AI system if you can explain what it did, why it did it, and what would change the decision.
+				Our services are designed to reduce hallucination risk and make outcomes measurable.
+			</p>
+			<div class="landing-cta">
+				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
+				<a class="md-button" href="../methodology/index.md">See the methodology</a>
+				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+			</div>
+		</div>
+		<div class="landing-visual" aria-hidden="true">
+			<img src="../assets/img/hero-brmodel.svg" alt="" />
+		</div>
+	</div>
+</div>
 
-Our work is structured to minimize risk and make outcomes measurable.
+<div class="landing-section">
+	<h2>Engagements (pick the risk level you’re in)</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Epistemic Audit</h3>
+			<p>Diagnosis: where hallucinations come from in your stack, and what a decision-grade roadmap looks like.</p>
+			<p><a class="md-button md-button--primary" href="epistemic-audit.md">Explore</a></p>
+		</div>
+		<div class="landing-card">
+			<h3>Architecture Blueprint</h3>
+			<p>Design: ontology, constraints, ingestion strategy, and a client-owned reference architecture.</p>
+			<p><a class="md-button md-button--primary" href="blueprint.md">Explore</a></p>
+		</div>
+		<div class="landing-card">
+			<h3>Implementation</h3>
+			<p>Execution: build the glass-box memory layer, enforcement gates, traces, monitoring, and team handover.</p>
+			<p><a class="md-button md-button--primary" href="implementation.md">Explore</a></p>
+		</div>
+		<div class="landing-card">
+			<h3>Ongoing Partnership</h3>
+			<p>Retainer: continuous audits, governance updates, model reviews, and reliability tracking.</p>
+			<p><a class="md-button md-button--primary" href="partnership.md">Explore</a></p>
+		</div>
+	</div>
+</div>
 
-## 1) Epistemic Audit (diagnosis)
+<div class="landing-section">
+	<h2>Diagram: how engagements fit together</h2>
 
-For teams that need a reality check before scaling agentic AI.
+```mermaid
+flowchart LR;
+	S["Start a conversation"] --> A["Epistemic audit"];
+	A --> B["Architecture blueprint"];
+	B --> I["Implementation"];
+	I --> P["Ongoing partnership"];
+```
 
-**Deliverables**
+</div>
 
-- AI readiness report (data quality, failure modes, hallucination risk)
-- ontology / concept gap analysis
-- a staged roadmap with measurable milestones
+<div class="landing-section">
+	<h2>Diagram: the risk-reduction loop we build</h2>
 
-## 2) Causal Architecture Blueprint (design)
+```mermaid
+flowchart TB;
+	D["Data reality"] --> M["Memory model + provenance"];
+	M --> G["Constraint gate"];
+	G --> T["Trace objects"];
+	T --> R["Review + measurement"];
+	R --> M;
+```
 
-For teams building a “corporate brain”: durable semantics and constraints.
+</div>
 
-**Deliverables**
-
-- domain ontology (client-owned)
-- governance rules and constraint design
-- data ingestion strategy and reference architecture
-
-## 3) Glass-Box Implementation (execution)
-
-For teams that want an end-to-end production system.
-
-**Deliverables**
-
-- deployed graph-based memory layer
-- auditable reasoning traces
-- monitoring and operational playbook
-
-## Long-term partnership (retainer)
-
-We act as an external office of AI architecture: reviewing new models, auditing changes, and evolving governance.
-
----
-
-Ready to discuss fit? [Start a Conversation](start.md)
+<div class="landing-section">
+	<h2>Ready to discuss fit?</h2>
+	<div class="landing-card">
+		<p>
+			The fastest start is usually an <strong>Epistemic Audit</strong>.
+			If you already have clarity and sponsorship, go straight to a <strong>Blueprint</strong>.
+		</p>
+		<p><a class="md-button md-button--primary" href="start.md">Start a Conversation</a></p>
+	</div>
+</div>
