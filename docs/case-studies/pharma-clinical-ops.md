@@ -69,7 +69,7 @@ flowchart TB;
 
 ```mermaid
 flowchart TB;
-  S["Sources\n(protocol, logs, reports)"] --> C["Claims"];
+  S["Sources</br>(protocol, logs, reports)"] --> C["Claims"];
   C --> R["Rules applied"];
   R --> D["Decision"];
   D --> T["Trace + inspection bundle"];

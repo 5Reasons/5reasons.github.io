@@ -1,0 +1,14 @@
+graph TD;
+  Y["Y: Safe intervention answers"];
+
+  X1["Mechanism executability"] --> M1["Assumption visibility"];
+  X2["Clause discipline"] --> M1;
+  X3["Governance loop"] --> M2["Contradiction handling"];
+  X3 --> M3["Confidence calibration"];
+  X4["Retrieval alignment"] --> M1;
+
+  M1 --> Y;
+  M2 --> Y;
+  M3 --> Y;
+
+  S["Sources"] --> R["brScribe"] --> ST["brStatement"] --> G["brGraph"] --> Y;

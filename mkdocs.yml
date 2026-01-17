@@ -86,6 +86,9 @@ nav:
     - Blog: blog/index.md
     - How to Read Posts: blog/how-to-read.md
     - Topics: blog/topics.md
+    - "2026-01-17 · Temporal Memory Beats Bigger Context": blog/posts/2026-01-17_temporal-memory-beats-bigger-context.md
+    - "2026-01-17 · Mechanism-Executable Causal GraphRAG": blog/posts/2026-01-17_mechanism-executable-causal-graphrag.md
+    - "2026-01-17 · HRM’s Latent Reasoning Still Needs Verification": blog/posts/2026-01-17_hrm-latent-reasoning-needs-verification.md
     - "2026-01-17 · Agent Memory Needs Identity, Governance, and Decay": blog/posts/2026-01-17_memory-needs-identity-governance-and-decay.md
     - "2026-01-17 · AI Coding Assistants: A Causal Framework": blog/posts/2026-01-17_ai-coding-assistants-a-causal-framework.md
     - "2026-01-17 · From SWOT to Testable Causal Hypotheses": blog/posts/2026-01-17_from-swot-to-testable-hypotheses.md

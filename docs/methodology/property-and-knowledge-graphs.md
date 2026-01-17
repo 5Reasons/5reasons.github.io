@@ -49,7 +49,7 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
 
 ```mermaid
 flowchart LR;
-  PG["Property graph\n(nodes/edges + properties)"] --> KG["Knowledge graph\n(ontology + constraints + meaning)"];
+  PG["Property graph</br>(nodes/edges + properties)"] --> KG["Knowledge graph</br>(ontology + constraints + meaning)"];
   KG --> Q["Queries with validity guarantees"];
 ```
 

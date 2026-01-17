@@ -1,0 +1,14 @@
+graph TD;
+  Y["Y: Long-run agent reliability"];
+
+  X1["Temporal validity modeling"] --> M1["Stale-context rate"];
+  X2["Identity binding quality"] --> M1;
+  X3["Retrieval policy"] --> M2["Context precision"];
+  X4["Governance loop strength"] --> M3["Decision trace quality"];
+
+  M1 --> Y;
+  M2 --> Y;
+  M3 --> Y;
+
+  Z1["Drift rate"] -. moderates .-> M1;
+  Z2["Task stakes"] -. moderates .-> Y;

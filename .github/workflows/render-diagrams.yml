@@ -38,13 +38,12 @@ jobs:
 
           mkdir -p docs/diagrams/img
 
-          shopt -s nullglob
-          for file in docs/diagrams/mmd/*.mmd; do
+          while IFS= read -r -d '' file; do
             base="$(basename "$file" .mmd)"
             out="docs/diagrams/img/${base}.svg"
             mmdc -i "$file" -o "$out" -b transparent
             echo "Rendered $file -> $out"
-          done
+          done < <(find docs/diagrams/mmd -type f -name '*.mmd' -print0)
 
       - name: Commit rendered SVGs (if changed)
         shell: bash

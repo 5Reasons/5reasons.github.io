@@ -55,10 +55,10 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 
 ```mermaid
 flowchart TB;
-	D["Domain semantics\n(ontology + meaning)"] --> C["Constraints\n(what must never happen)"];
-	C --> I["Ingestion\n(provenance + validation)"];
-	I --> S["System architecture\n(services + responsibilities)"];
-	S --> O["Operational metrics\n(reliability + drift)"];
+	D["Domain semantics</br>(ontology + meaning)"] --> C["Constraints</br>(what must never happen)"];
+	C --> I["Ingestion</br>(provenance + validation)"];
+	I --> S["System architecture</br>(services + responsibilities)"];
+	S --> O["Operational metrics</br>(reliability + drift)"];
 ```
 
 </div>

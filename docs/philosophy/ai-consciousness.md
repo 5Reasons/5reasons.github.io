@@ -67,10 +67,10 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
 
 ```mermaid
 graph LR;
-  A["Anthropomorphic framing\n(""it understands"", ""it knows"")"] --> T["Over-trust / reduced verification"];
-  T --> R["Risky delegation\n(actions based on wrong beliefs)"];
-  G["Governance constraints\n(enforcement layer)"] -->|"blocks"| R;
-  E["Evidence & traces\n(what/why/source)"] -->|"enables"| V["Verification"];
+  A["Anthropomorphic framing</br>(""it understands"", ""it knows"")"] --> T["Over-trust / reduced verification"];
+  T --> R["Risky delegation</br>(actions based on wrong beliefs)"];
+  G["Governance constraints</br>(enforcement layer)"] -->|"blocks"| R;
+  E["Evidence & traces</br>(what/why/source)"] -->|"enables"| V["Verification"];
   V -->|"reduces"| T;
 ```
 

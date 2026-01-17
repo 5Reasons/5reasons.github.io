@@ -17,9 +17,9 @@ description: "A public-facing strategic narrative: one core causal framework app
 				Vision 2026 is our plan to build <strong>decision-grade cognitive infrastructure</strong>: causal memory, governance, and auditable reasoning.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start.md">Start a conversation</a>
-				<a class="md-button" href="../methodology/index.md">Open methodology</a>
-				<a class="md-button" href="governance.md">Governance approach</a>
+				<a class="md-button md-button--primary" href="../services/start/">Start a conversation</a>
+				<a class="md-button" href="../methodology/">Open methodology</a>
+				<a class="md-button" href="governance/">Governance approach</a>
 			</div>
 			<div class="landing-proof" aria-label="Highlights">
 				<span class="landing-pill">Abstain over improvise</span>
@@ -66,9 +66,9 @@ description: "A public-facing strategic narrative: one core causal framework app
 
 ```mermaid
 flowchart LR
-	A["brModel™ core\n(causal memory + governance)"] --> S["Science\n(hardest validation)"];
-	A --> M["Market\n(commercial deployments)"];
-	A --> P["Product\n(reusable building blocks)"];
+	A["brModel™ core</br>(causal memory + governance)"] --> S["Science</br>(hardest validation)"];
+	A --> M["Market</br>(commercial deployments)"];
+	A --> P["Product</br>(reusable building blocks)"];
 	S --> M;
 	M --> P;
 	P --> S;
@@ -103,10 +103,10 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-	Q["Question / decision"] --> G["Causal graph memory\n(entities, mechanisms, sources)"];
-	G --> V["Validate constraints\n(governance)"];
-	V -->|"Pass"| T["Answer + trace\n(what/why/source)"];
-	V -->|"Fail"| A["Abstain / escalate\n(never guess)"];
+	Q["Question / decision"] --> G["Causal graph memory</br>(entities, mechanisms, sources)"];
+	G --> V["Validate constraints</br>(governance)"];
+	V -->|"Pass"| T["Answer + trace</br>(what/why/source)"];
+	V -->|"Fail"| A["Abstain / escalate</br>(never guess)"];
 ```
 
 </div>
@@ -128,7 +128,7 @@ flowchart TB
 		</div>
 	</div>
 	<p>
-		<a class="md-button" href="operating-model.md">Operating model</a>
-		<a class="md-button" href="../services/index.md">Services</a>
+		<a class="md-button" href="operating-model/">Operating model</a>
+		<a class="md-button" href="../services/">Services</a>
 	</p>
 </div>

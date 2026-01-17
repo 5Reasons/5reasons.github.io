@@ -71,7 +71,7 @@ flowchart LR;
 
 ```mermaid
 flowchart TB;
-	Q["Do you already have clarity\non failure modes and constraints?"] -->|"No"| A["Start with Epistemic Audit"];
+	Q["Do you already have clarity</br>on failure modes and constraints?"] -->|"No"| A["Start with Epistemic Audit"];
 	Q -->|"Yes"| B["Start with Architecture Blueprint"];
 	A --> B;
 	B --> I["Implementation (optional)"];

@@ -1,0 +1,14 @@
+graph TD;
+  Y["Y: Deployed reasoning reliability"];
+
+  X1["Adaptive computation depth"] --> M1["Error propagation control"];
+  X2["Hierarchical control"] --> M1;
+  X3["Verification harness"] --> M2["Debuggability"];
+  X3 --> M3["Overconfidence rate"];
+
+  M1 --> Y;
+  M2 --> Y;
+  M3 --> Y;
+
+  L1["Property-based tests"] --> X3;
+  L2["Canary + rollback"] --> X3;

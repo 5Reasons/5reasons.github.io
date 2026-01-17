@@ -65,7 +65,7 @@ graph LR;
 
 ```mermaid
 flowchart TB;
-  C["Clause"] --> T["Type\n(obligation / prohibition / exception)"];
+  C["Clause"] --> T["Type</br>(obligation / prohibition / exception)"];
   T --> S["Scope + conditions"];
   S --> L["Link to referenced clauses"];
   L --> D["Detect conflicts"];

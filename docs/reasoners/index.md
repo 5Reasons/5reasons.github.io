@@ -17,9 +17,9 @@ description: "Cognitive infrastructure architects building deterministic, audita
 				We help teams move from <strong>probabilistic demos</strong> to <strong>auditable systems</strong>: causal graph memory, enforceable governance, and reasoning traces you can inspect.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start.md">Start a conversation</a>
-				<a class="md-button" href="vision-2026.md">Vision 2026</a>
-				<a class="md-button" href="../methodology/index.md">Methodology</a>
+				<a class="md-button md-button--primary" href="../services/start/">Start a conversation</a>
+				<a class="md-button" href="vision-2026/">Vision 2026</a>
+				<a class="md-button" href="../methodology/">Methodology</a>
 			</div>
 			<div class="landing-proof" aria-label="Highlights">
 				<span class="landing-pill">Abstain over improvise</span>
@@ -69,9 +69,9 @@ description: "Cognitive infrastructure architects building deterministic, audita
 		</div>
 	</div>
 	<p>
-		<a class="md-button" href="vision-2026.md">Read Vision 2026</a>
-		<a class="md-button" href="operating-model.md">Operating model</a>
-		<a class="md-button" href="governance.md">Governance approach</a>
+		<a class="md-button" href="vision-2026/">Read Vision 2026</a>
+		<a class="md-button" href="operating-model/">Operating model</a>
+		<a class="md-button" href="governance/">Governance approach</a>
 	</p>
 </div>
 
@@ -82,24 +82,24 @@ description: "Cognitive infrastructure architects building deterministic, audita
 			<h3>Evaluate fit</h3>
 			<p>See what we do and what “good” looks like.</p>
 			<p>
-				<a class="md-button md-button--primary" href="../services/index.md">Services</a>
-				<a class="md-button" href="../case-studies/index.md">Case studies</a>
+				<a class="md-button md-button--primary" href="../services/">Services</a>
+				<a class="md-button" href="../case-studies/">Case studies</a>
 			</p>
 		</div>
 		<div class="landing-card">
 			<h3>Understand the core</h3>
 			<p>Go deeper into primitives, traces, and constraints.</p>
 			<p>
-				<a class="md-button md-button--primary" href="../methodology/index.md">Methodology</a>
-				<a class="md-button" href="../philosophy/index.md">Philosophy</a>
+				<a class="md-button md-button--primary" href="../methodology/">Methodology</a>
+				<a class="md-button" href="../philosophy/">Philosophy</a>
 			</p>
 		</div>
 		<div class="landing-card">
 			<h3>Read models</h3>
 			<p>Public causal writing and reusable diagrams.</p>
 			<p>
-				<a class="md-button md-button--primary" href="../blog/index.md">Blog</a>
-				<a class="md-button" href="../diagrams/index.md">Diagram gallery</a>
+				<a class="md-button md-button--primary" href="../blog/">Blog</a>
+				<a class="md-button" href="../diagrams/">Diagram gallery</a>
 			</p>
 		</div>
 	</div>

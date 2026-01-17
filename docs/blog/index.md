@@ -19,7 +19,7 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
         with explicit uncertainty and falsification ideas.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="posts/2026-01-17_memory-needs-identity-governance-and-decay/">Read the latest post</a>
+        <a class="md-button md-button--primary" href="posts/2026-01-17_temporal-memory-beats-bigger-context/">Read the latest post</a>
         <a class="md-button" href="how-to-read/">How to read posts</a>
       </div>
     </div>
@@ -33,11 +33,10 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
   <h2>Latest</h2>
   <div class="landing-grid landing-grid--2">
     <div class="landing-card">
-      <p class="landing-card__meta">2026-01-17 · ~15 min · tags: causality, agent-memory, governance</p>
-      <h3 class="landing-card__title"><a href="posts/2026-01-17_memory-needs-identity-governance-and-decay/">Agent Memory Needs Identity, Governance, and Decay</a></h3>
+      <p class="landing-card__meta">2026-01-17 · ~16 min · tags: causality, agent-memory, knowledge-graphs</p>
+      <h3 class="landing-card__title"><a href="posts/2026-01-17_temporal-memory-beats-bigger-context/">Temporal Memory Beats Bigger Context</a></h3>
       <p class="landing-card__desc">
-        Agent memory fails without identity and governance: context must be versioned, auditable, and allowed to decay —
-        or retrieval amplifies error and risk.
+        Temporal knowledge graphs turn memory into a governed, time-aware system—reducing stale-context errors and making agent behavior auditable, not mystical.
       </p>
     </div>
 
@@ -64,7 +63,7 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
       <strong>reading_time_minutes</strong>.
     </p>
     <p>
-      Recommended discovery pattern: this page for chronology, <a href="topics.md">Topics</a> for curation,
+      Recommended discovery pattern: this page for chronology, <a href="topics/">Topics</a> for curation,
       and global search for everything else.
     </p>
     <p>
@@ -86,6 +85,21 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>2026-01-17</td>
+          <td><a href="posts/2026-01-17_temporal-memory-beats-bigger-context/">Temporal Memory Beats Bigger Context</a></td>
+          <td>Temporal validity, supersession, hybrid retrieval, governance</td>
+        </tr>
+        <tr>
+          <td>2026-01-17</td>
+          <td><a href="posts/2026-01-17_mechanism-executable-causal-graphrag/">Mechanism-Executable Causal GraphRAG</a></td>
+          <td>Executable clauses, EMCT primitives, governance loop, interventions</td>
+        </tr>
+        <tr>
+          <td>2026-01-17</td>
+          <td><a href="posts/2026-01-17_hrm-latent-reasoning-needs-verification/">HRM’s Latent Reasoning Still Needs Verification</a></td>
+          <td>Adaptive depth, latent reasoning, harness verification, deployment risk</td>
+        </tr>
         <tr>
           <td>2026-01-17</td>
           <td><a href="posts/2026-01-17_memory-needs-identity-governance-and-decay/">Agent Memory Needs Identity, Governance, and Decay</a></td>

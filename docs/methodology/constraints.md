@@ -81,7 +81,7 @@ flowchart TB;
 
 ```mermaid
 flowchart LR;
-	G["Graph state"] --> P["Proposed update\n(claim/edge)"];
+	G["Graph state"] --> P["Proposed update</br>(claim/edge)"];
 	P --> S["SHACL shapes"];
 	S --> R["Validation report"];
 	R -->|"Conforms"| C["Commit update"];

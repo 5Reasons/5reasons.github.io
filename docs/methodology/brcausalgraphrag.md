@@ -96,7 +96,7 @@ flowchart TB;
 
 ```mermaid
 flowchart LR;
-  ID["Identity\n(role + permissions + goals)"] --> Q["Question / task"];
+  ID["Identity</br>(role + permissions + goals)"] --> Q["Question / task"];
   Q --> TRV["Traverse causal memory"];
   TRV --> G["Constraint gate"];
   G -->|"Pass"| ACT["Act / answer"];

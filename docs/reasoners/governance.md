@@ -65,9 +65,9 @@ description: "Governance by design: how we encode rules as enforceable constrain
 
 ```mermaid
 flowchart TB
-  Q["Proposed action / answer"] --> V["Validate constraints\n(governance)"];
-  V -->|"Pass"| T["Attach trace + evidence\n(audit-ready)"];
-  V -->|"Fail"| A["Abstain / escalate\n(never guess)"];
+  Q["Proposed action / answer"] --> V["Validate constraints</br>(governance)"];
+  V -->|"Pass"| T["Attach trace + evidence</br>(audit-ready)"];
+  V -->|"Fail"| A["Abstain / escalate</br>(never guess)"];
 ```
 
 </div>

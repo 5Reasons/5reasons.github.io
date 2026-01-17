@@ -43,7 +43,7 @@ description: "A retainer model for continuous governance, model review, system a
 
 ```mermaid
 flowchart TB;
-	CH["Change arrives\n(model / policy / data)"] --> R["Review impact"];
+	CH["Change arrives</br>(model / policy / data)"] --> R["Review impact"];
 	R --> U["Update constraints + ontology"];
 	U --> E["Evaluate + red-team"];
 	E -->|"Pass"| D["Deploy"];
