@@ -7,35 +7,128 @@ description: "A public-facing strategic narrative: one core causal framework app
 
 # Vision 2026
 
-This is a public-facing summary of our strategic direction.
+<div class="landing-hero">
+	<div class="landing-hero__grid">
+		<div>
+			<p class="landing-kicker">Public strategic narrative</p>
+			<h2 class="landing-title">From data to understanding: science-grade rigor, business-grade delivery.</h2>
+			<p class="landing-subtitle">
+				Generative AI is impressive — but in critical workflows it fails in the worst possible way: it fabricates.
+				Vision 2026 is our plan to build <strong>decision-grade cognitive infrastructure</strong>: causal memory, governance, and auditable reasoning.
+			</p>
+			<div class="landing-cta">
+				<a class="md-button md-button--primary" href="../services/start.md">Start a conversation</a>
+				<a class="md-button" href="../methodology/index.md">Open methodology</a>
+				<a class="md-button" href="governance.md">Governance approach</a>
+			</div>
+			<div class="landing-proof" aria-label="Highlights">
+				<span class="landing-pill">Abstain over improvise</span>
+				<span class="landing-pill">Auditable traces</span>
+				<span class="landing-pill">Causal paths</span>
+				<span class="landing-pill">Enforced constraints</span>
+			</div>
+		</div>
+		<div class="landing-visual" aria-hidden="true">
+			<img src="../assets/img/hero-brmodel.svg" alt="" />
+		</div>
+	</div>
+</div>
 
-## The diagnosis
+<div class="landing-section">
+	<h2>The diagnosis</h2>
+	<div class="landing-callout">
+		<p><strong>The industry is stuck.</strong> Models can write and summarize, but when evidence is missing they often produce a confident guess. In medicine, finance, and law that failure mode is unacceptable.</p>
+		<p class="landing-mini">A safe system must be able to refuse. It must also show its work.</p>
+	</div>
+</div>
 
-Generative AI can write, summarize, and code. Yet in critical moments it can fabricate details with confidence. In regulated or safety-sensitive environments, that failure mode is unacceptable.
+<div class="landing-section">
+	<h2>The goal</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Truth infrastructure</h3>
+			<p>A memory + logic layer that makes answers grounded and inspectable — not just fluent.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Glass-box reasoning</h3>
+			<p>Every output ships with an evidence trail and a causal path that can be audited.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Governance by design</h3>
+			<p>Rules are encoded as constraints, so unsafe or non-compliant actions are technically blocked.</p>
+		</div>
+	</div>
+</div>
 
-## The goal
+<div class="landing-section">
+	<h2>One core, three reinforcing lanes</h2>
+	<p>The strategy is deliberately simple: we develop one shared core (brModel™) and apply it across three lanes that reinforce each other.</p>
 
-Build **decision-grade cognitive infrastructure**: systems that can:
+```mermaid
+flowchart LR
+	A["brModel™ core\n(causal memory + governance)"] --> S["Science\n(hardest validation)"];
+	A --> M["Market\n(commercial deployments)"];
+	A --> P["Product\n(reusable building blocks)"];
+	S --> M;
+	M --> P;
+	P --> S;
+```
 
-- abstain when evidence is missing
-- produce auditable traces for every claim
-- enforce governance constraints as hard rules
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Lane A: Science (proof-of-quality)</h3>
+			<p>We test where error is most expensive and structure is most complex. If the approach holds here, it holds anywhere.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Lane B: Market (ROI + constraints)</h3>
+			<p>Commercial deployments force real measurement: latency, trace quality, governance coverage, and operational stability.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Lane C: Product (scale)</h3>
+			<p>We convert repeated patterns into reusable components so the system can be adopted beyond a single team or project.</p>
+		</div>
+	</div>
+</div>
 
-## One core, three reinforcing lanes
+<div class="landing-section">
+	<h2>How we explain it without jargon</h2>
+	<div class="landing-card">
+		<p>Think of an AI system as a brilliant new hire with two problems:</p>
+		<ul>
+			<li>It forgets quickly.</li>
+			<li>It sometimes improvises under pressure.</li>
+		</ul>
+		<p>Standard RAG gives the new hire more documents to skim. Our approach gives it a <strong>map</strong>: a causal graph of your domain, with provenance and enforceable rules.</p>
+	</div>
 
-We develop one shared framework (brModel™) and apply it across:
+```mermaid
+flowchart TB
+	Q["Question / decision"] --> G["Causal graph memory\n(entities, mechanisms, sources)"];
+	G --> V["Validate constraints\n(governance)"];
+	V -->|"Pass"| T["Answer + trace\n(what/why/source)"];
+	V -->|"Fail"| A["Abstain / escalate\n(never guess)"];
+```
 
-1. **Science** — the hardest domain as validation.
-2. **Market** — commercial deployments that pay for iteration.
-3. **Product** — reusable building blocks that scale the approach.
+</div>
 
-## How we explain it without jargon
-
-Think of AI as a very smart new hire with two issues:
-
-- it forgets quickly
-- it sometimes improvises
-
-We don’t just give it more text to read. We give it a **map of cause-and-effect**—so it can follow routes, cite sources, and refuse to guess.
-
-If you want the operational version, start with [brModel™ Methodology](../methodology/index.md).
+<div class="landing-section">
+	<h2>What a client gets</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Confidence</h3>
+			<p>Answers backed by explicit causal paths and source provenance — not pattern-matched paragraphs.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Evidence</h3>
+			<p>For every claim: traceable steps you can inspect, audit, and challenge.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Safety</h3>
+			<p>Hard rules that prevent invalid recommendations (e.g., compliance, medical contraindications, policy constraints).</p>
+		</div>
+	</div>
+	<p>
+		<a class="md-button" href="operating-model.md">Operating model</a>
+		<a class="md-button" href="../services/index.md">Services</a>
+	</p>
+</div>

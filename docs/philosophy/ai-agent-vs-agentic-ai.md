@@ -7,54 +7,94 @@ description: "Why ‘agent’ is not a product category: the difference between 
 
 # AI Agent vs Agentic AI
 
-People use these terms interchangeably—and then wonder why deployments fail.
+<div class="landing-hero">
+  <div class="landing-hero__grid">
+    <div>
+      <p class="landing-kicker">Terminology that matters</p>
+      <h2 class="landing-title">Tool-use is not autonomy.</h2>
+      <p class="landing-subtitle">
+        People use “agent” and “agentic” interchangeably — and then wonder why deployments fail.
+        The difference is not marketing language. It is a difference in <strong>risk surface</strong>.
+      </p>
+      <div class="landing-cta">
+        <a class="md-button md-button--primary" href="../reasoners/governance.md">Governance approach</a>
+        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
+        <a class="md-button" href="probabilistic-ai.md">Why probabilistic AI fails</a>
+      </div>
+    </div>
+    <div class="landing-visual" aria-hidden="true">
+      <img src="../assets/img/hero-brmodel.svg" alt="" />
+    </div>
+  </div>
+</div>
 
-## The distinction
+<div class="landing-section">
+  <h2>The distinction</h2>
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>AI agent (tool-using)</h3>
+      <p>A model that can call tools (search, code, APIs) to complete a task, typically within a bounded interaction.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Agentic AI (system property)</h3>
+      <p>Autonomy + iteration + memory + action loops that continue over time. If you deploy this, you are shipping a process.</p>
+    </div>
+  </div>
+</div>
 
-**AI agent** usually means a model that can use tools (search, code, APIs) to complete a task.
-
-**Agentic AI** means a *system property*: autonomy, iteration, memory, and action loops that continue over time.
-
-If you deploy “agentic” behavior, you are not shipping a chatbot. You are shipping a process.
-
-## What changes when a system becomes agentic
-
-- You must handle **feedback loops** (actions change the world; the world changes the next action).
-- You must define **stopping conditions** (when to stop acting).
-- You must encode **governance constraints** (what must never happen).
-- You must support **abstention** (refuse to act when evidence is insufficient).
+<div class="landing-section">
+  <h2>What changes when a system becomes agentic</h2>
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>Feedback loops</h3>
+      <p>Actions change the world; the world changes the next action. Errors compound.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Stopping conditions</h3>
+      <p>“Keep going” is not a control policy. You need explicit stop, timeout, and escalation rules.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Governance constraints</h3>
+      <p>Define what must never happen and enforce it at runtime.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Abstention</h3>
+      <p>Refuse to act when evidence is insufficient or constraints fail.</p>
+    </div>
+  </div>
+</div>
 
 ## Diagram: from tool-use to autonomy
 
 ```mermaid
-flowchart TB
-  subgraph ToolUse["AI Agent (tool-using)"]
-    U[User] --> Q[Question]
-    Q --> L[LLM]
-    L --> T[Tools]
-    T --> L
-    L --> A[Answer]
-  end
+flowchart TB;
+  subgraph ToolUse["AI Agent (tool-using)"];
+    U["User"] --> Q["Question"];
+    Q --> L["LLM"];
+    L --> T["Tools"];
+    T --> L;
+    L --> A["Answer"];
+  end;
 
-  subgraph Agentic["Agentic AI (system property)"]
-    G[Goal] --> P[Plan]
-    P --> X[Act]
-    X --> O[Observe]
-    O --> M[Memory]
-    M --> P
-    O --> V[Validate constraints]
-    V -->|Fail| S[Stop / Abstain / Escalate]
-    V -->|Pass| P
-  end
+  subgraph Agentic["Agentic AI (system property)"];
+    G["Goal"] --> P["Plan"];
+    P --> X["Act"];
+    X --> O["Observe"];
+    O --> M["Memory"];
+    M --> P;
+    O --> V["Validate constraints"];
+    V -->|"Fail"| S["Stop / abstain / escalate"];
+    V -->|"Pass"| P;
+  end;
 ```
 
 ## Diagram: governance gate (the non-negotiable)
 
 ```mermaid
-flowchart LR
-  A[Proposed action] --> V[Validate constraints]
-  V -->|Pass| E[Execute]
-  V -->|Fail| S[Stop / escalate]
+flowchart LR;
+  A["Proposed action"] --> V["Validate constraints"];
+  V -->|"Pass"| E["Execute"];
+  V -->|"Fail"| S["Stop / escalate"];
 ```
 
 ## Practical implication

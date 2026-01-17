@@ -7,69 +7,115 @@ description: "A causal operating system for AI memory: structured entities, cons
 
 # brModel™ Methodology
 
-A universal operating system for AI memory.
+<div class="landing-hero">
+  <div class="landing-hero__grid">
+    <div>
+      <p class="landing-kicker">Methodology</p>
+      <h2 class="landing-title">A causal operating system for AI memory.</h2>
+      <p class="landing-subtitle">
+        Instead of starting with “Which LLM?”, we start with <strong>memory</strong> and <strong>constraints</strong> — the parts that survive model churn.
+        The goal is decision-grade behavior: traceable, governable, and able to abstain.
+      </p>
+      <div class="landing-cta">
+        <a class="md-button md-button--primary" href="core-primitives.md">Core primitives</a>
+        <a class="md-button" href="constraints.md">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+      </div>
+      <div class="landing-proof" aria-label="Highlights">
+        <span class="landing-pill">Provenance-first</span>
+        <span class="landing-pill">Constraint gates</span>
+        <span class="landing-pill">Causal traversal</span>
+        <span class="landing-pill">Audit-ready traces</span>
+      </div>
+    </div>
+    <div class="landing-visual" aria-hidden="true">
+      <img src="../assets/img/hero-brmodel.svg" alt="" />
+    </div>
+  </div>
+</div>
 
-Instead of starting with “Which LLM?”, we start with **memory** and **constraints**: the parts that survive model churn.
-
-## Mental model
-
-brModel™ treats knowledge as a **causal graph**, not a pile of text chunks.
-
-- Facts become nodes with provenance.
-- Relationships encode causality and permitted transformations.
-- Rules become constraints that can be enforced.
+<div class="landing-section">
+  <h2>Mental model</h2>
+  <div class="landing-callout">
+    <p><strong>brModel™ treats knowledge as a causal graph, not a pile of text chunks.</strong></p>
+    <p class="landing-mini">Facts become nodes with provenance; relationships encode mechanisms and allowed transformations; rules become enforceable constraints.</p>
+  </div>
 
 ```mermaid
-flowchart LR
-  Q[User question] --> R[Retrieve facts]
-  R --> C[Causal graph traversal]
-  C --> T[Trace + citations]
-  T --> A[Answer or abstain]
+flowchart LR;
+  Q["User question"] --> R["Retrieve facts"];
+  R --> C["Causal graph traversal"];
+  C --> T["Trace + citations"];
+  T --> A["Answer or abstain"];
 ```
 
-## The cognitive stack (high level)
+</div>
 
-We separate immutable reality from decision-making layers:
-
-- **Facts & provenance** (what happened, where it came from)
-- **Domain models** (what concepts mean)
-- **Constraints** (what is allowed)
-- **Plans & predictions** (what to do next, and what might happen)
+<div class="landing-section">
+  <h2>The cognitive stack (high level)</h2>
+  <div class="landing-card">
+    <p>We separate immutable reality from decision-making layers:</p>
+    <ul>
+      <li><strong>Facts &amp; provenance</strong> (what happened, where it came from)</li>
+      <li><strong>Domain models</strong> (what concepts mean)</li>
+      <li><strong>Constraints</strong> (what is allowed)</li>
+      <li><strong>Plans &amp; predictions</strong> (what to do next, and what might happen)</li>
+    </ul>
+  </div>
 
 ```mermaid
-flowchart TB
-  subgraph Objective
-    F[Facts + sources]
-    M[Domain model]
-    G[Governance constraints]
-  end
-  subgraph Decision
-    P[Plan / prescription]
-    S[Simulation / prediction]
-  end
-  F --> M --> G --> P --> S
+flowchart TB;
+  subgraph Objective["Objective layer"];
+    F["Facts + sources"];
+    M["Domain model"];
+    G["Governance constraints"];
+  end;
+  subgraph Decision["Decision layer"];
+    P["Plan / prescription"];
+    S["Simulation / prediction"];
+  end;
+  F --> M --> G --> P --> S;
 ```
 
-## Why this reduces hallucinations
+</div>
 
-- A model can’t “invent a relationship” if it must traverse an existing graph edge.
-- A policy can’t be bypassed if it’s encoded as a constraint.
-- Debugging becomes possible because you can locate failure modes (data vs. model vs. rules).
+<div class="landing-section">
+  <h2>Why this reduces hallucinations</h2>
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>Edges constrain reasoning</h3>
+      <p>A model can’t “invent a relationship” if it must traverse an existing graph edge.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Constraints enforce policy</h3>
+      <p>A policy can’t be bypassed if it’s encoded as an enforcement gate.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Debugging becomes concrete</h3>
+      <p>You can localize failures to data, model behavior, or missing rules.</p>
+    </div>
+  </div>
+</div>
 
-## Concepts (symmetrically scoped)
+<div class="landing-section">
+  <h2>Concept map (how vs why)</h2>
+  <div class="landing-card">
+    <p>Methodology is the <em>how</em>. Philosophy is the <em>why</em>.</p>
+    <ul>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-agent-vs-agentic-ai.md">AI Agent vs Agentic AI</a></li>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/correlation-vs-causality.md">Correlation vs Causality</a></li>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-consciousness.md">AI Consciousness (operational view)</a></li>
+      <li><strong>Methodology</strong>: <a href="property-and-knowledge-graphs.md">Property Graphs &amp; Knowledge Graphs</a></li>
+      <li><strong>Methodology</strong>: <a href="llm-tool-rag.md">LLM + Tool + RAG</a></li>
+      <li><strong>Methodology</strong>: <a href="causalgraphrag.md">CausalGraphRAG</a></li>
+      <li><strong>Methodology</strong>: <a href="brcausalgraphrag.md">brCausalGraphRAG</a></li>
+    </ul>
+  </div>
+</div>
 
-Methodology is the *how*. Philosophy is the *why*.
-
-- Philosophy: [AI Agent vs Agentic AI](../philosophy/ai-agent-vs-agentic-ai.md)
-- Philosophy: [Correlation vs Causality](../philosophy/correlation-vs-causality.md)
-- Methodology: [Property Graphs & Knowledge Graphs](property-and-knowledge-graphs.md)
-- Methodology: [LLM + Tool + RAG](llm-tool-rag.md)
-- Methodology: [CausalGraphRAG](causalgraphrag.md)
-- Methodology: [brCausalGraphRAG](brcausalgraphrag.md)
-
-## Model diagrams (open in modal)
-
-Click any diagram to open it in a modal and inspect the model without leaving the page.
+<div class="landing-section">
+  <h2>Model diagrams (open in modal)</h2>
+  <p class="landing-mini">Click any diagram to open it in a modal and inspect the model without leaving the page.</p>
 
 <p>
   <a class="diagram-open" href="#" data-diagram-target="diagram-ai-agent-vs-agentic-ai">AI Agent vs Agentic AI</a>
@@ -87,25 +133,25 @@ Click any diagram to open it in a modal and inspect the model without leaving th
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-flowchart TB
-  subgraph ToolUse["AI Agent (tool-using)"]
-    U[User] --> Q[Question]
-    Q --> L[LLM]
-    L --> T[Tools]
-    T --> L
-    L --> A[Answer]
-  end
+flowchart TB;
+  subgraph ToolUse["AI Agent (tool-using)"];
+    U["User"] --> Q["Question"];
+    Q --> L["LLM"];
+    L --> T["Tools"];
+    T --> L;
+    L --> A["Answer"];
+  end;
 
-  subgraph Agentic["Agentic AI (system property)"]
-    G[Goal] --> P[Plan]
-    P --> X[Act]
-    X --> O[Observe]
-    O --> M[Memory]
-    M --> P
-    O --> V[Validate constraints]
-    V -->|Fail| S[Stop / Abstain / Escalate]
-    V -->|Pass| P
-  end
+  subgraph Agentic["Agentic AI (system property)"];
+    G["Goal"] --> P["Plan"];
+    P --> X["Act"];
+    X --> O["Observe"];
+    O --> M["Memory"];
+    M --> P;
+    O --> V["Validate constraints"];
+    V -->|"Fail"| S["Stop / abstain / escalate"];
+    V -->|"Pass"| P;
+  end;
     </div>
   </div>
 </dialog>
@@ -117,10 +163,10 @@ flowchart TB
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-graph LR
-  C[Confounder C] --> X[X]
-  C --> Y[Y]
-  X --> Y
+graph LR;
+  C["Confounder C"] --> X["X"];
+  C --> Y["Y"];
+  X --> Y;
     </div>
   </div>
 </dialog>
@@ -132,9 +178,9 @@ graph LR
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-flowchart LR
-  PG["Property Graph (nodes/edges + properties)"] --> KG["Knowledge Graph (ontology + constraints + meaning)"]
-  KG --> Q[Queries with validity guarantees]
+flowchart LR;
+  PG["Property Graph (nodes/edges + properties)"] --> KG["Knowledge Graph (ontology + constraints + meaning)"];
+  KG --> Q["Queries with validity guarantees"];
     </div>
   </div>
 </dialog>
@@ -146,13 +192,13 @@ flowchart LR
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-flowchart LR
-  U[User] --> L[LLM]
-  L -->|Search/Retrieve| R[RAG]
-  R --> L
-  L -->|Call tools| T[Tools / APIs]
-  T --> L
-  L --> A[Answer]
+flowchart LR;
+  U["User"] --> L["LLM"];
+  L -->|"Search / retrieve"| R["RAG"];
+  R --> L;
+  L -->|"Call tools"| T["Tools / APIs"];
+  T --> L;
+  L --> A["Answer"];
     </div>
   </div>
 </dialog>
@@ -164,8 +210,11 @@ flowchart LR
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-flowchart LR
-  Q["Question"] --> S["Start node(s)"]; S --> P["Path search with constraints"]; P --> T["Trace + evidence"]; T --> A["Answer or abstain"];
+flowchart LR;
+  Q["Question"] --> S["Start node(s)"];
+  S --> P["Path search with constraints"];
+  P --> T["Trace + evidence"];
+  T --> A["Answer or abstain"];
     </div>
   </div>
 </dialog>
@@ -177,13 +226,13 @@ flowchart LR
   </div>
   <div class="diagram-modal__body">
     <div class="mermaid">
-flowchart TB
-  Q[Question] --> S[Select start nodes]
-  S --> P[Constrained path search]
-  P --> V[Validate shapes/constraints]
-  V -->|Pass| T[Generate trace object]
-  T --> A[Answer with evidence]
-  V -->|Fail| X[Abstain / Escalate]
+flowchart TB;
+  Q["Question"] --> S["Select start nodes"];
+  S --> P["Constrained path search"];
+  P --> V["Validate shapes / constraints"];
+  V -->|"Pass"| T["Generate trace object"];
+  T --> A["Answer with evidence"];
+  V -->|"Fail"| X["Abstain / escalate"];
     </div>
   </div>
 </dialog>

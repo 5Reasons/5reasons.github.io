@@ -1,3 +1,4 @@
+---
 title: "Reasoners"
 description: "Cognitive infrastructure architects building deterministic, auditable AI systems: causal memory, governance, and glass-box reasoning for high-stakes domains."
 ---
@@ -6,34 +7,107 @@ description: "Cognitive infrastructure architects building deterministic, audita
 
 # Reasoners
 
-Cognitive infrastructure architects and causal intelligence services.
+<div class="landing-hero">
+	<div class="landing-hero__grid">
+		<div>
+			<p class="landing-kicker">Logic-first, glass-box delivery</p>
+			<h2 class="landing-title">We build decision-grade cognitive infrastructure.</h2>
+			<p class="landing-subtitle">
+				For high-stakes domains, “a plausible answer” is a liability.
+				We help teams move from <strong>probabilistic demos</strong> to <strong>auditable systems</strong>: causal graph memory, enforceable governance, and reasoning traces you can inspect.
+			</p>
+			<div class="landing-cta">
+				<a class="md-button md-button--primary" href="../services/start.md">Start a conversation</a>
+				<a class="md-button" href="vision-2026.md">Vision 2026</a>
+				<a class="md-button" href="../methodology/index.md">Methodology</a>
+			</div>
+			<div class="landing-proof" aria-label="Highlights">
+				<span class="landing-pill">Abstain over improvise</span>
+				<span class="landing-pill">Traceable answers</span>
+				<span class="landing-pill">Constraints, not prompts</span>
+				<span class="landing-pill">No lock-in (standards-first)</span>
+			</div>
+		</div>
+		<div class="landing-visual" aria-hidden="true">
+			<img src="../assets/img/hero-brmodel.svg" alt="" />
+		</div>
+	</div>
+</div>
 
-We help teams move from **probabilistic demos** to **decision-grade systems**: AI that can explain itself, cite evidence, and refuse to guess.
+<div class="landing-section">
+	<h2>What we build (plain English)</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Structured memory for agents</h3>
+			<p>A persistent memory layer grounded in entities, relations, provenance, and mechanisms — not just vector similarity.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Glass-box reasoning traces</h3>
+			<p>Every answer includes an auditable path: what nodes were used, why edges were traversed, and which sources support each step.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Governance by design</h3>
+			<p>Critical rules encoded as enforceable constraints (e.g., SHACL-style) so policy violations become technically impossible.</p>
+		</div>
+	</div>
+</div>
 
-## What we build (in plain English)
+<div class="landing-section">
+	<h2>One core, three reinforcing lanes</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Science (proof-of-quality)</h3>
+			<p>We validate the hardest cases first. If the approach holds in biomedicine, it holds anywhere.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Market (measurable ROI)</h3>
+			<p>Commercial deployments that fund iteration and prove value under real operational constraints.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Product (reusable building blocks)</h3>
+			<p>We convert patterns into reusable architecture and tooling so the approach scales beyond one-off projects.</p>
+		</div>
+	</div>
+	<p>
+		<a class="md-button" href="vision-2026.md">Read Vision 2026</a>
+		<a class="md-button" href="operating-model.md">Operating model</a>
+		<a class="md-button" href="governance.md">Governance approach</a>
+	</p>
+</div>
 
-- **A persistent memory layer** for agents that is structured, not just vectorized text.
-- **A "glass box" reasoning path**: every answer comes with an auditable trace.
-- **Governance by design**: business rules encoded as hard constraints, not prompt suggestions.
+<div class="landing-section">
+	<h2>Where to start</h2>
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Evaluate fit</h3>
+			<p>See what we do and what “good” looks like.</p>
+			<p>
+				<a class="md-button md-button--primary" href="../services/index.md">Services</a>
+				<a class="md-button" href="../case-studies/index.md">Case studies</a>
+			</p>
+		</div>
+		<div class="landing-card">
+			<h3>Understand the core</h3>
+			<p>Go deeper into primitives, traces, and constraints.</p>
+			<p>
+				<a class="md-button md-button--primary" href="../methodology/index.md">Methodology</a>
+				<a class="md-button" href="../philosophy/index.md">Philosophy</a>
+			</p>
+		</div>
+		<div class="landing-card">
+			<h3>Read models</h3>
+			<p>Public causal writing and reusable diagrams.</p>
+			<p>
+				<a class="md-button md-button--primary" href="../blog/index.md">Blog</a>
+				<a class="md-button" href="../diagrams/index.md">Diagram gallery</a>
+			</p>
+		</div>
+	</div>
+</div>
 
-## The three-lane strategy
-
-One shared core (brModel™) applied across three reinforcing lanes:
-
-1. **Science** — hardest problems as proof-of-quality (biomedicine).
-2. **Market** — commercial deployments with measurable ROI.
-3. **Product** — converting patterns into reusable software.
-
-## Start here
-
-- Read the philosophy: [Why Probabilistic AI Isn’t Enough](../philosophy/index.md)
-- See the technical core: [brModel™ Methodology](../methodology/index.md)
-- Browse outcomes: [Case Studies](../case-studies/index.md)
-- Explore engagement models: [Services](../services/index.md)
-- If you’re ready: [Start a Conversation](../services/start.md)
-
----
-
-## Regional note (future-ready)
-
-This site is currently **English-first**. If you need region-specific materials (DACH / CEE), we’ll add dedicated landing pages without breaking URLs.
+<div class="landing-section">
+	<h2>Regional note</h2>
+	<div class="landing-card">
+		<p>This site is currently <strong>English-first</strong>. If you need region-specific materials (DACH / CEE), we’ll add dedicated landing pages without breaking URLs.</p>
+	</div>
+</div>
