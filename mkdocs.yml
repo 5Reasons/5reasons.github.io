@@ -20,6 +20,19 @@ theme:
     - content.code.copy
   icon:
     repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: 'indigo'
+      accent: 'indigo'
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: 'indigo'
+      accent: 'indigo'
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 nav:
   - Home:
@@ -100,6 +113,7 @@ markdown_extensions:
 
 extra_css:
   - assets/css/extra.css
+  - assets/css/landing.css
 
 extra_javascript:
   - assets/js/lightbox.js
