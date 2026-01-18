@@ -17,9 +17,9 @@ description: "Why high-stakes organizations need causal memory and governance—
         It’s a <strong>confident fabrication</strong> that bypasses verification.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../methodology/index.md">How we operationalize this</a>
-        <a class="md-button" href="../reasoners/governance.md">Governance approach</a>
-        <a class="md-button" href="../services/index.md">Services</a>
+        <a class="md-button md-button--primary" href="../methodology/">How we operationalize this</a>
+        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="../services/">Services</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Glass-box traces</span>
@@ -27,9 +27,6 @@ description: "Why high-stakes organizations need causal memory and governance—
         <span class="landing-pill">Causal memory</span>
         <span class="landing-pill">Abstention</span>
       </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>
@@ -48,17 +45,17 @@ description: "Why high-stakes organizations need causal memory and governance—
 		<div class="landing-card">
 			<h3>Similarity is not truth</h3>
 			<p>Next-token prediction optimizes plausibility, not epistemic validity. It can be wrong in ways that look correct.</p>
-			<p><a class="md-button" href="probabilistic-ai.md">Why probabilistic AI fails</a></p>
+      <p><a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>RAG reduces noise, not causality</h3>
 			<p>Retrieval can improve relevance, but it doesn’t create causal understanding or enforce cross-document constraints.</p>
-			<p><a class="md-button" href="../methodology/llm-tool-rag.md">LLM + Tool + RAG</a></p>
+      <p><a class="md-button" href="../methodology/llm-tool-rag/">LLM + Tool + RAG</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>High stakes require governance</h3>
 			<p>When systems act, they create feedback loops. You need stopping conditions, constraints, and audit trails.</p>
-			<p><a class="md-button" href="ai-agent-vs-agentic-ai.md">Agent vs agentic</a></p>
+      <p><a class="md-button" href="ai-agent-vs-agentic-ai/">Agent vs agentic</a></p>
 		</div>
 	</div>
 </div>
@@ -79,7 +76,7 @@ description: "Why high-stakes organizations need causal memory and governance—
 			<p>AI assists, simulates, and recommends. Humans own decisions and liability.</p>
 		</div>
 	</div>
-	<p><a class="md-button md-button--primary" href="three-laws.md">Read the three laws</a></p>
+  <p><a class="md-button md-button--primary" href="three-laws/">Read the three laws</a></p>
 </div>
 
 <div class="landing-section">
@@ -88,17 +85,17 @@ description: "Why high-stakes organizations need causal memory and governance—
     <div class="landing-card">
       <h3>AI Agent vs Agentic AI</h3>
       <p>Tool-use is not autonomy. If you ship loops and actions, you’re shipping a process — and you need governance.</p>
-      <p><a class="md-button" href="ai-agent-vs-agentic-ai.md">Read</a></p>
+      <p><a class="md-button" href="ai-agent-vs-agentic-ai/">Read</a></p>
     </div>
     <div class="landing-card">
       <h3>Correlation vs Causality</h3>
       <p>Prediction can work in stable environments. Decision-making under intervention requires causal structure.</p>
-      <p><a class="md-button" href="correlation-vs-causality.md">Read</a></p>
+      <p><a class="md-button" href="correlation-vs-causality/">Read</a></p>
     </div>
     <div class="landing-card">
       <h3>AI Consciousness (operational view)</h3>
       <p>We don’t need to solve consciousness to build safe systems. We need enforceable constraints and traceable evidence.</p>
-      <p><a class="md-button" href="ai-consciousness.md">Read</a></p>
+      <p><a class="md-button" href="ai-consciousness/">Read</a></p>
     </div>
   </div>
 </div>
@@ -112,8 +109,8 @@ description: "Why high-stakes organizations need causal memory and governance—
       <li><strong>Case studies</strong>: show the approach under real constraints.</li>
     </ul>
     <p>
-      <a class="md-button" href="../methodology/index.md">brModel™ Methodology</a>
-      <a class="md-button" href="../case-studies/index.md">Case Studies</a>
+      <a class="md-button" href="../methodology/">brModel™ Methodology</a>
+      <a class="md-button" href="../case-studies/">Case Studies</a>
     </p>
   </div>
 </div>

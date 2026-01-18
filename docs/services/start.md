@@ -17,9 +17,9 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 				In one short exchange, we can usually tell whether your problem is best solved with constraints, better evaluation, better semantics — or not with AI at all.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="epistemic-audit.md">Epistemic Audit</a>
-				<a class="md-button" href="blueprint.md">Architecture Blueprint</a>
-				<a class="md-button" href="../methodology/index.md">Methodology</a>
+				<a class="md-button md-button--primary" href="epistemic-audit/">Epistemic Audit</a>
+				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+				<a class="md-button" href="../methodology/">Methodology</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -79,9 +79,9 @@ flowchart TB;
 
 	<div class="landing-card">
 		<p>
-			<a class="md-button md-button--primary" href="epistemic-audit.md">Epistemic Audit</a>
-			<a class="md-button" href="blueprint.md">Architecture Blueprint</a>
-			<a class="md-button" href="implementation.md">Implementation</a>
+			<a class="md-button md-button--primary" href="epistemic-audit/">Epistemic Audit</a>
+			<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+			<a class="md-button" href="implementation/">Implementation</a>
 		</p>
 	</div>
 </div>

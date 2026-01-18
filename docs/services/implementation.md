@@ -17,9 +17,9 @@ description: "From blueprint to production: building a glass-box memory layer, e
 				The key deliverable is not “a chatbot” — it’s a governed memory layer that decides when to answer, when to abstain, and how to prove why.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
-				<a class="md-button" href="blueprint.md">Architecture Blueprint</a>
-				<a class="md-button" href="../methodology/brcausalgraphrag.md">brCausalGraphRAG</a>
+				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
+				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+				<a class="md-button" href="../methodology/brcausalgraphrag/">brCausalGraphRAG</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -84,7 +84,7 @@ flowchart LR;
 			<li>Success criteria and reliability dashboards</li>
 		</ul>
 		<p>
-			<a class="md-button md-button--primary" href="partnership.md">Ongoing Partnership</a>
+			<a class="md-button md-button--primary" href="partnership/">Ongoing Partnership</a>
 		</p>
 	</div>
 </div>

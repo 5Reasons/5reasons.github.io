@@ -17,9 +17,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
         <strong>brCausalGraphRAG</strong> is the discipline: every step is grounded, validated, traceable — and allowed to refuse.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../philosophy/ai-consciousness.md">AI consciousness (operational view)</a>
-        <a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+        <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../philosophy/ai-consciousness/">AI consciousness (operational view)</a>
+        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -137,9 +137,9 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="constraints.md">Constraints &amp; SHACL</a>
-      <a class="md-button" href="../reasoners/governance.md">Governance approach</a>
-      <a class="md-button" href="../philosophy/ai-consciousness.md">AI consciousness (operational)</a>
+      <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
+      <a class="md-button" href="../reasoners/governance/">Governance approach</a>
+      <a class="md-button" href="../philosophy/ai-consciousness/">AI consciousness (operational)</a>
     </p>
   </div>
 </div>

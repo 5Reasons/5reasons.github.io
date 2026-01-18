@@ -17,9 +17,9 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
         CausalGraphRAG retrieves <em>paths</em> in a causal graph — then produces a trace you can audit.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="brcausalgraphrag.md">brCausalGraphRAG</a>
-        <a class="md-button" href="constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="property-and-knowledge-graphs.md">Graphs</a>
+        <a class="md-button md-button--primary" href="brcausalgraphrag/">brCausalGraphRAG</a>
+        <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">

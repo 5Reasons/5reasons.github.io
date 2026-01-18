@@ -19,9 +19,9 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
         A decision-grade system must be able to <strong>prove why</strong> a decision was allowed — or refuse.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../services/epistemic-audit.md">Epistemic Audit</a>
+        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../services/epistemic-audit/">Epistemic Audit</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -95,8 +95,8 @@ flowchart LR;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/epistemic-audit.md">Epistemic Audit</a>
-      <a class="md-button" href="../services/blueprint.md">Architecture Blueprint</a>
+      <a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
+      <a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
     </p>
   </div>
 </div>

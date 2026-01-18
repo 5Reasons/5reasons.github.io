@@ -23,9 +23,6 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
         <a class="md-button" href="how-to-read/">How to read posts</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

@@ -17,9 +17,9 @@ description: "A retainer model for continuous governance, model review, system a
 				Partnership is how you keep governance, evaluation, and reliability in lockstep — continuously.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
-				<a class="md-button" href="epistemic-audit.md">Epistemic Audit</a>
-				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
+				<a class="md-button" href="epistemic-audit/">Epistemic Audit</a>
+				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -79,6 +79,6 @@ flowchart LR;
 			<li>Clear incident postmortems with trace artifacts</li>
 			<li>A system that stays governable as scope grows</li>
 		</ul>
-		<p><a class="md-button md-button--primary" href="start.md">Start a Conversation</a></p>
+		<p><a class="md-button md-button--primary" href="start/">Start a Conversation</a></p>
 	</div>
 </div>

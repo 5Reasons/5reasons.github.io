@@ -17,9 +17,9 @@ description: "Governance by design: how we encode rules as enforceable constrain
         Governance means the system is <strong>architecturally unable</strong> to produce invalid actions — and can show exactly why it refused.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../services/index.md">Services</a>
-        <a class="md-button" href="../case-studies/index.md">Case studies</a>
+        <a class="md-button md-button--primary" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../services/">Services</a>
+        <a class="md-button" href="../case-studies/">Case studies</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Enforcement layer</span>
@@ -108,9 +108,9 @@ flowchart TB
   <h2>Where this fits</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../methodology/constraints.md">Methodology → Constraints</a>
-      <a class="md-button" href="operating-model.md">Operating model</a>
-      <a class="md-button" href="../services/index.md">Services</a>
+      <a class="md-button md-button--primary" href="../methodology/constraints/">Methodology → Constraints</a>
+      <a class="md-button" href="operating-model/">Operating model</a>
+      <a class="md-button" href="../services/">Services</a>
     </p>
   </div>
 </div>

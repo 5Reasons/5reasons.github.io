@@ -17,9 +17,9 @@ description: "Graph-based contract analysis to detect clause contradictions and 
         Chat summaries can be fluent while structurally wrong.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-        <a class="md-button" href="../methodology/property-and-knowledge-graphs.md">Graphs</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
+        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+        <a class="md-button" href="../methodology/property-and-knowledge-graphs/">Graphs</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -88,8 +88,8 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-      <a class="md-button" href="../services/epistemic-audit.md">Epistemic Audit</a>
+      <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+      <a class="md-button" href="../services/epistemic-audit/">Epistemic Audit</a>
     </p>
   </div>
 </div>

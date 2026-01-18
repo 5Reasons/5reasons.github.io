@@ -17,9 +17,9 @@ description: "Why ‘agent’ is not a product category: the difference between 
         The difference is not marketing language. It is a difference in <strong>risk surface</strong>.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../reasoners/governance.md">Governance approach</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="probabilistic-ai.md">Why probabilistic AI fails</a>
+        <a class="md-button md-button--primary" href="../reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">

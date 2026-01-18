@@ -17,9 +17,9 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 				The goal is straightforward: make reliability a property of the system, not a hope inside prompts.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
-				<a class="md-button" href="implementation.md">Implementation</a>
-				<a class="md-button" href="../methodology/core-primitives.md">Core primitives</a>
+				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
+				<a class="md-button" href="implementation/">Implementation</a>
+				<a class="md-button" href="../methodology/core-primitives/">Core primitives</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -89,8 +89,8 @@ flowchart LR;
 			The Blueprint becomes the build plan for a glass-box implementation: enforceable gates, traces, monitoring, and a team-ready handover.
 		</p>
 		<p>
-			<a class="md-button md-button--primary" href="implementation.md">Implementation</a>
-			<a class="md-button" href="partnership.md">Ongoing Partnership</a>
+			<a class="md-button md-button--primary" href="implementation/">Implementation</a>
+			<a class="md-button" href="partnership/">Ongoing Partnership</a>
 		</p>
 	</div>
 </div>

@@ -15,9 +15,9 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
         The difference matters because governance and meaning live in different layers than traversal and retrieval.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="core-primitives.md">Core primitives</a>
-        <a class="md-button" href="constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="causalgraphrag.md">CausalGraphRAG</a>
+        <a class="md-button md-button--primary" href="core-primitives/">Core primitives</a>
+        <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -109,9 +109,9 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="llm-tool-rag.md">LLM + Tool + RAG</a>
-      <a class="md-button" href="causalgraphrag.md">CausalGraphRAG</a>
-      <a class="md-button" href="brcausalgraphrag.md">brCausalGraphRAG</a>
+      <a class="md-button md-button--primary" href="llm-tool-rag/">LLM + Tool + RAG</a>
+      <a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
+      <a class="md-button" href="brcausalgraphrag/">brCausalGraphRAG</a>
     </p>
   </div>
 </div>

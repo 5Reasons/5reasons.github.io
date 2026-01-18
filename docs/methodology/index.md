@@ -17,9 +17,9 @@ description: "A causal operating system for AI memory: structured entities, cons
         The goal is decision-grade behavior: traceable, governable, and able to abstain.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="core-primitives.md">Core primitives</a>
-        <a class="md-button" href="constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+        <a class="md-button md-button--primary" href="core-primitives/">Core primitives</a>
+        <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Provenance-first</span>
@@ -27,9 +27,6 @@ description: "A causal operating system for AI memory: structured entities, cons
         <span class="landing-pill">Causal traversal</span>
         <span class="landing-pill">Audit-ready traces</span>
       </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>
@@ -102,13 +99,13 @@ flowchart TB;
   <div class="landing-card">
     <p>Methodology is the <em>how</em>. Philosophy is the <em>why</em>.</p>
     <ul>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-agent-vs-agentic-ai.md">AI Agent vs Agentic AI</a></li>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/correlation-vs-causality.md">Correlation vs Causality</a></li>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-consciousness.md">AI Consciousness (operational view)</a></li>
-      <li><strong>Methodology</strong>: <a href="property-and-knowledge-graphs.md">Property Graphs &amp; Knowledge Graphs</a></li>
-      <li><strong>Methodology</strong>: <a href="llm-tool-rag.md">LLM + Tool + RAG</a></li>
-      <li><strong>Methodology</strong>: <a href="causalgraphrag.md">CausalGraphRAG</a></li>
-      <li><strong>Methodology</strong>: <a href="brcausalgraphrag.md">brCausalGraphRAG</a></li>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-agent-vs-agentic-ai/">AI Agent vs Agentic AI</a></li>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/correlation-vs-causality/">Correlation vs Causality</a></li>
+      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-consciousness/">AI Consciousness (operational view)</a></li>
+      <li><strong>Methodology</strong>: <a href="property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a></li>
+      <li><strong>Methodology</strong>: <a href="llm-tool-rag/">LLM + Tool + RAG</a></li>
+      <li><strong>Methodology</strong>: <a href="causalgraphrag/">CausalGraphRAG</a></li>
+      <li><strong>Methodology</strong>: <a href="brcausalgraphrag/">brCausalGraphRAG</a></li>
     </ul>
   </div>
 </div>
@@ -239,6 +236,6 @@ flowchart TB;
 
 ## Next pages (skeleton)
 
-- Engagement patterns: [Services](../services/index.md)
-- Applied outcomes: [Case Studies](../case-studies/index.md)
-- Real example: [SK Biomedicine](../case-studies/biomedicine.md)
+- Engagement patterns: [Services](../services/)
+- Applied outcomes: [Case Studies](../case-studies/)
+- Real example: [SK Biomedicine](../case-studies/biomedicine/)

@@ -19,9 +19,9 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 				We don’t scale by hiring dozens of juniors. We scale by applying rigorous methodology and durable standards.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-				<a class="md-button" href="../methodology/index.md">Methodology</a>
-				<a class="md-button" href="faq.md">FAQ</a>
+				<a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+				<a class="md-button" href="../methodology/">Methodology</a>
+				<a class="md-button" href="faq/">FAQ</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

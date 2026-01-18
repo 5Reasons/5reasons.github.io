@@ -17,9 +17,9 @@ description: "How governance constraints prevent policy-violating approvals and 
         We make policy enforcement deterministic and produce traces suitable for audit.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../services/epistemic-audit.md">Epistemic Audit</a>
+        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="../services/epistemic-audit/">Epistemic Audit</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -89,8 +89,8 @@ flowchart LR;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/index.md">Services</a>
-      <a class="md-button" href="../services/start.md">Start a Conversation</a>
+      <a class="md-button md-button--primary" href="../services/">Services</a>
+      <a class="md-button" href="../services/start/">Start a Conversation</a>
     </p>
   </div>
 </div>

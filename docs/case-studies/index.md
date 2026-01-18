@@ -17,13 +17,10 @@ description: "Where causality beats probability: examples from biomedicine, fina
 				The common thread: reliability becomes a system property, not a prompt suggestion.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-				<a class="md-button" href="../methodology/index.md">Methodology</a>
-				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+				<a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+				<a class="md-button" href="../methodology/">Methodology</a>
+				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
 			</div>
-		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
 		</div>
 	</div>
 </div>
@@ -51,17 +48,17 @@ flowchart LR;
 		<div class="landing-card">
 			<h3>Biomedicine</h3>
 			<p>Mechanism discovery: connecting entities into testable causal chains beyond document similarity.</p>
-			<p><a class="md-button md-button--primary" href="biomedicine.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="biomedicine/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Finance</h3>
 			<p>Compliance by design: constraints make policy violations impossible and produce audit-ready traces.</p>
-			<p><a class="md-button md-button--primary" href="finance.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="finance/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Legal</h3>
 			<p>Contract logic conflicts: graph structure surfaces contradictions and hidden dependencies.</p>
-			<p><a class="md-button md-button--primary" href="legal.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="legal/">Read case study</a></p>
 		</div>
 	</div>
 </div>
@@ -72,32 +69,32 @@ flowchart LR;
 		<div class="landing-card">
 			<h3>Insurance</h3>
 			<p>Claims and underwriting under hard constraints, with traceable evidence and deterministic abstention.</p>
-			<p><a class="md-button md-button--primary" href="insurance.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="insurance/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Cybersecurity</h3>
 			<p>SOC decision support: evidence paths, playbook constraints, and incident traces you can replay.</p>
-			<p><a class="md-button md-button--primary" href="cybersecurity.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="cybersecurity/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Manufacturing</h3>
 			<p>Quality and root-cause analysis: causal chains across process steps, suppliers, and sensor evidence.</p>
-			<p><a class="md-button md-button--primary" href="manufacturing.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="manufacturing/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Energy &amp; Utilities</h3>
 			<p>Grid operations: safety gates, operating constraints, and replayable incident reasoning.</p>
-			<p><a class="md-button md-button--primary" href="energy-utilities.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="energy-utilities/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Pharma / Clinical Ops</h3>
 			<p>Protocol and safety constraints with inspection-ready evidence paths and deterministic escalation.</p>
-			<p><a class="md-button md-button--primary" href="pharma-clinical-ops.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="pharma-clinical-ops/">Read case study</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Enterprise central memory</h3>
 			<p>Meetings and projects as governed decision artifacts: owners, assumptions, constraints, and change logs.</p>
-			<p><a class="md-button md-button--primary" href="enterprise-central-memory.md">Read case study</a></p>
+			<p><a class="md-button md-button--primary" href="enterprise-central-memory/">Read case study</a></p>
 		</div>
 	</div>
 </div>

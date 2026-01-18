@@ -17,9 +17,9 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
         But it still lacks an enforcement layer that makes violations impossible.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="causalgraphrag.md">Upgrade to CausalGraphRAG</a>
-        <a class="md-button" href="constraints.md">Add constraints &amp; SHACL</a>
-        <a class="md-button" href="core-primitives.md">See core primitives</a>
+        <a class="md-button md-button--primary" href="causalgraphrag/">Upgrade to CausalGraphRAG</a>
+        <a class="md-button" href="constraints/">Add constraints &amp; SHACL</a>
+        <a class="md-button" href="core-primitives/">See core primitives</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -97,8 +97,8 @@ flowchart TB;
   <h2>Next step</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="causalgraphrag.md">CausalGraphRAG</a>
-      <a class="md-button" href="brcausalgraphrag.md">brCausalGraphRAG</a>
+      <a class="md-button md-button--primary" href="causalgraphrag/">CausalGraphRAG</a>
+      <a class="md-button" href="brcausalgraphrag/">brCausalGraphRAG</a>
     </p>
   </div>
 </div>

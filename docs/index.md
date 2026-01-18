@@ -1,4 +1,4 @@
-# Reasoners × 5Reasons
+# 5Reasons Solutions
 
 --8<-- "includes/quicknav.html"
 
@@ -16,15 +16,6 @@
         <a class="md-button" href="methodology/">Explore brModel™ methodology</a>
         <a class="md-button" href="reasoners/vision-2026/">Read the 2026 vision</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Glass-box AI (not vibes)</span>
-        <span class="landing-pill">CausalGraphRAG traces</span>
-        <span class="landing-pill">Governance via constraints</span>
-        <span class="landing-pill">Standards-first, no lock-in</span>
-      </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>
@@ -101,7 +92,7 @@
       <h3>Reasoners (consulting & infrastructure)</h3>
       <p>For organizations where hallucination is unacceptable — we build durable semantics, governance, and auditable reasoning.</p>
       <p>
-        <a class="md-button" href="reasoners/">Start with Reasoners</a>
+        <a class="md-button" href="reasoners/">Start</a>
         <a class="md-button" href="methodology/">Technical core</a>
       </p>
     </div>
@@ -122,11 +113,4 @@
       </p>
     </div>
   </div>
-</div>
-
-<div class="landing-section">
-  <h2>Featured</h2>
-  <ul>
-    <li><a href="blog/posts/2026-01-16_why-small-frictions-cascade-into-system-failure/">Why Small Frictions Cascade into System Failure</a></li>
-  </ul>
 </div>

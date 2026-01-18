@@ -18,9 +18,9 @@ description: "How causal graphs connect process steps, sensor signals, and suppl
         We make those chains explicit and auditable.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-        <a class="md-button" href="../methodology/causalgraphrag.md">CausalGraphRAG</a>
-        <a class="md-button" href="../services/blueprint.md">Architecture Blueprint</a>
+        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+        <a class="md-button" href="../methodology/causalgraphrag/">CausalGraphRAG</a>
+        <a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -90,8 +90,8 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/epistemic-audit.md">Epistemic Audit</a>
-      <a class="md-button" href="../services/implementation.md">Implementation</a>
+      <a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
+      <a class="md-button" href="../services/implementation/">Implementation</a>
     </p>
   </div>
 </div>

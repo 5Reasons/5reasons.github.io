@@ -17,9 +17,9 @@ description: "How causal traversal, playbook constraints, and trace objects turn
         The system must connect evidence into defensible chains — and enforce what actions are allowed.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
-        <a class="md-button" href="../methodology/causalgraphrag.md">CausalGraphRAG</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
+        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
+        <a class="md-button" href="../methodology/causalgraphrag/">CausalGraphRAG</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -90,8 +90,8 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/epistemic-audit.md">Epistemic Audit</a>
-      <a class="md-button" href="../services/blueprint.md">Architecture Blueprint</a>
+      <a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
+      <a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
     </p>
   </div>
 </div>

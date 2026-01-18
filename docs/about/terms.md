@@ -19,8 +19,8 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 				Reuse is restricted — especially for commercial, research, or machine-learning purposes.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start.md">Licensing / contact</a>
-				<a class="md-button" href="../../LICENSE.md">Repository license</a>
+				<a class="md-button md-button--primary" href="../services/start/">Licensing / contact</a>
+				<a class="md-button" href="https://github.com/5Reasons/5reasons.github.io/blob/main/LICENSE.md">Repository license</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -70,7 +70,7 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	<div class="landing-card">
 		<p>
 			The binding legal terms are defined in the repository license file:
-			<a href="../../LICENSE.md">LICENSE.md</a>.
+			<a href="https://github.com/5Reasons/5reasons.github.io/blob/main/LICENSE.md">LICENSE.md</a>.
 		</p>
 	</div>
 </div>
@@ -91,7 +91,7 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	<div class="landing-card">
 		<p>
 			If you need a commercial license, research permission, or ML usage rights, contact us:
-			<a class="md-button md-button--primary" href="../services/start.md">Start a Conversation</a>
+			<a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
 		</p>
 	</div>
 </div>

@@ -16,8 +16,8 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 				These are not slogans. They translate directly into architecture: evidence gates, constraint enforcement, and accountable decision ownership.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../methodology/index.md">Methodology</a>
-				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+				<a class="md-button md-button--primary" href="../methodology/">Methodology</a>
+				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

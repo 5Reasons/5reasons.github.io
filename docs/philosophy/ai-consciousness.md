@@ -19,9 +19,9 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
         None of that requires a system to be conscious.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../reasoners/governance.md">Governance approach</a>
-        <a class="md-button" href="../methodology/constraints.md">Constraints &amp; SHACL</a>
-        <a class="md-button" href="ai-agent-vs-agentic-ai.md">Agent vs agentic</a>
+        <a class="md-button md-button--primary" href="../reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="ai-agent-vs-agentic-ai/">Agent vs agentic</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Avoid anthropomorphism</span>
@@ -138,9 +138,9 @@ flowchart TB;
   <h2>Where this connects</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button" href="probabilistic-ai.md">Why probabilistic AI fails</a>
-      <a class="md-button" href="three-laws.md">The three laws</a>
-      <a class="md-button" href="../methodology/index.md">Methodology</a>
+      <a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a>
+      <a class="md-button" href="three-laws/">The three laws</a>
+      <a class="md-button" href="../methodology/">Methodology</a>
     </p>
   </div>
 </div>

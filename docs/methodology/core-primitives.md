@@ -17,9 +17,9 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 				That means: the unit of memory is not “a paragraph” — it is a structured object with provenance.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../methodology/index.md">Methodology overview</a>
-				<a class="md-button" href="constraints.md">Constraints &amp; SHACL</a>
-				<a class="md-button" href="property-and-knowledge-graphs.md">Graphs</a>
+				<a class="md-button md-button--primary" href="../methodology/">Methodology overview</a>
+				<a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
+				<a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -96,9 +96,9 @@ flowchart LR;
 	<h2>Where this connects</h2>
 	<div class="landing-card">
 		<p>
-			<a class="md-button md-button--primary" href="property-and-knowledge-graphs.md">Property Graphs &amp; Knowledge Graphs</a>
-			<a class="md-button" href="llm-tool-rag.md">LLM + Tool + RAG</a>
-			<a class="md-button" href="causalgraphrag.md">CausalGraphRAG</a>
+			<a class="md-button md-button--primary" href="property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a>
+			<a class="md-button" href="llm-tool-rag/">LLM + Tool + RAG</a>
+			<a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
 		</p>
 	</div>
 </div>

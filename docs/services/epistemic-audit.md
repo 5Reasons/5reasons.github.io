@@ -18,9 +18,9 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 				We answer it with evidence, not optimism.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start.md">Start a Conversation</a>
-				<a class="md-button" href="blueprint.md">Architecture Blueprint</a>
-				<a class="md-button" href="../methodology/llm-tool-rag.md">Baseline stack (LLM+Tool+RAG)</a>
+				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
+				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+				<a class="md-button" href="../methodology/llm-tool-rag/">Baseline stack (LLM+Tool+RAG)</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
@@ -96,6 +96,6 @@ flowchart LR;
 			<li>Your data is messy and multi-source.</li>
 			<li>You need a plan that survives model churn.</li>
 		</ul>
-		<p><a class="md-button md-button--primary" href="start.md">Start a Conversation</a></p>
+		<p><a class="md-button md-button--primary" href="start/">Start a Conversation</a></p>
 	</div>
 </div>

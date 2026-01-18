@@ -17,9 +17,9 @@ description: "How enforceable constraints make policy violations impossible, and
 				SHACL is one practical way to formalize those constraints for graph-shaped data.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="brcausalgraphrag.md">brCausalGraphRAG</a>
-				<a class="md-button" href="llm-tool-rag.md">LLM + Tool + RAG</a>
-				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
+				<a class="md-button md-button--primary" href="brcausalgraphrag/">brCausalGraphRAG</a>
+				<a class="md-button" href="llm-tool-rag/">LLM + Tool + RAG</a>
+				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
