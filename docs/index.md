@@ -1,4 +1,4 @@
-# Reasoners × 5Reasons
+# 5Reasons Solutions
 
 --8<-- "includes/quicknav.html"
 
@@ -16,15 +16,6 @@
         <a class="md-button" href="methodology/">Explore brModel™ methodology</a>
         <a class="md-button" href="reasoners/vision-2026/">Read the 2026 vision</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Glass-box AI (not vibes)</span>
-        <span class="landing-pill">CausalGraphRAG traces</span>
-        <span class="landing-pill">Governance via constraints</span>
-        <span class="landing-pill">Standards-first, no lock-in</span>
-      </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>

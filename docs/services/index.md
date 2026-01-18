@@ -22,9 +22,6 @@ description: "From epistemic audit to causal architecture blueprints to producti
 				<a class="md-button" href="../reasoners/governance.md">Governance approach</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

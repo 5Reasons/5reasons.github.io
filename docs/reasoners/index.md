@@ -28,9 +28,6 @@ description: "Cognitive infrastructure architects building deterministic, audita
 				<span class="landing-pill">No lock-in (standards-first)</span>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

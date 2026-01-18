@@ -28,9 +28,6 @@ description: "A causal operating system for AI memory: structured entities, cons
         <span class="landing-pill">Audit-ready traces</span>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

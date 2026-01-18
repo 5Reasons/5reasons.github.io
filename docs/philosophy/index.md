@@ -28,9 +28,6 @@ description: "Why high-stakes organizations need causal memory and governance—
         <span class="landing-pill">Abstention</span>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 
