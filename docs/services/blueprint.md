@@ -19,7 +19,7 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
 				<a class="md-button" href="implementation/">Implementation</a>
-				<a class="md-button" href="../methodology/core-primitives/">Core primitives</a>
+				<a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

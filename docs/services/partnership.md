@@ -19,7 +19,7 @@ description: "A retainer model for continuous governance, model review, system a
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
 				<a class="md-button" href="epistemic-audit/">Epistemic Audit</a>
-				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
+				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

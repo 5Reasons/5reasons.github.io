@@ -17,9 +17,9 @@ description: "How we structure pages, why navigation stays stable, and how posts
 				This page explains how we do that.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../home/start-here/">Start Here</a>
-				<a class="md-button" href="../blog/">Blog</a>
-				<a class="md-button" href="../diagrams/">Diagram gallery</a>
+				<a class="md-button md-button--primary" href="/home/start-here/">Start Here</a>
+				<a class="md-button" href="/blog/">Blog</a>
+				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</div>
 			<div class="landing-proof" aria-label="Highlights">
 				<span class="landing-pill">Minimal nav, maximal scale</span>
@@ -76,7 +76,7 @@ description: "How we structure pages, why navigation stays stable, and how posts
 			<p>When we add “primary” diagrams, we keep slugs consistent across post, .mmd, and .svg names for long-term sanity.</p>
 		</div>
 	</div>
-	<p><a class="md-button" href="../diagrams/">Open diagram gallery</a></p>
+	<p><a class="md-button" href="/diagrams/">Open diagram gallery</a></p>
 </div>
 
 <div class="landing-section">

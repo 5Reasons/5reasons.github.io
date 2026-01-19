@@ -18,8 +18,8 @@ description: "From epistemic audit to causal architecture blueprints to producti
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
-				<a class="md-button" href="../methodology/">See the methodology</a>
-				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
+				<a class="md-button" href="/methodology/">See the methodology</a>
+				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 	</div>

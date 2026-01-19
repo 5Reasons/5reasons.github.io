@@ -19,7 +19,7 @@ description: "From blueprint to production: building a glass-box memory layer, e
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
 				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
-				<a class="md-button" href="../methodology/brcausalgraphrag/">brCausalGraphRAG</a>
+				<a class="md-button" href="/methodology/brcausalgraphrag/">brCausalGraphRAG</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

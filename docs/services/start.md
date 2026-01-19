@@ -19,7 +19,7 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="epistemic-audit/">Epistemic Audit</a>
 				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
-				<a class="md-button" href="../methodology/">Methodology</a>
+				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">
