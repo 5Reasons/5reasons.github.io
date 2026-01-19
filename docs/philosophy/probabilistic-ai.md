@@ -34,6 +34,13 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 </div>
 
 <div class="landing-section">
+	<div class="landing-card">
+		<img class="glightbox" src="/assets/img/br-008768.png" alt="Illustration of the illusion: plausible text can appear decision-grade without epistemic validity." />
+		<p class="landing-mini"><strong>Click to enlarge:</strong> a concrete example of how “plausible” can look like “valid”.</p>
+	</div>
+</div>
+
+<div class="landing-section">
 	<h2>Why RAG helps — and why it still fails</h2>
 	<div class="landing-grid">
 		<div class="landing-card">

@@ -20,6 +20,14 @@
   </div>
 </div>
 
+<div class="landing-card" style="margin-top: 14px;">
+  <p class="landing-mini"><strong>Audio:</strong> Hidden complexity makes AI memory toxic</p>
+  <audio controls preload="none" style="width: 100%;">
+    <source src="/assets/Hidden_Complexity_Makes_AI_Memory_Toxic.m4a" type="audio/mp4" />
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 <div class="landing-section">
   <h2>What we build</h2>
   <div class="landing-grid">
@@ -67,6 +75,13 @@
 </div>
 
 <div class="landing-section">
+  <div class="landing-card">
+    <img class="glightbox" src="/assets/img/br-008767.png" alt="Engagement overview: audit → blueprint → implementation, with governance constraints and traceable outputs." />    <p class="landing-mini"><strong>Click to enlarge:</strong> a visual overview of the engagement flow.</p>
+
+  </div>
+</div>
+
+<div class="landing-section">
   <h2>Validated where it hurts</h2>
   <div class="landing-grid">
     <div class="landing-card">
@@ -82,7 +97,6 @@
       <p>Contract analysis as a knowledge graph: detect logical conflicts across clauses you’d never spot with keyword search.</p>
     </div>
   </div>
-md-button" href="case-studies/">Browse case studies</a></p>
 </div>
 
 <div class="landing-section">
@@ -100,11 +114,19 @@ md-button" href="case-studies/">Browse case studies</a></p>
       <h3>5Reasons (writing & diagrams)</h3>
       <p>Public causal analysis you can argue with: models, counterfactuals, diagrams, mechanisms, and leverage points.</p>
       <p>
-        <a class="md-button" href="blog/">Read the blog
-uires a written license (see Terms of Use).</p>
+        <a class="md-button" href="blog/">Read the blog</a>
+      </p>
       <p>
         <a class="md-button" href="about/terms/">Terms of Use</a>
         <a class="md-button" href="services/start/">Request a license</a>
+      </p>
+    </div>
+    <div class="landing-card">
+      <h3>Inquiry (fast fit check)</h3>
+      <p>Tell us your domain, the decision you need to support, the constraints that must be enforced, and what failure is unacceptable.</p>
+      <p>
+        <a class="md-button md-button--primary" href="home/inquiry/">Open the inquiry form</a>
+        <a class="md-button" href="services/">Services</a>
       </p>
     </div>
   </div>
