@@ -1,7 +1,7 @@
 site_name: 5Reasons
 site_url: https://5reasons.github.io/
-repo_url: https://github.com/5Reasons/5reasons.github.io
-repo_name: 5Reasons/5reasons.github.io
+# repo_url: https://github.com/5Reasons/5reasons.github.io
+repo_name: 5Reasons
 
 theme:
   name: material

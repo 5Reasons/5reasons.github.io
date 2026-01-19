@@ -6,7 +6,7 @@
   <div class="landing-hero__grid">
     <div>
       <p class="landing-kicker">Decision-grade cognitive infrastructure</p>
-      <h2 class="landing-title">Architects of mental models for machines — and causal analytics for humans.</h2>
+      <h2 class="landing-title">Architects of mental models and causal analytics for machines and humans.</h2>
       <p class="landing-subtitle">
         We turn messy enterprise reality (PDF + SQL + policies + domain expertise) into <strong>decision-grade cognitive infrastructure</strong>:
         causal graph memory, governance constraints, and auditable reasoning traces for LLMs and agentic systems.
