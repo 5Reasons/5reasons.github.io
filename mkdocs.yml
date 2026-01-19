@@ -41,6 +41,7 @@ nav:
   - Home:
     - Overview: index.md
     - Start Here: home/start-here.md
+    - Inquiry: home/inquiry.md
     - How This Site Works: home/how-this-site-works.md
   - Reasoners:
     - Overview: reasoners/index.md
