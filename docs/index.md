@@ -141,6 +141,6 @@
 
 <div class="landing-section">
   <ul>
-    <li><a href="blog/posts/2026-01-16_why-small-frictions-cascade-into-system-failure/">Why Small Frictions Cascade into System Failure</a></li>
+    <li><a href="blog/posts/why-small-frictions-cascade-into-system-failure/">Why Small Frictions Cascade into System Failure</a></li>
   </ul>
 </div>

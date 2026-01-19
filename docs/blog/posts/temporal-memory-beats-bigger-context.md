@@ -231,7 +231,7 @@ Those are causal interventions: they change which memories are eligible to influ
 ### Sources (workspace)
 
 - `localSource/Analysis/Zep Platforma pre pamäť a kontext AI agentov 23b90bcdd8ae80e3a684ced17a3ec1cd.md` — temporal KG, hybrid retrieval, governance concepts.
-- `docs/blog/posts/2026-01-17_memory-needs-identity-governance-and-decay.md` — prior site post framing memory as a governed system.
+- `docs/blog/posts/memory-needs-identity-governance-and-decay.md` — prior site post framing memory as a governed system.
 
 ### Assumptions log
 
