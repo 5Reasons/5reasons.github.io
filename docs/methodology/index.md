@@ -32,6 +32,14 @@ description: "A causal operating system for AI memory: structured entities, cons
     <p class="landing-mini">Facts become nodes with provenance; relationships encode mechanisms and allowed transformations; rules become enforceable constraints.</p>
   </div>
 
+<div class="landing-card" style="margin-top: 14px;">
+  <p class="landing-mini"><strong>Audio:</strong> Simulating Interventions With Executable Causal Clauses</p>
+  <audio controls preload="none" style="width: 100%;">
+    <source src="\assets\Simulating_Interventions_With_Executable_Causal_Clauses.m4a" type="audio/mp4" />
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 ```mermaid
 flowchart LR;
   Q["User question"] --> R["Retrieve facts"];
