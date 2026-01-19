@@ -49,7 +49,6 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 			<p>If you want causal writing and reusable diagrams — start with the blog index and diagram gallery.</p>
 			<p>
 				<a class="md-button md-button--primary" href="/blog/">Blog</a>
-				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</p>
 		</div>
 	</div>
@@ -82,7 +81,6 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 			<ol>
 				<li><a href="/blog/how-to-read/">How to Read Posts</a></li>
 				<li><a href="/blog/">Blog index</a> (pick one post)</li>
-				<li><a href="/diagrams/">Diagram Gallery</a> (browse models fast)</li>
 			</ol>
 		</div>
 	</div>

@@ -19,7 +19,7 @@ description: "A public-facing strategic narrative: one core causal framework app
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/services/start/">Start a conversation</a>
 				<a class="md-button" href="/methodology/">Open methodology</a>
-				<a class="md-button" href="governance/">Governance approach</a>
+				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 	</div>
@@ -119,7 +119,7 @@ flowchart TB
 		</div>
 	</div>
 	<p>
-		<a class="md-button" href="operating-model/">Operating model</a>
+		<a class="md-button" href="/reasoners/operating-model/">Operating model</a>
 		<a class="md-button" href="/services/">Services</a>
 	</p>
 </div>

@@ -90,7 +90,6 @@ description: "Cognitive infrastructure architects building deterministic, audita
 			<p>Public causal writing and reusable diagrams.</p>
 			<p>
 				<a class="md-button md-button--primary" href="/blog/">Blog</a>
-				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</p>
 		</div>
 	</div>

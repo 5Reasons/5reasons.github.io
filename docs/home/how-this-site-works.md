@@ -19,7 +19,6 @@ description: "How we structure pages, why navigation stays stable, and how posts
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/home/start-here/">Start Here</a>
 				<a class="md-button" href="/blog/">Blog</a>
-				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</div>
 		</div>
 	</div>
@@ -49,25 +48,6 @@ description: "How we structure pages, why navigation stays stable, and how posts
 		<p><strong>We avoid renaming published URLs.</strong> Once a page is public, it becomes part of the external surface area (bookmarks, references, search).</p>
 		<p class="landing-mini">If a rename is ever unavoidable, we treat it as a migration (and ask first if it affects published links).</p>
 	</div>
-</div>
-
-<div class="landing-section">
-	<h2>What the “Diagram Gallery” means</h2>
-	<div class="landing-grid">
-		<div class="landing-card">
-			<h3>Gallery = preview layer</h3>
-			<p>It’s a browsing surface: quick scanning of models and patterns.</p>
-		</div>
-		<div class="landing-card">
-			<h3>Inline Mermaid is canonical</h3>
-			<p>The authoritative source remains Mermaid blocks embedded in pages/posts. Gallery images are optional previews.</p>
-		</div>
-		<div class="landing-card">
-			<h3>Deterministic naming</h3>
-			<p>When we add “primary” diagrams, we keep slugs consistent across post, .mmd, and .svg names for long-term sanity.</p>
-		</div>
-	</div>
-	<p><a class="md-button" href="/diagrams/">Open diagram gallery</a></p>
 </div>
 
 <div class="landing-section">

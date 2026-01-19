@@ -21,7 +21,7 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="/reasoners/governance/">Governance approach</a>
         <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="ai-agent-vs-agentic-ai/">Agent vs agentic</a>
+        <a class="md-button" href="/philosophy/ai-agent-vs-agentic-ai/">Agent vs agentic</a>
       </div>
     </div>
   </div>
@@ -129,8 +129,8 @@ flowchart TB;
   <h2>Where this connects</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a>
-      <a class="md-button" href="three-laws/">The three laws</a>
+      <a class="md-button" href="/philosophy/probabilistic-ai/">Why probabilistic AI fails</a>
+      <a class="md-button" href="/philosophy/three-laws/">The three laws</a>
       <a class="md-button" href="/methodology/">Methodology</a>
     </p>
   </div>

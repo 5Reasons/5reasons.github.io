@@ -19,7 +19,7 @@ description: "Why ‘agent’ is not a product category: the difference between 
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="/reasoners/governance/">Governance approach</a>
         <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a>
+        <a class="md-button" href="/philosophy/probabilistic-ai/">Why probabilistic AI fails</a>
       </div>
     </div>
   </div>

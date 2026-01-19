@@ -18,7 +18,7 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/methodology/constraints/">Constraints &amp; SHACL</a>
-				<a class="md-button" href="three-laws/">The three laws</a>
+				<a class="md-button" href="/philosophy/three-laws/">The three laws</a>
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>

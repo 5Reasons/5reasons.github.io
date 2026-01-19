@@ -100,7 +100,7 @@ flowchart TB
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/methodology/constraints/">Methodology → Constraints</a>
-      <a class="md-button" href="operating-model/">Operating model</a>
+      <a class="md-button" href="/reasoners/operating-model/">Operating model</a>
       <a class="md-button" href="/services/">Services</a>
     </p>
   </div>

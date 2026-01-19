@@ -107,7 +107,7 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	<div class="landing-card">
 		<p>
 			<a class="md-button" href="/services/">Services</a>
-			<a class="md-button" href="governance/">Governance approach</a>
+			<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			<a class="md-button" href="/methodology/">Methodology</a>
 		</p>
 	</div>
