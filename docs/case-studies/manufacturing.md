@@ -43,6 +43,8 @@ description: "How causal graphs connect process steps, sensor signals, and suppl
     <div class="landing-card"><h3>Missing context</h3><p>Process step dependencies and maintenance history are often disconnected.</p></div>
     <div class="landing-card"><h3>Non-reproducible investigations</h3><p>Root-cause analysis becomes tribal knowledge without traces.</p></div>
     <div class="landing-card"><h3>Unsafe actions</h3><p>Line stops, recalls, and supplier blocks must be governed and reviewed.</p></div>
+    <div class="landing-card"><h3>Batch confounding</h3><p>Supplier lots, shifts, and ambient conditions can confound signals unless modeled explicitly.</p></div>
+    <div class="landing-card"><h3>Measurement drift</h3><p>Sensor calibration and threshold changes can look like process change without a provenance trail.</p></div>
   </div>
 </div>
 
@@ -80,6 +82,8 @@ flowchart TB;
     <div class="landing-card"><h3>Traceable interventions</h3><p>Line adjustments, supplier actions, and mitigations tied to the trace artifact.</p></div>
     <div class="landing-card"><h3>Faster postmortems</h3><p>Investigations become repeatable and comparable over time.</p></div>
     <div class="landing-card"><h3>Governed escalation</h3><p>High-impact actions trigger review gates and mandatory sign-offs.</p></div>
+    <div class="landing-card"><h3>Supplier propagation map</h3><p>How upstream batch and supplier events flow into downstream quality signals — with evidence per link.</p></div>
+    <div class="landing-card"><h3>Change-impact analysis</h3><p>Before you adjust a process, the system can show which constraints, steps, and failure modes the change touches.</p></div>
   </div>
 </div>
 

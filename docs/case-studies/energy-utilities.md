@@ -44,6 +44,8 @@ description: "How governed causal memory supports grid ops decisions with tracea
     <div class="landing-card"><h3>Non-local constraints</h3><p>Switching constraints depend on topology, equipment state, and work orders across systems.</p></div>
     <div class="landing-card"><h3>Evidence gaps</h3><p>Telemetry and tickets disagree; the system must be able to abstain and request missing data.</p></div>
     <div class="landing-card"><h3>Unreplayable incidents</h3><p>Postmortems fail if reasoning exists only as transient chat output.</p></div>
+    <div class="landing-card"><h3>Topology misread</h3><p>Small modeling errors (feeds, ties, islands) can flip which actions are safe and permissible.</p></div>
+    <div class="landing-card"><h3>Work-order conflicts</h3><p>Planned maintenance and switching constraints can contradict proposed actions unless integrated and enforced.</p></div>
   </div>
 </div>
 
@@ -85,6 +87,8 @@ flowchart LR;
     <div class="landing-card"><h3>Incident traces</h3><p>Evidence, rules applied, decisions, and escalations captured as artifacts.</p></div>
     <div class="landing-card"><h3>Faster postmortems</h3><p>Replayable reasoning reduces time-to-resolution and improves learning.</p></div>
     <div class="landing-card"><h3>Governed automation boundaries</h3><p>Clear lines between auto-suggest, auto-execute, and mandatory human review.</p></div>
+    <div class="landing-card"><h3>Constraint library</h3><p>Operating limits, procedures, and exception rules encoded as enforceable checks — versioned like any other policy.</p></div>
+    <div class="landing-card"><h3>Operator-ready rationale</h3><p>Not just a plan, but why it is safe: which evidence and constraints justify each step of the recommendation.</p></div>
   </div>
 </div>
 

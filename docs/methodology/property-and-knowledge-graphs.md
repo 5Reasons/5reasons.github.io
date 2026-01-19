@@ -38,6 +38,12 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
       <p><strong>Data model:</strong> typed concepts and relations, explicit meaning, validation rules.</p>
       <p><strong>Typical wins:</strong> schema discipline, policy enforcement, consistent interpretation.</p>
     </div>
+    <div class="landing-card">
+      <h3>Hybrid (often best)</h3>
+      <p><strong>Point:</strong> not every problem fits one graph style.</p>
+      <p><strong>Pattern:</strong> use a property graph for fast retrieval and workflows, then layer knowledge-graph semantics for meaning, constraints, and audit.</p>
+      <p><strong>Result:</strong> speed without losing correctness when stakes rise.</p>
+    </div>
   </div>
 </div>
 
@@ -74,6 +80,26 @@ flowchart LR;
         <li>Mixing incompatible sources without noticing</li>
         <li>Smuggling policy decisions into “similarity” heuristics</li>
       </ul>
+    </div>
+
+    <div class="landing-card">
+      <h3>Helps when you need traceability</h3>
+      <p>Graphs shine when each edge is an inspectable claim with provenance. You can ask not only <em>what</em> connects, but <em>which source</em> says so and under what scope.</p>
+    </div>
+
+    <div class="landing-card">
+      <h3>Misleads when you skip semantics</h3>
+      <p>If relations aren’t typed and validated, traversal blends different meanings into one path. The output looks coherent, but it may be logically invalid or policy-violating.</p>
+    </div>
+
+    <div class="landing-card">
+      <h3>Helps when the world changes</h3>
+      <p>With versioned sources and constraints, you can detect drift: what changed, which edges became stale, and which decisions must be revalidated after deployment.</p>
+    </div>
+
+    <div class="landing-card">
+      <h3>Misleads under optimization pressure</h3>
+      <p>When graphs drive ranking or automation, agents learn to game proxies. Without guardrails and counterfactual checks, “best path” becomes a policy choice disguised as retrieval.</p>
     </div>
   </div>
 </div>

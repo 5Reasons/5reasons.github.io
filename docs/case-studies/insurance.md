@@ -44,6 +44,8 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
     <div class="landing-card"><h3>Evidence leakage</h3><p>Approvals without defensible evidence paths lead to leakage, disputes, and adverse selection.</p></div>
     <div class="landing-card"><h3>Fraud blind spots</h3><p>Fraud signals are multi-source and relational; similarity search misses structured contradictions.</p></div>
     <div class="landing-card"><h3>Unbounded automation</h3><p>High-risk actions must be constrained and sometimes escalated, not “handled end-to-end”.</p></div>
+    <div class="landing-card"><h3>Coverage misclassification</h3><p>Small wording differences can flip eligibility; mistakes compound into denials, complaints, and regulatory risk.</p></div>
+    <div class="landing-card"><h3>Adversarial behavior</h3><p>Claimants and intermediaries adapt; systems need controls against gaming, not just better summaries.</p></div>
   </div>
 </div>
 
@@ -85,6 +87,8 @@ flowchart LR;
     <div class="landing-card"><h3>Deterministic abstention</h3><p>If required evidence is missing, the system refuses and states what must be provided.</p></div>
     <div class="landing-card"><h3>Fraud investigation graph</h3><p>Relational signals and contradictions surfaced as navigable structures.</p></div>
     <div class="landing-card"><h3>Governable automation</h3><p>Explicit boundaries for what can be auto-approved vs what must escalate.</p></div>
+    <div class="landing-card"><h3>Dispute-ready justification</h3><p>When challenged, the system can point to the exact evidence path and policy rule that drove the outcome.</p></div>
+    <div class="landing-card"><h3>Leakage reduction</h3><p>Fewer unforced errors from missing documentation, inconsistent evidence, or bypassed exclusions and limits.</p></div>
   </div>
 </div>
 

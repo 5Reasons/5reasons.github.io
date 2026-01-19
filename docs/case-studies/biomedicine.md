@@ -88,6 +88,8 @@ flowchart TB;
     <div class="landing-card"><h3>Hypotheses</h3><p>Candidates ranked by mechanistic plausibility, not by rhetorical fluency.</p></div>
     <div class="landing-card"><h3>Falsification plan</h3><p>Clear missing evidence and which link would change the conclusion.</p></div>
     <div class="landing-card"><h3>Iterability</h3><p>A model that improves as new studies arrive without losing auditability.</p></div>
+    <div class="landing-card"><h3>Experiment prioritization</h3><p>Targeted follow-ups: which intervention would most reduce uncertainty in the mechanism chain.</p></div>
+    <div class="landing-card"><h3>Evidence gaps map</h3><p>A structured view of missing links, contradictory studies, and where new data would unlock a valid path.</p></div>
   </div>
 </div>
 

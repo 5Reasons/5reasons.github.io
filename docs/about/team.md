@@ -64,10 +64,6 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 			<h3>Design for audits</h3>
 			<p>Production systems must explain themselves: constraints, traces, provenance, and clear abstention.</p>
 		</div>
-		<div class="landing-card">
-			<h3>Governance is enforced</h3>
-			<p>Prompt-only safety is fragile. We build constraint gates that make violations impossible.</p>
-		</div>
 	</div>
 </div>
 

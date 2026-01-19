@@ -32,6 +32,8 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 		<div class="landing-card"><h3>Audits or compliance matter</h3><p>You need traceability and enforceable rules, not “best effort”.</p></div>
 		<div class="landing-card"><h3>Your data reality is messy</h3><p>PDF + SQL + KBs + tribal knowledge. The hard part is not the model — it’s the semantics.</p></div>
 		<div class="landing-card"><h3>You expect model churn</h3><p>You want an architecture that stays stable even as models change.</p></div>
+		<div class="landing-card"><h3>You need decisions, not chat</h3><p>You care about action selection with constraints and traces — not just “grounded” answers that can’t be audited.</p></div>
+		<div class="landing-card"><h3>Your policies evolve</h3><p>Rules, approvals, and risk posture change. You need governance that can be updated, tested, and enforced deterministically.</p></div>
 	</div>
 </div>
 

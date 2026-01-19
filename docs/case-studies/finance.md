@@ -39,6 +39,8 @@ description: "How governance constraints prevent policy-violating approvals and 
     <div class="landing-card"><h3>Cross-document constraints</h3><p>Policies and risk rules are distributed across multiple sources and versions.</p></div>
     <div class="landing-card"><h3>Sector prohibitions</h3><p>Some decisions are disallowed regardless of narrative quality.</p></div>
     <div class="landing-card"><h3>Silent uncertainty</h3><p>Fluent text can hide missing evidence. The system must be able to refuse.</p></div>
+    <div class="landing-card"><h3>Proxy discrimination</h3><p>“Neutral” features can encode protected attributes unless governance explicitly constrains them.</p></div>
+    <div class="landing-card"><h3>Rule drift</h3><p>When policies change, you need diffs and re-evaluation — not silent grandfathering of past decisions.</p></div>
   </div>
 </div>
 
@@ -79,6 +81,8 @@ flowchart LR;
     <div class="landing-card"><h3>Non-bypassable governance</h3><p>Constraints are enforced in code/data, not in prompt text.</p></div>
     <div class="landing-card"><h3>Audit-ready trail</h3><p>Traces and validation reports suitable for internal review.</p></div>
     <div class="landing-card"><h3>Deterministic abstention</h3><p>When evidence is missing, the system refuses and states what is required.</p></div>
+    <div class="landing-card"><h3>Policy diffs over time</h3><p>When rules change, you can see what decisions would flip and why — before changes go live.</p></div>
+    <div class="landing-card"><h3>Review bundles</h3><p>Decision artifacts packaged for compliance: evidence, scope, rule triggers, and the exact enforcement path.</p></div>
   </div>
 </div>
 

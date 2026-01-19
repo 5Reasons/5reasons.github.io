@@ -42,6 +42,8 @@ description: "How causal traversal, playbook constraints, and trace objects turn
     <div class="landing-card"><h3>Action without authorization</h3><p>Some responses must be gated by role, environment, and blast-radius constraints.</p></div>
     <div class="landing-card"><h3>Lost provenance</h3><p>If you cannot show where a claim came from, you cannot justify the response.</p></div>
     <div class="landing-card"><h3>Non-replayable decisions</h3><p>You need a trace you can replay later, not a transient chat transcript.</p></div>
+    <div class="landing-card"><h3>Context collapse</h3><p>Alerts lack business and infrastructure context; without it, prioritization becomes guesswork.</p></div>
+    <div class="landing-card"><h3>Overbroad containment</h3><p>Fast actions can cause outages; response steps must be constrained by impact and safety checks.</p></div>
   </div>
 </div>
 
@@ -80,6 +82,8 @@ flowchart TB;
     <div class="landing-card"><h3>Governed responses</h3><p>Actions are constrained by playbooks, roles, environments, and blast radius.</p></div>
     <div class="landing-card"><h3>Replayable incident traces</h3><p>Postmortems become faster because the reasoning artifact is explicit.</p></div>
     <div class="landing-card"><h3>Safer automation</h3><p>Abstention is a designed outcome when evidence or authorization is insufficient.</p></div>
+    <div class="landing-card"><h3>Chain-of-custody evidence</h3><p>Telemetry, timestamps, and scope captured as an artifact so reviews don’t depend on screenshots and memory.</p></div>
+    <div class="landing-card"><h3>Playbook gap detection</h3><p>When constraints block action, you learn which playbook step or permission is missing — and how to fix it.</p></div>
   </div>
 </div>
 

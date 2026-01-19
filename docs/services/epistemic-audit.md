@@ -42,8 +42,16 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 			<p>Missing concepts and relations that cause retrieval to return “relevant” but unusable evidence.</p>
 		</div>
 		<div class="landing-card">
+			<h3>Decision boundaries</h3>
+			<p>What must never be wrong, what can be approximate, and where abstention and escalation must trigger.</p>
+		</div>
+		<div class="landing-card">
 			<h3>Governance requirements</h3>
 			<p>Audit obligations, traceability, constraint needs, approval workflows, and abstention rules.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Evaluation reality</h3>
+			<p>What you can measure today, what you’re not measuring, and how to build go/no-go gates that survive model churn.</p>
 		</div>
 	</div>
 </div>
@@ -69,6 +77,8 @@ flowchart TB;
 		<div class="landing-card"><h3>Prioritized risks</h3><p>Top failure modes with severity, likelihood, and concrete mitigations.</p></div>
 		<div class="landing-card"><h3>Quick wins</h3><p>Low-effort fixes that reduce hallucinations fast (schema, provenance, constraints, evaluation).</p></div>
 		<div class="landing-card"><h3>Roadmap</h3><p>Staged plan with measurable milestones and explicit “go/no-go” gates.</p></div>
+		<div class="landing-card"><h3>Constraint scope</h3><p>A first-pass map of the rules that must be enforceable, plus the highest-risk violations to block first.</p></div>
+		<div class="landing-card"><h3>Evaluation plan</h3><p>A concrete test strategy: what to measure, how to red-team, and how to detect drift and regression over time.</p></div>
 	</div>
 </div>
 

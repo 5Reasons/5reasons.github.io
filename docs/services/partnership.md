@@ -32,6 +32,8 @@ description: "A retainer model for continuous governance, model review, system a
 		<div class="landing-card"><h3>Governance updates</h3><p>Rule reviews, constraint evolution, and traceability requirements as policy changes.</p></div>
 		<div class="landing-card"><h3>Architecture reviews</h3><p>Integration reviews for new tools, new endpoints, and new data sources.</p></div>
 		<div class="landing-card"><h3>Measurement &amp; tracking</h3><p>Reliability metrics, drift signals, and “go/no-go” gates for changes.</p></div>
+		<div class="landing-card"><h3>Incident support</h3><p>Postmortems with trace artifacts: what failed, why it failed, and which constraint or data fix prevents recurrence.</p></div>
+		<div class="landing-card"><h3>Model &amp; vendor reviews</h3><p>Change-impact assessment for new model versions and providers: behavior shifts, governance risk, and trace comparability.</p></div>
 	</div>
 </div>
 

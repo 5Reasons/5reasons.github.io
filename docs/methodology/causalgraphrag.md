@@ -44,6 +44,44 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
       <h3>Unknown is an output</h3>
       <p>If no valid path exists, the correct behavior is abstention with a falsification plan.</p>
     </div>
+    <div class="landing-card">
+      <h3>Debuggable failures</h3>
+      <p>When something goes wrong, you can localize the break: which edge failed validation, which source is missing, or which constraint blocked the path.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Better under change</h3>
+      <p>As policies evolve and evidence shifts, constraints and provenance gates keep behavior stable — and make necessary updates explicit instead of silent.</p>
+    </div>
+  </div>
+</div>
+
+<div class="landing-section">
+  <h2>Advantages (why this is the future)</h2>
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>Decision-grade outputs</h3>
+      <p>Outputs are constrained by structure, not vibes. You get answers that are checkable — and abstention when checks fail.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Auditability by default</h3>
+      <p>Every result is a trace object linked to evidence and versions. That’s how you pass reviews, regulators, and internal postmortems.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Governance becomes enforceable</h3>
+      <p>Policies live as constraints, not paragraphs. The system can deterministically reject invalid paths and forbidden assertions.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Faster iteration</h3>
+      <p>When you change rules, you update constraints and schemas — not prompt folklore. Failures become reproducible and fixable.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Composable across domains</h3>
+      <p>The same primitives and gates work across medicine, finance, security, and law. Only the graph content changes, not the logic.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Lower long-term cost</h3>
+      <p>Model churn stops being existential. When memory and validity live outside the LLM, you can swap models without rewriting reality.</p>
+    </div>
   </div>
 </div>
 

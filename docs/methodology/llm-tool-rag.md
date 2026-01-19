@@ -42,6 +42,32 @@ flowchart LR;
 
 <div class="landing-section">
   <h2>The missing layer: constraint gate</h2>
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>LLM</h3>
+      <p>A probabilistic language engine: great at synthesis and dialogue, but it does not intrinsically know what is permitted, true, or safe to execute.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Tools</h3>
+      <p>Deterministic actions and APIs: they make the system do real work, but they will do the wrong thing if the plan or parameters are wrong.</p>
+    </div>
+    <div class="landing-card">
+      <h3>RAG</h3>
+      <p>Retrieval for grounding: it reduces pure invention, but retrieval returns candidates — not a verified chain of claims for this specific decision.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Why it’s insufficient: no hard rules</h3>
+      <p>If constraints only live in text, the model can ignore them under pressure. High-stakes systems need non-negotiable checks outside the model.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Why it’s insufficient: weak audit trail</h3>
+      <p>You can log prompts and retrieved chunks, but that is not an auditable reasoning artifact. Governance needs structured traces and provenance.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Why it’s insufficient: mismatch under change</h3>
+      <p>After deployment, sources drift and policies evolve. Without validation gates, the system keeps producing fluent outputs on outdated assumptions.</p>
+    </div>
+  </div>
   <div class="landing-callout">
     <p><strong>Prompting is negotiable. Constraints are enforceable.</strong></p>
     <p class="landing-mini">If a rule matters, it must live in a layer the model cannot “talk its way around”.</p>
@@ -74,6 +100,14 @@ flowchart TB;
     <div class="landing-card">
       <h3>Silent uncertainty</h3>
       <p>The system can be fluent while wrong; abstention must be a designed outcome, not a polite suggestion.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Tool misuse and unsafe execution</h3>
+      <p>Tool calls amplify impact. Without schema validation and policy checks, a small reasoning error becomes a real-world incident.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Inconsistent answers across runs</h3>
+      <p>Different retrieval results or model versions can produce different conclusions. Without constraints and traces, you can’t guarantee stability.</p>
     </div>
   </div>
 </div>

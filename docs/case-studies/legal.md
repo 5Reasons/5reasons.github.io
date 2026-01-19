@@ -78,6 +78,8 @@ flowchart TB;
     <div class="landing-card"><h3>Risk register</h3><p>Prioritized issues with remediation suggestions and owner workflows.</p></div>
     <div class="landing-card"><h3>Traceable justification</h3><p>Every flag links back to clauses, sources, and logic edges.</p></div>
     <div class="landing-card"><h3>Governance integration</h3><p>Constraints can block prohibited actions and require legal escalation.</p></div>
+    <div class="landing-card"><h3>Exception handling</h3><p>Non-local carve-outs and precedence rules surfaced explicitly, so reviewers don’t miss “only if…” conditions.</p></div>
+    <div class="landing-card"><h3>Negotiation levers</h3><p>Which clauses drive the most downstream risk, and what edits reduce conflict without breaking the deal intent.</p></div>
   </div>
 </div>
 

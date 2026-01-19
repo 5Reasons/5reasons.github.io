@@ -39,9 +39,19 @@ description: "From epistemic audit to causal architecture blueprints to producti
 			<p><a class="md-button md-button--primary" href="blueprint/">Explore</a></p>
 		</div>
 		<div class="landing-card">
+			<h3>Red-Team Evaluation Sprint</h3>
+			<p>Stress test: adversarial prompts, policy edge cases, drift scenarios, and “unknown” handling — before it hits production.</p>
+			<p><a class="md-button md-button--primary" href="epistemic-audit/">Explore</a></p>
+		</div>
+		<div class="landing-card">
 			<h3>Implementation</h3>
 			<p>Execution: build the glass-box memory layer, enforcement gates, traces, monitoring, and team handover.</p>
 			<p><a class="md-button md-button--primary" href="implementation/">Explore</a></p>
+		</div>
+		<div class="landing-card">
+			<h3>Governance &amp; Constraints Pack</h3>
+			<p>Policy-as-code: encode rules, escalation paths, and shape validation so the system can deterministically block violations.</p>
+			<p><a class="md-button md-button--primary" href="blueprint/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Ongoing Partnership</h3>

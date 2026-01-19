@@ -44,6 +44,14 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 			<h3>Reference architecture</h3>
 			<p>Components and responsibilities: retrieval, traversal, constraint gate, trace store, evaluation, monitoring.</p>
 		</div>
+		<div class="landing-card">
+			<h3>Trace schema</h3>
+			<p>What gets stored for every decision: path, evidence, rules applied, and the exact reason for answer vs abstain.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Measurement &amp; gates</h3>
+			<p>Operational metrics and validation gates that make reliability measurable: regressions, drift, and policy violations become visible.</p>
+		</div>
 	</div>
 </div>
 

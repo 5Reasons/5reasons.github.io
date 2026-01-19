@@ -44,6 +44,8 @@ description: "How a governed central memory turns meeting notes and project arti
     <div class="landing-card"><h3>“Consensus hallucinations”</h3><p>Systems summarize without capturing who decided what, under which assumptions.</p></div>
     <div class="landing-card"><h3>Version confusion</h3><p>Projects reference outdated specs and silently drift across teams.</p></div>
     <div class="landing-card"><h3>No governance</h3><p>Confidentiality and permissions must be enforced, not “remembered”.</p></div>
+    <div class="landing-card"><h3>Attribution loss</h3><p>Without owners and timestamps, accountability disappears and “why” becomes a matter of opinion.</p></div>
+    <div class="landing-card"><h3>Strategic revisionism</h3><p>People rewrite history after outcomes; traces prevent retroactive narratives from replacing facts.</p></div>
   </div>
 </div>
 
@@ -83,6 +85,8 @@ flowchart LR;
     <div class="landing-card"><h3>Constraint-aware planning</h3><p>Plans that respect policies, dependencies, and “must never happen” rules.</p></div>
     <div class="landing-card"><h3>Faster onboarding</h3><p>New team members can traverse “why we did this”, not just “what we did”.</p></div>
     <div class="landing-card"><h3>Governed access</h3><p>Permissions and confidentiality enforced at the memory layer.</p></div>
+    <div class="landing-card"><h3>Contradiction detection</h3><p>When new plans conflict with earlier constraints or decisions, the system can surface the clash and demand resolution.</p></div>
+    <div class="landing-card"><h3>Replayable decision trails</h3><p>You can reconstruct how a decision was made at the time — what was known, what rules applied, and what changed later.</p></div>
   </div>
 </div>
 

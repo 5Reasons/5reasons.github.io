@@ -44,6 +44,8 @@ description: "How traceable causal chains and constraint gates reduce protocol d
     <div class="landing-card"><h3>Evidence ambiguity</h3><p>Summaries that merge incompatible sources across versions and sites.</p></div>
     <div class="landing-card"><h3>Unsafe overconfidence</h3><p>Fluent outputs that hide missing data or unverified assumptions.</p></div>
     <div class="landing-card"><h3>Non-auditable workflows</h3><p>If you can’t show provenance and rules applied, you can’t defend decisions.</p></div>
+    <div class="landing-card"><h3>Amendment confusion</h3><p>Protocol amendments change requirements; systems must enforce the correct version per site and time.</p></div>
+    <div class="landing-card"><h3>Site variability</h3><p>Local practices and vendor workflows differ; constraints must reflect real operational context.</p></div>
   </div>
 </div>
 
@@ -81,6 +83,8 @@ flowchart TB;
     <div class="landing-card"><h3>Inspection-ready traces</h3><p>Evidence, versions, rules applied, and justification captured as artifacts.</p></div>
     <div class="landing-card"><h3>Faster deviation triage</h3><p>Non-local dependencies across sites and vendors become navigable structures.</p></div>
     <div class="landing-card"><h3>Deterministic escalation</h3><p>When evidence is insufficient, the system refuses and specifies what is required.</p></div>
+    <div class="landing-card"><h3>Protocol deviation prevention</h3><p>Constraint gates block risky recommendations early, before they become operational deviations or inspection findings.</p></div>
+    <div class="landing-card"><h3>Regulatory evidence bundles</h3><p>Decision artifacts packaged for audit: provenance, versions, rule triggers, and the full trace path in one place.</p></div>
   </div>
 </div>
 
