@@ -22,9 +22,6 @@ description: "How enforceable constraints make policy violations impossible, and
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

@@ -18,12 +18,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
       </p>
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness (operational view)</a>
+        <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness</a>
         <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>

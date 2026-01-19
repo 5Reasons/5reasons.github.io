@@ -20,9 +20,6 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

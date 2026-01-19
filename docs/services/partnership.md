@@ -22,9 +22,6 @@ description: "A retainer model for continuous governance, model review, system a
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

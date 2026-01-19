@@ -21,15 +21,6 @@ description: "A public-facing strategic narrative: one core causal framework app
 				<a class="md-button" href="/methodology/">Open methodology</a>
 				<a class="md-button" href="governance/">Governance approach</a>
 			</div>
-			<div class="landing-proof" aria-label="Highlights">
-				<span class="landing-pill">Abstain over improvise</span>
-				<span class="landing-pill">Auditable traces</span>
-				<span class="landing-pill">Causal paths</span>
-				<span class="landing-pill">Enforced constraints</span>
-			</div>
-		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
 		</div>
 	</div>
 </div>

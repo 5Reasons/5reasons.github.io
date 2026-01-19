@@ -22,9 +22,6 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
         <a class="md-button" href="core-primitives/">See core primitives</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

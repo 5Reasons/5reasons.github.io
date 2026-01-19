@@ -24,9 +24,6 @@ description: "How a governed central memory turns meeting notes and project arti
         <a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

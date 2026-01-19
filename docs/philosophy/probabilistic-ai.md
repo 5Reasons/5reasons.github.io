@@ -22,9 +22,6 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

@@ -24,9 +24,6 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 				<a class="md-button" href="team/">Team &amp; Philosophy</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

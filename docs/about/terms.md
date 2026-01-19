@@ -23,9 +23,6 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 				<a class="md-button" href="https://github.com/5Reasons/5reasons.github.io/blob/main/LICENSE.md">Repository license</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

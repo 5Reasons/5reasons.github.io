@@ -24,9 +24,6 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
         <a class="md-button" href="/services/epistemic-audit/">Epistemic Audit</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

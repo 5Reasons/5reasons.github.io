@@ -21,15 +21,6 @@ description: "How we structure pages, why navigation stays stable, and how posts
 				<a class="md-button" href="/blog/">Blog</a>
 				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</div>
-			<div class="landing-proof" aria-label="Highlights">
-				<span class="landing-pill">Minimal nav, maximal scale</span>
-				<span class="landing-pill">Stable URLs</span>
-				<span class="landing-pill">Inline Mermaid is canonical</span>
-				<span class="landing-pill">Search-first discovery</span>
-			</div>
-		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
 		</div>
 	</div>
 </div>

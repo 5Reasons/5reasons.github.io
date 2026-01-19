@@ -21,15 +21,6 @@ description: "Governance by design: how we encode rules as enforceable constrain
         <a class="md-button" href="/services/">Services</a>
         <a class="md-button" href="/case-studies/">Case studies</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Enforcement layer</span>
-        <span class="landing-pill">Traceable refusals</span>
-        <span class="landing-pill">Immutable provenance</span>
-        <span class="landing-pill">Fact vs hypothesis separation</span>
-      </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>

@@ -23,15 +23,6 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
         <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
         <a class="md-button" href="ai-agent-vs-agentic-ai/">Agent vs agentic</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Avoid anthropomorphism</span>
-        <span class="landing-pill">Measure behavior, not vibes</span>
-        <span class="landing-pill">Safety is enforced</span>
-        <span class="landing-pill">Refusal is a feature</span>
-      </div>
-    </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
     </div>
   </div>
 </div>

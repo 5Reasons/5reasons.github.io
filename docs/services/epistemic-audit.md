@@ -23,9 +23,6 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 				<a class="md-button" href="/methodology/llm-tool-rag/">Baseline stack (LLM+Tool+RAG)</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

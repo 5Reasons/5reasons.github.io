@@ -21,9 +21,6 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
         <a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 
@@ -32,11 +29,15 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Correlation</h3>
-      <p>Often enough for prediction when environments are stable and you don’t change the system.</p>
+      <p>Often enough for prediction when environments are stable and you don’t change the system. It captures what co-moves in past data, but it can’t justify interventions or anticipate side effects.</p>
     </div>
     <div class="landing-card">
       <h3>Causality</h3>
-      <p>Required for decisions when you will change the system (pricing, policy, treatment, automation).</p>
+      <p>Required for decisions when you will change the system (pricing, policy, treatment, automation). It models how actions propagate to outcomes, separating mechanism from coincidence under intervention.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Reasoning</h3>
+      <p>Causality is the substrate. Reasoning adds goals, constraints, and counterfactual search over actions — so you can justify <em>why</em> an intervention is chosen and what could go wrong.</p>
     </div>
   </div>
 </div>
@@ -58,7 +59,7 @@ graph LR;
 ## Diagram: interventions change the object
 
 ```mermaid
-flowchart LR;
+flowchart TB;
   Obs["Observational data learns P(Y|X)"] --> Pred["Good prediction (sometimes)"];
   Int["Intervention needs P(Y|do(X))"] --> Dec["Good decisions"];
   Obs -. "not equal" .-> Int;
@@ -86,8 +87,16 @@ Those are not the same object.
       <p>The world changes after deployment. Fix: monitor drift and revalidate assumptions continuously.</p>
     </div>
     <div class="landing-card">
+      <h3>Reverse causality</h3>
+      <p>Y drives X (or both co-evolve), so the arrow points the other way. Fix: use time ordering, instruments, or explicit structural assumptions — then test implications.</p>
+    </div>
+    <div class="landing-card">
       <h3>Policy feedback</h3>
       <p>Interventions change incentives and behavior. Fix: explicitly model feedback loops and second-order effects.</p>
+    </div>
+    <div class="landing-card">
+      <h3>Goodhart / proxy gaming</h3>
+      <p>Optimizing a proxy breaks the link to the real goal. Fix: model the mechanism, include guardrail outcomes, and anticipate strategic adaptation.</p>
     </div>
   </div>
 </div>

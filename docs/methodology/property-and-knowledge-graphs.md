@@ -20,9 +20,6 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
         <a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

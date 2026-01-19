@@ -22,9 +22,6 @@ description: "From blueprint to production: building a glass-box memory layer, e
 				<a class="md-button" href="/methodology/brcausalgraphrag/">brCausalGraphRAG</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

@@ -24,9 +24,6 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 				<a class="md-button" href="faq/">FAQ</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

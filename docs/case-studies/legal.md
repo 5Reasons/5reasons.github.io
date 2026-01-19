@@ -22,9 +22,6 @@ description: "Graph-based contract analysis to detect clause contradictions and 
         <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

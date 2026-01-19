@@ -21,12 +21,6 @@ description: "Cognitive infrastructure architects building deterministic, audita
 				<a class="md-button" href="vision-2026/">Vision 2026</a>
 				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
-			<div class="landing-proof" aria-label="Highlights">
-				<span class="landing-pill">Abstain over improvise</span>
-				<span class="landing-pill">Traceable answers</span>
-				<span class="landing-pill">Constraints, not prompts</span>
-				<span class="landing-pill">No lock-in (standards-first)</span>
-			</div>
 		</div>
 	</div>
 </div>

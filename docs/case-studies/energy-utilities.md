@@ -24,9 +24,6 @@ description: "How governed causal memory supports grid ops decisions with tracea
         <a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

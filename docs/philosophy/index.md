@@ -21,12 +21,6 @@ description: "Why high-stakes organizations need causal memory and governance—
         <a class="md-button" href="/reasoners/governance/">Governance approach</a>
         <a class="md-button" href="/services/">Services</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Glass-box traces</span>
-        <span class="landing-pill">Constraints</span>
-        <span class="landing-pill">Causal memory</span>
-        <span class="landing-pill">Abstention</span>
-      </div>
     </div>
   </div>
 </div>

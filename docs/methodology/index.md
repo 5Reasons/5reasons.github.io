@@ -21,12 +21,6 @@ description: "A causal operating system for AI memory: structured entities, cons
         <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
         <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       </div>
-      <div class="landing-proof" aria-label="Highlights">
-        <span class="landing-pill">Provenance-first</span>
-        <span class="landing-pill">Constraint gates</span>
-        <span class="landing-pill">Causal traversal</span>
-        <span class="landing-pill">Audit-ready traces</span>
-      </div>
     </div>
   </div>
 </div>

@@ -22,9 +22,6 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
 		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
-		</div>
 	</div>
 </div>
 

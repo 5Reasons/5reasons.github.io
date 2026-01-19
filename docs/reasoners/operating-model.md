@@ -21,15 +21,6 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 				<a class="md-button" href="/services/">Services</a>
 				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
-			<div class="landing-proof" aria-label="Highlights">
-				<span class="landing-pill">Outcome-first</span>
-				<span class="landing-pill">Trace-first</span>
-				<span class="landing-pill">Constraint-first</span>
-				<span class="landing-pill">Measurement built-in</span>
-			</div>
-		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
 		</div>
 	</div>
 </div>

@@ -21,15 +21,6 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 				<a class="md-button" href="/methodology/">Open the methodology</a>
 				<a class="md-button" href="/case-studies/">See case studies</a>
 			</div>
-			<div class="landing-proof" aria-label="Highlights">
-				<span class="landing-pill">Abstain over improvise</span>
-				<span class="landing-pill">Auditable traces</span>
-				<span class="landing-pill">Hard constraints</span>
-				<span class="landing-pill">Causal paths (not similarity)</span>
-			</div>
-		</div>
-		<div class="landing-visual" aria-hidden="true">
-			<img src="../assets/img/hero-brmodel.svg" alt="" />
 		</div>
 	</div>
 </div>

@@ -22,9 +22,6 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
         <a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 

@@ -22,9 +22,6 @@ description: "Why ‘agent’ is not a product category: the difference between 
         <a class="md-button" href="probabilistic-ai/">Why probabilistic AI fails</a>
       </div>
     </div>
-    <div class="landing-visual" aria-hidden="true">
-      <img src="../assets/img/hero-brmodel.svg" alt="" />
-    </div>
   </div>
 </div>
 
