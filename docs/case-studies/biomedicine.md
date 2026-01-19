@@ -25,8 +25,9 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
   </div>
 </div>
 
+## The causal question
+
 <div class="landing-section">
-  <h2>The causal question</h2>
   <div class="landing-card">
     <p>
       How do we uncover mechanistic chains (not just correlations) around targets like <strong>CA IX</strong> in tumor microenvironments?
@@ -34,8 +35,9 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
   </div>
 </div>
 
+## Why probabilistic search fails (even when it is “honest”)
+
 <div class="landing-section">
-  <h2>Why probabilistic search fails (even when it is “honest”)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Retrieval returns relevance</h3>
@@ -52,8 +54,9 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
   </div>
 </div>
 
+## What changes with causal traversal
+
 <div class="landing-section">
-  <h2>What changes with causal traversal</h2>
   <div class="landing-callout">
     <p><strong>We encode entities, interactions, and provenance into a causal graph and run directed pathfinding.</strong></p>
     <p class="landing-mini">The output is a candidate mechanism with evidence per edge — or an abstention with missing data requirements.</p>
@@ -68,8 +71,9 @@ flowchart LR;
 
 </div>
 
+## Diagram: evidence and provenance per edge
+
 <div class="landing-section">
-  <h2>Diagram: evidence and provenance per edge</h2>
 
 ```mermaid
 flowchart TB;
@@ -81,8 +85,9 @@ flowchart TB;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Traceable paths</h3><p>Causal chains with supporting sources and versioned evidence.</p></div>
     <div class="landing-card"><h3>Hypotheses</h3><p>Candidates ranked by mechanistic plausibility, not by rhetorical fluency.</p></div>
@@ -93,8 +98,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>

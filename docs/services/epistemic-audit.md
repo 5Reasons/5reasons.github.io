@@ -26,8 +26,9 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 	</div>
 </div>
 
+## What we assess
+
 <div class="landing-section">
-	<h2>What we assess</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Data reality</h3>
@@ -56,8 +57,9 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 	</div>
 </div>
 
+## Diagram: what an audit maps
+
 <div class="landing-section">
-	<h2>Diagram: what an audit maps</h2>
 
 ```mermaid
 flowchart TB;
@@ -70,8 +72,9 @@ flowchart TB;
 
 </div>
 
+## Deliverables (decision-grade, not slide-grade)
+
 <div class="landing-section">
-	<h2>Deliverables (decision-grade, not slide-grade)</h2>
 	<div class="landing-grid">
 		<div class="landing-card"><h3>Readiness report</h3><p>A candid assessment of reliability, risk, and what must change before production.</p></div>
 		<div class="landing-card"><h3>Prioritized risks</h3><p>Top failure modes with severity, likelihood, and concrete mitigations.</p></div>
@@ -82,8 +85,9 @@ flowchart TB;
 	</div>
 </div>
 
+## Diagram: from audit to blueprint
+
 <div class="landing-section">
-	<h2>Diagram: from audit to blueprint</h2>
 
 ```mermaid
 flowchart LR;
@@ -94,8 +98,9 @@ flowchart LR;
 
 </div>
 
+## Best fit
+
 <div class="landing-section">
-	<h2>Best fit</h2>
 	<div class="landing-card">
 		<ul>
 			<li>Hallucination is unacceptable (legal, medical, financial, safety-critical).</li>

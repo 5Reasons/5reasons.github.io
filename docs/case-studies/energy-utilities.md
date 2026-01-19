@@ -27,8 +27,9 @@ description: "How governed causal memory supports grid ops decisions with tracea
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>
       Can AI support grid operations (outage response, switching plans, capacity constraints) while preventing unsafe actions,
@@ -37,8 +38,9 @@ description: "How governed causal memory supports grid ops decisions with tracea
   </div>
 </div>
 
+## Failure modes to avoid
+
 <div class="landing-section">
-  <h2>Failure modes to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Unsafe suggestions</h3><p>Recommending actions that violate safety procedures or operating limits.</p></div>
     <div class="landing-card"><h3>Non-local constraints</h3><p>Switching constraints depend on topology, equipment state, and work orders across systems.</p></div>
@@ -49,8 +51,9 @@ description: "How governed causal memory supports grid ops decisions with tracea
   </div>
 </div>
 
+## What changes with governed causal memory
+
 <div class="landing-section">
-  <h2>What changes with governed causal memory</h2>
   <div class="landing-callout">
     <p><strong>We connect topology, telemetry, work orders, and procedures into a constraint-gated reasoning layer.</strong></p>
     <p class="landing-mini">The result is a recommended plan with evidence paths — or a deterministic escalation.</p>
@@ -67,8 +70,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: typical evidence path (illustrative)
+
 <div class="landing-section">
-  <h2>Diagram: typical evidence path (illustrative)</h2>
 
 ```mermaid
 flowchart LR;
@@ -80,8 +84,9 @@ flowchart LR;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Safe-by-design recommendations</h3><p>Plans that are validated against procedure and operating constraints.</p></div>
     <div class="landing-card"><h3>Incident traces</h3><p>Evidence, rules applied, decisions, and escalations captured as artifacts.</p></div>
@@ -92,8 +97,9 @@ flowchart LR;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>

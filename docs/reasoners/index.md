@@ -25,8 +25,9 @@ description: "Cognitive infrastructure architects building deterministic, audita
 	</div>
 </div>
 
+## What we build
+
 <div class="landing-section">
-	<h2>What we build</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Structured memory for agents</h3>
@@ -43,8 +44,9 @@ description: "Cognitive infrastructure architects building deterministic, audita
 	</div>
 </div>
 
+## One core, three reinforcing lanes
+
 <div class="landing-section">
-	<h2>One core, three reinforcing lanes</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Science (proof-of-quality)</h3>
@@ -66,8 +68,9 @@ description: "Cognitive infrastructure architects building deterministic, audita
 	</p>
 </div>
 
+## Where to start
+
 <div class="landing-section">
-	<h2>Where to start</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Evaluate fit</h3>

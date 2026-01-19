@@ -26,8 +26,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## What you can do
+
 <div class="landing-section">
-	<h2>What you can do</h2>
 	<div class="landing-card">
 		<p>
 			You may access and view this site for personal, informational purposes.
@@ -36,8 +37,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## What you cannot do without an explicit written license
+
 <div class="landing-section">
-	<h2>What you cannot do without an explicit written license</h2>
 	<div class="landing-card">
 		<p>Unless you have an explicit written license from 5Reasons, you may not:</p>
 		<ul>
@@ -52,8 +54,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## Why we do this
+
 <div class="landing-section">
-	<h2>Why we do this</h2>
 	<div class="landing-card">
 		<p>
 			The site includes proprietary methodology and structured models.
@@ -62,8 +65,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## Binding license
+
 <div class="landing-section">
-	<h2>Binding license</h2>
 	<div class="landing-card">
 		<p>
 			The binding legal terms are defined in the repository license file:
@@ -72,8 +76,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## Disclaimers
+
 <div class="landing-section">
-	<h2>Disclaimers</h2>
 	<div class="landing-card">
 		<ul>
 			<li>This site is provided “as is” without warranties of any kind.</li>
@@ -83,8 +88,9 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 	</div>
 </div>
 
+## Licensing
+
 <div class="landing-section">
-	<h2>Licensing</h2>
 	<div class="landing-card">
 		<p>
 			If you need a commercial license, research permission, or ML usage rights, contact us:

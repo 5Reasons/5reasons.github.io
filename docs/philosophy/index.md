@@ -25,16 +25,18 @@ description: "Why high-stakes organizations need causal memory and governance—
   </div>
 </div>
 
+## The causal question
+
 <div class="landing-section">
-	<h2>The causal question</h2>
 	<div class="landing-callout">
 		<p><strong>What mechanisms turn a fluent model into a safe decision component?</strong></p>
 		<p class="landing-mini">Our answer: don’t rely on “good outputs”. Build systems that enforce evidence, constraints, and accountability — and refuse when those are missing.</p>
 	</div>
 </div>
 
+## What goes wrong (and why)
+
 <div class="landing-section">
-	<h2>What goes wrong (and why)</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Similarity is not truth</h3>
@@ -54,8 +56,9 @@ description: "Why high-stakes organizations need causal memory and governance—
 	</div>
 </div>
 
+## Three operating laws (implementation requirements)
+
 <div class="landing-section">
-	<h2>Three operating laws (implementation requirements)</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>1) No answer without evidence</h3>
@@ -73,8 +76,9 @@ description: "Why high-stakes organizations need causal memory and governance—
   <p><a class="md-button md-button--primary" href="three-laws/">Read the three laws</a></p>
 </div>
 
+## Key distinctions
+
 <div class="landing-section">
-	<h2>Key distinctions</h2>
 	<div class="landing-grid">
     <div class="landing-card">
       <h3>AI Agent vs Agentic AI</h3>
@@ -94,8 +98,9 @@ description: "Why high-stakes organizations need causal memory and governance—
   </div>
 </div>
 
+## Where this connects
+
 <div class="landing-section">
-  <h2>Where this connects</h2>
   <div class="landing-card">
     <ul>
       <li><strong>Methodology</strong>: encode domain memory (graphs), constrain allowed reasoning paths, attach models.</li>

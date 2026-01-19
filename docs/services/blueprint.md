@@ -25,8 +25,9 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 	</div>
 </div>
 
+## Outputs
+
 <div class="landing-section">
-	<h2>Outputs</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Domain model</h3>
@@ -55,8 +56,9 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 	</div>
 </div>
 
+## Diagram: blueprint layers
+
 <div class="landing-section">
-	<h2>Diagram: blueprint layers</h2>
 
 ```mermaid
 flowchart TB;
@@ -68,8 +70,9 @@ flowchart TB;
 
 </div>
 
+## Why clients like this phase
+
 <div class="landing-section">
-	<h2>Why clients like this phase</h2>
 	<div class="landing-callout">
 		<p><strong>Because it reduces vendor lock-in.</strong></p>
 		<p class="landing-mini">You own the semantics and constraints even when models change.</p>
@@ -87,8 +90,9 @@ flowchart LR;
 
 </div>
 
+## What happens next
+
 <div class="landing-section">
-	<h2>What happens next</h2>
 	<div class="landing-card">
 		<p>
 			The Blueprint becomes the build plan for a glass-box implementation: enforceable gates, traces, monitoring, and a team-ready handover.

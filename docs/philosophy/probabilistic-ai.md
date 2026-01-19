@@ -25,8 +25,9 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	</div>
 </div>
 
+## The illusion
+
 <div class="landing-section">
-	<h2>The illusion</h2>
 	<div class="landing-callout">
 		<p><strong>LLMs are excellent at generating text that resembles correct answers.</strong> But resemblance is not the same as truth.</p>
 		<p class="landing-mini">In practice, fluency can mask missing sources, missing constraints, and missing causal structure.</p>
@@ -40,8 +41,9 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	</div>
 </div>
 
+## Why RAG helps — and why it still fails
+
 <div class="landing-section">
-	<h2>Why RAG helps — and why it still fails</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Causal questions</h3>
@@ -58,8 +60,9 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	</div>
 </div>
 
+## What changes with glass-box systems
+
 <div class="landing-section">
-	<h2>What changes with glass-box systems</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Traceable path</h3>
@@ -77,8 +80,9 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	<p class="landing-mini">If the system can’t provide path + sources + constraints, it must abstain. This is not a UX preference — it’s an architectural constraint.</p>
 </div>
 
+## Diagram: plausible text vs decision-grade pipeline
+
 <div class="landing-section">
-	<h2>Diagram: plausible text vs decision-grade pipeline</h2>
 
 ```mermaid
 flowchart TB;
@@ -96,8 +100,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: where RAG fails
+
 <div class="landing-section">
-	<h2>Diagram: where RAG fails</h2>
 
 ```mermaid
 graph TD;

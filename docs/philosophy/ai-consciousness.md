@@ -27,16 +27,18 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
   </div>
 </div>
 
+## The core claim
+
 <div class="landing-section">
-  <h2>The core claim</h2>
   <div class="landing-callout">
     <p><strong>Whether a model is conscious is (currently) not a reliable input to governance.</strong></p>
     <p class="landing-mini">We can’t operationally measure consciousness with high confidence. We can measure failure modes, trace quality, constraint coverage, and abstention behavior.</p>
   </div>
 </div>
 
+## Why consciousness debates derail real safety
+
 <div class="landing-section">
-  <h2>Why consciousness debates derail real safety</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Anthropomorphism creates over-trust</h3>
@@ -53,8 +55,9 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
   </div>
 </div>
 
+## A simple causal model of the failure
+
 <div class="landing-section">
-  <h2>A simple causal model of the failure</h2>
 
 ```mermaid
 graph TB
@@ -69,8 +72,9 @@ graph TB
 
 </div>
 
+## Our operational stance (what we do in practice)
+
 <div class="landing-section">
-  <h2>Our operational stance (what we do in practice)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>1) Treat models as fallible components</h3>
@@ -87,8 +91,9 @@ graph TB
   </div>
 </div>
 
+## Decision flow: governance-first (not consciousness-first)
+
 <div class="landing-section">
-  <h2>Decision flow: governance-first (not consciousness-first)</h2>
 
 ```mermaid
 flowchart TB;
@@ -102,8 +107,9 @@ flowchart TB;
 
 </div>
 
+## What we don’t claim
+
 <div class="landing-section">
-  <h2>What we don’t claim</h2>
   <div class="landing-card">
     <ul>
       <li>We do not claim to prove or disprove consciousness in current models.</li>
@@ -113,8 +119,9 @@ flowchart TB;
   </div>
 </div>
 
+## What would change our mind (falsification)
+
 <div class="landing-section">
-  <h2>What would change our mind (falsification)</h2>
   <div class="landing-card">
     <p>We’d update this stance if we had a reproducible, operational test that reliably predicts safety-relevant behavior better than governance metrics.</p>
     <ul>
@@ -125,8 +132,9 @@ flowchart TB;
   </div>
 </div>
 
+## Where this connects
+
 <div class="landing-section">
-  <h2>Where this connects</h2>
   <div class="landing-card">
     <p>
       <a class="md-button" href="/philosophy/probabilistic-ai/">Why probabilistic AI fails</a>

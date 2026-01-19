@@ -26,8 +26,9 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
   </div>
 </div>
 
+## Latest
+
 <div class="landing-section">
-  <h2>Latest</h2>
   <div class="landing-grid landing-grid--2">
     <div class="landing-card">
       <p class="landing-card__meta">2026-01-17 · ~16 min · tags: causality, agent-memory, knowledge-graphs</p>
@@ -51,8 +52,9 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
   </div>
 </div>
 
+## Feed format (for future posts)
+
 <div class="landing-section">
-  <h2>Feed format (for future posts)</h2>
   <div class="landing-card">
     <p>
       Each post should include stable front matter fields so the archive stays uniform:
@@ -70,8 +72,9 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
   </div>
 </div>
 
+## All posts (chronological)
+
 <div class="landing-section">
-  <h2>All posts (chronological)</h2>
   <div class="landing-card">
     <table>
       <thead>
@@ -122,8 +125,9 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
   </div>
 </div>
 
+## Where to start
+
 <div class="landing-section">
-  <h2>Where to start</h2>
   <div class="landing-grid landing-grid--3">
     <div class="landing-card">
       <h3 class="landing-card__title"><a href="how-to-read/">How to Read Posts</a></h3>

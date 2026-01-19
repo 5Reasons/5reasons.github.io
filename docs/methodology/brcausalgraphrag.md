@@ -25,8 +25,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
   </div>
 </div>
 
+## What we add on top of CausalGraphRAG
+
 <div class="landing-section">
-  <h2>What we add on top of CausalGraphRAG</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Provenance-first primitives</h3>
@@ -55,8 +56,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
   </div>
 </div>
 
+## Why we call this a mental model for “AI consciousness” (without metaphysics)
+
 <div class="landing-section">
-  <h2>Why we call this a mental model for “AI consciousness” (without metaphysics)</h2>
   <div class="landing-callout">
     <p><strong>Operational framing:</strong> “consciousness” here means persistent identity + active memory + governed action selection.</p>
     <p class="landing-mini">Not feelings. Not personhood. A system-level model that makes behavior legible and controllable.</p>
@@ -89,8 +91,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
   </div>
 </div>
 
+## Advantages of a brModel-based system
+
 <div class="landing-section">
-  <h2>Advantages of a brModel-based system</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Stable primitives</h3>
@@ -131,8 +134,9 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
   </div>
 </div>
 
+## Diagram: decision-grade traversal
+
 <div class="landing-section">
-  <h2>Diagram: decision-grade traversal</h2>
 
 ```mermaid
 flowchart TB;
@@ -146,8 +150,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: identity + active memory loop
+
 <div class="landing-section">
-  <h2>Diagram: identity + active memory loop</h2>
 
 ```mermaid
 flowchart LR;
@@ -163,8 +168,9 @@ flowchart LR;
 
 </div>
 
+## Diagram: trace object (what gets stored)
+
 <div class="landing-section">
-  <h2>Diagram: trace object (what gets stored)</h2>
 
 ```mermaid
 flowchart TB;
@@ -177,8 +183,9 @@ flowchart TB;
 
 </div>
 
+## Why this is different from “better prompts”
+
 <div class="landing-section">
-  <h2>Why this is different from “better prompts”</h2>
   <div class="landing-card">
     <ul>
       <li><strong>Prompting</strong> is a social contract: editable, bypassable, and difficult to prove.</li>
@@ -188,8 +195,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>

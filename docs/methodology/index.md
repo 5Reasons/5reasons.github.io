@@ -25,8 +25,9 @@ description: "A causal operating system for AI memory: structured entities, cons
   </div>
 </div>
 
+## Mental model
+
 <div class="landing-section">
-  <h2>Mental model</h2>
   <div class="landing-callout">
     <p><strong>brModel™ treats knowledge as a causal graph, not a pile of text chunks.</strong></p>
     <p class="landing-mini">Facts become nodes with provenance; relationships encode mechanisms and allowed transformations; rules become enforceable constraints.</p>
@@ -50,8 +51,9 @@ flowchart LR;
 
 </div>
 
+## The cognitive stack (high level)
+
 <div class="landing-section">
-  <h2>The cognitive stack (high level)</h2>
   <div class="landing-card">
     <p>We separate immutable reality from decision-making layers:</p>
     <ul>
@@ -78,8 +80,9 @@ flowchart TB;
 
 </div>
 
+## Why this reduces hallucinations
+
 <div class="landing-section">
-  <h2>Why this reduces hallucinations</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Edges constrain reasoning</h3>
@@ -96,8 +99,9 @@ flowchart TB;
   </div>
 </div>
 
+## Concept map (how vs why)
+
 <div class="landing-section">
-  <h2>Concept map (how vs why)</h2>
   <div class="landing-card">
     <p>Methodology is the <em>how</em>. Philosophy is the <em>why</em>.</p>
     <ul>
@@ -112,8 +116,9 @@ flowchart TB;
   </div>
 </div>
 
+## Model diagrams (open in modal)
+
 <div class="landing-section">
-  <h2>Model diagrams (open in modal)</h2>
   <p class="landing-mini">Click any diagram to open it in a modal and inspect the model without leaving the page.</p>
 
 <p>

@@ -25,15 +25,17 @@ description: "Graph-based contract analysis to detect clause contradictions and 
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>How do we surface contradictions in long contracts where obligations and exceptions are far apart?</p>
   </div>
 </div>
 
+## Why chat summaries fail
+
 <div class="landing-section">
-  <h2>Why chat summaries fail</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Structure is the point</h3><p>Contracts are not prose; they are conditional rules with scope and precedence.</p></div>
     <div class="landing-card"><h3>Conflicts are non-local</h3><p>Clause A can silently contradict Clause B across sections and appendices.</p></div>
@@ -41,8 +43,9 @@ description: "Graph-based contract analysis to detect clause contradictions and 
   </div>
 </div>
 
+## Graph representation
+
 <div class="landing-section">
-  <h2>Graph representation</h2>
   <div class="landing-callout">
     <p><strong>Model clauses as nodes and dependencies/conflicts as edges.</strong></p>
     <p class="landing-mini">This makes contradictions computable and reviewable.</p>
@@ -57,8 +60,9 @@ graph LR;
 
 </div>
 
+## Diagram: obligation/exception flow
+
 <div class="landing-section">
-  <h2>Diagram: obligation/exception flow</h2>
 
 ```mermaid
 flowchart TB;
@@ -71,8 +75,9 @@ flowchart TB;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Conflict graph</h3><p>Edges with clause references and conditions under which the conflict triggers.</p></div>
     <div class="landing-card"><h3>Risk register</h3><p>Prioritized issues with remediation suggestions and owner workflows.</p></div>
@@ -83,8 +88,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>

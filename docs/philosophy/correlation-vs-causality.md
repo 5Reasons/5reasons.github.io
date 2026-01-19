@@ -24,8 +24,9 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
   </div>
 </div>
 
+## The operational difference
+
 <div class="landing-section">
-  <h2>The operational difference</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Correlation</h3>
@@ -71,8 +72,9 @@ A predictive model learns $P(Y|X)$.
 When you intervene on $X$, you need $P(Y|do(X))$.
 Those are not the same object.
 
+## Common traps (and what to do instead)
+
 <div class="landing-section">
-  <h2>Common traps (and what to do instead)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Confounding</h3>

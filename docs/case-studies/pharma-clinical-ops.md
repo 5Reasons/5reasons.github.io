@@ -27,8 +27,9 @@ description: "How traceable causal chains and constraint gates reduce protocol d
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>
       Can AI support trial operations (eligibility checks, deviations, safety signals, vendor coordination)
@@ -37,8 +38,9 @@ description: "How traceable causal chains and constraint gates reduce protocol d
   </div>
 </div>
 
+## Failure modes to avoid
+
 <div class="landing-section">
-  <h2>Failure modes to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Protocol drift</h3><p>Recommendations that ignore inclusion/exclusion criteria or exception procedures.</p></div>
     <div class="landing-card"><h3>Evidence ambiguity</h3><p>Summaries that merge incompatible sources across versions and sites.</p></div>
@@ -49,8 +51,9 @@ description: "How traceable causal chains and constraint gates reduce protocol d
   </div>
 </div>
 
+## What changes with constraint-gated evidence paths
+
 <div class="landing-section">
-  <h2>What changes with constraint-gated evidence paths</h2>
 
 ```mermaid
 flowchart TB;
@@ -63,8 +66,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: provenance-first decision artifact
+
 <div class="landing-section">
-  <h2>Diagram: provenance-first decision artifact</h2>
 
 ```mermaid
 flowchart TB;
@@ -76,8 +80,9 @@ flowchart TB;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Protocol-safe recommendations</h3><p>Decisions bounded by eligibility, consent, and safety reporting rules.</p></div>
     <div class="landing-card"><h3>Inspection-ready traces</h3><p>Evidence, versions, rules applied, and justification captured as artifacts.</p></div>
@@ -88,8 +93,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>

@@ -23,8 +23,9 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
   </div>
 </div>
 
+## Two graph families (and what each optimizes)
+
 <div class="landing-section">
-  <h2>Two graph families (and what each optimizes)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Property graph</h3>
@@ -47,8 +48,9 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
   </div>
 </div>
 
+## Diagram: data vs meaning
+
 <div class="landing-section">
-  <h2>Diagram: data vs meaning</h2>
 
 ```mermaid
 flowchart LR;
@@ -58,8 +60,9 @@ flowchart LR;
 
 </div>
 
+## Where graphs help — and where they mislead
+
 <div class="landing-section">
-  <h2>Where graphs help — and where they mislead</h2>
   <div class="landing-callout">
     <p><strong>A graph can store "what is connected" without storing "why it is true".</strong></p>
     <p class="landing-mini">Causal claims require mechanisms and counterfactual commitments; paths alone are not enough.</p>
@@ -104,8 +107,9 @@ flowchart LR;
   </div>
 </div>
 
+## Diagram: provenance as a first-class object
+
 <div class="landing-section">
-  <h2>Diagram: provenance as a first-class object</h2>
 
 ```mermaid
 flowchart TB;
@@ -117,8 +121,9 @@ flowchart TB;
 
 </div>
 
+## Practical rule
+
 <div class="landing-section">
-  <h2>Practical rule</h2>
   <div class="landing-card">
     <ul>
       <li>If you need speed and flexible ingestion: start with a <strong>property graph</strong>.</li>
@@ -128,8 +133,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="llm-tool-rag/">LLM + Tool + RAG</a>

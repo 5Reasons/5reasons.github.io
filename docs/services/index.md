@@ -25,8 +25,9 @@ description: "From epistemic audit to causal architecture blueprints to producti
 	</div>
 </div>
 
+## Engagements (pick the risk level you’re in)
+
 <div class="landing-section">
-	<h2>Engagements (pick the risk level you’re in)</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Epistemic Audit</h3>
@@ -61,8 +62,9 @@ description: "From epistemic audit to causal architecture blueprints to producti
 	</div>
 </div>
 
+## Diagram: how engagements fit together
+
 <div class="landing-section">
-	<h2>Diagram: how engagements fit together</h2>
 
 ```mermaid
 flowchart LR;
@@ -74,8 +76,9 @@ flowchart LR;
 
 </div>
 
+## Diagram: the risk-reduction loop we build
+
 <div class="landing-section">
-	<h2>Diagram: the risk-reduction loop we build</h2>
 
 ```mermaid
 flowchart TB;
@@ -88,8 +91,9 @@ flowchart TB;
 
 </div>
 
+## Ready to discuss fit?
+
 <div class="landing-section">
-	<h2>Ready to discuss fit?</h2>
 	<div class="landing-card">
 		<p>
 			The fastest start is usually an <strong>Epistemic Audit</strong>.

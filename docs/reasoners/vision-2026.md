@@ -25,16 +25,18 @@ description: "A public-facing strategic narrative: one core causal framework app
 	</div>
 </div>
 
+## The diagnosis
+
 <div class="landing-section">
-	<h2>The diagnosis</h2>
 	<div class="landing-callout">
 		<p><strong>The industry is stuck.</strong> Models can write and summarize, but when evidence is missing they often produce a confident guess. In medicine, finance, and law that failure mode is unacceptable.</p>
 		<p class="landing-mini">A safe system must be able to refuse. It must also show its work.</p>
 	</div>
 </div>
 
+## The goal
+
 <div class="landing-section">
-	<h2>The goal</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Truth infrastructure</h3>
@@ -51,8 +53,9 @@ description: "A public-facing strategic narrative: one core causal framework app
 	</div>
 </div>
 
+## One core, three reinforcing lanes
+
 <div class="landing-section">
-	<h2>One core, three reinforcing lanes</h2>
 	<p>The strategy is deliberately simple: we develop one shared core (brModel™) and apply it across three lanes that reinforce each other.</p>
 
 ```mermaid
@@ -81,8 +84,9 @@ flowchart TB
 	</div>
 </div>
 
+## How we explain it without jargon
+
 <div class="landing-section">
-	<h2>How we explain it without jargon</h2>
 	<div class="landing-card">
 		<p>Think of an AI system as a brilliant new hire with two problems:</p>
 		<ul>
@@ -102,8 +106,9 @@ flowchart TB
 
 </div>
 
+## What a client gets
+
 <div class="landing-section">
-	<h2>What a client gets</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Confidence</h3>

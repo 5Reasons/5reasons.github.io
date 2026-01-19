@@ -25,8 +25,9 @@ description: "A retainer model for continuous governance, model review, system a
 	</div>
 </div>
 
+## What we do
+
 <div class="landing-section">
-	<h2>What we do</h2>
 	<div class="landing-grid">
 		<div class="landing-card"><h3>Periodic audits</h3><p>Failure-mode analysis, regression checks, and adversarial testing tailored to your domain.</p></div>
 		<div class="landing-card"><h3>Governance updates</h3><p>Rule reviews, constraint evolution, and traceability requirements as policy changes.</p></div>
@@ -37,8 +38,9 @@ description: "A retainer model for continuous governance, model review, system a
 	</div>
 </div>
 
+## Diagram: continuous governance loop
+
 <div class="landing-section">
-	<h2>Diagram: continuous governance loop</h2>
 
 ```mermaid
 flowchart TB;
@@ -53,8 +55,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: why model updates are never “just a model update”
+
 <div class="landing-section">
-	<h2>Diagram: why model updates are never “just a model update”</h2>
 
 ```mermaid
 flowchart LR;
@@ -69,8 +72,9 @@ flowchart LR;
 
 </div>
 
+## Typical outcomes
+
 <div class="landing-section">
-	<h2>Typical outcomes</h2>
 	<div class="landing-card">
 		<ul>
 			<li>Fewer surprises in production</li>

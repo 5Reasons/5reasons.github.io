@@ -25,8 +25,9 @@ description: "From blueprint to production: building a glass-box memory layer, e
 	</div>
 </div>
 
+## Typical components
+
 <div class="landing-section">
-	<h2>Typical components</h2>
 	<div class="landing-grid">
 		<div class="landing-card"><h3>Graph memory + provenance</h3><p>Claims as objects with sources, versions, and scope.</p></div>
 		<div class="landing-card"><h3>Retrieval + traversal services</h3><p>Similarity for discovery; causal traversal for mechanistic paths.</p></div>
@@ -37,8 +38,9 @@ description: "From blueprint to production: building a glass-box memory layer, e
 	</div>
 </div>
 
+## Diagram: the glass-box stack
+
 <div class="landing-section">
-	<h2>Diagram: the glass-box stack</h2>
 
 ```mermaid
 flowchart TB;
@@ -54,8 +56,9 @@ flowchart TB;
 
 </div>
 
+## How we ship (so reliability is observable)
+
 <div class="landing-section">
-	<h2>How we ship (so reliability is observable)</h2>
 	<div class="landing-callout">
 		<p><strong>We treat governance and evaluation as first-class features.</strong></p>
 		<p class="landing-mini">If you can’t measure it, you can’t run it.</p>
@@ -72,8 +75,9 @@ flowchart LR;
 
 </div>
 
+## Handover
+
 <div class="landing-section">
-	<h2>Handover</h2>
 	<div class="landing-card">
 		<ul>
 			<li>Documentation and operational playbooks</li>

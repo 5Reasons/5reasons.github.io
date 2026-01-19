@@ -25,8 +25,9 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
   </div>
 </div>
 
+## Why this matters
+
 <div class="landing-section">
-  <h2>Why this matters</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>A path is constrained</h3>
@@ -55,8 +56,9 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
   </div>
 </div>
 
+## Advantages (why this is the future)
+
 <div class="landing-section">
-  <h2>Advantages (why this is the future)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Decision-grade outputs</h3>
@@ -85,8 +87,9 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
   </div>
 </div>
 
+## Minimal flow
+
 <div class="landing-section">
-  <h2>Minimal flow</h2>
 
 ```mermaid
 flowchart LR;
@@ -98,8 +101,9 @@ flowchart LR;
 
 </div>
 
+## Diagram: why this beats chunk retrieval
+
 <div class="landing-section">
-  <h2>Diagram: why this beats chunk retrieval</h2>
 
 ```mermaid
 flowchart LR;
@@ -111,8 +115,9 @@ flowchart LR;
 
 </div>
 
+## Diagram: validity gates (how abstention becomes deterministic)
+
 <div class="landing-section">
-  <h2>Diagram: validity gates (how abstention becomes deterministic)</h2>
 
 ```mermaid
 flowchart TB;
@@ -125,8 +130,9 @@ flowchart TB;
 
 </div>
 
+## What you get (operationally)
+
 <div class="landing-section">
-  <h2>What you get (operationally)</h2>
   <div class="landing-card">
     <ul>
       <li>A mechanistic chain (A → B → C), not a narrative collage</li>

@@ -25,8 +25,9 @@ description: "Where causality beats probability: examples from biomedicine, fina
 	</div>
 </div>
 
+## How to read these
+
 <div class="landing-section">
-	<h2>How to read these</h2>
 	<div class="landing-callout">
 		<p><strong>These are representative patterns.</strong></p>
 		<p class="landing-mini">They illustrate the mechanism: provenance → constraints → traces → auditable decisions.</p>
@@ -42,8 +43,9 @@ flowchart LR;
 
 </div>
 
+## Curated case studies
+
 <div class="landing-section">
-	<h2>Curated case studies</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Biomedicine</h3>
@@ -63,8 +65,9 @@ flowchart LR;
 	</div>
 </div>
 
+## High-value verticals we also focus on
+
 <div class="landing-section">
-	<h2>High-value verticals we also focus on</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Insurance</h3>

@@ -27,8 +27,9 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 	</div>
 </div>
 
+## Are you an AI agency?
+
 <div class="landing-section">
-	<h2>Are you an AI agency?</h2>
 	<div class="landing-card">
 		<p>
 			Not in the “chatbot factory” sense.
@@ -38,8 +39,9 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 	</div>
 </div>
 
+## Do we need to replace our stack?
+
 <div class="landing-section">
-	<h2>Do we need to replace our stack?</h2>
 	<div class="landing-card">
 		<p>
 			No. We aim for a <strong>sidecar approach</strong>: we connect to what you already run (data stores, tools, models)
@@ -48,8 +50,9 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 	</div>
 </div>
 
+## Why does governance matter so much?
+
 <div class="landing-section">
-	<h2>Why does governance matter so much?</h2>
 	<div class="landing-card">
 		<p>
 			Because in high-stakes domains, errors have real costs: regulatory exposure, financial loss, reputational damage, safety incidents.
@@ -58,8 +61,9 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 	</div>
 </div>
 
+## Why are you expensive?
+
 <div class="landing-section">
-	<h2>Why are you expensive?</h2>
 	<div class="landing-card">
 		<p>
 			Because we solve problems that cost millions when they fail.
@@ -69,8 +73,9 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 	</div>
 </div>
 
+## What’s the usual starting point?
+
 <div class="landing-section">
-	<h2>What’s the usual starting point?</h2>
 	<div class="landing-card">
 		<p>
 			An <strong>Epistemic Audit</strong>.

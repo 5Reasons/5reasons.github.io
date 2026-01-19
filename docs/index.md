@@ -28,8 +28,9 @@
   </audio>
 </div>
 
+## What we build
+
 <div class="landing-section">
-  <h2>What we build</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Epistemic safety</h3>
@@ -46,8 +47,9 @@
   </div>
 </div>
 
+## Why “statistical AI” fails in high-stakes domains
+
 <div class="landing-section">
-  <h2>Why “statistical AI” fails in high-stakes domains</h2>
   <div class="landing-callout">
     <p><strong>Similarity is not truth.</strong> LLMs are powerful pattern-completers, but without durable semantics and constraints they fail exactly where your organization can’t afford errors: medicine, finance, law, and critical engineering.</p>
     <p class="landing-mini">If hallucination is unacceptable, the question is no longer “Which model?” — it’s “Where is the memory, logic, and audit trail?”</p>
@@ -55,8 +57,9 @@
   </div>
 </div>
 
+## How we work (risk-minimizing engagement)
+
 <div class="landing-section">
-  <h2>How we work (risk-minimizing engagement)</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>1) Epistemic Audit</h3>
@@ -81,8 +84,9 @@
   </div>
 </div>
 
+## Validated where it hurts
+
 <div class="landing-section">
-  <h2>Validated where it hurts</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Biomedicine</h3>
@@ -99,8 +103,9 @@
   </div>
 </div>
 
+## Two complementary tracks
+
 <div class="landing-section">
-  <h2>Two complementary tracks</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Reasoners (consulting & infrastructure)</h3>
@@ -132,8 +137,9 @@
   </div>
 </div>
 
+## Featured
+
 <div class="landing-section">
-  <h2>Featured</h2>
   <ul>
     <li><a href="blog/posts/2026-01-16_why-small-frictions-cascade-into-system-failure/">Why Small Frictions Cascade into System Failure</a></li>
   </ul>

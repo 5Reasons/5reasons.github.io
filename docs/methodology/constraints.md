@@ -25,8 +25,9 @@ description: "How enforceable constraints make policy violations impossible, and
 	</div>
 </div>
 
+## The problem with prompt-only governance
+
 <div class="landing-section">
-	<h2>The problem with prompt-only governance</h2>
 	<div class="landing-grid">
 		<div class="landing-card"><h3>Editable</h3><p>Instructions can be changed, ignored, or diluted by competing context.</p></div>
 		<div class="landing-card"><h3>Bypassable</h3><p>A sufficiently clever prompt can route around “guidelines”.</p></div>
@@ -37,8 +38,9 @@ description: "How enforceable constraints make policy violations impossible, and
 	</div>
 </div>
 
+## The constraint approach
+
 <div class="landing-section">
-	<h2>The constraint approach</h2>
 	<div class="landing-callout">
 		<p><strong>Encode rules as constraints that validate actions and outputs.</strong></p>
 		<p class="landing-mini">The model can propose; the system decides what is allowed.</p>
@@ -53,8 +55,9 @@ flowchart TB;
 
 </div>
 
+## What SHACL gives you (practically)
+
 <div class="landing-section">
-	<h2>What SHACL gives you (practically)</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Shape validation</h3>
@@ -83,8 +86,9 @@ flowchart TB;
 	</div>
 </div>
 
+## Diagram: SHACL validation pipeline (conceptual)
+
 <div class="landing-section">
-	<h2>Diagram: SHACL validation pipeline (conceptual)</h2>
 
 ```mermaid
 flowchart LR;
@@ -97,8 +101,9 @@ flowchart LR;
 
 </div>
 
+## Examples of enforceable constraints
+
 <div class="landing-section">
-	<h2>Examples of enforceable constraints</h2>
 	<div class="landing-card">
 		<ul>
 			<li><strong>Role-based prohibitions</strong>: certain actions cannot be executed under a role.</li>
@@ -110,8 +115,9 @@ flowchart LR;
 	</div>
 </div>
 
+## Operational result
+
 <div class="landing-section">
-	<h2>Operational result</h2>
 	<div class="landing-card">
 		<p>
 			A system that refuses to cross boundaries and produces a machine-verifiable reason when it abstains.

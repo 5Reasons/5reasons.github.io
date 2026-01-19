@@ -25,8 +25,9 @@ description: "Why ‘agent’ is not a product category: the difference between 
   </div>
 </div>
 
+## The distinction
+
 <div class="landing-section">
-  <h2>The distinction</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>AI agent (tool-using)</h3>
@@ -43,8 +44,9 @@ description: "Why ‘agent’ is not a product category: the difference between 
   </div>
 </div>
 
+## What changes when a system becomes agentic
+
 <div class="landing-section">
-  <h2>What changes when a system becomes agentic</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Feedback loops</h3>

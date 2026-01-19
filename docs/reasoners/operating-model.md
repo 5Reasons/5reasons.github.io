@@ -25,8 +25,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	</div>
 </div>
 
+## The engagement loop
+
 <div class="landing-section">
-	<h2>The engagement loop</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>1) Clarify the decision</h3>
@@ -57,8 +58,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	</div>
 </div>
 
+## What we optimize for
+
 <div class="landing-section">
-	<h2>What we optimize for</h2>
 	<div class="landing-callout">
 		<ul>
 			<li><strong>Traceability</strong> over fluency</li>
@@ -70,8 +72,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	</div>
 </div>
 
+## Typical artifacts (deliverables)
+
 <div class="landing-section">
-	<h2>Typical artifacts (deliverables)</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Decision brief</h3>
@@ -102,8 +105,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	</div>
 </div>
 
+## Where this connects
+
 <div class="landing-section">
-	<h2>Where this connects</h2>
 	<div class="landing-card">
 		<p>
 			<a class="md-button" href="/services/">Services</a>

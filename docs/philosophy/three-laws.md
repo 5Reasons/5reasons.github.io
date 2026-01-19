@@ -23,8 +23,9 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 	</div>
 </div>
 
+## Law 1: No answer without evidence
+
 <div class="landing-section">
-	<h2>Law 1: No answer without evidence</h2>
 	<div class="landing-callout">
 		<p><strong>If the system can’t point to a source, it should say “I don’t know”.</strong></p>
 		<p class="landing-mini">Evidence is a gate: it prevents plausible-but-wrong claims from entering high-stakes workflows.</p>
@@ -39,8 +40,9 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 	</div>
 </div>
 
+## Law 2: Order before speed
+
 <div class="landing-section">
-	<h2>Law 2: Order before speed</h2>
 	<div class="landing-callout">
 		<p><strong>Structure the domain before automating decisions.</strong></p>
 		<p class="landing-mini">The fastest way to ship unreliable AI is to automate first and model the domain later.</p>
@@ -55,8 +57,9 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 	</div>
 </div>
 
+## Law 3: Humans remain accountable
+
 <div class="landing-section">
-	<h2>Law 3: Humans remain accountable</h2>
 	<div class="landing-callout">
 		<p><strong>AI assists, simulates, and recommends. Humans own responsibility.</strong></p>
 		<p class="landing-mini">Accountability can be supported by AI; it cannot be outsourced to it.</p>
@@ -71,8 +74,9 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 	</div>
 </div>
 
+## Diagram: evidence gate (non-negotiable)
+
 <div class="landing-section">
-	<h2>Diagram: evidence gate (non-negotiable)</h2>
 
 ```mermaid
 flowchart TB;
@@ -84,8 +88,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: human accountability in the loop
+
 <div class="landing-section">
-	<h2>Diagram: human accountability in the loop</h2>
 
 ```mermaid
 flowchart TB;

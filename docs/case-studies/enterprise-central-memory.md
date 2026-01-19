@@ -27,8 +27,9 @@ description: "How a governed central memory turns meeting notes and project arti
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>
       Can AI help leadership and teams make better decisions from meeting notes and project artifacts
@@ -37,8 +38,9 @@ description: "How a governed central memory turns meeting notes and project arti
   </div>
 </div>
 
+## Failure modes to avoid
+
 <div class="landing-section">
-  <h2>Failure modes to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Meeting amnesia</h3><p>Decisions get made, then lost; later plans contradict earlier constraints.</p></div>
     <div class="landing-card"><h3>“Consensus hallucinations”</h3><p>Systems summarize without capturing who decided what, under which assumptions.</p></div>
@@ -49,8 +51,9 @@ description: "How a governed central memory turns meeting notes and project arti
   </div>
 </div>
 
+## What changes with central memory + constraints
+
 <div class="landing-section">
-  <h2>What changes with central memory + constraints</h2>
 
 ```mermaid
 flowchart TB;
@@ -64,8 +67,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: decision trace as an organizational primitive
+
 <div class="landing-section">
-  <h2>Diagram: decision trace as an organizational primitive</h2>
 
 ```mermaid
 flowchart LR;
@@ -78,8 +82,9 @@ flowchart LR;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Decision register</h3><p>Versioned decisions tied to owners, assumptions, and artifacts.</p></div>
     <div class="landing-card"><h3>Constraint-aware planning</h3><p>Plans that respect policies, dependencies, and “must never happen” rules.</p></div>
@@ -90,8 +95,9 @@ flowchart LR;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>

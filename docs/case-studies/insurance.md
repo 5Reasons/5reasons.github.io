@@ -27,8 +27,9 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>
       Can AI assist claims and underwriting decisions while enforcing policy, fraud controls, and regulatory constraints —
@@ -37,8 +38,9 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
   </div>
 </div>
 
+## Failure modes to avoid
+
 <div class="landing-section">
-  <h2>Failure modes to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Policy as prose</h3><p>Policies contain non-local exceptions and precedence rules that text summaries routinely flatten.</p></div>
     <div class="landing-card"><h3>Evidence leakage</h3><p>Approvals without defensible evidence paths lead to leakage, disputes, and adverse selection.</p></div>
@@ -49,8 +51,9 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
   </div>
 </div>
 
+## What changes with constraint-gated reasoning
+
 <div class="landing-section">
-  <h2>What changes with constraint-gated reasoning</h2>
   <div class="landing-callout">
     <p><strong>The model can propose; the system decides what is allowed.</strong></p>
     <p class="landing-mini">Every step is validated against policy shapes, required evidence, and role permissions.</p>
@@ -67,8 +70,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: typical causal/evidence path (illustrative)
+
 <div class="landing-section">
-  <h2>Diagram: typical causal/evidence path (illustrative)</h2>
 
 ```mermaid
 flowchart LR;
@@ -80,8 +84,9 @@ flowchart LR;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Audit-ready traces</h3><p>Decision, evidence, rules applied, and policy violations (if any).</p></div>
     <div class="landing-card"><h3>Deterministic abstention</h3><p>If required evidence is missing, the system refuses and states what must be provided.</p></div>
@@ -92,8 +97,9 @@ flowchart LR;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>

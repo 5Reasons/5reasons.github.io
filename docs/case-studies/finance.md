@@ -25,15 +25,17 @@ description: "How governance constraints prevent policy-violating approvals and 
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>Can AI assist credit decisions without violating policy, sector restrictions, or regulatory expectations?</p>
   </div>
 </div>
 
+## Failure mode to avoid
+
 <div class="landing-section">
-  <h2>Failure mode to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Footnote exceptions</h3><p>Important clauses live in appendices, edge cases, and “only if…” conditions.</p></div>
     <div class="landing-card"><h3>Cross-document constraints</h3><p>Policies and risk rules are distributed across multiple sources and versions.</p></div>
@@ -44,8 +46,9 @@ description: "How governance constraints prevent policy-violating approvals and 
   </div>
 </div>
 
+## What changes with governance constraints
+
 <div class="landing-section">
-  <h2>What changes with governance constraints</h2>
   <div class="landing-callout">
     <p><strong>Instead of “asking the model to behave”, we enforce constraints at the system level.</strong></p>
     <p class="landing-mini">Every approval or rejection points to the rule and the evidence that triggered it.</p>
@@ -60,8 +63,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: constraint taxonomy (examples)
+
 <div class="landing-section">
-  <h2>Diagram: constraint taxonomy (examples)</h2>
 
 ```mermaid
 flowchart LR;
@@ -74,8 +78,9 @@ flowchart LR;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Rule IDs + rationale</h3><p>Every decision is tied to a specific rule and its evaluated inputs.</p></div>
     <div class="landing-card"><h3>Non-bypassable governance</h3><p>Constraints are enforced in code/data, not in prompt text.</p></div>
@@ -86,8 +91,9 @@ flowchart LR;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/">Services</a>

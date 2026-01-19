@@ -25,8 +25,9 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 	</div>
 </div>
 
+## What we treat as first-class
+
 <div class="landing-section">
-	<h2>What we treat as first-class</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Subjects (actors)</h3>
@@ -55,8 +56,9 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 	</div>
 </div>
 
+## The meta-ontology (why this is interdisciplinary)
+
 <div class="landing-section">
-	<h2>The meta-ontology (why this is interdisciplinary)</h2>
 	<div class="landing-callout">
 		<p><strong>We separate “what exists” from “how it interacts”.</strong></p>
 		<p class="landing-mini">The same abstract building blocks work in biotech, finance, cybersecurity, and law because they describe structure, change, and evidence — not a specific discipline.</p>
@@ -102,8 +104,9 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 	</div>
 </div>
 
+## Diagram: primitive schema (minimal)
+
 <div class="landing-section">
-	<h2>Diagram: primitive schema (minimal)</h2>
 
 ```mermaid
 flowchart TB;
@@ -116,8 +119,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: meta-ontology → domain DSL
+
 <div class="landing-section">
-	<h2>Diagram: meta-ontology → domain DSL</h2>
 
 ```mermaid
 flowchart TB;
@@ -147,8 +151,9 @@ flowchart TB;
 
 </div>
 
+## WisdomGraph: the five domain-facing interfaces
+
 <div class="landing-section">
-	<h2>WisdomGraph: the five domain-facing interfaces</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Source</h3>
@@ -180,8 +185,9 @@ flowchart TB;
 	</div>
 </div>
 
+## Why provenance matters
+
 <div class="landing-section">
-	<h2>Why provenance matters</h2>
 	<div class="landing-callout">
 		<p><strong>Without provenance, you can’t audit, debug, or falsify.</strong></p>
 		<p class="landing-mini">Provenance turns “an answer” into a decision-grade artifact: it makes claims inspectable and contestable.</p>
@@ -196,8 +202,9 @@ flowchart TB;
 	</div>
 </div>
 
+## Diagram: provenance chain (what “grounded” really means)
+
 <div class="landing-section">
-	<h2>Diagram: provenance chain (what “grounded” really means)</h2>
 
 ```mermaid
 flowchart LR;
@@ -210,8 +217,9 @@ flowchart LR;
 
 </div>
 
+## Where this connects
+
 <div class="landing-section">
-	<h2>Where this connects</h2>
 	<div class="landing-card">
 		<p>
 			<a class="md-button md-button--primary" href="property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a>

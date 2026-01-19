@@ -25,8 +25,9 @@ description: "How causal traversal, playbook constraints, and trace objects turn
   </div>
 </div>
 
+## The question
+
 <div class="landing-section">
-  <h2>The question</h2>
   <div class="landing-card">
     <p>
       Can AI support SOC triage and response while preserving chain-of-custody, enforcing playbooks,
@@ -35,8 +36,9 @@ description: "How causal traversal, playbook constraints, and trace objects turn
   </div>
 </div>
 
+## Failure modes to avoid
+
 <div class="landing-section">
-  <h2>Failure modes to avoid</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Hallucinated links</h3><p>Invented relationships between events can send responders down the wrong path.</p></div>
     <div class="landing-card"><h3>Action without authorization</h3><p>Some responses must be gated by role, environment, and blast-radius constraints.</p></div>
@@ -47,8 +49,9 @@ description: "How causal traversal, playbook constraints, and trace objects turn
   </div>
 </div>
 
+## What changes with causal memory + playbook constraints
+
 <div class="landing-section">
-  <h2>What changes with causal memory + playbook constraints</h2>
 
 ```mermaid
 flowchart TB;
@@ -61,8 +64,9 @@ flowchart TB;
 
 </div>
 
+## Diagram: incident trace object (conceptual)
+
 <div class="landing-section">
-  <h2>Diagram: incident trace object (conceptual)</h2>
 
 ```mermaid
 flowchart TB;
@@ -75,8 +79,9 @@ flowchart TB;
 
 </div>
 
+## Outputs
+
 <div class="landing-section">
-  <h2>Outputs</h2>
   <div class="landing-grid">
     <div class="landing-card"><h3>Defensible hypotheses</h3><p>Mechanistic chains that connect alerts to likely causes with evidence per edge.</p></div>
     <div class="landing-card"><h3>Governed responses</h3><p>Actions are constrained by playbooks, roles, environments, and blast radius.</p></div>
@@ -87,8 +92,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next steps
+
 <div class="landing-section">
-  <h2>Next steps</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>

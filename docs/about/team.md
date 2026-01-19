@@ -27,8 +27,9 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 	</div>
 </div>
 
+## Origin story
+
 <div class="landing-section">
-	<h2>Origin story</h2>
 	<div class="landing-card">
 		<p>
 			Many of us started in environments where errors were not acceptable.
@@ -45,8 +46,9 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 	</div>
 </div>
 
+## Our philosophy: Logic-first
+
 <div class="landing-section">
-	<h2>Our philosophy: Logic-first</h2>
 	<div class="landing-callout">
 		<p><strong>Most AI work is model-first. We are logic-first.</strong></p>
 		<p class="landing-mini">Models are a commodity. Your domain logic and data reality are not.</p>
@@ -67,8 +69,9 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 	</div>
 </div>
 
+## How we scale
+
 <div class="landing-section">
-	<h2>How we scale</h2>
 	<div class="landing-card">
 		<p>Not by volume — by rigor:</p>
 		<ul>
@@ -80,8 +83,9 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 	</div>
 </div>
 
+## What we avoid
+
 <div class="landing-section">
-	<h2>What we avoid</h2>
 	<div class="landing-card">
 		<ul>
 			<li>Prompt-only safety</li>

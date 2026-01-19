@@ -25,8 +25,9 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
   </div>
 </div>
 
+## The baseline architecture
+
 <div class="landing-section">
-  <h2>The baseline architecture</h2>
 
 ```mermaid
 flowchart LR;
@@ -40,8 +41,9 @@ flowchart LR;
 
 </div>
 
+## The missing layer: constraint gate
+
 <div class="landing-section">
-  <h2>The missing layer: constraint gate</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>LLM</h3>
@@ -82,8 +84,9 @@ flowchart TB;
 
 </div>
 
+## Where it still breaks
+
 <div class="landing-section">
-  <h2>Where it still breaks</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Retrieval is not reasoning</h3>
@@ -112,8 +115,9 @@ flowchart TB;
   </div>
 </div>
 
+## What to add for decision-grade systems
+
 <div class="landing-section">
-  <h2>What to add for decision-grade systems</h2>
   <div class="landing-card">
     <ul>
       <li><strong>Enforceable constraints</strong> (not guidelines)</li>
@@ -124,8 +128,9 @@ flowchart TB;
   </div>
 </div>
 
+## Next step
+
 <div class="landing-section">
-  <h2>Next step</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="causalgraphrag/">CausalGraphRAG</a>

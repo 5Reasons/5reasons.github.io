@@ -25,8 +25,9 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 	</div>
 </div>
 
+## We’re a strong fit if
+
 <div class="landing-section">
-	<h2>We’re a strong fit if</h2>
 	<div class="landing-grid">
 		<div class="landing-card"><h3>Hallucination is unacceptable</h3><p>You need a system that can abstain, justify, and prove its boundaries.</p></div>
 		<div class="landing-card"><h3>Audits or compliance matter</h3><p>You need traceability and enforceable rules, not “best effort”.</p></div>
@@ -37,8 +38,9 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 	</div>
 </div>
 
+## What we need (minimal)
+
 <div class="landing-section">
-	<h2>What we need (minimal)</h2>
 	<div class="landing-card">
 		<ol>
 			<li><strong>The decision</strong> you want to support (and what must never be wrong)</li>
@@ -48,8 +50,9 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 	</div>
 </div>
 
+## Diagram: intake flow
+
 <div class="landing-section">
-	<h2>Diagram: intake flow</h2>
 
 ```mermaid
 flowchart LR;
@@ -61,8 +64,9 @@ flowchart LR;
 
 </div>
 
+## How to start (recommended)
+
 <div class="landing-section">
-	<h2>How to start (recommended)</h2>
 	<div class="landing-callout">
 		<p><strong>Start with an Epistemic Audit</strong> if you want clarity fast.</p>
 		<p class="landing-mini">Start with a Blueprint if you already know you must build durable semantics and constraints.</p>
@@ -85,8 +89,9 @@ flowchart TB;
 	</div>
 </div>
 
+## Contact channel (your call)
+
 <div class="landing-section">
-	<h2>Contact channel (your call)</h2>
 	<div class="landing-card">
 		<p>
 			Tell me what contact channel you prefer to publish (email address, Calendly link, or another method).

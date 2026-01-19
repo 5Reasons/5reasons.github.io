@@ -25,8 +25,9 @@ description: "Governance by design: how we encode rules as enforceable constrain
   </div>
 </div>
 
+## Two layers of governance
+
 <div class="landing-section">
-  <h2>Two layers of governance</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Interpretation layer</h3>
@@ -43,16 +44,18 @@ description: "Governance by design: how we encode rules as enforceable constrain
   </div>
 </div>
 
+## Why constraints beat prompts
+
 <div class="landing-section">
-  <h2>Why constraints beat prompts</h2>
   <div class="landing-callout">
     <p><strong>A model can be persuaded. A constraint cannot.</strong></p>
     <p class="landing-mini">Prompt discipline is a useful interface pattern — but it is not a security boundary.</p>
   </div>
 </div>
 
+## Decision lifecycle (with refusal as a first-class outcome)
+
 <div class="landing-section">
-  <h2>Decision lifecycle (with refusal as a first-class outcome)</h2>
 
 ```mermaid
 flowchart TB
@@ -63,8 +66,9 @@ flowchart TB
 
 </div>
 
+## Practical design choices
+
 <div class="landing-section">
-  <h2>Practical design choices</h2>
   <div class="landing-grid">
     <div class="landing-card">
       <h3>Encode critical rules as constraints</h3>
@@ -95,8 +99,9 @@ flowchart TB
   </div>
 </div>
 
+## Where this fits
+
 <div class="landing-section">
-  <h2>Where this fits</h2>
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="/methodology/constraints/">Methodology → Constraints</a>

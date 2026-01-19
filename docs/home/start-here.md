@@ -25,8 +25,9 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 	</div>
 </div>
 
+## Choose your role
+
 <div class="landing-section">
-	<h2>Choose your role</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Buyer / operator</h3>
@@ -54,8 +55,9 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 	</div>
 </div>
 
+## Three recommended “reading paths”
+
 <div class="landing-section">
-	<h2>Three recommended “reading paths”</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Path A: evaluate business fit (30 minutes)</h3>
@@ -86,16 +88,18 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 	</div>
 </div>
 
+## The default stance (non-negotiable)
+
 <div class="landing-section">
-	<h2>The default stance (non-negotiable)</h2>
 	<div class="landing-callout">
 		<p><strong>When evidence is missing, a system should abstain rather than improvise.</strong></p>
 		<p class="landing-mini">That single design choice drives everything downstream: architecture, evaluation, governance, product UX, and compliance posture.</p>
 	</div>
 </div>
 
+## Licensing note
+
 <div class="landing-section">
-	<h2>Licensing note</h2>
 	<div class="landing-card">
 		<p><strong>Reading is public.</strong> Reuse for commercial or research purposes requires a written license.</p>
 		<p>
