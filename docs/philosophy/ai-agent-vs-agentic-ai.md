@@ -39,6 +39,10 @@ description: "Why ‘agent’ is not a product category: the difference between 
       <h3>Agentic AI (system property)</h3>
       <p>Autonomy + iteration + memory + action loops that continue over time. If you deploy this, you are shipping a process.</p>
     </div>
+    <div class="landing-card">
+      <h3>Abstention</h3>
+      <p>Refuse to act when evidence is insufficient or constraints fail.</p>
+    </div>
   </div>
 </div>
 
@@ -57,10 +61,6 @@ description: "Why ‘agent’ is not a product category: the difference between 
       <h3>Governance constraints</h3>
       <p>Define what must never happen and enforce it at runtime.</p>
     </div>
-    <div class="landing-card">
-      <h3>Abstention</h3>
-      <p>Refuse to act when evidence is insufficient or constraints fail.</p>
-    </div>
   </div>
 </div>
 
@@ -69,6 +69,7 @@ description: "Why ‘agent’ is not a product category: the difference between 
 ```mermaid
 flowchart TB;
   subgraph ToolUse["AI Agent (tool-using)"];
+  direction TB
     U["User"] --> Q["Question"];
     Q --> L["LLM"];
     L --> T["Tools"];
@@ -77,6 +78,7 @@ flowchart TB;
   end;
 
   subgraph Agentic["Agentic AI (system property)"];
+  direction TB
     G["Goal"] --> P["Plan"];
     P --> X["Act"];
     X --> O["Observe"];

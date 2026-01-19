@@ -32,7 +32,7 @@ description: "Cognitive infrastructure architects building deterministic, audita
 </div>
 
 <div class="landing-section">
-	<h2>What we build (plain English)</h2>
+	<h2>What we build</h2>
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Structured memory for agents</h3>
@@ -99,12 +99,5 @@ description: "Cognitive infrastructure architects building deterministic, audita
 				<a class="md-button" href="/diagrams/">Diagram gallery</a>
 			</p>
 		</div>
-	</div>
-</div>
-
-<div class="landing-section">
-	<h2>Regional note</h2>
-	<div class="landing-card">
-		<p>This site is currently <strong>English-first</strong>. If you need region-specific materials (DACH / CEE), we’ll add dedicated landing pages without breaking URLs.</p>
 	</div>
 </div>

@@ -66,8 +66,8 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
   <h2>A simple causal model of the failure</h2>
 
 ```mermaid
-graph LR;
-  A["Anthropomorphic framing</br>(""it understands"", ""it knows"")"] --> T["Over-trust / reduced verification"];
+graph TB
+  A["Anthropomorphic framing</br>it understands, it knows"] --> T["Over-trust / reduced verification"];
   T --> R["Risky delegation</br>(actions based on wrong beliefs)"];
   G["Governance constraints</br>(enforcement layer)"] -->|"blocks"| R;
   E["Evidence & traces</br>(what/why/source)"] -->|"enables"| V["Verification"];

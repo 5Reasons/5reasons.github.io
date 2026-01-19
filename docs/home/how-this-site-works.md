@@ -96,14 +96,3 @@ description: "How we structure pages, why navigation stays stable, and how posts
 		</div>
 	</div>
 </div>
-
-<div class="landing-section">
-	<h2>Local preview workflow</h2>
-	<div class="landing-card">
-		<p>For day-to-day writing and design iteration, run the dev server and refresh.</p>
-		<ul>
-			<li>Use <code>python -m zensical serve --config-file mkdocs.yml</code> for live preview.</li>
-			<li>Some Zensical builds may not emit HTML via <code>build</code>; preview via <code>serve</code> is the reliable workflow here.</li>
-		</ul>
-	</div>
-</div>

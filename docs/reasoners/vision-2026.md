@@ -65,7 +65,7 @@ description: "A public-facing strategic narrative: one core causal framework app
 	<p>The strategy is deliberately simple: we develop one shared core (brModel™) and apply it across three lanes that reinforce each other.</p>
 
 ```mermaid
-flowchart LR
+flowchart TB
 	A["brModel™ core</br>(causal memory + governance)"] --> S["Science</br>(hardest validation)"];
 	A --> M["Market</br>(commercial deployments)"];
 	A --> P["Product</br>(reusable building blocks)"];

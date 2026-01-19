@@ -78,7 +78,7 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 	<h2>Diagram: evidence gate (non-negotiable)</h2>
 
 ```mermaid
-flowchart LR;
+flowchart TB;
 	Q["Question / decision"] --> E["Evidence available?"];
 	E -->|"No"| A["Abstain / escalate"];
 	E -->|"Yes"| V["Verify + trace"];

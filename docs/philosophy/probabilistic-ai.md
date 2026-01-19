@@ -51,10 +51,6 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 			<h3>Cross-document constraints</h3>
 			<p>“This is allowed only if A and B and not C” is a constraint problem. Text similarity doesn’t enforce it.</p>
 		</div>
-		<div class="landing-card">
-			<h3>Long-range dependencies</h3>
-			<p>High-stakes reasoning often spans multiple documents, time windows, and conditional rules.</p>
-		</div>
 	</div>
 </div>
 
@@ -81,7 +77,7 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	<h2>Diagram: plausible text vs decision-grade pipeline</h2>
 
 ```mermaid
-flowchart LR;
+flowchart TB;
 	U["User request"] --> L["LLM output"];
 	L --> P["Plausible answer"];
 	P --> R1["Risk: confident fabrication"];
