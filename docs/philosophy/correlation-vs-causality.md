@@ -17,8 +17,8 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
         If your system will change the world, you need causal structure.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../methodology/causalgraphrag/">CausalGraphRAG</a>
-        <a class="md-button" href="../methodology/core-primitives/">Core primitives</a>
+        <a class="md-button md-button--primary" href="/methodology/causalgraphrag/">CausalGraphRAG</a>
+        <a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">

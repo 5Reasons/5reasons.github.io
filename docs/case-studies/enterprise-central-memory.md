@@ -19,9 +19,9 @@ description: "How a governed central memory turns meeting notes and project arti
         Central memory is about turning that sprawl into governed, versioned, traceable decision artifacts — not a nicer chat UI.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-        <a class="md-button" href="../services/epistemic-audit/">Epistemic Audit</a>
-        <a class="md-button" href="../methodology/core-primitives/">Core primitives</a>
+        <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+        <a class="md-button" href="/services/epistemic-audit/">Epistemic Audit</a>
+        <a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -93,9 +93,9 @@ flowchart LR;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
-      <a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
-      <a class="md-button" href="../services/implementation/">Implementation</a>
+      <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>
+      <a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
+      <a class="md-button" href="/services/implementation/">Implementation</a>
     </p>
   </div>
 </div>

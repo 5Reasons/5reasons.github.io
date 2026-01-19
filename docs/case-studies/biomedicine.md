@@ -17,9 +17,9 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
         The question is whether there is a mechanistic chain you can inspect, challenge, and experimentally validate.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-        <a class="md-button" href="../methodology/causalgraphrag/">CausalGraphRAG</a>
-        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+        <a class="md-button" href="/methodology/causalgraphrag/">CausalGraphRAG</a>
+        <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -98,8 +98,8 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-      <a class="md-button" href="../methodology/">Explore Methodology</a>
+      <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+      <a class="md-button" href="/methodology/">Explore Methodology</a>
     </p>
   </div>
 </div>

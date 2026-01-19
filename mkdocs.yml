@@ -1,12 +1,14 @@
 site_name: 5Reasons
-# site_url: https://5reasons.github.io/
-site_url: https://5reasons.services/
+# site_url: https://5reasons.services/
+site_url: https://5reasons.github.io/
 # repo_url: https://github.com/5Reasons/5reasons.github.io
 repo_name: 5Reasons
 
 theme:
   name: material
   language: en
+  logo: logos/br-008766.png
+  favicon: logos/br-008766.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky

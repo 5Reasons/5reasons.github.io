@@ -19,8 +19,8 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 				If you want a cheap chatbot, we are not a fit.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-				<a class="md-button" href="../services/epistemic-audit/">Epistemic Audit</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+				<a class="md-button" href="/services/epistemic-audit/">Epistemic Audit</a>
 				<a class="md-button" href="team/">Team &amp; Philosophy</a>
 			</div>
 		</div>
@@ -80,8 +80,8 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 			It’s the fastest way to turn uncertainty into a roadmap with measurable milestones.
 		</p>
 		<p>
-			<a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
-			<a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
+			<a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>
+			<a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
 		</p>
 	</div>
 </div>

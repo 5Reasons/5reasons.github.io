@@ -19,7 +19,7 @@ description: "How enforceable constraints make policy violations impossible, and
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="brcausalgraphrag/">brCausalGraphRAG</a>
 				<a class="md-button" href="llm-tool-rag/">LLM + Tool + RAG</a>
-				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
+				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 		<div class="landing-visual" aria-hidden="true">

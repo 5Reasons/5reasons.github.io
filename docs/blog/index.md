@@ -134,7 +134,7 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
       <p class="landing-card__desc">Curated entry points that scale better than a huge navigation tree.</p>
     </div>
     <div class="landing-card">
-      <h3 class="landing-card__title"><a href="../reasoners/">Reasoners</a></h3>
+      <h3 class="landing-card__title"><a href="/reasoners/">Reasoners</a></h3>
       <p class="landing-card__desc">If you want the infrastructure behind the writing, start here.</p>
     </div>
   </div>

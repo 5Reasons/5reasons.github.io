@@ -17,9 +17,9 @@ description: "Where causality beats probability: examples from biomedicine, fina
 				The common thread: reliability becomes a system property, not a prompt suggestion.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-				<a class="md-button" href="../methodology/">Methodology</a>
-				<a class="md-button" href="../reasoners/governance/">Governance approach</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+				<a class="md-button" href="/methodology/">Methodology</a>
+				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
 	</div>

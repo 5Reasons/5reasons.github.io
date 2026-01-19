@@ -19,7 +19,7 @@ description: "A causal operating system for AI memory: structured entities, cons
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="core-primitives/">Core primitives</a>
         <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Provenance-first</span>
@@ -99,9 +99,9 @@ flowchart TB;
   <div class="landing-card">
     <p>Methodology is the <em>how</em>. Philosophy is the <em>why</em>.</p>
     <ul>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-agent-vs-agentic-ai/">AI Agent vs Agentic AI</a></li>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/correlation-vs-causality/">Correlation vs Causality</a></li>
-      <li><strong>Philosophy</strong>: <a href="../philosophy/ai-consciousness/">AI Consciousness (operational view)</a></li>
+      <li><strong>Philosophy</strong>: <a href="/philosophy/ai-agent-vs-agentic-ai/">AI Agent vs Agentic AI</a></li>
+      <li><strong>Philosophy</strong>: <a href="/philosophy/correlation-vs-causality/">Correlation vs Causality</a></li>
+      <li><strong>Philosophy</strong>: <a href="/philosophy/ai-consciousness/">AI Consciousness (operational view)</a></li>
       <li><strong>Methodology</strong>: <a href="property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a></li>
       <li><strong>Methodology</strong>: <a href="llm-tool-rag/">LLM + Tool + RAG</a></li>
       <li><strong>Methodology</strong>: <a href="causalgraphrag/">CausalGraphRAG</a></li>

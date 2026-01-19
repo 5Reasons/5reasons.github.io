@@ -17,7 +17,7 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 				That means: the unit of memory is not “a paragraph” — it is a structured object with provenance.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../methodology/">Methodology overview</a>
+				<a class="md-button md-button--primary" href="/methodology/">Methodology overview</a>
 				<a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
 				<a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
 			</div>

@@ -19,9 +19,9 @@ description: "How traceable causal chains and constraint gates reduce protocol d
         A decision-grade system must surface evidence paths and refuse when the chain is incomplete.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../services/start/">Start a Conversation</a>
-        <a class="md-button" href="../methodology/brcausalgraphrag/">brCausalGraphRAG</a>
-        <a class="md-button" href="../methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+        <a class="md-button" href="/methodology/brcausalgraphrag/">brCausalGraphRAG</a>
+        <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -91,8 +91,8 @@ flowchart TB;
   <h2>Next steps</h2>
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="../services/epistemic-audit/">Epistemic Audit</a>
-      <a class="md-button" href="../services/blueprint/">Architecture Blueprint</a>
+      <a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>
+      <a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
     </p>
   </div>
 </div>

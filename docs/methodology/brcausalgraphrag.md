@@ -18,8 +18,8 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
       </p>
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="../philosophy/ai-consciousness/">AI consciousness (operational view)</a>
-        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness (operational view)</a>
+        <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       </div>
     </div>
     <div class="landing-visual" aria-hidden="true">
@@ -138,8 +138,8 @@ flowchart TB;
   <div class="landing-card">
     <p>
       <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
-      <a class="md-button" href="../reasoners/governance/">Governance approach</a>
-      <a class="md-button" href="../philosophy/ai-consciousness/">AI consciousness (operational)</a>
+      <a class="md-button" href="/reasoners/governance/">Governance approach</a>
+      <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness (operational)</a>
     </p>
   </div>
 </div>

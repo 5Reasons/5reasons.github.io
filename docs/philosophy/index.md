@@ -17,9 +17,9 @@ description: "Why high-stakes organizations need causal memory and governance—
         It’s a <strong>confident fabrication</strong> that bypasses verification.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="../methodology/">How we operationalize this</a>
-        <a class="md-button" href="../reasoners/governance/">Governance approach</a>
-        <a class="md-button" href="../services/">Services</a>
+        <a class="md-button md-button--primary" href="/methodology/">How we operationalize this</a>
+        <a class="md-button" href="/reasoners/governance/">Governance approach</a>
+        <a class="md-button" href="/services/">Services</a>
       </div>
       <div class="landing-proof" aria-label="Highlights">
         <span class="landing-pill">Glass-box traces</span>
@@ -50,7 +50,7 @@ description: "Why high-stakes organizations need causal memory and governance—
 		<div class="landing-card">
 			<h3>RAG reduces noise, not causality</h3>
 			<p>Retrieval can improve relevance, but it doesn’t create causal understanding or enforce cross-document constraints.</p>
-      <p><a class="md-button" href="../methodology/llm-tool-rag/">LLM + Tool + RAG</a></p>
+      <p><a class="md-button" href="/methodology/llm-tool-rag/">LLM + Tool + RAG</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>High stakes require governance</h3>
@@ -109,8 +109,8 @@ description: "Why high-stakes organizations need causal memory and governance—
       <li><strong>Case studies</strong>: show the approach under real constraints.</li>
     </ul>
     <p>
-      <a class="md-button" href="../methodology/">brModel™ Methodology</a>
-      <a class="md-button" href="../case-studies/">Case Studies</a>
+      <a class="md-button" href="/methodology/">brModel™ Methodology</a>
+      <a class="md-button" href="/case-studies/">Case Studies</a>
     </p>
   </div>
 </div>

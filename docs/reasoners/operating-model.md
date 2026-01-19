@@ -17,9 +17,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 				The operating model below is designed to reduce that risk quickly and measurably.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="../services/start/">Start a conversation</a>
-				<a class="md-button" href="../services/">Services</a>
-				<a class="md-button" href="../methodology/">Methodology</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a conversation</a>
+				<a class="md-button" href="/services/">Services</a>
+				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
 			<div class="landing-proof" aria-label="Highlights">
 				<span class="landing-pill">Outcome-first</span>
@@ -115,9 +115,9 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 	<h2>Where this connects</h2>
 	<div class="landing-card">
 		<p>
-			<a class="md-button" href="../services/">Services</a>
+			<a class="md-button" href="/services/">Services</a>
 			<a class="md-button" href="governance/">Governance approach</a>
-			<a class="md-button" href="../methodology/">Methodology</a>
+			<a class="md-button" href="/methodology/">Methodology</a>
 		</p>
 	</div>
 </div>
