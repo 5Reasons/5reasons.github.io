@@ -139,3 +139,4 @@ extra_javascript:
   - assets/js/diagram-modal.js
   - assets/js/link-fixes.js
   - assets/js/mathjax.js
+  - assets/js/wizard-scroll.js

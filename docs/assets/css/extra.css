@@ -159,3 +159,24 @@ dialog.diagram-modal::backdrop {
   max-width: 100%;
   height: auto;
 }
+
+/* Wizard page helpers */
+.wizard-section {
+  scroll-margin-top: 92px; /* header offset */
+}
+
+.wizard-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 18px;
+}
+
+.wizard-jumps .md-button {
+  margin: 0;
+}
+
+/* Slightly more compact Mermaid labels on dense diagrams */
+.wizard-wide .mermaid {
+  font-size: 14px;
+}

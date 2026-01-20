@@ -27,6 +27,54 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 
 ## Choose your role
 
+<div class="landing-card">
+<p><strong>The question this page answers</strong>: How does a first-time visitor self-identify, and which mental path leads them to real value (learning, dialogue, or an actionable engagement)?</p>
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+
+
+I_Home("? 5Reason web"):::i
+
+%% Subjects
+S_Visitor("👤 Visitor"):::s
+S_Buyer("🧑‍💼 Buyer / Operator"):::s
+S_Eng("🧑‍💻 Engineer / Architect"):::s
+S_Read("🧑‍🔬 Reader / Analyst"):::s
+
+%% Processes
+P_Ident("🧭 Self-Identification"):::p
+P_Biz("💬 Business evaluation"):::p
+P_Tech("🧩 Technical deep-dive"):::p
+P_Learn("📚 Learn about causality"):::p
+
+
+%% Flow
+I_Home --> S_Visitor
+S_Visitor --> P_Ident
+P_Ident --> S_Buyer
+P_Ident --> S_Eng
+P_Ident --> S_Read
+
+S_Buyer --> P_Biz
+S_Eng --> P_Tech 
+S_Read --> P_Learn 
+
+%% Links (existing pages + wizard drill-down sections)
+click I_Home "/" "Home"
+click S_Visitor "/home/start-here/" "Start Here"
+click S_Buyer "/wizard/#buyer" "Jump to Buyer flow"
+click S_Eng "/wizard/#engineer" "Jump to Engineer flow"
+
+```
+</div>
+
 <div class="landing-section">
 	<div class="landing-grid">
 		<div class="landing-card">
