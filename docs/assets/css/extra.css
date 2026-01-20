@@ -2,6 +2,7 @@
 .mermaid {
   max-width: 100%;
   overflow-x: auto;
+  text-align: center;
 }
 
 /* Horizontal quick navigation (page-level) */

@@ -24,11 +24,9 @@
   </div>
 </div>
 
-## What we build
-
 <div class="landing-card">
-<p><strong>The question this section answers</strong>: What are the main paths through this site — and which next step should you take based on your intent?</p>
-<p>This diagram is intentionally minimal: it shows only the <em>top-level processes</em> that open the pages in the horizontal tabs, plus key Home subpages.</p>
+<p><strong>Rule of thumb:</strong> orient → self-identify → pick a tab → return here when you feel lost.</p>
+<p>In this navigation map, the <strong>👤 Visitor (YOU)</strong> begins with <strong>🧭 Orientation</strong>, quickly uses <strong>ℹ️ Understand who we are</strong> to anchor context, then enters <strong>🧭 Self-identification</strong> to pick the next best path: <strong>🧰 Explore services</strong>, <strong>📐 Explore methodology</strong>, or <strong>📰 Explore the blog</strong> (which often leads into <strong>🧠 Explore philosophy</strong> and back into <strong>📐 methodology</strong>). Once ready, they move into <strong>📞 Start a conversation</strong> and <strong>🤝 Engagement</strong>, then follow a risk-minimizing delivery chain: <strong>🔎 Epistemic audit</strong> produces an <strong>🧾 audit report</strong>, which feeds <strong>🗺️ architectural planning</strong> and yields an <strong>📐 architecture blueprint</strong> that drives <strong>🧑‍💻 implementation</strong>. Implementation produces <strong>🧠 memory for AI agents</strong>, which then enables <strong>🛰️ agentic system operations</strong> that emit <strong>🧾 reasoning logs</strong> into <strong>🛠️ maintenance</strong>. Maintenance produces <strong>📊 reporting</strong> and also generates <strong>🧩 change proposals</strong> that flow back into <strong>🗺️ architectural planning</strong>, closing the loop.</p>
 
 ```mermaid
 flowchart TB
@@ -48,7 +46,7 @@ S_Visitor --> P_Orient --> P_About --> P_Ident
 
 %% Home subpage (key conversion)
 P_Inquiry("📝 Inquiry"):::p
-P_Ident -. "ready to engage" .-> P_Inquiry
+P_Contact -. "ready to engage" .-> P_Inquiry
 
 %% Top-tab processes (each opens a top-level tab)
 P_Services("🧰 Explore services"):::p
@@ -80,18 +78,21 @@ P_Reasoners --> P_Contact --> R_Engage
 P_Inquiry --> R_Engage
 
 %% Delivery lifecycle (high-level)
-O_Audit("🟢 Epistemic audit"):::o
-O_Blueprint("🟢 Architecture blueprint"):::o
-P_Impl("🛠️ Implementation"):::p
-O_Software("🟢 Software release"):::o
-O_Memory("🟢 Memory for AI agents"):::o
-P_Maint("🔧 Maintenance"):::p
-O_Reporting("🟢 Reporting"):::o
+P_Audit("🔎 Epistemic audit"):::p
+R_AuditReport("🧾 Audit report"):::r
+P_ArchPlan("🗺️ Architectural planning"):::p
+R_Blueprint("📐 Architecture blueprint"):::r
+P_Impl("🧑‍💻 Implementation"):::p
+O_Memory("🧠 Memory for AI agents"):::o
+P_Ops("🛰️ Agentic system operations"):::p
+R_Logs("🧾 Reasoning logs"):::r
+P_Maint("🛠️ Maintenance"):::p
+O_Reporting("📊 Reporting"):::o
+R_Change("🧩 Change proposals"):::r
 
-R_Engage --> O_Audit
-R_Engage --> O_Blueprint
-R_Engage --> P_Impl --> O_Software --> O_Memory
-O_Software --> P_Maint --> O_Reporting
+R_Engage --> P_Audit --> R_AuditReport --> P_ArchPlan --> R_Blueprint --> P_Impl --> O_Memory
+O_Memory --> P_Ops --> R_Logs --> P_Maint --> O_Reporting
+P_Maint --> R_Change --> P_ArchPlan
 
 %% Links (process → detailed explanation)
 click P_Orient "/home/start-here/" "Start Here"
@@ -109,19 +110,18 @@ click P_Blog "/blog/" "Blog"
 click P_Contact "/services/start/" "Start a conversation"
 click R_Engage "/services/" "Engagement model"
 
-click O_Audit "/services/epistemic-audit/" "Epistemic Audit"
-click O_Blueprint "/services/blueprint/" "Architecture Blueprint"
+click P_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click P_ArchPlan "/services/blueprint/" "Architecture Blueprint"
+click R_Blueprint "/services/blueprint/" "Architecture Blueprint"
 click P_Impl "/services/implementation/" "Implementation"
-click O_Software "/services/implementation/" "Implementation"
 click O_Memory "/methodology/" "Methodology"
+click P_Ops "/reasoners/operating-model/" "Operating model"
 click P_Maint "/services/partnership/" "Ongoing Partnership"
 click O_Reporting "/reasoners/governance/" "Governance Approach"
 ```
-
-<p>In this map, the <strong>👤 Visitor</strong> begins with <strong>🧭 Orientation</strong>, quickly uses <strong>ℹ️ Understand who we are</strong> to anchor context, then enters <strong>🧭 Self-identification</strong> to pick the next best path: <strong>🧰 Explore services</strong>, <strong>📐 Explore methodology</strong>, or <strong>📰 Explore the blog</strong> (which often leads into <strong>🧠 Explore philosophy</strong> and back into <strong>📐 methodology</strong>). Once ready, they move into <strong>📞 Start a conversation</strong> and <strong>🤝 Engagement</strong>, which can yield <strong>🟢 Epistemic audit</strong> or <strong>🟢 Architecture blueprint</strong>, and then progress through <strong>🛠️ Implementation</strong> to a <strong>🟢 Software release</strong> (delivering <strong>🟢 memory for AI agents</strong>), followed by <strong>🔧 Maintenance</strong> and <strong>🟢 Reporting</strong>.</p>
-
-<p><strong>Rule of thumb:</strong> orient → self-identify → pick a tab → return here when you feel lost.</p>
 </div>
+
+## What we build
 
 <div class="landing-section">
   <div class="landing-grid">
