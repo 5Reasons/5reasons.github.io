@@ -138,3 +138,24 @@ dialog.diagram-modal::backdrop {
 .diagram-modal__body .mermaid {
   overflow: visible;
 }
+
+/* Full-width container for large diagrams (opt-in per page) */
+.wizard-wide {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.wizard-wide .mermaid {
+  max-width: 100%;
+}
+
+.wizard-wide .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
