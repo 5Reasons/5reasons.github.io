@@ -5,6 +5,10 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008789.png"/>
+</div>
+
 # Why Probabilistic AI Fails (in High-Stakes Work)
 
 <div class="landing-hero">
@@ -31,13 +35,6 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 	<div class="landing-callout">
 		<p><strong>LLMs are excellent at generating text that resembles correct answers.</strong> But resemblance is not the same as truth.</p>
 		<p class="landing-mini">In practice, fluency can mask missing sources, missing constraints, and missing causal structure.</p>
-	</div>
-</div>
-
-<div class="landing-section">
-	<div class="landing-card">
-		<img class="glightbox" src="/assets/img/br-008768.png" alt="Illustration of the illusion: plausible text can appear decision-grade without epistemic validity." />
-		<p class="landing-mini"><strong>Click to enlarge:</strong> a concrete example of how “plausible” can look like “valid”.</p>
 	</div>
 </div>
 

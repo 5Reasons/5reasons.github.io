@@ -5,6 +5,10 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008819.png"/>
+</div>
+
 # brCausalGraphRAG
 
 <div class="landing-hero">

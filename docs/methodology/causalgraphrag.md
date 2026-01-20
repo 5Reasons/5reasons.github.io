@@ -7,6 +7,10 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
 
 # CausalGraphRAG
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008809.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

@@ -43,15 +43,6 @@ description: "How we structure pages, why navigation stays stable, and how posts
 	</div>
 </div>
 
-## URL stability
-
-<div class="landing-section">
-	<div class="landing-callout">
-		<p><strong>We avoid renaming published URLs.</strong> Once a page is public, it becomes part of the external surface area (bookmarks, references, search).</p>
-		<p class="landing-mini">If a rename is ever unavoidable, we treat it as a migration (and ask first if it affects published links).</p>
-	</div>
-</div>
-
 ## Where content lives
 
 <div class="landing-section">

@@ -5,6 +5,10 @@ description: "From blueprint to production: building a glass-box memory layer, e
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008824.png"/>
+</div>
+
 # Implementation
 
 <div class="landing-hero">

@@ -5,6 +5,10 @@ description: "How enforceable constraints make policy violations impossible, and
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008823.png"/>
+</div>
+
 # Constraints & SHACL
 
 <div class="landing-hero">

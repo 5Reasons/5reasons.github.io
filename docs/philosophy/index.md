@@ -7,6 +7,10 @@ description: "Why high-stakes organizations need causal memory and governance—
 
 # Philosophy
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008816.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -22,6 +26,13 @@ description: "Why high-stakes organizations need causal memory and governance—
         <a class="md-button" href="/services/">Services</a>
       </div>
     </div>
+    <div class="landing-card" style="margin-top: 14px;">
+  <p class="landing-mini"><strong>Audio:</strong> Agents Are Storytellers</p>
+  <audio controls preload="none" style="width: 100%;">
+    <source src="/assets/Agents_Are_Storytellers_Not_Physics_Engines.m4a" type="audio/mp4" />
+    Your browser does not support the audio element.
+  </audio>
+</div>  
   </div>
 </div>
 

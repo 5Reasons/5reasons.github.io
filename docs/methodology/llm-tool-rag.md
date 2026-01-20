@@ -7,6 +7,10 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
 
 # LLM + Tool + RAG
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008807.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

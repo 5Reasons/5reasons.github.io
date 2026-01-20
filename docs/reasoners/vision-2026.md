@@ -5,6 +5,10 @@ description: "A public-facing strategic narrative: one core causal framework app
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008830.png"/>
+</div>
+
 # Vision 2026
 
 <div class="landing-hero">

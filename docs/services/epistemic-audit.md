@@ -5,6 +5,10 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008822.png"/>
+</div>
+
 # Epistemic Audit
 
 <div class="landing-hero">

@@ -58,8 +58,8 @@ nav:
   - Methodology:
     - Overview: methodology/index.md
     - Core Primitives: methodology/core-primitives.md
-    - Property-Knowledge Graph: methodology/property-and-knowledge-graphs.md
     - LLM + Tool + RAG: methodology/llm-tool-rag.md
+    - Property-Knowledge Graph: methodology/property-and-knowledge-graphs.md
     - CausalGraphRAG: methodology/causalgraphrag.md
     - brCausalGraphRAG: methodology/brcausalgraphrag.md
     - Constraints & SHACL: methodology/constraints.md

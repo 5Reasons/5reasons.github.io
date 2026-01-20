@@ -7,6 +7,10 @@ description: "From epistemic audit to causal architecture blueprints to producti
 
 # Services
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-21545.png"/>
+</div>
+
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>

@@ -55,6 +55,10 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
   </div>
 </div>
 
+<div class="landing-callout">
+    <img class="glightbox" src="/assets/img/br-008790.png"/>
+</div>
+
 ## A simple causal model of the failure
 
 <div class="landing-section">

@@ -5,6 +5,10 @@ description: "Why ‘agent’ is not a product category: the difference between 
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008827.png"/>
+</div>
+
 # AI Agent vs Agentic AI
 
 <div class="landing-hero">

@@ -7,6 +7,10 @@ description: "Cognitive infrastructure architects building deterministic, audita
 
 # Reasoners
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008831.png"/>
+</div>
+
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>

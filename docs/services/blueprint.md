@@ -5,6 +5,10 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008829.png"/>
+</div>
+
 # Architecture Blueprint
 
 <div class="landing-hero">

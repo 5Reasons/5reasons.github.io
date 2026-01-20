@@ -50,20 +50,6 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 	</div>
 </div>
 
-## Diagram: intake flow
-
-<div class="landing-section">
-
-```mermaid
-flowchart LR;
-	I["Initial message"] --> D["Decision + risk"];
-	D --> S["Sources"];
-	S --> C["Constraints"];
-	C --> R["Recommendation"];
-```
-
-</div>
-
 ## How to start (recommended)
 
 <div class="landing-section">
@@ -72,15 +58,7 @@ flowchart LR;
 		<p class="landing-mini">Start with a Blueprint if you already know you must build durable semantics and constraints.</p>
 	</div>
 
-```mermaid
-flowchart TB;
-	Q["Do you already have clarity</br>on failure modes and constraints?"] -->|"No"| A["Start with Epistemic Audit"];
-	Q -->|"Yes"| B["Start with Architecture Blueprint"];
-	A --> B;
-	B --> I["Implementation (optional)"];
-```
-
-	<div class="landing-card">
+<div class="landing-card">
 		<p>
 			<a class="md-button md-button--primary" href="epistemic-audit/">Epistemic Audit</a>
 			<a class="md-button" href="blueprint/">Architecture Blueprint</a>
@@ -97,5 +75,6 @@ flowchart TB;
 			Tell me what contact channel you prefer to publish (email address, Calendly link, or another method).
 			I’ll place it here and also mirror it in the About section so it’s easy to find.
 		</p>
+		<iframe src="https://bigring.notion.site/ebd//2ed90bcdd8ae808a91dcffb2a49454e9" width="100%" height="900" frameborder="0" allowfullscreen />
 	</div>
 </div>

@@ -5,6 +5,10 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008806.png"/>
+</div>
+
 # Correlation vs Causality
 
 <div class="landing-hero">
@@ -41,6 +45,10 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
       <p>Causality is the substrate. Reasoning adds goals, constraints, and counterfactual search over actions — so you can justify <em>why</em> an intervention is chosen and what could go wrong.</p>
     </div>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008828.png"/>
 </div>
 
 ## Two counterfactual statements

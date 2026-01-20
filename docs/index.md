@@ -2,6 +2,10 @@
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008792.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -19,6 +23,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div class="landing-card" style="margin-top: 14px;">
   <p class="landing-mini"><strong>Audio:</strong> Hidden complexity makes AI memory toxic</p>
@@ -75,13 +81,6 @@
     </div>
   </div>
   <p><a class="md-button md-button--primary" href="services/">See services</a></p>
-</div>
-
-<div class="landing-section">
-  <div class="landing-card">
-    <img class="glightbox" src="/assets/img/br-008767.png" alt="Engagement overview: audit → blueprint → implementation, with governance constraints and traceable outputs." />    <p class="landing-mini"><strong>Click to enlarge:</strong> a visual overview of the engagement flow.</p>
-
-  </div>
 </div>
 
 ## Validated where it hurts

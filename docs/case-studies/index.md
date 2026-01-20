@@ -7,6 +7,10 @@ description: "Where causality beats probability: examples from biomedicine, fina
 
 # Case Studies
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008815.png"/>
+</div>
+
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>

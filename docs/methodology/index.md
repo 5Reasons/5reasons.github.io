@@ -7,6 +7,10 @@ description: "A causal operating system for AI memory: structured entities, cons
 
 # brModel™ Methodology
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008818.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -32,6 +36,10 @@ description: "A causal operating system for AI memory: structured entities, cons
     <p><strong>brModel™ treats knowledge as a causal graph, not a pile of text chunks.</strong></p>
     <p class="landing-mini">Facts become nodes with provenance; relationships encode mechanisms and allowed transformations; rules become enforceable constraints.</p>
   </div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008813.png"/>
+</div>
 
 <div class="landing-card" style="margin-top: 14px;">
   <p class="landing-mini"><strong>Audio:</strong> Simulating Interventions With Executable Causal Clauses</p>

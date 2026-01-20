@@ -7,6 +7,10 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 
 # Core Primitives
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/image_4.png"/>
+</div>
+
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>
@@ -63,6 +67,11 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 		<p><strong>We separate “what exists” from “how it interacts”.</strong></p>
 		<p class="landing-mini">The same abstract building blocks work in biotech, finance, cybersecurity, and law because they describe structure, change, and evidence — not a specific discipline.</p>
 	</div>
+	
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008821.png"/>
+</div>
+
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Element</h3>

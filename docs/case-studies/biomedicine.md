@@ -5,7 +5,11 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
 
 --8<-- "includes/quicknav.html"
 
-# SK Biomedicine: Mechanism Discovery
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008825.png"/>
+</div>
+
+# Biomedicine: Mechanism Discovery
 
 <div class="landing-hero">
   <div class="landing-hero__grid">

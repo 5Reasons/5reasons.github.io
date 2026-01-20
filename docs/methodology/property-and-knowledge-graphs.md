@@ -5,6 +5,10 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
 
 --8<-- "includes/quicknav.html"
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008808.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
