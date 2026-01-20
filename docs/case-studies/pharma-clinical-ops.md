@@ -9,6 +9,10 @@ description: "How traceable causal chains and constraint gates reduce protocol d
 
 # Pharma & Clinical Ops: Trial Decisions With Auditable Evidence
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008833.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

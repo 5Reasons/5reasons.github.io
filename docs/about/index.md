@@ -28,3 +28,7 @@ We are **logic-first**:
 - **Design for audits**: production systems must explain themselves.
 
 If you want to discuss fit, go to [Start a Conversation](../services/start.md).
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008840.png"/>
+</div>

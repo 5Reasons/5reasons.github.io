@@ -9,6 +9,10 @@ description: "How governed causal memory supports grid ops decisions with tracea
 
 # Energy & Utilities: Grid Operations Under Constraints
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008836.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

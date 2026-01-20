@@ -5,11 +5,11 @@ description: "How causal traversal, playbook constraints, and trace objects turn
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008826.png"/>
-</div>
-
 # SOC Decisions With Evidence Paths
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008835.png"/>
+</div>
 
 <div class="landing-hero">
   <div class="landing-hero__grid">

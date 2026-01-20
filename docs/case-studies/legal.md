@@ -7,6 +7,10 @@ description: "Graph-based contract analysis to detect clause contradictions and 
 
 # Legal: Contract Logic Conflicts
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008837.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

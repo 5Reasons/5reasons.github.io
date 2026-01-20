@@ -9,6 +9,10 @@ description: "How a governed central memory turns meeting notes and project arti
 
 # Enterprise Central Memory: Meetings, Projects, and Decision Traceability
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008838.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>

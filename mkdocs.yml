@@ -72,6 +72,7 @@ nav:
     - Start a Conversation: services/start.md
   - Case Studies:
     - Overview: case-studies/index.md
+    - Enterprise Central Memory: case-studies/enterprise-central-memory.md
     - Biomedicine: case-studies/biomedicine.md
     - Finance: case-studies/finance.md
     - Legal: case-studies/legal.md
@@ -80,7 +81,6 @@ nav:
     - Manufacturing: case-studies/manufacturing.md
     - Energy & Utilities: case-studies/energy-utilities.md
     - Pharma & Clinical Ops: case-studies/pharma-clinical-ops.md
-    - Enterprise Central Memory: case-studies/enterprise-central-memory.md
   - About:
     - Overview: about/index.md
     - Team & Philosophy: about/team.md

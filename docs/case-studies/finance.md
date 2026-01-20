@@ -7,6 +7,10 @@ description: "How governance constraints prevent policy-violating approvals and 
 
 # Finance: Compliance & Risk
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008834.png"/>
+</div>
+
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
