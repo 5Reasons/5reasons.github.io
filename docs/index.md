@@ -1,4 +1,4 @@
-# 5Reasons Services - Cognitive infrastructure
+# Cognitive Technolgies & Services
 
 --8<-- "includes/quicknav.html"
 
@@ -9,8 +9,8 @@
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
-      <p class="landing-kicker">Decision-grade cognitive infrastructure</p>
-      <h2 class="landing-title">Architects of mental model— and causal analyti s fomachines and r humans.</h2>
+      <p class="landing-kicker">We are building memory for AI agents</p>
+      <h2 class="landing-title">Architects of mental model— and causal analytics for machines and humans.</h2>
       <p class="landing-subtitle">
         We turn messy enterprise reality (PDF + SQL + policies + domain expertise) into <strong>decision-grade cognitive infrastructure</strong>:
         causal graph memory, governance constraints, and auditable reasoning traces for LLMs and agentic systems.
@@ -23,8 +23,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="landing-card" style="margin-top: 14px;">
   <p class="landing-mini"><strong>Audio:</strong> Hidden complexity makes AI memory toxic</p>
