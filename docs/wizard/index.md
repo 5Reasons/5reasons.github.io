@@ -32,45 +32,94 @@ This page is a full-width workspace for “big picture → drill-down” causal/
 ```mermaid
 flowchart TB
 %% Styles (brModel Standard)
-classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
 classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
-
-I_Home("? 5Reason web"):::i
-
-%% Subjects
+%% Entry
 S_Visitor("👤 Visitor"):::s
-S_Buyer("🧑‍💼 Buyer / Operator"):::s
-S_Eng("🧑‍💻 Engineer / Architect"):::s
-S_Read("🧑‍🔬 Reader / Analyst"):::s
+P_Orient("🧭 Orientation"):::p
+P_Ident("🧭 Self-identification"):::p
 
-%% Processes
-P_Ident("🧭 Self-Identification"):::p
-P_Biz("💬 Business evaluation"):::p
-P_Tech("🧩 Technical deep-dive"):::p
-P_Learn("📚 Causal learning"):::p
+S_Visitor --> P_Orient --> P_Ident
 
+%% Before evaluation, the visitor usually needs context.
+P_Who("🧑‍🏫 Understand who we are"):::p
+P_Learn("📚 Learn about causality"):::p
+P_Philosophy("🧠 Study philosophy"):::p
+P_Method("📐 Study methodology"):::p
+P_Reasoners("🤝 Understand Reasoners"):::p
+P_BrowseCases("🧾 Review case studies"):::p
+P_BrowseBlog("📰 Browse the blog"):::p
+P_BrowseDiagrams("🗺️ Browse diagrams"):::p
 
-%% Flow
-I_Home --> S_Visitor
-S_Visitor --> P_Ident
-P_Ident --> S_Buyer
-P_Ident --> S_Eng
-P_Ident --> S_Read
+P_Ident --> P_Who
+P_Who --> P_Learn
+P_Learn --> P_Philosophy
+P_Philosophy --> P_Method
 
-S_Buyer --> P_Biz
-S_Eng --> P_Tech 
-S_Read --> P_Learn 
+P_Learn --> P_BrowseBlog
+P_BrowseBlog --> P_BrowseDiagrams
 
-%% Links (existing pages + wizard drill-down sections)
-click I_Home "/" "Home"
-click S_Visitor "/home/start-here/" "Start Here"
-click S_Buyer "/wizard/#buyer" "Jump to Buyer flow"
-click S_Eng "/wizard/#engineer" "Jump to Engineer flow"
+P_Who --> P_Reasoners
+P_Method --> P_BrowseCases
+P_Reasoners --> P_BrowseCases
 
+%% Two evaluations, one trust (no duplicated nodes)
+P_Biz("💬 Evaluate business fit"):::p
+P_Tech("🧩 Evaluate technical fit"):::p
+P_Trust("🤝 Build trust"):::p
+
+P_BrowseCases --> P_Biz
+P_BrowseCases --> P_Tech
+P_Method --> P_Tech
+P_Who --> P_Biz
+
+P_Biz --> P_Trust
+P_Tech --> P_Trust
+
+%% Commitment sequence
+P_Contact("📞 Start a conversation"):::p
+P_Inquiry("📝 Submit an inquiry"):::p
+R_Engage("🤝 Engagement"):::r
+P_Delivery("🛠️ Delivery"):::p
+
+P_Trust --> P_Contact --> P_Inquiry --> R_Engage --> P_Delivery
+
+%% What delivery can look like (high-level outcomes)
+O_Audit("🟢 Epistemic audit"):::o
+O_Blueprint("🟢 Architecture blueprint"):::o
+O_Impl("🟢 Implementation"):::o
+O_Partner("🟢 Ongoing partnership"):::o
+
+P_Delivery --> O_Audit
+P_Delivery --> O_Blueprint
+P_Delivery --> O_Impl
+P_Delivery --> O_Partner
+
+%% Links (process → detailed explanation)
+click P_Orient "/home/start-here/" "Start Here"
+click P_Ident "/home/start-here/#choose-your-role" "Choose your role"
+click P_Who "/reasoners/about/" "About"
+click P_Learn "/philosophy/correlation-vs-causality/" "Correlation vs Causality"
+click P_Philosophy "/philosophy/" "Philosophy"
+click P_Method "/methodology/" "Methodology"
+click P_Reasoners "/reasoners/" "Reasoners"
+click P_BrowseCases "/case-studies/" "Case Studies"
+click P_BrowseBlog "/blog/" "Blog"
+click P_BrowseDiagrams "/diagrams/" "Diagram Gallery"
+click P_Biz "/services/" "Services"
+click P_Tech "/methodology/" "Methodology"
+click P_Trust "/services/epistemic-audit/" "Epistemic Audit"
+click P_Contact "/services/start/" "Start a conversation"
+click P_Inquiry "/home/inquiry/" "Inquiry"
+click R_Engage "/services/" "Engagement model"
+click P_Delivery "/services/" "Services"
+click O_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click O_Blueprint "/services/blueprint/" "Architecture Blueprint"
+click O_Impl "/services/implementation/" "Implementation"
+click O_Partner "/services/partnership/" "Ongoing Partnership"
 ```
 </div>
 

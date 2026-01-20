@@ -151,7 +151,7 @@ click S_Eng "/wizard/#engineer" "Jump to Engineer flow"
 	<div class="landing-card">
 		<p><strong>Reading is public.</strong> Reuse for commercial or research purposes requires a written license.</p>
 		<p>
-			<a class="md-button" href="/about/terms/">Terms of Use</a>
+			<a class="md-button" href="/reasoners/terms/">Terms of Use</a>
 			<a class="md-button md-button--primary" href="/services/start/">Request a license</a>
 		</p>
 	</div>

@@ -46,6 +46,10 @@ nav:
     - Wizard (Full-Width): wizard/index.md
   - Reasoners:
     - Overview: reasoners/index.md
+    - About: reasoners/about.md
+    - Team & Philosophy: reasoners/team.md
+    - FAQ: reasoners/faq.md
+    - Terms of Use: reasoners/terms.md
     - Vision 2026: reasoners/vision-2026.md
     - Operating Model: reasoners/operating-model.md
     - Governance Approach: reasoners/governance.md
@@ -82,11 +86,6 @@ nav:
     - Manufacturing: case-studies/manufacturing.md
     - Energy & Utilities: case-studies/energy-utilities.md
     - Pharma & Clinical Ops: case-studies/pharma-clinical-ops.md
-  - About:
-    - Overview: about/index.md
-    - Team & Philosophy: about/team.md
-    - FAQ: about/faq.md
-    - Terms of Use: about/terms.md
   - Blog:
     - Blog: blog/index.md
     - How to Read Posts: blog/how-to-read.md

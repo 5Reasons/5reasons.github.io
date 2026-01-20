@@ -27,28 +27,100 @@
 ## What we build
 
 <div class="landing-card">
-<p><strong>The question this section answers</strong>: What are the three building blocks of a decision-grade AI system — and where should you start reading?</p>
-<p>If you only read three pages, follow the diagram: start with services (why), then methodology (how), then constraints (what stops failures).</p>
+<p><strong>The question this section answers</strong>: What are the main paths through this site — and which next step should you take based on your intent?</p>
+<p>This diagram is intentionally minimal: it shows only the <em>top-level processes</em> that open the pages in the horizontal tabs, plus key Home subpages.</p>
 
 ```mermaid
 flowchart TB
 %% Styles (brModel Standard)
-classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
-P_Start("🧭 Start"):::p
-I_Services("🧰 Services"):::i
-I_Method("📐 Methodology"):::i
-I_Constraints("🧱 Constraints"):::i
-O_System("✅ Decision-grade system"):::o
+%% Entry
+S_Visitor("👤 Visitor"):::s
+P_Orient("🧭 Orientation"):::p
+P_About("ℹ️ Understand who we are"):::p
+P_Ident("🧭 Self-identification"):::p
 
-P_Start --> I_Services --> I_Method --> I_Constraints --> O_System
+S_Visitor --> P_Orient --> P_About --> P_Ident
 
-click I_Services "/services/" "Services"
-click I_Method "/methodology/" "Methodology"
-click I_Constraints "/methodology/constraints/" "Constraints & SHACL"
+%% Home subpage (key conversion)
+P_Inquiry("📝 Inquiry"):::p
+P_Ident -. "ready to engage" .-> P_Inquiry
+
+%% Top-tab processes (each opens a top-level tab)
+P_Services("🧰 Explore services"):::p
+P_Methodology("📐 Explore methodology"):::p
+P_Philosophy("🧠 Explore philosophy"):::p
+P_Reasoners("🤝 Explore Reasoners"):::p
+P_CaseStudies("🧾 Explore case studies"):::p
+P_Blog("📰 Explore the blog"):::p
+
+%% Minimal mental dependencies (no duplication of detailed role diagrams)
+P_Ident --> P_Services
+P_Ident --> P_Methodology
+P_Ident --> P_Blog
+
+P_Blog --> P_Philosophy
+P_Philosophy --> P_Methodology
+
+P_Methodology --> P_Reasoners
+P_Services --> P_Reasoners
+P_CaseStudies --> P_Reasoners
+
+P_Services --> P_CaseStudies
+
+%% Engagement (keep at top level here; details live in Services)
+P_Contact("📞 Start a conversation"):::p
+R_Engage("🤝 Engagement"):::r
+
+P_Reasoners --> P_Contact --> R_Engage
+P_Inquiry --> R_Engage
+
+%% Delivery lifecycle (high-level)
+O_Audit("🟢 Epistemic audit"):::o
+O_Blueprint("🟢 Architecture blueprint"):::o
+P_Impl("🛠️ Implementation"):::p
+O_Software("🟢 Software release"):::o
+O_Memory("🟢 Memory for AI agents"):::o
+P_Maint("🔧 Maintenance"):::p
+O_Reporting("🟢 Reporting"):::o
+
+R_Engage --> O_Audit
+R_Engage --> O_Blueprint
+R_Engage --> P_Impl --> O_Software --> O_Memory
+O_Software --> P_Maint --> O_Reporting
+
+%% Links (process → detailed explanation)
+click P_Orient "/home/start-here/" "Start Here"
+click P_Ident "/home/start-here/#choose-your-role" "Choose your role"
+click P_Inquiry "/home/inquiry/" "Inquiry"
+click P_About "/reasoners/about/" "About"
+
+click P_Services "/services/" "Services"
+click P_Methodology "/methodology/" "Methodology"
+click P_Philosophy "/philosophy/" "Philosophy"
+click P_Reasoners "/reasoners/" "Reasoners"
+click P_CaseStudies "/case-studies/" "Case Studies"
+click P_Blog "/blog/" "Blog"
+
+click P_Contact "/services/start/" "Start a conversation"
+click R_Engage "/services/" "Engagement model"
+
+click O_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click O_Blueprint "/services/blueprint/" "Architecture Blueprint"
+click P_Impl "/services/implementation/" "Implementation"
+click O_Software "/services/implementation/" "Implementation"
+click O_Memory "/methodology/" "Methodology"
+click P_Maint "/services/partnership/" "Ongoing Partnership"
+click O_Reporting "/reasoners/governance/" "Governance Approach"
 ```
+
+<p>In this map, the <strong>👤 Visitor</strong> begins with <strong>🧭 Orientation</strong>, quickly uses <strong>ℹ️ Understand who we are</strong> to anchor context, then enters <strong>🧭 Self-identification</strong> to pick the next best path: <strong>🧰 Explore services</strong>, <strong>📐 Explore methodology</strong>, or <strong>📰 Explore the blog</strong> (which often leads into <strong>🧠 Explore philosophy</strong> and back into <strong>📐 methodology</strong>). Once ready, they move into <strong>📞 Start a conversation</strong> and <strong>🤝 Engagement</strong>, which can yield <strong>🟢 Epistemic audit</strong> or <strong>🟢 Architecture blueprint</strong>, and then progress through <strong>🛠️ Implementation</strong> to a <strong>🟢 Software release</strong> (delivering <strong>🟢 memory for AI agents</strong>), followed by <strong>🔧 Maintenance</strong> and <strong>🟢 Reporting</strong>.</p>
+
+<p><strong>Rule of thumb:</strong> orient → self-identify → pick a tab → return here when you feel lost.</p>
 </div>
 
 <div class="landing-section">
@@ -95,9 +167,14 @@ O_Harm("💥 High-stakes harm"):::o
 
 I_LLM --> P_Gap --> P_Risk --> O_Harm
 
+P_Home("⬆️ Back to Home overview"):::p
+
 click P_Gap "/methodology/constraints/" "Constraints & SHACL"
 click P_Risk "/philosophy/probabilistic-ai/" "Why Probabilistic AI Fails"
+click P_Home "/#what-we-build" "Back to the main process map"
 ```
+
+<p>Here the story is: <strong>🧠 LLM output</strong> becomes dangerous when there are <strong>🧩 no constraints / weak provenance</strong>, which increases <strong>⚠️ failure risk</strong> and can cause <strong>💥 high-stakes harm</strong>. Use <strong>⬆️ Back to Home overview</strong> to return to the main process map.</p>
 </div>
 
 <div class="landing-section">
@@ -127,10 +204,15 @@ O_Deliver("✅ Working system"):::o
 
 P_Audit --> P_Blueprint --> P_Impl --> O_Deliver
 
+P_Home("⬆️ Back to Home overview"):::p
+
 click P_Audit "/services/epistemic-audit/" "Epistemic Audit"
 click P_Blueprint "/services/blueprint/" "Architecture Blueprint"
 click P_Impl "/services/implementation/" "Implementation"
+click P_Home "/#what-we-build" "Back to the main process map"
 ```
+
+<p>This is the delivery chain: start with <strong>🧪 Audit</strong> to surface failure modes and constraints, convert that into a <strong>🏗️ Blueprint</strong> your team can own, then execute <strong>🛠️ Implementation</strong> until you have a <strong>✅ working system</strong>. Use <strong>⬆️ Back to Home overview</strong> to return to the main process map.</p>
 </div>
 
 <div class="landing-section">
@@ -171,10 +253,15 @@ P_Choose --> I_Bio
 P_Choose --> I_Fin
 P_Choose --> I_Legal
 
+P_Home("⬆️ Back to Home overview"):::p
+
 click I_Bio "/case-studies/biomedicine/" "Biomedicine"
 click I_Fin "/case-studies/finance/" "Finance"
 click I_Legal "/case-studies/legal/" "Legal"
+click P_Home "/#what-we-build" "Back to the main process map"
 ```
+
+<p>Pick your operating context: <strong>🧭 Choose a domain</strong> routes you into <strong>🧬 Biomedicine</strong>, <strong>💳 Finance</strong>, or <strong>⚖️ Legal</strong>. Use <strong>⬆️ Back to Home overview</strong> to return to the main process map.</p>
 </div>
 
 <div class="landing-section">
@@ -214,10 +301,15 @@ P_Pick --> I_Reasoners
 P_Pick --> I_5Reasons
 P_Pick --> I_Inquiry
 
+P_Home("⬆️ Back to Home overview"):::p
+
 click I_Reasoners "/reasoners/" "Reasoners"
 click I_5Reasons "/blog/" "Blog"
 click I_Inquiry "/home/inquiry/" "Inquiry"
+click P_Home "/#what-we-build" "Back to the main process map"
 ```
+
+<p>This is the “next step” chooser: start at <strong>🧭 Pick your path</strong>, then go to <strong>🤝 Reasoners</strong> if you need infrastructure and governance, <strong>📝 5Reasons</strong> if you want analysis and diagrams, or <strong>📝 Inquiry</strong> if you want a fast fit check. Use <strong>⬆️ Back to Home overview</strong> to return to the main process map.</p>
 </div>
 
 <div class="landing-section">

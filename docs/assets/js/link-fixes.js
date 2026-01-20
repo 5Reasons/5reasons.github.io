@@ -1,4 +1,21 @@
 (function () {
+  function applyLegacyRedirects() {
+    const path = window.location.pathname || '';
+
+    const redirects = {
+      '/about/': '/reasoners/about/',
+      '/about/team/': '/reasoners/team/',
+      '/about/faq/': '/reasoners/faq/',
+      '/about/terms/': '/reasoners/terms/',
+    };
+
+    const target = redirects[path];
+    if (!target) return;
+
+    const nextUrl = `${target}${window.location.search || ''}${window.location.hash || ''}`;
+    if (nextUrl !== window.location.href) window.location.replace(nextUrl);
+  }
+
   function isLikelyInternalHref(href) {
     if (!href) return false;
     if (href.startsWith('#')) return false;
@@ -40,9 +57,18 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fixLinks);
-  } else {
+  function run() {
+    applyLegacyRedirects();
     fixLinks();
+  }
+
+  if (typeof document$ !== 'undefined' && document$ && typeof document$.subscribe === 'function') {
+    document$.subscribe(run);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
   }
 })();
