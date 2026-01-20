@@ -5,7 +5,7 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 
 --8<-- "includes/quicknav.html"
 
-# Core Primitives
+# Core primitives of the brModel
 
 <div class="landing-section">
     <img class="glightbox" src="/assets/img/image_4.png"/>
