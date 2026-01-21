@@ -25,8 +25,90 @@
     }
   }
 
+  function markMermaidLinkedLabels(root) {
+    try {
+      var scope = root || document;
+
+      // Only target HTML labels inside foreignObject; SVG <a> isn't reliably
+      // compatible with generated content across browsers.
+      var links = scope.querySelectorAll(
+        ".mermaid foreignObject a[href], svg[id^='__mermaid_'] foreignObject a[href]"
+      );
+
+      links.forEach(function (a) {
+        if (!a) return;
+        if (a.dataset && a.dataset.mermaidLinkMarked === "1") return;
+
+        // Avoid double-marking if Mermaid reuses DOM fragments.
+        if (a.querySelector && a.querySelector(".br-mermaid-link-marker")) {
+          if (a.dataset) a.dataset.mermaidLinkMarked = "1";
+          return;
+        }
+
+        var marker = document.createElement("span");
+        marker.className = "br-mermaid-link-marker";
+        marker.setAttribute("aria-hidden", "true");
+        marker.textContent = "✦";
+        a.appendChild(marker);
+
+        if (a.dataset) a.dataset.mermaidLinkMarked = "1";
+      });
+    } catch (e) {
+      // Non-fatal.
+    }
+  }
+
+  function fixMermaidLinkUnderlines(root) {
+    try {
+      var scope = root || document;
+
+      // Mermaid can inject SVG-scoped rules like:
+      // `#__mermaid_0 a .nodeLabel { text-decoration: underline; }`
+      // CSS overrides can lose depending on cascade; inline !important wins.
+      var svgLabelEls = scope.querySelectorAll(
+        "svg[id^='__mermaid_'] a .nodeLabel, svg[id^='__mermaid_'] a .nodeLabel *"
+      );
+
+      svgLabelEls.forEach(function (el) {
+        if (!el || !el.style) return;
+        // Avoid repeated work.
+        if (el.dataset && el.dataset.mermaidUnderlineFixed === "1") return;
+
+        if (el.style && el.style.setProperty) {
+          el.style.setProperty("text-decoration", "none", "important");
+          el.style.setProperty("text-decoration-line", "none", "important");
+        } else {
+          el.style.textDecoration = "none";
+        }
+
+        if (el.dataset) el.dataset.mermaidUnderlineFixed = "1";
+      });
+
+      // HTML labels inside foreignObject can also contain links.
+      var htmlLabelEls = scope.querySelectorAll(
+        ".mermaid foreignObject a[href] .nodeLabel, .mermaid foreignObject a[href] .nodeLabel *"
+      );
+
+      htmlLabelEls.forEach(function (el) {
+        if (!el || !el.style) return;
+        if (el.dataset && el.dataset.mermaidUnderlineFixed === "1") return;
+        if (el.style && el.style.setProperty) {
+          el.style.setProperty("text-decoration", "none", "important");
+          el.style.setProperty("text-decoration-line", "none", "important");
+        } else {
+          el.style.textDecoration = "none";
+        }
+        if (el.dataset) el.dataset.mermaidUnderlineFixed = "1";
+      });
+    } catch (e) {
+      // Non-fatal.
+    }
+  }
+
   function onPageRender() {
     fixMermaidInlineLabelStyles(document);
+    markMermaidLinkedLabels(document);
+    fixMermaidLinkUnderlines(document);
 
     // Mermaid rendering can happen after the page is swapped in (instant navigation)
     // so observe for newly inserted SVG/foreignObject nodes.
@@ -46,10 +128,14 @@
             (n.matches("svg") || n.matches("foreignObject") || n.matches(".mermaid"))
           ) {
             fixMermaidInlineLabelStyles(document);
+            markMermaidLinkedLabels(document);
+            fixMermaidLinkUnderlines(document);
             return;
           }
           if (n.querySelector && n.querySelector(".mermaid svg, foreignObject")) {
             fixMermaidInlineLabelStyles(document);
+            markMermaidLinkedLabels(document);
+            fixMermaidLinkUnderlines(document);
           }
         });
       }

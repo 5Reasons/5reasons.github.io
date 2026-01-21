@@ -52,6 +52,55 @@ svg[id^="__mermaid_"] foreignObject [style*="white-space: nowrap"] {
   white-space: normal !important;
 }
 
+/* Mermaid: links inside nodes should not be underlined.
+   Keep this scoped to Mermaid so we don't change site-wide link styling. */
+.mermaid a,
+svg[id^="__mermaid_"] a {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+/* Mermaid sometimes injects rules like:
+   `#__mermaid_0 a .nodeLabel { text-decoration: underline; }`
+   so we must also reset decoration on the label container itself. */
+.mermaid a .nodeLabel,
+.mermaid a .nodeLabel *,
+svg[id^="__mermaid_"] a .nodeLabel,
+svg[id^="__mermaid_"] a .nodeLabel * {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.mermaid a:link,
+.mermaid a:visited,
+svg[id^="__mermaid_"] a:link,
+svg[id^="__mermaid_"] a:visited {
+  color: inherit !important;
+}
+
+.mermaid a:hover,
+.mermaid a:active,
+svg[id^="__mermaid_"] a:hover,
+svg[id^="__mermaid_"] a:active {
+  text-decoration: none !important;
+}
+
+.mermaid a {
+  cursor: pointer;
+}
+
+/* Optional: small marker for clickable Mermaid node labels.
+   Inserted by docs/assets/js/mermaid-label-fixes.js for foreignObject (HTML) labels. */
+.mermaid .br-mermaid-link-marker {
+  margin-left: 0.25em;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+[data-md-color-scheme="slate"] .mermaid .br-mermaid-link-marker {
+  opacity: 0.85;
+}
+
 /* Some Mermaid render paths place label text into spans under classed nodes
    (e.g., `.r span`). Ensure those spans can wrap too. */
 svg[id^="__mermaid_"] .label span,

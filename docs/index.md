@@ -25,7 +25,7 @@
 </div>
 
 ## Home Navigation
-
+🧭 Some nodes in the diagram are **clickable** — hover to see a pointer cursor, then click to navigate to the relevant page.
 <div class="landing-card">
 <p><strong>Rule of thumb:</strong> orient → self-identify → pick a tab → return here when you feel lost.</p>
 
