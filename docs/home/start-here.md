@@ -13,7 +13,7 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 			<p class="landing-kicker">Your first 10 minutes</p>
 			<h2 class="landing-title">Pick a path. Get to signal fast.</h2>
 			<p class="landing-subtitle">
-				This site has two complementary layers: <strong>Reasoners</strong> (consulting + cognitive infrastructure) and <strong>5Reasons</strong> (writing about causal AI).
+				This site has two complementary layers: <strong>Reasoners, Philosophy, Methodology and Services</strong> (consulting + cognitive infrastructure) and <strong>Case Studies and Blog</strong> (writing about causal AI).
 				Use this page to choose the fastest route based on your role.
 			</p>
 			<div class="landing-cta">
@@ -40,7 +40,7 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
 I_Home("Back to home"):::i
-S_Visitor("👤 Visitor"):::s
+S_Visitor("👤 Visitor (YOU)"):::s
 P_Ident{"Choose your role"}:::p
 
 S_Buyer("🧑‍💼 Buyer / operator"):::s
@@ -60,10 +60,38 @@ click I_Home "/" "Home"
 ```
 </div>
 
+<div class="landing-section">
+	<div class="landing-grid">
+		<div class="landing-card">
+			<h3>Buyer / operator</h3>
+			<p>If you’re evaluating fit, risk, and outcomes — start with services and one real case.</p>
+			<p>
+				<a class="md-button md-button--primary" href="/services/">Services</a>
+				<a class="md-button" href="/case-studies/">Case studies</a>
+			</p>
+		</div>
+		<div class="landing-card">
+			<h3>Engineer / architect</h3>
+			<p>If you care about how it works — start with primitives, traces, and constraints.</p>
+			<p>
+				<a class="md-button md-button--primary" href="/methodology/">Methodology</a>
+				<a class="md-button" href="/philosophy/">Philosophy</a>
+			</p>
+		</div>
+		<div class="landing-card">
+			<h3>Reader / analyst</h3>
+			<p>If you want causal writing and reusable diagrams — start with the blog index and diagram gallery.</p>
+			<p>
+				<a class="md-button md-button--primary" href="/blog/">Blog</a>
+			</p>
+		</div>
+	</div>
+</div>
+
 ## Buyer / operator
 
 <div class="landing-card" id="buyer-operator">
-<p><strong>The causal question</strong>: If your job is to own risk and outcomes, what sequence of pages turns ambiguity into a safe next step?</p>
+<p>If your job is to own risk and outcomes, what sequence of pages turns ambiguity into a safe next step?</p>
 
 ```mermaid
 flowchart TB
@@ -97,7 +125,7 @@ click P_Start "/services/start/" "Start a conversation"
 ## Engineer / architect
 
 <div class="landing-card" id="engineer-architect">
-<p><strong>The causal question</strong>: If you build systems, what path gets you from “interesting idea” to a concrete architecture you can implement and govern?</p>
+<p>If you build systems, what path gets you from “interesting idea” to a concrete architecture you can implement and govern?</p>
 
 ```mermaid
 flowchart TB
@@ -131,7 +159,7 @@ click P_Constr "/methodology/constraints/" "Constraints & SHACL"
 ## Reader / analyst
 
 <div class="landing-card" id="reader-analyst">
-<p><strong>The causal question</strong>: If you’re learning, what path gives you reusable mental models (not just opinions) as fast as possible?</p>
+<p>If you’re learning, what path gives you reusable mental models (not just opinions) as fast as possible?</p>
 
 ```mermaid
 flowchart TB
@@ -160,34 +188,6 @@ click P_Topics "/blog/topics/" "Topics"
 ```
 
 <p>For analysts, the output is a <strong>model you can argue with</strong>: explicit mechanisms, counterfactual claims, and diagrams that connect evidence to decisions. That’s the fastest way to build signal without getting trapped in “AI vibes”.</p>
-</div>
-
-<div class="landing-section">
-	<div class="landing-grid">
-		<div class="landing-card">
-			<h3>Buyer / operator</h3>
-			<p>If you’re evaluating fit, risk, and outcomes — start with services and one real case.</p>
-			<p>
-				<a class="md-button md-button--primary" href="/services/">Services</a>
-				<a class="md-button" href="/case-studies/">Case studies</a>
-			</p>
-		</div>
-		<div class="landing-card">
-			<h3>Engineer / architect</h3>
-			<p>If you care about how it works — start with primitives, traces, and constraints.</p>
-			<p>
-				<a class="md-button md-button--primary" href="/methodology/">Methodology</a>
-				<a class="md-button" href="/philosophy/">Philosophy</a>
-			</p>
-		</div>
-		<div class="landing-card">
-			<h3>Reader / analyst</h3>
-			<p>If you want causal writing and reusable diagrams — start with the blog index and diagram gallery.</p>
-			<p>
-				<a class="md-button md-button--primary" href="/blog/">Blog</a>
-			</p>
-		</div>
-	</div>
 </div>
 
 ## Three recommended “reading paths”

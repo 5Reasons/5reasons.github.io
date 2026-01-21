@@ -274,7 +274,7 @@ click R_Logs "/reasoners/governance/" "Governance Approach"
 click P_Maint "/services/partnership/" "Ongoing Partnership"
 ```
 
-<p>This is a <strong>gated delivery system</strong>: each phase produces a concrete artifact (yellow) and a <strong>go/no-go</strong> decision (diamonds). You begin with <strong>🔎 Epistemic audit</strong> to produce a <strong>🧾 audit report</strong>, then move into <strong>🗺️ planning</strong> to produce a <strong>📐 blueprint</strong>. Only then do you execute <strong>🧑‍💻 implementation</strong> into <strong>🧠 production memory</strong> with <strong>🛰️ operations</strong>, <strong>🧾 logs</strong>, and <strong>🛠️ maintenance</strong>. Maintenance yields <strong>🧩 change proposals</strong> that loop back into planning — so the system improves without rewriting everything. </p>
+<p>This is a <strong>gated delivery system</strong>: each phase produces a concrete artifact and a <strong>go/no-go</strong> decision (diamonds). You begin with <strong>🔎 Epistemic audit</strong> to produce a <strong>🧾 audit report</strong>, then move into <strong>🗺️ planning</strong> to produce a <strong>📐 blueprint</strong>. Only then do you execute <strong>🧑‍💻 implementation</strong> into <strong>🧠 production memory</strong> with <strong>🛰️ operations</strong>, <strong>🧾 logs</strong>, and <strong>🛠️ maintenance</strong>. Maintenance yields <strong>🧩 change proposals</strong> that loop back into planning — so the system improves without rewriting everything. </p>
 </div>
 
 ## Validated where it hurts
@@ -455,7 +455,7 @@ click O_Inquiry "/home/inquiry/" "Inquiry"
       </p>
       <p>
         <a class="md-button" href="reasoners/terms/">Terms of Use</a>
-        <a class="md-button" href="services/start/">Request a license</a>
+        <a class="md-button" href="services/start/">Request a license (brModel)</a>
       </p>
     </div>
     <div class="landing-card">
