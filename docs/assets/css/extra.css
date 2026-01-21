@@ -5,6 +5,71 @@
   text-align: center;
 }
 
+/* Mermaid HTML labels often render as <p> inside an SVG foreignObject.
+   Default paragraph margins can make text “leak” outside node shapes.
+   Keep labels tight and predictable (use <br> in Mermaid text for manual wrapping). */
+.mermaid .nodeLabel p,
+.mermaid .edgeLabel p,
+.mermaid .label p {
+  margin: 0;
+}
+
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .label {
+  line-height: 1.2;
+}
+
+.mermaid .nodeLabel,
+.mermaid .nodeLabel * {
+  white-space: normal;
+}
+
+/* Mermaid sometimes injects inline styles on the HTML label container inside
+   SVG <foreignObject> (e.g., `white-space: nowrap; max-width: 200px; display: table-cell;`).
+   These cause text to overflow node shapes. Override them aggressively. */
+.mermaid foreignObject > div[style] {
+  display: block !important;
+  white-space: normal !important;
+  max-width: none !important;
+  line-height: 1.2 !important;
+  overflow: visible !important;
+}
+
+/* Mermaid sometimes places the problematic inline styles on nested elements,
+   not directly on `foreignObject > div`. Catch those variants too. */
+.mermaid foreignObject [style*="white-space"] {
+  white-space: normal !important;
+}
+
+.mermaid foreignObject [style*="max-width"] {
+  max-width: none !important;
+}
+
+.mermaid foreignObject [style*="display"] {
+  display: block !important;
+}
+
+.mermaid foreignObject [style*="line-height"] {
+  line-height: 1.2 !important;
+}
+
+/* Dark mode: Mermaid node labels must stay readable.
+   Mermaid renders labels sometimes as SVG text (needs `fill`) and sometimes as HTML
+   inside foreignObject (needs `color`). */
+[data-md-color-scheme="slate"] {
+  /* MkDocs Material provides Mermaid label styles via this CSS custom property.
+     Overriding the variable is the most robust way to beat Mermaid's injected
+     per-diagram rules like `#__mermaid_0 .nodeLabel p { color: var(...) }`. */
+  --md-mermaid-label-fg-color: #000000;
+}
+
+[data-md-color-scheme="slate"] .mermaid .nodeLabel,
+[data-md-color-scheme="slate"] .mermaid .nodeLabel * {
+  color: #000000 !important;
+  fill: #000000 !important;
+  white-space: normal !important;
+}
 /* Horizontal quick navigation (page-level) */
 .quicknav {
   display: flex;
