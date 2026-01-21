@@ -165,8 +165,8 @@ direction TB
 I_Q1(["📥 Question + context"]):::i
 P_LLM1("🧠 Generate an answer"):::p
 R_Text1["📝 Plausible text<br>(no guarantees)"]:::r
-P_Check1{"Can we justify it?"}:::p
-S_Error1("⚠️ Confident error"):::s
+P_Check1{"Can we justify it?"}:::s
+S_Error1("⚠️ Confident error"):::i
 I_Q1 --> P_LLM1 --> R_Text1 --> P_Check1 --> S_Error1
 end
 
@@ -219,11 +219,11 @@ I_Goal(["🎯 Decision + constraints + failure modes"]):::i
 
 P_Audit("🔎 Epistemic audit"):::p
 R_AuditReport["🧾 Audit report: <br>gaps, risks, hypotheses"]:::r
-G1{"Proceed?"}:::p
+G1{"Proceed?"}:::s
 
 P_Plan("🗺️ Architectural planning"):::p
 R_Blueprint["📐 Blueprint: ontology + <br>constraints + ingestion"]:::r
-G2{"Proceed?"}:::p
+G2{"Proceed?"}:::s
 
 P_Impl("🧑‍💻 Implementation"):::p
 O_Memory("🧠 Memory <br>+ governance in production"):::o
@@ -233,7 +233,7 @@ R_Logs["🧾 Reasoning logs"]:::r
 P_Maint("🛠️ Maintenance"):::p
 R_Change["🧩 Change proposals"]:::r
 
-S_Stop("🛑 Stop / rescope"):::s
+S_Stop("🛑 Stop / rescope"):::i
 
 I_Goal --> P_Audit --> R_AuditReport --> G1
 G1 -->|"no"| S_Stop
@@ -288,9 +288,10 @@ classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
 classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Decision(["🎯 What must be correct?"]):::i
-P_Domain{"Pick a domain"}:::p
+P_Domain{"Pick a domain"}:::s
 
 P_Bio("🧬 Biomedicine"):::p
 R_Bio["🧾 Mechanisms <br>+ evidence chains"]:::r
@@ -352,9 +353,10 @@ classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
 classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Intent(["🧭 What do you need now?"]):::i
-P_Pick{"Pick intent"}:::p
+P_Pick{"Pick intent"}:::s
 
 P_Reasoners("🤝 Reasoners"):::p
 R_Reasoners["📐 Governance <br>+ operating model <br>+ architecture"]:::r
