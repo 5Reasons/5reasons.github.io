@@ -5,53 +5,64 @@
   text-align: center;
 }
 
-/* Mermaid HTML labels often render as <p> inside an SVG foreignObject.
-   Default paragraph margins can make text “leak” outside node shapes.
-   Keep labels tight and predictable (use <br> in Mermaid text for manual wrapping). */
+/* Mermaid label wrapping (fix text overflow)
+   Mermaid often renders node/edge labels as HTML inside SVG <foreignObject> and
+   may inject inline styles like `white-space: nowrap; max-width: 200px; display: table-cell;`.
+   We override those so labels can wrap (you can use <br> for deterministic breaks). */
+.mermaid .label p,
 .mermaid .nodeLabel p,
-.mermaid .edgeLabel p,
-.mermaid .label p {
+.mermaid .edgeLabel p {
   margin: 0;
+  overflow-wrap: break-word;
+  white-space: normal !important;
 }
 
+.mermaid .label,
 .mermaid .nodeLabel,
-.mermaid .edgeLabel,
-.mermaid .label {
+.mermaid .edgeLabel {
   line-height: 1.2;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
 }
 
+/* Prefer wrapping for all Mermaid labels */
+.mermaid .label,
+.mermaid .label *,
 .mermaid .nodeLabel,
-.mermaid .nodeLabel * {
-  white-space: normal;
+.mermaid .nodeLabel *,
+.mermaid .edgeLabel,
+.mermaid .edgeLabel * {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word !important;
 }
 
-/* Mermaid sometimes injects inline styles on the HTML label container inside
-   SVG <foreignObject> (e.g., `white-space: nowrap; max-width: 200px; display: table-cell;`).
-   These cause text to overflow node shapes. Override them aggressively. */
-.mermaid foreignObject > div[style] {
-  display: block !important;
-  white-space: normal !important;
-  max-width: none !important;
-  line-height: 1.2 !important;
+/* Ensure the foreignObject isn't clipping the HTML label */
+.mermaid foreignObject,
+.mermaid foreignObject * {
   overflow: visible !important;
-}
-
-/* Mermaid sometimes places the problematic inline styles on nested elements,
-   not directly on `foreignObject > div`. Catch those variants too. */
-.mermaid foreignObject [style*="white-space"] {
+  overflow-wrap: break-word !important;
   white-space: normal !important;
 }
 
-.mermaid foreignObject [style*="max-width"] {
-  max-width: none !important;
+/* Mermaid may force nowrap via inline styles on HTML label containers.
+   Do the minimal override: flip nowrap -> normal (keep Mermaid's own max-width). */
+.mermaid foreignObject [style*="white-space: nowrap"],
+svg[id^="__mermaid_"] foreignObject [style*="white-space: nowrap"] {
+  white-space: normal !important;
 }
 
-.mermaid foreignObject [style*="display"] {
-  display: block !important;
-}
-
-.mermaid foreignObject [style*="line-height"] {
-  line-height: 1.2 !important;
+/* Some Mermaid render paths place label text into spans under classed nodes
+   (e.g., `.r span`). Ensure those spans can wrap too. */
+svg[id^="__mermaid_"] .label span,
+svg[id^="__mermaid_"] .nodeLabel span,
+svg[id^="__mermaid_"] .edgeLabel span,
+svg[id^="__mermaid_"] .r span,
+svg[id^="__mermaid_"] .p span,
+svg[id^="__mermaid_"] .s span,
+svg[id^="__mermaid_"] .o span,
+svg[id^="__mermaid_"] .i span {
+  white-space: normal !important;
 }
 
 /* Dark mode: Mermaid node labels must stay readable.
@@ -62,6 +73,8 @@
      Overriding the variable is the most robust way to beat Mermaid's injected
      per-diagram rules like `#__mermaid_0 .nodeLabel p { color: var(...) }`. */
   --md-mermaid-label-fg-color: #000000;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
 }
 
 [data-md-color-scheme="slate"] .mermaid .nodeLabel,
@@ -69,7 +82,9 @@
   color: #000000 !important;
   fill: #000000 !important;
   white-space: normal !important;
+  overflow-wrap: break-word !important;
 }
+
 /* Horizontal quick navigation (page-level) */
 .quicknav {
   display: flex;
@@ -82,7 +97,7 @@
 }
 
 .quicknav__link {
-  white-space: nowrap;
+  /* white-space: nowrap; */
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;

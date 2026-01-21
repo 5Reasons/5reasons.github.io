@@ -82,7 +82,7 @@ P_ArchPlan("🗺️ Architectural planning"):::p
 R_Blueprint("📐 Architecture blueprint"):::r
 P_Impl("🧑‍💻 Implementation"):::p
 O_Memory("🧠 Memory for AI agents"):::o
-P_Ops("🛰️ Agentic system<br>providing"):::p
+P_Ops("🛰️ Agentic systemproviding"):::p
 R_Logs("🧾 Reasoning logs"):::r
 P_Maint("🛠️ Maintenance"):::p
 O_Reporting("📊 Reporting"):::o
@@ -171,9 +171,9 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 subgraph S1["Statistical AI"]
 direction TB
-I_Q1(["📥 Question + sources <br>+ context"]):::i
+I_Q1(["📥 Question + sources + context"]):::i
 P_LLM1("🧠 Generate an answer"):::p
-R_Text1["📝 Plausible text<br>(no guarantees)"]:::r
+R_Text1["📝 Plausible text(no guarantees)"]:::r
 P_Check1{"Can we justify it?"}:::s
 S_Error1("⚠️ Confident error"):::i
 I_Q1 --> P_LLM1 --> R_Text1 --> P_Check1 --> S_Error1
@@ -183,10 +183,10 @@ subgraph S2["brModel"]
 direction TB
 I_Q2(["📥 Question + sources"]):::i
 P_Memory("🧭 Retrieve causal memory"):::p
-R_Trace["🧾 Reasoning<br>trace + provenance"]:::r
+R_Trace["🧾 Reasoningtrace + provenance"]:::r
 P_Constraints("🔒 Enforce constraints"):::p
 O_Safe("✅ Auditable action"):::o
-S_Block("🛑 Refuse <br>ask for missing data"):::s
+S_Block("🛑 Refuse ask for missing data"):::s
 I_Q2 --> P_Memory --> R_Trace --> P_Constraints --> O_Safe
 P_Constraints -. "blocked" .-> S_Block
 end
@@ -238,15 +238,15 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 I_Goal(["🎯 Decision + constraints + failure modes"]):::i
 
 P_Audit("🔎 Epistemic audit"):::p
-R_AuditReport["🧾 Audit report: <br>gaps, risks, hypotheses"]:::r
+R_AuditReport["🧾 Audit report: gaps, risks, hypotheses"]:::r
 G1{"Proceed?"}:::s
 
 P_Plan("🗺️ Architectural planning"):::p
-R_Blueprint["📐 Blueprint: ontology + <br>constraints + ingestion"]:::r
+R_Blueprint["📐 Blueprint: ontology + constraints + ingestion"]:::r
 G2{"Proceed?"}:::s
 
 P_Impl("🧑‍💻 Implementation"):::p
-O_Memory("🧠 Memory <br>+ governance in production"):::o
+O_Memory("🧠 Memory + governance in production"):::o
 
 P_Ops("🛰️ Operations"):::p
 R_Logs["🧾 Reasoning logs"]:::r
@@ -292,31 +292,31 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-P_Route(["🎯 What failure <br>is unacceptable?<br>Choose a case study"]):::i
+P_Route(["🎯 What failure is unacceptable?Choose a case study"]):::i
 
 subgraph G_Reg["Regulated decisions"]
 direction LR
-P_Fin("💳 Finance<br>Constraints that<br> cannot be bypassed"):::p
-P_Ins("🛡️ Insurance<br>Policy logic <br>+ controlled approvals"):::p
-P_Legal("⚖️ Legal<br>Clause logic <br>+ conflict detection"):::p
+P_Fin("💳 FinanceConstraints that cannot be bypassed"):::p
+P_Ins("🛡️ InsurancePolicy logic + controlled approvals"):::p
+P_Legal("⚖️ LegalClause logic + conflict detection"):::p
 end
 
 subgraph G_Bio["Bio & clinical"]
 direction LR
-P_Bio("🧬 Biomedicine<br>Mechanisms <br>+ evidence chains"):::p
-P_Pharma("🧪 Pharma & Clinical Ops<br>Traceable decisions <br>in workflows"):::p
+P_Bio("🧬 BiomedicineMechanisms + evidence chains"):::p
+P_Pharma("🧪 Pharma & Clinical OpsTraceable decisions in workflows"):::p
 end
 
 subgraph G_Ops["Operational systems"]
 direction LR
-P_Cyber("🧯 Cybersecurity<br>Reasoning under <br>adversarial conditions"):::p
-P_Energy("⚡ Energy & Utilities<br>Safety + critical operations"):::p
-P_Manu("🏭 Manufacturing<br>Process constraints <br>+ reliability"):::p
+P_Cyber("🧯 CybersecurityReasoning under adversarial conditions"):::p
+P_Energy("⚡ Energy & UtilitiesSafety + critical operations"):::p
+P_Manu("🏭 ManufacturingProcess constraints + reliability"):::p
 end
 
 subgraph G_Org["Enterprise memory"]
 direction LR
-P_ECM("🏢 Enterprise <br>Central Memory<br>Shared semantics <br>+ governance"):::p
+P_ECM("🏢 Enterprise Central MemoryShared semantics + governance"):::p
 end
 
 P_Route --> G_Reg
@@ -408,15 +408,15 @@ I_Intent(["🧭 What do you need now?"]):::i
 P_Pick{"Pick intent"}:::s
 
 P_Reasoners("🤝 Reasoners"):::p
-R_Reasoners["📐 Governance <br>+ operating model <br>+ architecture"]:::r
-O_Reasoners("✅ Build cognitive <br>infrastructure"):::o
+R_Reasoners["📐 Governance + operating model + architecture"]:::r
+O_Reasoners("✅ Build cognitive infrastructure"):::o
 
 P_5Reasons("📝 5Reasons (blog)"):::p
-R_5Reasons["🧾 Causal posts <br>+ diagrams <br>+ counterfactuals"]:::r
+R_5Reasons["🧾 Causal posts + diagrams + counterfactuals"]:::r
 O_5Reasons("✅ Understand mechanisms"):::o
 
 P_Inquiry("📝 Inquiry"):::p
-R_Inquiry["🧾 Problem statement <br>+ constraints <br>+ fit check"]:::r
+R_Inquiry["🧾 Problem statement + constraints + fit check"]:::r
 O_Inquiry("✅ Clear next step"):::o
 
 I_Intent --> P_Pick

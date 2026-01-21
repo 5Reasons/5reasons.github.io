@@ -13,7 +13,7 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 			<p class="landing-kicker">Your first 10 minutes</p>
 			<h2 class="landing-title">Pick a path. Get to signal fast.</h2>
 			<p class="landing-subtitle">
-				This site has two complementary layers: <strong>Reasoners</strong> (consulting + cognitive infrastructure) and <strong>5Reasons</strong> (public causal writing).
+				This site has two complementary layers: <strong>Reasoners</strong> (consulting + cognitive infrastructure) and <strong>5Reasons</strong> (writing about causal AI).
 				Use this page to choose the fastest route based on your role.
 			</p>
 			<div class="landing-cta">
@@ -28,7 +28,7 @@ description: "A quick orientation to the Reasoners × 5Reasons site: what’s wh
 ## Choose your role
 
 <div class="landing-card">
-<p><strong>The question this page answers</strong>: How does a first-time visitor self-identify, and which mental path leads them to real value (learning, dialogue, or an actionable engagement)?</p>
+<p>How does a first-time visitor self-identify, and which mental path leads them to real value?</p>
 
 ```mermaid
 flowchart TB
@@ -39,40 +39,127 @@ classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
 classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
-
-I_Home("? 5Reason web"):::i
-
-%% Subjects
+I_Home("Back to home"):::i
 S_Visitor("👤 Visitor"):::s
-S_Buyer("🧑‍💼 Buyer / Operator"):::s
-S_Eng("🧑‍💻 Engineer / Architect"):::s
-S_Read("🧑‍🔬 Reader / Analyst"):::s
+P_Ident{"Choose your role"}:::p
 
-%% Processes
-P_Ident("🧭 Self-Identification"):::p
-P_Biz("💬 Business evaluation"):::p
-P_Tech("🧩 Technical deep-dive"):::p
-P_Learn("📚 Learn about causality"):::p
+S_Buyer("🧑‍💼 Buyer / operator"):::s
+S_Eng("🧑‍💻 Engineer / architect"):::s
+S_Read("🧑‍🔬 Reader / analyst"):::s
 
-
-%% Flow
 I_Home --> S_Visitor
 S_Visitor --> P_Ident
 P_Ident --> S_Buyer
 P_Ident --> S_Eng
 P_Ident --> S_Read
 
-S_Buyer --> P_Biz
-S_Eng --> P_Tech 
-S_Read --> P_Learn 
-
-%% Links (existing pages + wizard drill-down sections)
+click S_Buyer "/home/start-here/#buyer-operator" "Jump to Buyer path"
+click S_Eng "/home/start-here/#engineer-architect" "Jump to Engineer path"
+click S_Read "/home/start-here/#reader-analyst" "Jump to Reader path"
 click I_Home "/" "Home"
-click S_Visitor "/home/start-here/" "Start Here"
-click S_Buyer "/wizard/#buyer" "Jump to Buyer flow"
-click S_Eng "/wizard/#engineer" "Jump to Engineer flow"
-
 ```
+</div>
+
+## Buyer / operator
+
+<div class="landing-card" id="buyer-operator">
+<p><strong>The causal question</strong>: If your job is to own risk and outcomes, what sequence of pages turns ambiguity into a safe next step?</p>
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+
+S_Buyer("🧑‍💼 Buyer / operator"):::s
+I_Problem(["🎯 Decision + constraints + unacceptable failure"]):::i
+
+P_Services("🧰 Services"):::p
+P_Case("🧾 Case studies"):::p
+R_Risk["🧾 Risk picture + staged roadmap"]:::r
+
+P_Start("📞 Start a conversation"):::p
+O_Next("✅ Clear lowest-risk next step"):::o
+
+S_Buyer --> I_Problem --> P_Services --> P_Case --> R_Risk --> P_Start --> O_Next
+
+click P_Services "/services/" "Services"
+click P_Case "/case-studies/" "Case studies"
+click P_Start "/services/start/" "Start a conversation"
+```
+
+<p>For an operator, the value is not “more information” — it’s <strong>risk reduction</strong>. You start from the decision you must make, use <strong>🧰 services</strong> and <strong>🧾 case studies</strong> to surface failure modes, and convert that into a <strong>🧾 risk picture + roadmap</strong> before you invest further.</p>
+</div>
+
+## Engineer / architect
+
+<div class="landing-card" id="engineer-architect">
+<p><strong>The causal question</strong>: If you build systems, what path gets you from “interesting idea” to a concrete architecture you can implement and govern?</p>
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+
+S_Eng("🧑‍💻 Engineer / architect"):::s
+I_Stack(["🧩 What must be enforced and why?"]):::i
+
+P_Prim("📐 Methodology"):::p
+P_Traces("🧭 CausalGraphRAG"):::p
+P_Constr("🔒 Constraints & SHACL"):::p
+
+R_Design["📐 Architecture primitives + enforcement model"]:::r
+O_Build("✅ Buildable, auditable system design"):::o
+
+S_Eng --> I_Stack --> P_Prim --> P_Traces --> P_Constr --> R_Design --> O_Build
+
+click P_Prim "/methodology/" "Methodology"
+click P_Traces "/methodology/causalgraphrag/" "CausalGraphRAG"
+click P_Constr "/methodology/constraints/" "Constraints & SHACL"
+```
+
+<p>For an engineer, the causal pivot is simple: <strong>constraints + provenance + traces</strong> turn an LLM from “chat” into a system that can be <strong>governed</strong>. This path gives you the primitives you need to reason about correctness, not just capability.</p>
+</div>
+
+## Reader / analyst
+
+<div class="landing-card" id="reader-analyst">
+<p><strong>The causal question</strong>: If you’re learning, what path gives you reusable mental models (not just opinions) as fast as possible?</p>
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+
+S_Read("🧑‍🔬 Reader / analyst"):::s
+I_Why(["❓ What causes failure and what fixes it?"]):::i
+
+P_ReadHow("📝 How to read"):::p
+P_Blog("📰 Blog"):::p
+P_Topics("🏷️ Topics"):::p
+
+R_Models["🧾 Causal models + diagrams + counterfactuals"]:::r
+O_Transfer("✅ Transferable frameworks"):::o
+
+S_Read --> I_Why --> P_ReadHow --> P_Blog --> P_Topics --> R_Models --> O_Transfer
+
+click P_ReadHow "/blog/how-to-read/" "How to Read Posts"
+click P_Blog "/blog/" "Blog"
+click P_Topics "/blog/topics/" "Topics"
+```
+
+<p>For analysts, the output is a <strong>model you can argue with</strong>: explicit mechanisms, counterfactual claims, and diagrams that connect evidence to decisions. That’s the fastest way to build signal without getting trapped in “AI vibes”.</p>
 </div>
 
 <div class="landing-section">
