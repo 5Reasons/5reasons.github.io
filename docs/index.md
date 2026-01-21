@@ -12,7 +12,7 @@
       <p class="landing-kicker">We are building memory for AI agents</p>
       <h2 class="landing-title">Architects of mental model— and causal analytics for machines and humans.</h2>
       <p class="landing-subtitle">
-        We turn messy enterprise reality (PDF + SQL + policies + domain expertise) into <strong>decision-grade cognitive infrastructure</strong>:
+        We turn messy enterprise reality (files + databases + policies + domain expertise) into <strong>decision-grade cognitive infrastructure</strong>:
         causal graph memory, governance constraints, and auditable reasoning traces for LLMs and agentic systems.
       </p>
       <div class="landing-cta">
@@ -147,6 +147,15 @@ click O_Reporting "/reasoners/governance/" "Governance Approach"
 
 ## Why “statistical AI” fails in high-stakes domains
 
+
+<div class="landing-section">
+  <div class="landing-callout">
+    <p><strong>Similarity is not truth.</strong> LLMs are powerful pattern-completers, but without durable semantics and constraints they fail exactly where your organization can’t afford errors: medicine, finance, law, and critical engineering.</p>
+    <p class="landing-mini">If hallucination is unacceptable, the question is no longer “Which model?” — it’s “Where is the memory, logic, and audit trail?”</p>
+    <p><a class="md-button" href="philosophy/probabilistic-ai/">Read the Philosophy</a></p>
+  </div>
+</div>
+
 <div class="landing-card">
 <p><strong>The question this section answers</strong>: Why do LLMs fail precisely where you need correctness, provenance, and enforceable rules?</p>
 <p>The failure mode is predictable: pattern completion + missing constraints + missing audit trail → confident errors.</p>
@@ -162,7 +171,7 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 subgraph S1["Statistical AI"]
 direction TB
-I_Q1(["📥 Question + context"]):::i
+I_Q1(["📥 Question + sources <br>+ context"]):::i
 P_LLM1("🧠 Generate an answer"):::p
 R_Text1["📝 Plausible text<br>(no guarantees)"]:::r
 P_Check1{"Can we justify it?"}:::s
@@ -189,21 +198,32 @@ click P_Constraints "/methodology/constraints/" "Constraints & SHACL"
 click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
 
-<p>This diagram contrasts two causal mechanisms. In <strong>Statistical AI</strong>, a model turns <strong>📥 question + context</strong> into <strong>📝 plausible text</strong>, but when you can’t justify it you get <strong>⚠️ confident error</strong>. In <strong>brModel</strong>, you route the same question through <strong>🧭 causal memory</strong>, produce a <strong>🧾 trace + provenance</strong>, and <strong>🔒 enforce constraints</strong> so the system either produces an <strong>✅ auditable action</strong> or <strong>🛑 blocks</strong> and asks for missing evidence. Use <strong>⬆️ Home Navigation</strong> to return to the main process map.</p>
+<p>This diagram contrasts two causal mechanisms. In <strong>Statistical AI</strong>, a model turns <strong>📥 question + context</strong> into <strong>📝 plausible text</strong>, but when you can’t justify it you get <strong>⚠️ confident error</strong>. In <strong>brModel</strong>, you route the same question through <strong>🧭 causal memory</strong>, produce a <strong>🧾 trace + provenance</strong>, and <strong>🔒 enforce constraints</strong> so the system either produces an <strong>✅ auditable action</strong> or <strong>🛑 blocks</strong> and asks for missing evidence.</p>
 </div>
 
-<div class="landing-section">
-  <div class="landing-callout">
-    <p><strong>Similarity is not truth.</strong> LLMs are powerful pattern-completers, but without durable semantics and constraints they fail exactly where your organization can’t afford errors: medicine, finance, law, and critical engineering.</p>
-    <p class="landing-mini">If hallucination is unacceptable, the question is no longer “Which model?” — it’s “Where is the memory, logic, and audit trail?”</p>
-    <p><a class="md-button" href="philosophy/probabilistic-ai/">Read the Philosophy</a></p>
-  </div>
-</div>
 
 ## How we work (risk-minimizing engagement)
 
+<div class="landing-section">
+  <div class="landing-grid">
+    <div class="landing-card">
+      <h3>1) Epistemic Audit</h3>
+      <p>Reality check: data readiness, failure modes, hallucination risk, concept/ontology gaps, and a staged roadmap.</p>
+  <p><a class="md-button md-button--primary" href="services/">See services</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>2) Causal Architecture Blueprint</h3>
+      <p>We design the “physics” of your domain: ontology, constraints, ingestion strategy, and a reference architecture your team can own.</p>
+    </div>
+    <div class="landing-card">
+      <h3>3) Glass-Box Implementation</h3>
+      <p>Production delivery: graph memory, CausalGraphRAG reasoning traces, monitoring, and an operational playbook.</p>
+    </div>
+  </div>
+</div>
+
 <div class="landing-card">
-<p><strong>The question this section answers</strong>: What is the lowest-risk path from curiosity to a real deployment?</p>
+<p><strong>What is the lowest-risk path from curiosity to a real deployment?</strong></p>
 <p>We start by measuring failure modes, then design the architecture, then implement with auditable traces and enforcement.</p>
 
 ```mermaid
@@ -254,35 +274,17 @@ click R_Logs "/reasoners/governance/" "Governance Approach"
 click P_Maint "/services/partnership/" "Ongoing Partnership"
 ```
 
-<p>This is a <strong>gated delivery system</strong>: each phase produces a concrete artifact (yellow) and a <strong>go/no-go</strong> decision (diamonds). You begin with <strong>🔎 Epistemic audit</strong> to produce a <strong>🧾 audit report</strong>, then move into <strong>🗺️ planning</strong> to produce a <strong>📐 blueprint</strong>. Only then do you execute <strong>🧑‍💻 implementation</strong> into <strong>🧠 production memory</strong> with <strong>🛰️ operations</strong>, <strong>🧾 logs</strong>, and <strong>🛠️ maintenance</strong>. Maintenance yields <strong>🧩 change proposals</strong> that loop back into planning — so the system improves without rewriting everything. Use <strong>⬆️ Home Navigation</strong> to return to the main process map.</p>
-</div>
-
-<div class="landing-section">
-  <div class="landing-grid">
-    <div class="landing-card">
-      <h3>1) Epistemic Audit</h3>
-      <p>Reality check: data readiness, failure modes, hallucination risk, concept/ontology gaps, and a staged roadmap.</p>
-    </div>
-    <div class="landing-card">
-      <h3>2) Causal Architecture Blueprint</h3>
-      <p>We design the “physics” of your domain: ontology, constraints, ingestion strategy, and a reference architecture your team can own.</p>
-    </div>
-    <div class="landing-card">
-      <h3>3) Glass-Box Implementation</h3>
-      <p>Production delivery: graph memory, CausalGraphRAG reasoning traces, monitoring, and an operational playbook.</p>
-    </div>
-  </div>
-  <p><a class="md-button md-button--primary" href="services/">See services</a></p>
+<p>This is a <strong>gated delivery system</strong>: each phase produces a concrete artifact (yellow) and a <strong>go/no-go</strong> decision (diamonds). You begin with <strong>🔎 Epistemic audit</strong> to produce a <strong>🧾 audit report</strong>, then move into <strong>🗺️ planning</strong> to produce a <strong>📐 blueprint</strong>. Only then do you execute <strong>🧑‍💻 implementation</strong> into <strong>🧠 production memory</strong> with <strong>🛰️ operations</strong>, <strong>🧾 logs</strong>, and <strong>🛠️ maintenance</strong>. Maintenance yields <strong>🧩 change proposals</strong> that loop back into planning — so the system improves without rewriting everything. </p>
 </div>
 
 ## Validated where it hurts
 
 <div class="landing-card">
-<p><strong>The question this section answers</strong>: Where do these failure modes show up in the real world — and what does “good” look like?</p>
+<p><strong> Where do these failure modes show up in the real world — and what does “good” look like?</strong></p>
 <p>Pick one domain and follow the diagram into a concrete case study.</p>
 
 ```mermaid
-flowchart TB
+flowchart LR
 %% Styles (brModel Standard)
 classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
@@ -290,52 +292,99 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-I_Decision(["🎯 What must be correct?"]):::i
-P_Domain{"Pick a domain"}:::s
+P_Route(["🎯 What failure <br>is unacceptable?<br>Choose a case study"]):::i
 
-P_Bio("🧬 Biomedicine"):::p
-R_Bio["🧾 Mechanisms <br>+ evidence chains"]:::r
-O_Bio("✅ Case study"):::o
+subgraph G_Reg["Regulated decisions"]
+direction LR
+P_Fin("💳 Finance<br>Constraints that<br> cannot be bypassed"):::p
+P_Ins("🛡️ Insurance<br>Policy logic <br>+ controlled approvals"):::p
+P_Legal("⚖️ Legal<br>Clause logic <br>+ conflict detection"):::p
+end
 
-P_Fin("💳 Finance"):::p
-R_Fin["🧾 Enforceable policy <br>constraints"]:::r
-O_Fin("✅ Case study"):::o
+subgraph G_Bio["Bio & clinical"]
+direction LR
+P_Bio("🧬 Biomedicine<br>Mechanisms <br>+ evidence chains"):::p
+P_Pharma("🧪 Pharma & Clinical Ops<br>Traceable decisions <br>in workflows"):::p
+end
 
-P_Legal("⚖️ Legal"):::p
-R_Legal["🧾 Clause logic <br>+ conflict detection"]:::r
-O_Legal("✅ Case study"):::o
+subgraph G_Ops["Operational systems"]
+direction LR
+P_Cyber("🧯 Cybersecurity<br>Reasoning under <br>adversarial conditions"):::p
+P_Energy("⚡ Energy & Utilities<br>Safety + critical operations"):::p
+P_Manu("🏭 Manufacturing<br>Process constraints <br>+ reliability"):::p
+end
 
-I_Decision --> P_Domain
-P_Domain --> P_Bio --> R_Bio --> O_Bio
-P_Domain --> P_Fin --> R_Fin --> O_Fin
-P_Domain --> P_Legal --> R_Legal --> O_Legal
+subgraph G_Org["Enterprise memory"]
+direction LR
+P_ECM("🏢 Enterprise <br>Central Memory<br>Shared semantics <br>+ governance"):::p
+end
 
+P_Route --> G_Reg
+P_Route --> G_Bio
+P_Route --> G_Ops
+P_Route --> G_Org
+click P_Route "/case-studies/" "Case studies"
 
-
-click P_Bio "/case-studies/biomedicine/" "Biomedicine"
-click O_Bio "/case-studies/biomedicine/" "Biomedicine"
+click P_ECM "/case-studies/enterprise-central-memory/" "Enterprise Central Memory"
 click P_Fin "/case-studies/finance/" "Finance"
-click O_Fin "/case-studies/finance/" "Finance"
+click P_Ins "/case-studies/insurance/" "Insurance"
 click P_Legal "/case-studies/legal/" "Legal"
-click O_Legal "/case-studies/legal/" "Legal"
+click P_Bio "/case-studies/biomedicine/" "Biomedicine"
+click P_Pharma "/case-studies/pharma-clinical-ops/" "Pharma & Clinical Ops"
+click P_Cyber "/case-studies/cybersecurity/" "Cybersecurity"
+click P_Energy "/case-studies/energy-utilities/" "Energy & Utilities"
+click P_Manu "/case-studies/manufacturing/" "Manufacturing"
 ```
 
-<p>In high-stakes work, “accuracy” is not abstract — it is tied to a <strong>decision</strong> and a <strong>failure mode</strong>. This diagram routes you by domain and shows the kind of <strong>decision-grade artifacts</strong> (yellow) each case study focuses on: mechanism/evidence chains (biomedicine), enforceable constraints (finance), and logical conflict detection (legal). Use <strong>⬆️ Home Navigation</strong> to return to the main process map.</p>
+<p>In high-stakes work, “accuracy” is not abstract — it is tied to a <strong>decision</strong> and a <strong>failure mode</strong>. This diagram routes you by domain and shows the kind of <strong>decision-grade artifacts</strong> (yellow) each case study focuses on: mechanism/evidence chains (biomedicine), enforceable constraints (finance), and logical conflict detection (legal).</p>
 </div>
 
 <div class="landing-section">
   <div class="landing-grid">
     <div class="landing-card">
+      <h3>Enterprise Central Memory</h3>
+      <p>Cross-team semantics and governance: the memory layer that makes agents consistent across time, tools, and departments.</p>
+      <p><a class="md-button" href="case-studies/enterprise-central-memory/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
       <h3>Biomedicine</h3>
       <p>Mechanism discovery over PDFs + omics: explain <em>why</em> a therapy fails, not just which sentences look similar.</p>
+      <p><a class="md-button" href="case-studies/biomedicine/">Read case study</a></p>
     </div>
     <div class="landing-card">
       <h3>Finance</h3>
       <p>Compliance-by-design: enforce policy constraints so agents cannot approve what regulators would reject.</p>
+      <p><a class="md-button" href="case-studies/finance/">Read case study</a></p>
     </div>
     <div class="landing-card">
       <h3>Legal</h3>
       <p>Contract analysis as a knowledge graph: detect logical conflicts across clauses you’d never spot with keyword search.</p>
+      <p><a class="md-button" href="case-studies/legal/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>Insurance</h3>
+      <p>Policy logic and underwriting decisions: explicit constraints and traceable approvals that don’t depend on “prompt discipline”.</p>
+      <p><a class="md-button" href="case-studies/insurance/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>Cybersecurity</h3>
+      <p>Reasoning under adversarial pressure: enforceable guardrails, provenance, and incident-ready audit trails.</p>
+      <p><a class="md-button" href="case-studies/cybersecurity/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>Manufacturing</h3>
+      <p>Operational reliability: process constraints and repeatable decisions across shifts, machines, and exception handling.</p>
+      <p><a class="md-button" href="case-studies/manufacturing/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>Energy &amp; Utilities</h3>
+      <p>Safety-critical operations: enforce policies and constraints so an agent cannot do what engineers would never allow.</p>
+      <p><a class="md-button" href="case-studies/energy-utilities/">Read case study</a></p>
+    </div>
+    <div class="landing-card">
+      <h3>Pharma &amp; Clinical Ops</h3>
+      <p>Traceable decisions in regulated workflows: provenance, constraints, and reasoning logs for real operational governance.</p>
+      <p><a class="md-button" href="case-studies/pharma-clinical-ops/">Read case study</a></p>
     </div>
   </div>
 </div>
@@ -385,7 +434,7 @@ click P_Inquiry "/home/inquiry/" "Inquiry"
 click O_Inquiry "/home/inquiry/" "Inquiry"
 ```
 
-<p>This is an <strong>intent router</strong>. If you want to <strong>build</strong>, go to <strong>🤝 Reasoners</strong> (architecture + governance + operating model). If you want to <strong>learn</strong>, go to <strong>📝 5Reasons</strong> (public causal analysis with diagrams and counterfactuals). If you want to <strong>decide</strong> quickly, use <strong>📝 Inquiry</strong> to express your decision, constraints, and unacceptable failure modes so we can recommend a next step. Use <strong>⬆️ Home Navigation</strong> to return to the main process map.</p>
+<p>This is an <strong>intent router</strong>. If you want to <strong>build</strong>, go to <strong>🤝 Reasoners</strong> (architecture + governance + operating model). If you want to <strong>learn</strong>, go to <strong>📝 5Reasons</strong> (public causal analysis with diagrams and counterfactuals). If you want to <strong>decide</strong> quickly, use <strong>📝 Inquiry</strong> to express your decision, constraints, and unacceptable failure modes so we can recommend a next step. </p>
 </div>
 
 <div class="landing-section">
