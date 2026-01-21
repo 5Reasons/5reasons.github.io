@@ -82,7 +82,7 @@ P_ArchPlan("🗺️ Architectural planning"):::p
 R_Blueprint("📐 Architecture blueprint"):::r
 P_Impl("🧑‍💻 Implementation"):::p
 O_Memory("🧠 Memory for AI agents"):::o
-P_Ops("🛰️ Agentic systemproviding"):::p
+P_Ops("🛰️ Agentic system providing"):::p
 R_Logs("🧾 Reasoning logs"):::r
 P_Maint("🛠️ Maintenance"):::p
 O_Reporting("📊 Reporting"):::o
@@ -173,7 +173,7 @@ subgraph S1["Statistical AI"]
 direction TB
 I_Q1(["📥 Question + sources + context"]):::i
 P_LLM1("🧠 Generate an answer"):::p
-R_Text1["📝 Plausible text(no guarantees)"]:::r
+R_Text1["📝 Plausible text (no guarantees)"]:::r
 P_Check1{"Can we justify it?"}:::s
 S_Error1("⚠️ Confident error"):::i
 I_Q1 --> P_LLM1 --> R_Text1 --> P_Check1 --> S_Error1
@@ -183,7 +183,7 @@ subgraph S2["brModel"]
 direction TB
 I_Q2(["📥 Question + sources"]):::i
 P_Memory("🧭 Retrieve causal memory"):::p
-R_Trace["🧾 Reasoningtrace + provenance"]:::r
+R_Trace["🧾 Reasoning trace + provenance"]:::r
 P_Constraints("🔒 Enforce constraints"):::p
 O_Safe("✅ Auditable action"):::o
 S_Block("🛑 Refuse ask for missing data"):::s
@@ -292,31 +292,31 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-P_Route(["🎯 What failure is unacceptable?Choose a case study"]):::i
+P_Route(["🎯 What failure is unacceptable? Choose a case study"]):::i
 
 subgraph G_Reg["Regulated decisions"]
 direction LR
-P_Fin("💳 FinanceConstraints that cannot be bypassed"):::p
-P_Ins("🛡️ InsurancePolicy logic + controlled approvals"):::p
-P_Legal("⚖️ LegalClause logic + conflict detection"):::p
+P_Fin("💳 Finance Constraints that cannot be bypassed"):::p
+P_Ins("🛡️ Insurance Policy logic + controlled approvals"):::p
+P_Legal("⚖️ Legal Clause logic + conflict detection"):::p
 end
 
 subgraph G_Bio["Bio & clinical"]
 direction LR
-P_Bio("🧬 BiomedicineMechanisms + evidence chains"):::p
-P_Pharma("🧪 Pharma & Clinical OpsTraceable decisions in workflows"):::p
+P_Bio("🧬 Biomedicine Mechanisms + evidence chains"):::p
+P_Pharma("🧪 Pharma & Clinical Ops Traceable decisions in workflows"):::p
 end
 
 subgraph G_Ops["Operational systems"]
 direction LR
-P_Cyber("🧯 CybersecurityReasoning under adversarial conditions"):::p
-P_Energy("⚡ Energy & UtilitiesSafety + critical operations"):::p
-P_Manu("🏭 ManufacturingProcess constraints + reliability"):::p
+P_Cyber("🧯 Cybersecurity Reasoning under adversarial conditions"):::p
+P_Energy("⚡ Energy & Utilities Safety + critical operations"):::p
+P_Manu("🏭 Manufacturing Process constraints + reliability"):::p
 end
 
 subgraph G_Org["Enterprise memory"]
 direction LR
-P_ECM("🏢 Enterprise Central MemoryShared semantics + governance"):::p
+P_ECM("🏢 Enterprise Central Memory Shared semantics + governance"):::p
 end
 
 P_Route --> G_Reg
