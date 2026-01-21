@@ -40,6 +40,7 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
 S_Visitor("👤 Visitor (YOU)"):::s
+P_HowWorks("ℹ️ How this site works"):::p
 P_Ident{"Choose your role"}:::p
 
 S_Buyer("🧑‍💼 Buyer / operator"):::s
@@ -47,6 +48,7 @@ S_Eng("🧑‍💻 Engineer / architect"):::s
 S_Read("🧑‍🔬 Reader / analyst"):::s
 
 S_Visitor --> P_Ident
+S_Visitor -. "need context" .-> P_HowWorks --> P_Ident
 P_Ident --> S_Buyer
 P_Ident --> S_Eng
 P_Ident --> S_Read
@@ -54,6 +56,7 @@ P_Ident --> S_Read
 click S_Buyer "/home/start-here/#buyer-operator" "Jump to Buyer path"
 click S_Eng "/home/start-here/#engineer-architect" "Jump to Engineer path"
 click S_Read "/home/start-here/#reader-analyst" "Jump to Reader path"
+click P_HowWorks "/home/how-this-site-works/" "How This Site Works"
 ```
 </div>
 

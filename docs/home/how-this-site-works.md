@@ -89,62 +89,177 @@ If you only remember one heuristic, use this:
 ## Site structure at a glance
 
 ```mermaid
-flowchart LR
-classDef i fill:#D3D3D3,stroke:#9A9A9A,color:#000,stroke-width:1px;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-I_Repo["Repository"]:::i
-I_Docs["docs/ (content root)"]:::i
-I_Assets["docs/assets/ (CSS + JS)"]:::i
-I_Mkdocs["mkdocs.yml (theme + nav + extensions)"]:::i
+S_You("👤 You"):::s
+P_Start("🧭 Start Here"):::p
+P_HowWorks("ℹ️ How This Site Works"):::p
+I_Map(["🗺️ Use diagrams as navigation\n(clickable nodes)"]):::i
 
-I_Sections["Sections (top tabs)"]:::i
-I_Home["Home (docs/index.md)"]:::i
-I_Start["Start Here (docs/home/start-here.md)"]:::i
-I_Reasoners["Reasoners/"]:::i
-I_Philosophy["Philosophy/"]:::i
-I_Methodology["Methodology/"]:::i
-I_Services["Services/"]:::i
-I_Case["Case Studies/"]:::i
-I_Blog["Blog/ (index + topics)"]:::i
-I_Diagrams["Diagram Gallery (docs/diagrams/index.md)"]:::i
+S_You --> P_Start --> I_Map
+S_You -. "need context" .-> P_HowWorks --> P_Start
 
-I_Mermaid["Mermaid diagrams (inline in pages)"]:::i
-I_Click["Clickable nodes (diagram navigation)"]:::i
-I_Lightbox["Image lightbox for .glightbox"]:::i
-I_Modals["Diagram modals (optional)"]:::i
-I_LinkFixes["Link fixes + legacy redirects"]:::i
-I_Math["Math rendering on instant navigation"]:::i
-I_Scroll["Smooth anchor scroll (header-offset)"]:::i
+%% Home
+H_Sec(["🏠 Home"]):::i
+H_Overview("🏠 Overview"):::i
+H_Start("🧭 Start Here"):::i
+H_Inquiry("📝 Inquiry"):::i
+H_HowWorks("ℹ️ How This Site Works"):::i
+H_Sec --> H_Overview --> H_Start --> H_Inquiry --> H_HowWorks
 
-I_DgmSrc["docs/diagrams/mmd/*.mmd"]:::i
-I_DgmImg["docs/diagrams/img/*.svg"]:::i
-I_RenderWF["GitHub Action: render-diagrams.yml"]:::i
-I_DeployWF["GitHub Action: deploy.yml"]:::i
-I_Site["site/ (built output)"]:::i
+%% Reasoners
+R_Sec(["🤝 Reasoners"]):::i
+R_Overview("🤝 Overview"):::i
+R_About("ℹ️ About"):::i
+R_Team("👥 Team & Philosophy"):::i
+R_FAQ("❓ FAQ"):::i
+R_Terms("📜 Terms of Use"):::i
+R_Vision("🗓️ Vision 2026"):::i
+R_Ops("🛰️ Operating Model"):::i
+R_Gov("🏛️ Governance Approach"):::i
+R_Sec --> R_Overview --> R_About --> R_Team --> R_FAQ --> R_Terms --> R_Vision --> R_Ops --> R_Gov
 
-I_Repo --> I_Mkdocs
-I_Repo --> I_Docs
-I_Docs --> I_Assets
-I_Docs --> I_Sections
-I_Sections --> I_Home
-I_Sections --> I_Start
-I_Sections --> I_Reasoners
-I_Sections --> I_Philosophy
-I_Sections --> I_Methodology
-I_Sections --> I_Services
-I_Sections --> I_Case
-I_Sections --> I_Blog
-I_Sections --> I_Diagrams
+%% Philosophy
+PH_Sec(["🧠 Philosophy"]):::i
+PH_Overview("🧠 Overview"):::i
+PH_Prob("🎲 Why Probabilistic AI Fails"):::i
+PH_Laws("⚖️ The Three Laws"):::i
+PH_Agent("🤖 AI Agent vs Agentic AI"):::i
+PH_Corr("📈 Correlation vs Causality"):::i
+PH_Consc("🧠 AI Consciousness"):::i
+PH_Sec --> PH_Overview --> PH_Prob --> PH_Laws --> PH_Agent --> PH_Corr --> PH_Consc
 
-I_Docs --> I_Mermaid --> I_Click
-I_Assets --> I_Lightbox
-I_Assets --> I_Modals
-I_Assets --> I_LinkFixes
-I_Assets --> I_Math
-I_Assets --> I_Scroll
+%% Methodology
+M_Sec(["📐 Methodology"]):::i
+M_Overview("📐 Overview"):::i
+M_Prim("🧱 Core Primitives"):::i
+M_Tool("🧰 LLM + Tool + RAG"):::i
+M_PKG("🧩 Property-Knowledge Graph"):::i
+M_CGR("🧭 CausalGraphRAG"):::i
+M_brCGR("🧭 brCausalGraphRAG"):::i
+M_Constr("🔒 Constraints & SHACL"):::i
+M_Sec --> M_Overview --> M_Prim --> M_Tool --> M_PKG --> M_CGR --> M_brCGR --> M_Constr
 
-I_DgmSrc --> I_RenderWF --> I_DgmImg
-I_Repo --> I_DeployWF --> I_Site
+%% Services
+S_Sec(["🧰 Services"]):::i
+S_Overview("🧰 Overview"):::i
+S_Audit("🔎 Epistemic Audit"):::i
+S_Blue("📐 Architecture Blueprint"):::i
+S_Impl("🧑‍💻 Implementation"):::i
+S_Partner("🤝 Ongoing Partnership"):::i
+S_Contact("📞 Start a conversation"):::i
+S_Sec --> S_Overview --> S_Audit --> S_Blue --> S_Impl --> S_Partner --> S_Contact
+
+%% Case Studies
+C_Sec(["🧾 Case Studies"]):::i
+C_Overview("🧾 Overview"):::i
+C_ECM("🏢 Enterprise Central Memory"):::i
+C_Bio("🧬 Biomedicine"):::i
+C_Fin("💳 Finance"):::i
+C_Legal("⚖️ Legal"):::i
+C_Ins("🛡️ Insurance"):::i
+C_Cyber("🧯 Cybersecurity"):::i
+C_Manu("🏭 Manufacturing"):::i
+C_Energy("⚡ Energy & Utilities"):::i
+C_Pharma("🧪 Pharma & Clinical Ops"):::i
+C_Sec --> C_Overview --> C_ECM --> C_Bio --> C_Fin --> C_Legal --> C_Ins --> C_Cyber --> C_Manu --> C_Energy --> C_Pharma
+
+%% Blog
+B_Sec(["📰 Blog"]):::i
+B_Index("📰 Blog index"):::i
+B_Read("📝 How to read"):::i
+B_Topics("🏷️ Topics"):::i
+B_Posts("📚 Posts (chronological)"):::i
+
+B_P1("Temporal Memory Beats Bigger Context"):::i
+B_P2("Mechanism-Executable Causal GraphRAG"):::i
+B_P3("HRM’s Latent Reasoning Still Needs Verification"):::i
+B_P4("Agent Memory Needs Identity, Governance, and Decay"):::i
+B_P5("AI Coding Assistants: A Causal Framework"):::i
+B_P6("From SWOT to Testable Causal Hypotheses"):::i
+B_P7("Why Small Frictions Cascade into System Failure"):::i
+
+B_Sec --> B_Index --> B_Read --> B_Topics --> B_Posts
+B_Posts --> B_P1 --> B_P2 --> B_P3 --> B_P4 --> B_P5 --> B_P6 --> B_P7
+
+
+I_Map --> H_Sec
+I_Map --> R_Sec
+I_Map --> PH_Sec
+I_Map --> M_Sec
+I_Map --> S_Sec
+I_Map --> C_Sec
+I_Map --> B_Sec
+
+%% Clickable nodes
+click P_Start "/home/start-here/" "Start Here"
+click P_HowWorks "/home/how-this-site-works/" "How This Site Works"
+
+click H_Overview "/" "Home"
+click H_Start "/home/start-here/" "Start Here"
+click H_Inquiry "/home/inquiry/" "Inquiry"
+click H_HowWorks "/home/how-this-site-works/" "How This Site Works"
+
+click R_Overview "/reasoners/" "Reasoners"
+click R_About "/reasoners/about/" "About"
+click R_Team "/reasoners/team/" "Team & Philosophy"
+click R_FAQ "/reasoners/faq/" "FAQ"
+click R_Terms "/reasoners/terms/" "Terms of Use"
+click R_Vision "/reasoners/vision-2026/" "Vision 2026"
+click R_Ops "/reasoners/operating-model/" "Operating Model"
+click R_Gov "/reasoners/governance/" "Governance Approach"
+
+click PH_Overview "/philosophy/" "Philosophy"
+click PH_Prob "/philosophy/probabilistic-ai/" "Why Probabilistic AI Fails"
+click PH_Laws "/philosophy/three-laws/" "The Three Laws"
+click PH_Agent "/philosophy/ai-agent-vs-agentic-ai/" "AI Agent vs Agentic AI"
+click PH_Corr "/philosophy/correlation-vs-causality/" "Correlation vs Causality"
+click PH_Consc "/philosophy/ai-consciousness/" "AI Consciousness"
+
+click M_Overview "/methodology/" "Methodology"
+click M_Prim "/methodology/core-primitives/" "Core Primitives"
+click M_Tool "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click M_PKG "/methodology/property-and-knowledge-graphs/" "Property-Knowledge Graph"
+click M_CGR "/methodology/causalgraphrag/" "CausalGraphRAG"
+click M_brCGR "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
+click M_Constr "/methodology/constraints/" "Constraints & SHACL"
+
+click S_Overview "/services/" "Services"
+click S_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click S_Blue "/services/blueprint/" "Architecture Blueprint"
+click S_Impl "/services/implementation/" "Implementation"
+click S_Partner "/services/partnership/" "Ongoing Partnership"
+click S_Contact "/services/start/" "Start a conversation"
+
+click C_Overview "/case-studies/" "Case Studies"
+click C_ECM "/case-studies/enterprise-central-memory/" "Enterprise Central Memory"
+click C_Bio "/case-studies/biomedicine/" "Biomedicine"
+click C_Fin "/case-studies/finance/" "Finance"
+click C_Legal "/case-studies/legal/" "Legal"
+click C_Ins "/case-studies/insurance/" "Insurance"
+click C_Cyber "/case-studies/cybersecurity/" "Cybersecurity"
+click C_Manu "/case-studies/manufacturing/" "Manufacturing"
+click C_Energy "/case-studies/energy-utilities/" "Energy & Utilities"
+click C_Pharma "/case-studies/pharma-clinical-ops/" "Pharma & Clinical Ops"
+
+click B_Index "/blog/" "Blog"
+click B_Read "/blog/how-to-read/" "How to Read"
+click B_Topics "/blog/topics/" "Topics"
+click B_P1 "/blog/posts/temporal-memory-beats-bigger-context/" "Post"
+click B_P2 "/blog/posts/mechanism-executable-causal-graphrag/" "Post"
+click B_P3 "/blog/posts/hrm-latent-reasoning-needs-verification/" "Post"
+click B_P4 "/blog/posts/memory-needs-identity-governance-and-decay/" "Post"
+click B_P5 "/blog/posts/ai-coding-assistants-a-causal-framework/" "Post"
+click B_P6 "/blog/posts/from-swot-to-testable-hypotheses/" "Post"
+click B_P7 "/blog/posts/why-small-frictions-cascade-into-system-failure/" "Post"
+
+click D_Overview "/diagrams/" "Diagram Gallery"
 ```
 
 ## Under the hood (what’s actually implemented)
@@ -174,3 +289,11 @@ The site uses MkDocs Material “instant navigation”, which swaps pages withou
 - Deployment is done via GitHub Actions to GitHub Pages.
 - The deploy workflow uses `zensical serve` on CI and pre-renders every Markdown URL into `site/` before publishing.
 - Diagram previews are rendered from `.mmd` sources into `.svg` via a separate workflow.
+
+---
+
+### Next step
+
+If you’re done with “how it works”, return to <strong>Start Here</strong> and pick your role-driven path.
+
+<p><a class="md-button md-button--primary" href="/home/start-here/">Go back to Start Here</a></p>
