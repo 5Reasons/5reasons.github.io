@@ -1,4 +1,4 @@
-# Cognitive Technolgies & Services
+# Cognitive Technologies & Services
 
 --8<-- "includes/quicknav.html"
 

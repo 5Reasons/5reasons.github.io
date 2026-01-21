@@ -100,7 +100,9 @@ nav:
 
 # Zensical note:
 # Start with no third-party MkDocs plugins to avoid incompatibilities.
-plugins: []
+# Keep built-ins like `search` enabled.
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
@@ -112,13 +114,7 @@ markdown_extensions:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.tasklist:
-      custom_checkbox: true
+
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true

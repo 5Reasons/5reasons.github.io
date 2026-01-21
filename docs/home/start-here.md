@@ -39,7 +39,6 @@ classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
 classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 
-I_Home("Back to home"):::i
 S_Visitor("👤 Visitor (YOU)"):::s
 P_Ident{"Choose your role"}:::p
 
@@ -47,7 +46,6 @@ S_Buyer("🧑‍💼 Buyer / operator"):::s
 S_Eng("🧑‍💻 Engineer / architect"):::s
 S_Read("🧑‍🔬 Reader / analyst"):::s
 
-I_Home --> S_Visitor
 S_Visitor --> P_Ident
 P_Ident --> S_Buyer
 P_Ident --> S_Eng
@@ -56,7 +54,6 @@ P_Ident --> S_Read
 click S_Buyer "/home/start-here/#buyer-operator" "Jump to Buyer path"
 click S_Eng "/home/start-here/#engineer-architect" "Jump to Engineer path"
 click S_Read "/home/start-here/#reader-analyst" "Jump to Reader path"
-click I_Home "/" "Home"
 ```
 </div>
 
