@@ -5,10 +5,6 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008789.png"/>
-</div>
-
 # Why Probabilistic AI Fails (in High-Stakes Work)
 
 <div class="landing-hero">
@@ -159,4 +155,9 @@ click R_Model "/methodology/constraints/" "Constraints & SHACL"
 click O_Glass "/reasoners/governance/" "Governance"
 ```
 
+</div>
+
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008789.png"/>
 </div>

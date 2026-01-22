@@ -127,5 +127,6 @@ extra_javascript:
   - assets/js/diagram-modal.js
   - assets/js/link-fixes.js
   - assets/js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   - assets/js/mermaid-label-fixes.js
   - assets/js/wizard-scroll.js

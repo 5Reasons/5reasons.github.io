@@ -5,10 +5,6 @@ description: "Correlation predicts; causality intervenes. A practical guide to w
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008806.png"/>
-</div>
-
 # Correlation vs Causality
 
 <div class="landing-hero">
@@ -166,19 +162,19 @@ R_T5(["🔁 Policy feedback"]):::r
 R_T6(["🎯 Goodhart / proxy gaming"]):::r
 
 R_Bad(["❌ Bad path: treat $P(Y|X)$ as decision-grade"]):::s
-P_Wrong("⚠️ Wrong intervention (do X)\n+ missing side-effects"):::s
-S_Harm(["💥 Bad outcome\n(unintended harm / wasted spend)"]):::s
+P_Wrong("⚠️ Wrong intervention (do X) + missing side-effects"):::s
+S_Harm(["💥 Bad outcome (unintended harm / wasted spend)"]):::s
 
 P_F1("Model confounders / identification"):::p
-P_F2("Track selection mechanism\n+ robustness tests"):::p
-P_F3("Monitor drift\n+ revalidate assumptions"):::p
-P_F4("Time ordering / instruments\n+ structural tests"):::p
-P_F5("Model feedback loops\n+ second-order effects"):::p
-P_F6("Guardrails + mechanism\n+ anticipate adaptation"):::p
+P_F2("Track selection mechanism + robustness tests"):::p
+P_F3("Monitor drift + revalidate assumptions"):::p
+P_F4("Time ordering / instruments + structural tests"):::p
+P_F5("Model feedback loops + second-order effects"):::p
+P_F6("Guardrails + mechanism + anticipate adaptation"):::p
 
-P_Good("✅ Guarded path: identify $P(Y|do(X))$\n+ governance + measurement"):::o
+P_Good("✅ Guarded path: identify $P(Y|do(X))$ + governance + measurement"):::o
 P_Do("🧪 Run intervention with constraints"):::p
-O_Value(["✅ Better outcome\n+ audit-ready learning"]):::o
+O_Value(["✅ Better outcome + audit-ready learning"]):::o
 
 I_Obs --> R_T1
 I_Obs --> R_T2
@@ -240,6 +236,10 @@ click P_Do "/methodology/constraints/" "Constraints & SHACL"
       <p>Optimizing a proxy breaks the link to the real goal. Fix: model the mechanism, include guardrail outcomes, and anticipate strategic adaptation.</p>
     </div>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008806.png"/>
 </div>
 
 ## Where this connects in our stack

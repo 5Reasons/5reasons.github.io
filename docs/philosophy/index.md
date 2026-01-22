@@ -7,10 +7,6 @@ description: "Why high-stakes organizations need causal memory and governance—
 
 # Philosophy
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008816.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -109,7 +105,7 @@ description: "Why high-stakes organizations need causal memory and governance—
   </div>
 </div>
 
-  ### Philosophy map (pages and how they connect)
+### Philosophy map (pages and how they connect)
 
   ```mermaid
   flowchart TB
@@ -181,4 +177,8 @@ description: "Why high-stakes organizations need causal memory and governance—
       <a class="md-button" href="/case-studies/">Case Studies</a>
     </p>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008816.png"/>
 </div>

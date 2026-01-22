@@ -7,10 +7,6 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 
 # The Three Laws
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008832.png"/>
-</div>
-
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>
@@ -25,6 +21,10 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008832.png"/>
 </div>
 
 ## Law 1: No answer without evidence

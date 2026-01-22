@@ -114,7 +114,7 @@ click O_Stop "/reasoners/governance/" "Governance"
 ## Diagram: governance gate (the non-negotiable)
 
 ```mermaid
-flowchart LR
+flowchart TB
 %% Styles (brModel Standard)
 classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
