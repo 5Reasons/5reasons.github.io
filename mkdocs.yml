@@ -6,6 +6,7 @@ repo_name: 5Reasons
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   logo: logos/bigRingQL.webp
   favicon: logos/bigRingQL.webp
