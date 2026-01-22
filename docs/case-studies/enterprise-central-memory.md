@@ -96,7 +96,7 @@ click P_S "/methodology/property-and-knowledge-graphs/" "Graphs"
 <div class="landing-section">
 
 ```mermaid
-flowchart LR
+flowchart TB
 %% Styles (brModel Standard)
 classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
@@ -104,24 +104,59 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-R_D(["🧾 Decision object"]):::r
-R_O(["👤 Owner"]):::r
-R_A(["🧠 Assumptions"]):::r
-R_E(["📎 Evidence links"]):::r
-R_C(["🔒 Constraints"]):::r
-R_CH(["🕒 Change log"]):::r
+I_Trig(["🎯 Decision trigger<br>(question / risk / change)"]):::i
+I_Ctx(["📎 Context inputs<br>(metrics, incidents, goals)"]):::i
 
-R_D --> R_O
+P_Scope("🧭 Define decision scope"):::p
+R_Scope(["🧾 Scope record<br>(what is in/out)"]):::r
+
+P_Opt("🧠 Generate options"):::p
+R_Opt(["📎 Option set<br>(alternatives)"]):::r
+
+P_Ev("📎 Attach evidence links"):::p
+G_Ev{"Evidence sufficient?"}:::s
+S_Req(["🛑 Request missing evidence"]):::s
+
+P_Own("👤 Assign owner + review roles"):::p
+G_Own{"Owner assigned?"}:::s
+S_Block(["🛑 Block: no accountability"]):::s
+
+P_Cons("🔒 Evaluate constraints"):::p
+G_OK{"Constraints pass?"}:::s
+
+R_D(["🧾 Decision object"]):::r
+R_A(["🧠 Assumptions" ]):::r
+R_E(["📎 Evidence links" ]):::r
+R_C(["🔒 Constraints evaluated" ]):::r
+R_CH(["🕒 Change log" ]):::r
+R_Tr(["🧾 Decision trace<br>(inputs → gates → outcome)"]):::r
+
+O_Out(["✅ Reusable decision artifact<br>(queryable + replayable)"]):::o
+
+I_Trig --> P_Scope
+I_Ctx --> P_Scope
+P_Scope --> R_Scope --> P_Opt --> R_Opt --> P_Ev --> G_Ev
+
+G_Ev -->|"no"| S_Req --> R_Tr
+G_Ev -->|"yes"| P_Own --> G_Own
+
+G_Own -->|"no"| S_Block --> R_Tr
+G_Own -->|"yes"| P_Cons --> G_OK
+
+G_OK -->|"no"| S_Req --> R_Tr
+G_OK -->|"yes"| R_D
+
 R_D --> R_A
 R_D --> R_E
 R_D --> R_C
 R_D --> R_CH
+R_D --> R_Tr --> O_Out
 
 %% Clickable nodes
 click R_C "/methodology/constraints/" "Constraints"
 ```
 
-<p>🧾 Treat decisions as first-class objects: a decision without an <strong>owner</strong>, <strong>assumptions</strong>, <strong>evidence</strong>, and a <strong>change log</strong> is just a story. This makes accountability computable.</p>
+<p>🧾 Treat decisions as first-class objects: a decision without an <strong>owner</strong>, <strong>assumptions</strong>, <strong>evidence</strong>, and a <strong>change log</strong> is just a story. This makes accountability computable. <strong>Product:</strong> a reusable <strong>decision trace</strong> object (inputs → gates → outcome) you can query and replay.</p>
 
 </div>
 
@@ -139,18 +174,48 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_New(["🧩 New proposal / plan"]):::i
-P_Link("🔗 Link to prior decisions + constraints"):::p
+I_Ctx(["📎 Current context<br>(targets, constraints, timeline)"]):::i
+
+P_Extract("🧾 Extract claims + commitments"):::p
+R_Claims(["🧾 Claim set<br>(what is asserted)"]):::r
+
+P_Ret("🔎 Retrieve relevant decisions + constraints"):::p
+R_Prior(["📎 Prior decision set" ]):::r
+R_Cons(["🔒 Constraint set" ]):::r
+
+P_Test("🧪 Contradiction tests"):::p
 G_Contr{"Contradiction?"}:::s
+P_Sev("⚠️ Classify severity + blast radius"):::p
+G_Sev{"High stakes?"}:::s
+
 O_OK(["✅ Approve + trace"]):::o
 S_Block(["🛑 Block + request resolution"]):::s
 R_Iss(["🧾 Issue record<br>(what conflicts with what)"]):::r
+R_Tr(["🧾 Trace bundle<br>(claims + prior + tests)"]):::r
 
-I_New --> P_Link --> G_Contr
-G_Contr -->|"no"| O_OK
-G_Contr -->|"yes"| S_Block --> R_Iss
+P_Resolve("🧩 Resolution workflow"):::p
+O_Upd(["✅ Update decision/constraint registry" ]):::o
+
+I_New --> P_Extract
+I_Ctx --> P_Extract
+P_Extract --> R_Claims --> P_Ret --> R_Prior
+P_Ret --> R_Cons
+
+R_Prior --> P_Test
+R_Cons --> P_Test
+R_Claims --> P_Test
+P_Test --> G_Contr
+
+G_Contr -->|"no"| O_OK --> R_Tr
+G_Contr -->|"yes"| P_Sev --> G_Sev
+
+G_Sev -->|"yes"| S_Block --> R_Iss --> R_Tr
+G_Sev -->|"no"| S_Block --> R_Iss --> R_Tr
+
+R_Tr --> P_Resolve --> O_Upd
 ```
 
-<p>🚦 The system does not “smooth over” conflict: it checks whether a new plan contradicts an existing decision or constraint. If yes, it blocks and produces a structured issue record instead of a polite summary.</p>
+<p>🚦 The system does not “smooth over” conflict: it checks whether a new plan contradicts an existing decision or constraint. If yes, it blocks and produces a structured issue record instead of a polite summary. <strong>Product:</strong> an <strong>issue record + trace bundle</strong> that routes into a resolution workflow and updates the registry.</p>
 
 </div>
 

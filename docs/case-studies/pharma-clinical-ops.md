@@ -69,23 +69,65 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Q(["📥 Operational question"]):::i
-P_E("📎 Retrieve evidence"):::p
+
+R_Sub(["🧾 Subject + site context"]):::r
+R_Prot(["📜 Protocol + amendments<br>(versioned)"]):::r
+R_Cons(["📝 Consent artifacts"]):::r
+R_Safety(["⚕️ Safety reporting rules"]):::r
+R_Ops(["📎 Ops sources<br>(EDC, CTMS, vendor logs)"]):::r
+
+P_E("📎 Retrieve + normalize evidence"):::p
+R_EB(["📎 Evidence bundle<br>(fingerprinted)"]):::r
+
+P_Map("🧭 Map correct version per site/time"):::p
+G_Ver{"Correct version?"}:::s
+S_Stop(["🛑 Block + escalate<br>(version mismatch)"]):::s
+
+P_Path("🕸️ Build evidence paths"):::p
 R_Path(["🧭 Path candidates<br>(eligibility / safety / ops)"]):::r
+G_Ev{"Evidence sufficient?"}:::s
+S_Req(["🛑 Request missing data"]):::s
+
+G_Elig{"Eligibility satisfied?"}:::s
+G_SAE{"Safety trigger?"}:::s
+
 P_G("🔒 Protocol + safety constraints"):::p
 G_OK{"Gates pass?"}:::s
-O_O(["✅ Recommendation + trace"]):::o
-S_X(["🛑 Abstain + request missing data"]):::s
 
-I_Q --> P_E --> R_Path --> P_G --> G_OK
-G_OK -->|"yes"| O_O
-G_OK -->|"no"| S_X
+O_O(["✅ Recommendation + trace"]):::o
+S_X(["🛑 Abstain + escalate"]):::s
+R_Tr(["🧾 Inspection bundle<br>(evidence + rules + versions)"]):::r
+
+I_Q --> P_E
+R_Sub --> P_E
+R_Prot --> P_E
+R_Cons --> P_E
+R_Safety --> P_E
+R_Ops --> P_E
+
+P_E --> R_EB --> P_Map --> G_Ver
+G_Ver -->|"no"| S_Stop --> R_Tr
+G_Ver -->|"yes"| P_Path --> R_Path --> G_Ev
+
+G_Ev -->|"no"| S_Req --> R_Tr
+G_Ev -->|"yes"| G_Elig
+
+G_Elig -->|"no"| S_X --> R_Tr
+G_Elig -->|"yes"| G_SAE
+
+G_SAE -->|"yes"| P_G
+G_SAE -->|"no"| P_G
+
+P_G --> G_OK
+G_OK -->|"yes"| O_O --> R_Tr
+G_OK -->|"no"| S_X --> R_Tr
 
 %% Clickable nodes
 click P_G "/methodology/constraints/" "Constraints & SHACL"
 click R_Path "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
 
-<p>💊 Clinical ops becomes decision-grade when recommendations are forced through <strong>protocol and safety gates</strong>. The system either produces a recommendation with a trace — or refuses and requests the missing evidence.</p>
+<p>💊 Clinical ops becomes decision-grade when the system produces inspection artifacts (evidence bundle, version mapping, evidence paths) and enforces explicit gates: <strong>correct protocol version</strong>, <strong>evidence sufficiency</strong>, <strong>eligibility</strong>, and <strong>protocol/safety constraints</strong>. Every path ends in an inspection bundle — even abstentions.</p>
 
 </div>
 
@@ -103,16 +145,30 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_S(["📄 Sources<br>(protocol, logs, reports)"]):::i
-R_C(["🧾 Claims"]):::r
+P_Fp("🧼 Normalize + fingerprint"):::p
+R_EB(["📎 Evidence bundle<br>(signed references)"]):::r
+
+P_Cl("🧾 Extract claims"):::p
+R_C(["🧾 Claim set<br>(with provenance)"]):::r
+
 P_R("🔒 Rules applied"):::p
+R_R(["📎 Rule triggers<br>(protocol + SOP)"]):::r
+
 P_D("⚖️ Decision"):::p
-R_T(["🧾 Trace + inspection bundle"]):::r
+G_Rev{"High stakes?"}:::s
+S_Rev(["🛑 Require human review"]):::s
+
+R_T(["🧾 Trace + inspection bundle<br>(claims + rules + versions)"]):::r
+P_Store("🗄️ Store in TMF-ready archive"):::p
 O_Out(["✅ Defensible outcome"]):::o
 
-I_S --> R_C --> P_R --> P_D --> R_T --> O_Out
+I_S --> P_Fp --> R_EB --> P_Cl --> R_C --> P_R --> R_R --> P_D --> G_Rev
+G_Rev -->|"yes"| S_Rev --> R_T
+G_Rev -->|"no"| R_T
+R_T --> P_Store --> O_Out
 ```
 
-<p>🧾 The inspection artifact is explicit: sources produce claims, claims are evaluated under protocol rules, and the outcome is packaged as a trace bundle you can replay during audits and inspections.</p>
+<p>🧾 The inspection artifact is explicit: sources are fingerprinted into an evidence bundle, claims are extracted with provenance, rule triggers are applied, and high-stakes decisions are gated to human review. The output is a trace + inspection bundle suitable for TMF-style archival.</p>
 
 </div>
 
@@ -132,21 +188,32 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 I_Am(["🧩 Protocol amendment / version"]):::i
 P_Map("🧭 Map version to site + time"):::p
 G_Ver{"Correct version selected?"}:::s
+S_Stop(["🛑 Block + escalate"]):::s
+
+P_Impact("🧪 Impact analysis"):::p
+R_Aff(["📎 Affected subjects + workflows"]):::r
+P_Diff("🧾 Compute decision diffs"):::p
+R_Diff(["🧾 Diff bundle<br>(what changes, where)"]):::r
+
+G_Train{"Training updated?"}:::s
 P_Reeval("🧪 Re-evaluate impacted decisions"):::p
 G_Gate{"Gates pass?"}:::s
+
 O_OK(["✅ Continue operations"]):::o
-S_Stop(["🛑 Block + escalate"]):::s
-R_Tr(["🧾 Inspection bundle<br>(version + decision diffs)"]):::r
+R_Tr(["🧾 Inspection bundle<br>(version + diffs + gates)"]):::r
 
 I_Am --> P_Map --> G_Ver
 G_Ver -->|"no"| S_Stop --> R_Tr
-G_Ver -->|"yes"| P_Reeval --> G_Gate
+G_Ver -->|"yes"| P_Impact --> R_Aff --> P_Diff --> R_Diff --> G_Train
+
+G_Train -->|"no"| S_Stop --> R_Tr
+G_Train -->|"yes"| P_Reeval --> G_Gate
 
 G_Gate -->|"yes"| O_OK --> R_Tr
 G_Gate -->|"no"| S_Stop --> R_Tr
 ```
 
-<p>🚦 Amendments change what is allowed. This diagram makes the versioning mechanism explicit: select the correct protocol version per site/time, re-evaluate affected decisions, and gate continuation. The trace becomes an inspection-ready diff bundle.</p>
+<p>🚦 Amendments change what is allowed. Versioning must be operational: select the correct version per site/time, run impact analysis, compute decision diffs, verify training updates, and only then re-evaluate and gate continuation. The output is an inspection bundle that shows what changed and why operations stayed compliant.</p>
 
 </div>
 

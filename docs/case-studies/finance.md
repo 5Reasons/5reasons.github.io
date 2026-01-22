@@ -91,7 +91,7 @@ click P_V "/methodology/constraints/" "Constraints & SHACL"
 <div class="landing-section">
 
 ```mermaid
-flowchart LR
+flowchart TB
 %% Styles (brModel Standard)
 classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
@@ -99,23 +99,65 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-R_P(["📜 Policy library"]):::r
-R1(["👤 Role restrictions"]):::r
-R2(["🚫 Sector prohibitions"]):::r
-R3(["📎 Evidence requirements"]):::r
-R4(["📏 Threshold limits"]):::r
-R_C(["🧾 Citations + provenance"]):::r
+R_P(["📜 Policy library<br>(versioned)"]):::r
+R1(["👤 Role restrictions<br>(who can do what)"]):::r
+R2(["🚫 Sector prohibitions<br>(must-never)"]):::r
+R3(["📎 Evidence requirements<br>(what must be attached)"]):::r
+R4(["📏 Threshold limits<br>(numeric caps)"]):::r
+R5(["🕒 Time/window rules<br>(when allowed)"]):::r
+R_C(["🧾 Citations + provenance" ]):::r
 
+P_Comp("🧩 Compile constraints"):::p
+R_Set(["🔒 Constraint set<br>(executable checks)"]):::r
+
+I_Dec(["📥 Proposed decision<br>(trade/approve/execute)"]):::i
+P_G("🔒 Constraint gate"):::p
+
+G_Role{"Role allowed?"}:::s
+G_Proh{"Prohibited?"}:::s
+G_Ev{"Evidence attached?"}:::s
+G_Lim{"Limits pass?"}:::s
+G_Time{"Window ok?"}:::s
+
+O_OK(["✅ Allow + trace"]):::o
+S_No(["🛑 Block / escalate<br>violations"]):::s
+R_Rep(["🧾 Validation report<br>(which checks fired)"]):::r
+
+R_P --> P_Comp --> R_Set
 R_P --> R1
 R_P --> R2
 R_P --> R3 --> R_C
 R_P --> R4
+R_P --> R5
+
+R1 --> P_G
+R2 --> P_G
+R3 --> P_G
+R4 --> P_G
+R5 --> P_G
+R_Set --> P_G
+I_Dec --> P_G --> G_Role
+
+G_Role -->|"no"| S_No --> R_Rep
+G_Role -->|"yes"| G_Proh
+
+G_Proh -->|"yes"| S_No --> R_Rep
+G_Proh -->|"no"| G_Ev
+
+G_Ev -->|"no"| S_No --> R_Rep
+G_Ev -->|"yes"| G_Lim
+
+G_Lim -->|"no"| S_No --> R_Rep
+G_Lim -->|"yes"| G_Time
+
+G_Time -->|"no"| S_No --> R_Rep
+G_Time -->|"yes"| O_OK --> R_Rep
 
 %% Clickable nodes
 click R_P "/methodology/constraints/" "Constraints"
 ```
 
-<p>📜 “Constraints” are not one thing: finance needs role controls, hard prohibitions, evidence requirements, and numeric limits — each versioned and enforceable, so policy can’t be bypassed by fluent text.</p>
+<p>📜 “Constraints” are not one thing: finance needs role controls, hard prohibitions, evidence requirements, and numeric limits — each versioned and enforceable, so policy can’t be bypassed by fluent text. <strong>Product:</strong> a deterministic <strong>validation report</strong> showing exactly which checks fired (or passed) for a given decision.</p>
 
 </div>
 
@@ -133,18 +175,41 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Upd(["🧩 Policy update"]):::i
+P_Diff("🧾 Compute diff"):::p
 R_Diff(["🧾 Policy diff<br>(what changed)"]):::r
-P_Reeval("🧪 Re-evaluate impacted decisions"):::p
-G_Flip{"Any outcomes flip?"}:::s
-O_Rep(["✅ Review bundle<br>(before/after + reasons)"]):::o
-S_No(["🛑 No material changes"]):::s
 
-I_Upd --> R_Diff --> P_Reeval --> G_Flip
-G_Flip -->|"yes"| O_Rep
-G_Flip -->|"no"| S_No
+P_Impact("🔎 Find impacted decisions"):::p
+R_Idx(["🧠 Decision index<br>(rules → decisions)"]):::r
+R_Set(["📎 Impacted decision set" ]):::r
+
+P_Reeval("🧪 Re-evaluate decisions"):::p
+G_Flip{"Any outcomes flip?"}:::s
+P_Pack("🧾 Build review bundles"):::p
+R_Bun(["🧾 Review bundle<br>(before/after + reasons)"]):::r
+
+G_Risk{"High stakes?"}:::s
+S_Sign(["🛑 Require sign-off" ]):::s
+O_Apply(["✅ Apply updates" ]):::o
+
+P_Log("🕒 Write change log"):::p
+R_Log(["🕒 Governance log<br>(diff + approvals)"]):::r
+
+S_No(["🛑 No material changes" ]):::s
+
+I_Upd --> P_Diff --> R_Diff --> P_Impact
+R_Idx --> P_Impact
+P_Impact --> R_Set --> P_Reeval --> G_Flip
+
+G_Flip -->|"no"| S_No --> P_Log
+G_Flip -->|"yes"| P_Pack --> R_Bun --> G_Risk
+
+G_Risk -->|"yes"| S_Sign --> P_Log
+G_Risk -->|"no"| O_Apply --> P_Log
+
+P_Log --> R_Log
 ```
 
-<p>🧪 Governance stays stable under change only if policy updates are <strong>diffed</strong> and decisions are <strong>re-evaluated</strong>. This turns “rule drift” into a reviewable artifact, not a silent production risk.</p>
+<p>🧪 Governance stays stable under change only if policy updates are <strong>diffed</strong> and decisions are <strong>re-evaluated</strong>. This turns “rule drift” into a reviewable artifact, not a silent production risk. <strong>Product:</strong> a <strong>review bundle</strong> (before/after + reasons) plus a <strong>governance log</strong> (diff + approvals) you can audit.</p>
 
 </div>
 

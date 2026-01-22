@@ -55,7 +55,7 @@ description: "How causal graphs connect process steps, sensor signals, and suppl
 <div class="landing-section">
 
 ```mermaid
-flowchart LR
+flowchart TB
 %% Styles (brModel Standard)
 classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
 classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
@@ -63,16 +63,44 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-I_B(["📦 Batch"]):::i
-P_S("🏭 Supplier event"):::p
-P_P("⚙️ Process step"):::p
-R_Q(["📈 Quality signal"]):::r
-S_F(["⚠️ Failure"]):::s
+I_B(["📦 Batch / lot"]):::i
+R_Sup(["📎 Supplier COA + lot history"]):::r
+R_Proc(["📎 Process recipe + setpoints"]):::r
+R_Tool(["📎 Tool calibration + maintenance"]):::r
+R_Env(["📎 Environment<br>(temp, humidity)"]):::r
+R_Sens(["📈 Sensor telemetry"]):::r
 
-I_B --> P_S --> P_P --> R_Q --> S_F
+P_Prov("🧾 Provenance + time alignment"):::p
+R_EB(["📎 Evidence bundle<br>(joined by batch/time)"]):::r
+
+P_CG("🕸️ Build causal graph"):::p
+R_CG(["🕸️ Process causal graph<br>(steps, tools, suppliers)"]):::r
+
+P_Anom("🔎 Detect anomalies"):::p
+R_Q(["📈 Quality signals<br>(yield, defects)"]):::r
+
+G_Drift{"Drift detected?"}:::s
+G_Conf{"Confounders controlled?"}:::s
+
+S_F(["⚠️ Failure / deviation"]):::s
+O_R(["✅ Root-cause candidates<br>(with evidence per link)"]):::o
+R_Tr(["🧾 Trace object<br>(batch → signals → causes)"]):::r
+
+I_B --> P_Prov
+R_Sup --> P_Prov
+R_Proc --> P_Prov
+R_Tool --> P_Prov
+R_Env --> P_Prov
+R_Sens --> P_Prov
+
+P_Prov --> R_EB --> P_CG --> R_CG --> P_Anom --> R_Q --> G_Drift
+G_Drift -->|"yes"| S_F --> G_Conf
+G_Drift -->|"no"| G_Conf
+G_Conf -->|"yes"| O_R --> R_Tr
+G_Conf -->|"no"| S_F --> R_Tr
 ```
 
-<p>🏭 Quality failures propagate through systems: batches and supplier events flow into process steps and sensor signals. A causal chain makes that propagation explicit — and auditable.</p>
+<p>🏭 The mechanism is multi-source: supplier lots, recipes, tooling, environment, and telemetry are merged into an <strong>evidence bundle</strong>, then turned into a <strong>causal graph</strong>. Drift and confounders become explicit gates; the output is root-cause candidates with evidence per link — packaged as a trace object.</p>
 
 </div>
 
@@ -91,22 +119,43 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Inc(["⚠️ Incident"]):::i
 P_E("📎 Collect evidence"):::p
+R_Src(["📎 Sources<br>(MES, SCADA, CMMS, supplier)"]):::r
+P_Prov("🧾 Validate provenance"):::p
+G_Prov{"Provenance ok?"}:::s
+
 P_Path("🧭 Generate causal paths"):::p
+R_Path(["🧭 Path candidates<br>(with assumptions)"]):::r
+G_Ev{"Evidence sufficient?"}:::s
+
+P_Conf("🧪 Confounder checks"):::p
+G_Conf{"Confounders controlled?"}:::s
+
 P_V("🔒 Validate constraints + required evidence"):::p
 G_OK{"Gates pass?"}:::s
-O_A(["✅ Recommendation + trace"]):::o
+
+O_A(["✅ RCA report + recommendation"]):::o
+R_Tr(["🧾 RCA trace bundle<br>(evidence + paths + gates)"]):::r
 S_X(["🛑 Abstain + request missing data"]):::s
 
-I_Inc --> P_E --> P_Path --> P_V --> G_OK
-G_OK -->|"yes"| O_A
-G_OK -->|"no"| S_X
+I_Inc --> P_E --> R_Src --> P_Prov --> G_Prov
+G_Prov -->|"no"| S_X
+G_Prov -->|"yes"| P_Path --> R_Path --> G_Ev
+
+G_Ev -->|"no"| S_X
+G_Ev -->|"yes"| P_Conf --> G_Conf
+
+G_Conf -->|"no"| S_X
+G_Conf -->|"yes"| P_V --> G_OK
+
+G_OK -->|"yes"| O_A --> R_Tr
+G_OK -->|"no"| S_X --> R_Tr
 
 %% Clickable nodes
 click P_V "/methodology/constraints/" "Constraints & SHACL"
 click P_Path "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
 
-<p>🔁 RCA becomes reproducible when it’s gated: you generate candidate causal paths, then validate required evidence and constraints. If gates fail, the correct output is <strong>abstention</strong> with an explicit missing-data request.</p>
+<p>🔁 RCA becomes reproducible when gates are explicit: provenance must hold, evidence must be sufficient, confounders must be controlled, and only then do constraints approve a recommendation. When any gate fails, the correct output is <strong>abstention</strong> with a precise missing-data request — not a forced conclusion.</p>
 
 </div>
 
@@ -127,9 +176,19 @@ I_Fix(["🧩 Proposed intervention<br>(tooling, recipe, supplier)"]):::i
 G_Impact{"High impact?"}:::s
 G_Ev{"Evidence sufficient?"}:::s
 G_Safe{"Safety constraints pass?"}:::s
-O_Do(["✅ Execute change + trace"]):::o
+
+P_Pilot("🧪 Pilot / sandbox test"):::p
+G_Pilot{"Pilot success?"}:::s
+P_RB("🧯 Define rollback plan"):::p
+G_Sign{"Sign-offs complete?"}:::s
+
+O_Do(["✅ Execute change"]):::o
+P_Mon("📈 Monitor outcome"):::p
+G_Reg{"Regression detected?"}:::s
+
 S_Rev(["🛑 Require review / sign-off"]):::s
-R_Tr(["🧾 Change trace bundle"]):::r
+S_Stop(["🛑 Stop + rollback"]):::s
+R_Tr(["🧾 Change trace bundle<br>(tests + approvals + results)"]):::r
 
 I_Fix --> G_Impact
 G_Impact -->|"yes"| G_Ev
@@ -138,11 +197,20 @@ G_Impact -->|"no"| G_Ev
 G_Ev -->|"no"| S_Rev --> R_Tr
 G_Ev -->|"yes"| G_Safe
 
-G_Safe -->|"yes"| O_Do --> R_Tr
 G_Safe -->|"no"| S_Rev --> R_Tr
+G_Safe -->|"yes"| P_Pilot --> G_Pilot
+
+G_Pilot -->|"no"| S_Rev --> R_Tr
+G_Pilot -->|"yes"| P_RB --> G_Sign
+
+G_Sign -->|"no"| S_Rev --> R_Tr
+G_Sign -->|"yes"| O_Do --> P_Mon --> G_Reg
+
+G_Reg -->|"yes"| S_Stop --> R_Tr
+G_Reg -->|"no"| R_Tr
 ```
 
-<p>🚦 The fix is also a governed decision: before changing a line, supplier, or process step, the system gates on impact, evidence, and safety constraints. Every intervention produces a trace bundle for later postmortems.</p>
+<p>🚦 The fix is also a governed decision: impact, evidence, and safety constraints gate the intervention; then a pilot test, rollback plan, and sign-offs are required. After execution, monitoring gates whether to keep or rollback — and the full lifecycle is captured in a trace bundle.</p>
 
 </div>
 

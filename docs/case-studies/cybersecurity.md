@@ -67,24 +67,59 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_A(["🚨 Alert"]):::i
-P_E("🕸️ Expand evidence graph"):::p
-R_Path(["🧭 Path candidates<br>(hypotheses)"]):::r
-P_G("🔒 Playbook constraint gate"):::p
-G_OK{"Gates pass?"}:::s
-O_R(["✅ Recommended response"]):::o
-S_X(["🛑 Abstain + escalate"]):::s
-R_T(["🧾 Incident trace package"]):::r
 
-I_A --> P_E --> R_Path --> P_G --> G_OK
-G_OK -->|"yes"| O_R --> R_T
-G_OK -->|"no"| S_X --> R_T
+R_Tel(["📎 Telemetry<br>(EDR, SIEM, cloud logs)"]):::r
+R_Asset(["🧾 Asset + business context"]):::r
+R_IAM(["🔐 IAM + privileges"]):::r
+R_PB(["📜 Playbooks + approvals<br>(versioned)"]):::r
+
+P_Enr("🧩 Enrich + correlate"):::p
+P_TL("🕒 Build timeline"):::p
+R_TL(["🕒 Timeline artifact"]):::r
+
+P_E("🕸️ Expand evidence graph"):::p
+R_Path(["🧭 Hypothesis paths<br>(evidence per edge)"]):::r
+G_Ev{"Evidence sufficient?"}:::s
+S_Req(["🛑 Request missing telemetry/scope"]):::s
+
+P_Sel("📋 Select playbook step"):::p
+P_Sim("🧪 Simulate blast radius"):::p
+G_Risk{"High risk?"}:::s
+G_Auth{"Authorized?"}:::s
+
+P_G("🔒 Playbook + constraint gate"):::p
+G_OK{"Gates pass?"}:::s
+
+O_R(["✅ Recommend / execute response"]):::o
+S_X(["🛑 Abstain + escalate"]):::s
+R_T(["🧾 Incident trace package<br>(evidence + rules + actions)"]):::r
+O_IR(["✅ Incident record<br>(postmortem-ready)"]):::o
+
+I_A --> P_Enr
+R_Tel --> P_Enr
+R_Asset --> P_Enr
+R_IAM --> P_Enr
+R_PB --> P_Enr
+
+P_Enr --> P_TL --> R_TL --> P_E --> R_Path --> G_Ev
+G_Ev -->|"no"| S_Req --> R_T
+G_Ev -->|"yes"| P_Sel --> P_Sim --> G_Risk
+
+G_Risk -->|"yes"| G_Auth
+G_Risk -->|"no"| G_Auth
+
+G_Auth -->|"no"| S_X --> R_T
+G_Auth -->|"yes"| P_G --> G_OK
+
+G_OK -->|"yes"| O_R --> R_T --> O_IR
+G_OK -->|"no"| S_X --> R_T --> O_IR
 
 %% Clickable nodes
 click P_G "/methodology/constraints/" "Constraints & SHACL"
 click P_E "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
 
-<p>🛡️ The critical change is that response is <strong>gated</strong>: evidence expands into hypotheses, then a <strong>🔒 playbook gate</strong> decides what actions are allowed. Either way, the system emits a <strong>🧾 trace package</strong> you can replay.</p>
+<p>🛡️ The point is decision mechanics: telemetry and context become a <strong>timeline artifact</strong> and <strong>hypothesis paths</strong>. Then gates enforce <strong>evidence sufficiency</strong>, <strong>authorization</strong>, <strong>risk/blast radius</strong>, and <strong>playbook constraints</strong>. Every path ends in a trace package plus a postmortem-ready incident record.</p>
 
 </div>
 
@@ -101,24 +136,44 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-R_T(["🧾 Incident trace"]):::r
-R_EV(["📎 Evidence (telemetry)"]):::r
-R_H(["🧭 Hypotheses + paths"]):::r
-R_RU(["🔒 Rules applied"]):::r
-R_AC(["✅ Actions allowed / blocked"]):::r
-R_TS(["🕒 Timestamps + scope"]):::r
+I_Ev(["📎 Raw evidence<br>(logs, alerts, snapshots)"]):::i
+P_Norm("🧼 Normalize + hash"):::p
+R_Ev(["📎 Evidence items<br>(with fingerprints)"]):::r
 
-R_T --> R_EV
-R_T --> R_H
-R_T --> R_RU
-R_T --> R_AC
-R_T --> R_TS
+P_Cust("🔐 Bind chain-of-custody"):::p
+G_Cust{"Custody intact?"}:::s
+S_Stop(["🛑 Stop + notify<br>(provenance break)"]):::s
+
+P_Build("🧾 Build trace object"):::p
+R_H(["🧭 Hypotheses + paths"]):::r
+R_RU(["🔒 Rules applied<br>(playbooks + constraints)"]):::r
+R_AC(["✅ Actions<br>allowed / blocked"]):::r
+R_TS(["🕒 Timestamps + scope"]):::r
+R_T(["🧾 Incident trace<br>(signed artifact)"]):::r
+
+P_Store("🗄️ Write to case store"):::p
+O_Case(["✅ Replayable case file<br>(postmortem / audit)"]):::o
+
+I_Ev --> P_Norm --> R_Ev --> P_Cust --> G_Cust
+G_Cust -->|"no"| S_Stop
+G_Cust -->|"yes"| P_Build
+
+P_Build --> R_H
+P_Build --> R_RU
+P_Build --> R_AC
+P_Build --> R_TS
+R_H --> R_T
+R_RU --> R_T
+R_AC --> R_T
+R_TS --> R_T
+
+R_T --> P_Store --> O_Case
 
 %% Clickable nodes
 click R_T "/methodology/brcausalgraphrag/" "Trace objects"
 ```
 
-<p>🧾 A trace is not a transcript: it’s a structured artifact that binds <strong>evidence</strong>, <strong>paths</strong>, <strong>rules</strong>, and <strong>actions</strong> with timestamps and scope — so postmortems are reproducible.</p>
+<p>🧾 A trace is a signed artifact with custody: raw evidence is fingerprinted, custody is validated, and only then does the system bind <strong>evidence</strong>, <strong>paths</strong>, <strong>rules</strong>, and <strong>actions</strong>. “Provenance break” becomes an explicit stop condition, not a hidden failure.</p>
 
 </div>
 
@@ -135,26 +190,51 @@ classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
 classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-I_Action(["⚙️ Proposed action<br>(contain / block / isolate)"]):::i
+I_Trig(["🎯 Trigger<br>(hypothesis + playbook step)"]):::i
+P_Der("🧩 Derive action candidate"):::p
+R_Act(["⚙️ Action candidate<br>(contain / block / isolate)"]):::r
+
+P_Scope("🧾 Estimate scope"):::p
+R_Scope(["🧾 Scope estimate<br>(assets, accounts, time)"]):::r
+
+P_Run("📜 Select runbook steps"):::p
+R_Run(["📜 Runbook plan<br>(step list)"]):::r
+
 G_Auth{"Authorized?"}:::s
-G_Risk{"High risk?"}:::s
 G_Ev{"Evidence sufficient?"}:::s
-O_Do(["✅ Execute / recommend"]):::o
-S_Esc(["🛑 Escalate to human review"]):::s
-R_Trace(["🧾 Decision trace"]):::r
+G_Risk{"High risk?"}:::s
+G_Safe{"Containment safe?"}:::s
 
-I_Action --> G_Auth
+P_Approve("🧑‍⚖️ Collect approvals"):::p
+G_App{"Approvals complete?"}:::s
+
+O_Auto(["✅ Auto-execute<br>(low risk)"]):::o
+O_Rec(["✅ Recommend<br>(runbook steps)"]):::o
+S_Esc(["🛑 Escalate to IR lead<br>+ change control"]):::s
+
+R_Trace(["🧾 Decision trace<br>(gates + reasons)"]):::r
+R_Tkt(["🎫 Case / change ticket<br>(links to trace)"]):::r
+
+I_Trig --> P_Der --> R_Act --> P_Scope --> R_Scope --> P_Run --> R_Run --> G_Auth
 G_Auth -->|"no"| S_Esc --> R_Trace
-G_Auth -->|"yes"| G_Risk
+G_Auth -->|"yes"| G_Ev
 
-G_Risk -->|"yes"| G_Ev
-G_Risk -->|"no"| G_Ev
-
-G_Ev -->|"yes"| O_Do --> R_Trace
 G_Ev -->|"no"| S_Esc --> R_Trace
+G_Ev -->|"yes"| G_Risk
+
+G_Risk -->|"yes"| G_Safe
+G_Risk -->|"no"| G_Safe
+
+G_Safe -->|"no"| S_Esc --> R_Trace
+G_Safe -->|"yes"| P_Approve --> G_App
+
+G_App -->|"no"| S_Esc --> R_Trace
+G_App -->|"yes"| O_Auto --> R_Trace
+
+R_Trace --> O_Rec --> R_Tkt
 ```
 
-<p>🚦 These gates prevent dangerous automation: even if a path exists, the system must check <strong>authorization</strong>, <strong>risk/blast radius</strong>, and <strong>evidence sufficiency</strong>. When any gate fails, it escalates — and records why.</p>
+<p>🚦 These gates prevent dangerous automation: even if a hypothesis exists, actions must pass <strong>authorization</strong>, <strong>evidence sufficiency</strong>, <strong>risk/blast radius</strong>, and <strong>containment safety</strong>. The trace records every gate and reason, and can be attached to case/change tickets for accountable execution. <strong>Product:</strong> a <strong>decision trace</strong> linked to a <strong>case/change ticket</strong> with the concrete runbook plan and approvals.</p>
 
 </div>
 

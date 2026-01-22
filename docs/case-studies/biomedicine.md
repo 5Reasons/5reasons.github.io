@@ -111,17 +111,42 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_S(["📄 Source<br>(paper / dataset)"]):::i
-R_C(["🧾 Claim object<br>(who said what, when)"]):::r
-P_E("🔗 Edge assertion"):::p
-R_Ev(["📎 Evidence bundle<br>(citations, snippets, stats)"]):::r
-P_Path("🧭 Path candidate"):::p
-R_T(["🧾 Trace object<br>(path + evidence + assumptions)"]):::r
-O_Out(["✅ Reviewable hypothesis"]):::o
+P_Ingest("🧼 Ingest + fingerprint"):::p
+R_Src(["📎 Source record<br>(versioned)"]):::r
 
-I_S --> R_C --> P_E --> R_Ev --> P_Path --> R_T --> O_Out
+P_Extract("🧾 Extract claim"):::p
+R_C(["🧾 Claim object<br>(who said what, when)"]):::r
+G_Q{"Quality sufficient?"}:::s
+S_Down(["🛑 Downweight / flag<br>(low quality)"]):::s
+
+P_Map("📐 Map measurements + units"):::p
+G_Meas{"Measurement aligned?"}:::s
+S_Ask(["🛑 Missing measurement details"]):::s
+
+P_E("🔗 Edge assertion"):::p
+R_Edge(["🔗 Edge object<br>(X → Y, direction)"]):::r
+
+P_Ev("📎 Attach evidence per edge"):::p
+R_Ev(["📎 Evidence bundle<br>(citations, snippets, stats)"]):::r
+G_Conf{"Confounders controlled?"}:::s
+
+P_Path("🧭 Assemble path candidate"):::p
+R_T(["🧾 Trace object<br>(edges + evidence + assumptions)"]):::r
+O_Out(["✅ Reviewable hypothesis" ]):::o
+
+I_S --> P_Ingest --> R_Src --> P_Extract --> R_C --> G_Q
+G_Q -->|"no"| S_Down --> P_Map
+G_Q -->|"yes"| P_Map
+
+P_Map --> G_Meas
+G_Meas -->|"no"| S_Ask --> R_T
+G_Meas -->|"yes"| P_E --> R_Edge --> P_Ev --> R_Ev --> G_Conf
+
+G_Conf -->|"no"| S_Down --> P_Path
+G_Conf -->|"yes"| P_Path --> R_T --> O_Out
 ```
 
-<p>📎 Each edge in the chain is backed by <strong>explicit evidence</strong>, not just a summary. The trace ties <strong>claims</strong> → <strong>edges</strong> → <strong>paths</strong> into an artifact you can challenge and iterate.</p>
+<p>📎 Each edge in the chain is backed by <strong>explicit evidence</strong>, not just a summary. The trace ties <strong>claims</strong> → <strong>edges</strong> → <strong>paths</strong> into an artifact you can challenge and iterate. <strong>Product:</strong> an edge-level <strong>evidence bundle</strong> plus a <strong>trace object</strong> that makes the hypothesis reviewable and falsifiable.</p>
 
 </div>
 
