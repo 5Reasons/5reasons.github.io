@@ -36,7 +36,7 @@ description: "Why high-stakes organizations need causal memory and governance—
   </div>
 </div>
 
-## The causal question
+## The question
 
 <div class="landing-section">
 	<div class="landing-callout">
@@ -108,6 +108,64 @@ description: "Why high-stakes organizations need causal memory and governance—
     </div>
   </div>
 </div>
+
+  ### Philosophy map (pages and how they connect)
+
+  ```mermaid
+  flowchart TB
+  %% Styles (brModel Standard)
+  classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+  classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+  classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+  classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+  classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+  S_Reader("👤 Reader"):::s
+  I_Goal(["🎯 Goal: reduce hallucination risk by enforcing evidence + constraints + accountability"]):::i
+
+  P_Prob("🎲 Why Probabilistic AI Fails"):::p
+  P_Laws("⚖️ The Three Laws"):::p
+  P_Agentic("🤖 AI Agent vs Agentic AI"):::p
+  P_Causal("📈 Correlation vs Causality"):::p
+  P_Consc("🧠 AI Consciousness (Operational View)"):::p
+
+  R_Imp(["🧾 Practical implications (refusal, governance, audit) "]):::r
+
+  M_Method("📐 Methodology"):::p
+  M_Constraints("🔒 Constraints & SHACL"):::p
+  R_Gov("🏛️ Governance Approach"):::p
+  S_Services("🧰 Services"):::p
+
+  S_Reader --> I_Goal
+
+  I_Goal --> P_Prob --> P_Laws --> R_Imp
+  I_Goal --> P_Agentic --> R_Imp
+  I_Goal --> P_Causal --> R_Imp
+  I_Goal --> P_Consc --> R_Imp
+
+  R_Imp --> R_Gov
+  R_Imp --> M_Constraints
+  M_Method --> M_Constraints
+
+  R_Gov -. "delivered via" .-> S_Services
+  M_Method -. "implemented via" .-> S_Services
+
+  %% Cross-links (why these pages matter together)
+  P_Causal -. "interventions" .-> P_Agentic
+  P_Consc -. "avoid over-trust" .-> P_Laws
+  P_Prob -. "RAG limits" .-> P_Causal
+
+  %% Clickable nodes
+  click P_Prob "/philosophy/probabilistic-ai/" "Why Probabilistic AI Fails"
+  click P_Laws "/philosophy/three-laws/" "The Three Laws"
+  click P_Agentic "/philosophy/ai-agent-vs-agentic-ai/" "AI Agent vs Agentic AI"
+  click P_Causal "/philosophy/correlation-vs-causality/" "Correlation vs Causality"
+  click P_Consc "/philosophy/ai-consciousness/" "AI Consciousness"
+  click M_Method "/methodology/" "Methodology"
+  click M_Constraints "/methodology/constraints/" "Constraints & SHACL"
+  click R_Gov "/reasoners/governance/" "Governance"
+  click S_Services "/services/" "Services"
+  ```
 
 ## Where this connects
 

@@ -82,17 +82,40 @@ description: "Why next-token prediction breaks in high-stakes domains, why RAG i
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	U["User request"] --> L["LLM output"];
-	L --> P["Plausible answer"];
-	P --> R1["Risk: confident fabrication"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-	U --> G["Governed system"];
-	G --> C["Constraint checks"];
-	C -->|"Fail"| A["Abstain / escalate"];
-	C -->|"Pass"| E["Evidence retrieval"];
-	E --> T["Trace + provenance"];
-	T --> O["Answer + audit trail"];
+S_User("👤 User"):::s
+I_Req(["📥 Request / decision context"]):::i
+
+P_LLM("🧠 LLM generates"):::p
+R_Text(["📝 Plausible text"]):::r
+O_Risk(["⚠️ Risk: confident fabrication (missing evidence + missing constraints)"]):::o
+
+P_Retrieve("🧭 Retrieve evidence"):::p
+R_Evidence(["🔎 Evidence set (sources + provenance)"]):::r
+P_Validate("🔒 Validate constraints"):::p
+G_OK{"Valid?"}:::s
+R_Trace(["🧾 Trace log (what/why/source)"]):::r
+O_Decision(["✅ Decision-grade output (answer + audit trail)"]):::o
+O_Refuse(["🛑 Refuse / escalate (no guessing)"]):::o
+
+S_User --> I_Req
+I_Req --> P_LLM --> R_Text --> O_Risk
+
+I_Req --> P_Retrieve --> R_Evidence --> P_Validate --> G_OK
+G_OK -->|"yes"| R_Trace --> O_Decision
+G_OK -->|"no"| O_Refuse
+
+%% Clickable nodes
+click P_Retrieve "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click P_Validate "/methodology/constraints/" "Constraints & SHACL"
+click R_Trace "/reasoners/governance/" "Governance"
 ```
 
 </div>
@@ -102,13 +125,38 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-graph TD;
-	R["Retrieval" ] --> S["Selected snippets"];
-	S --> L["LLM synthesis"];
-	X["Cross-doc constraints" ] -.->|"often missing"| L;
-	E["Edge-case clause" ] -.->|"often missed"| S;
-	M["Mechanism / causal model" ] -.->|"not guaranteed"| L;
-	L --> O["Output" ];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Query(["📥 Question"]):::i
+P_Retrieve("🔎 Retrieve top-k chunks"):::p
+R_Snips(["📄 Selected snippets"]):::r
+P_Synth("🧠 LLM synthesizes"):::p
+O_Text(["📝 Output text"]):::o
+
+I_Edge(["📌 Edge-case clause (often not retrieved)"]):::i
+I_Cross(["🔗 Cross-document constraint (A and B and not C)"]):::i
+I_Mech(["⚙️ Mechanism / causal model (not guaranteed)"]):::i
+
+P_Fix("🧱 Add structure"):::p
+R_Model(["🧠 Domain model + constraints (ground truth structure)"]):::r
+O_Glass(["✅ Glass-box output (traceable + governed)"]):::o
+
+I_Query --> P_Retrieve --> R_Snips --> P_Synth --> O_Text
+I_Edge -. "missing" .-> R_Snips
+I_Cross -. "not enforced" .-> P_Synth
+I_Mech -. "not represented" .-> P_Synth
+
+O_Text -. "risk" .-> P_Fix --> R_Model --> O_Glass
+
+%% Clickable nodes
+click R_Model "/methodology/constraints/" "Constraints & SHACL"
+click O_Glass "/reasoners/governance/" "Governance"
 ```
 
 </div>

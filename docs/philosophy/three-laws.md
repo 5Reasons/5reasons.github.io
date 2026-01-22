@@ -83,11 +83,36 @@ description: "Three operating laws for decision-grade AI: no answer without evid
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	Q["Question / decision"] --> E["Evidence available?"];
-	E -->|"No"| A["Abstain / escalate"];
-	E -->|"Yes"| V["Verify + trace"];
-	V --> O["Output + provenance"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["📥 Question / decision"]):::i
+P_Find("🔎 Find evidence"):::p
+G_Ev{"Evidence sufficient?"}:::s
+
+R_Cites(["📎 Citations + provenance (doc/section/version)"]):::r
+P_Check("🔒 Check constraints"):::p
+G_OK{"Allowed?"}:::s
+
+R_Trace(["🧾 Trace log (what/why/source)"]):::r
+O_Out(["✅ Output (audit-ready)"]):::o
+
+R_Refuse(["🛑 Refuse / escalate (request missing inputs)"]):::r
+
+I_Q --> P_Find --> G_Ev
+G_Ev -->|"no"| R_Refuse
+G_Ev -->|"yes"| R_Cites --> P_Check --> G_OK
+G_OK -->|"no"| R_Refuse
+G_OK -->|"yes"| R_Trace --> O_Out
+
+%% Clickable nodes
+click P_Check "/methodology/constraints/" "Constraints & SHACL"
+click R_Trace "/reasoners/governance/" "Governance"
 ```
 
 </div>
@@ -97,12 +122,34 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	S["System proposes"] --> J["Human judgment"];
-	J -->|"Approve"| X["Execute / publish"];
-	J -->|"Reject"| R["Revise / request more evidence"];
-	X --> L["Log decision + rationale"];
-	R --> L;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+S_System("🤖 System"):::s
+S_Owner("👤 Decision owner"):::s
+
+R_Proposal(["🧾 Proposal (recommendation + evidence)"]):::r
+P_Judge("🧑‍⚖️ Human judgment"):::p
+G_Approve{"Approve?"}:::s
+
+P_Act("⚙️ Execute action"):::p
+O_Result(["✅ Outcome"]):::o
+
+P_Request("📌 Request more evidence / revise scope"):::p
+R_Log(["🧾 Audit log (owner + rationale + trace)"]):::r
+
+S_System --> R_Proposal --> S_Owner --> P_Judge --> G_Approve
+G_Approve -->|"yes"| P_Act --> O_Result --> R_Log
+G_Approve -->|"no"| P_Request --> R_Log
+
+%% Clickable nodes
+click R_Log "/reasoners/governance/" "Governance"
+click P_Request "/services/start/" "Start a conversation"
 ```
 
 </div>

@@ -38,6 +38,39 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
 
 ## Why consciousness debates derail real safety
 
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Debate(["🧠 Consciousness debate (interesting, but not operational)"]):::i
+P_Frame("🗣️ Anthropomorphic framing"):::p
+R_Trust(["⚠️ Over-trust (reduced verification)"]):::r
+P_Delegate("📦 Risky delegation"):::p
+O_Harm(["💥 Safety failure (actions on wrong beliefs)"]):::o
+
+P_Gates("🔒 Governance gates"):::p
+R_Evidence(["🔎 Evidence + provenance"]):::r
+R_Trace(["🧾 Trace logs"]):::r
+O_Safe(["✅ Safer operation (refusal + audit)"]):::o
+
+I_Debate --> P_Frame --> R_Trust --> P_Delegate --> O_Harm
+
+R_Evidence --> R_Trust
+R_Trace --> R_Trust
+P_Gates -. "blocks" .-> P_Delegate
+P_Gates --> O_Safe
+
+%% Clickable nodes
+click P_Gates "/reasoners/governance/" "Governance"
+click R_Evidence "/philosophy/three-laws/" "Three laws"
+click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+```
+
 <div class="landing-section">
   <div class="landing-grid">
     <div class="landing-card">
@@ -64,12 +97,36 @@ description: "A pragmatic stance on artificial consciousness: why we don’t nee
 <div class="landing-section">
 
 ```mermaid
-graph TB
-  A["Anthropomorphic framing</br>it understands, it knows"] --> T["Over-trust / reduced verification"];
-  T --> R["Risky delegation</br>(actions based on wrong beliefs)"];
-  G["Governance constraints</br>(enforcement layer)"] -->|"blocks"| R;
-  E["Evidence & traces</br>(what/why/source)"] -->|"enables"| V["Verification"];
-  V -->|"reduces"| T;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+P_Frame("🗣️ Anthropomorphic framing"):::p
+R_Trust(["⚠️ Over-trust / reduced verification"]):::r
+P_Act("⚙️ Action taken"):::p
+O_Fail(["💥 Wrong-belief action (safety failure)"]):::o
+
+P_Ev("🔎 Evidence requirement"):::p
+R_Trace(["🧾 Trace + provenance"]):::r
+P_Verify("✅ Verification"):::p
+
+P_Gov("🔒 Governance constraints"):::p
+O_Block(["🛑 Block / refuse"]):::o
+
+P_Frame --> R_Trust --> P_Act --> O_Fail
+P_Ev --> P_Verify --> R_Trust
+R_Trace --> P_Verify
+P_Gov -. "blocks" .-> P_Act
+P_Gov --> O_Block
+
+%% Clickable nodes
+click P_Gov "/reasoners/governance/" "Governance"
+click P_Ev "/philosophy/three-laws/" "Three laws"
+click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
 
 <p class="landing-mini">The lever is not “prove consciousness”. The lever is: enforce constraints, require evidence, and design for refusal.</p>
@@ -100,13 +157,34 @@ graph TB
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  Q["Question / proposed action"] --> S["Select allowed scope"];
-  S --> C["Check constraints"];
-  C -->|"Fail"| A["Abstain / escalate"];
-  C -->|"Pass"| R["Retrieve evidence + trace"];
-  R --> V["Verify against provenance"];
-  V --> O["Output (answer/action) + audit trail"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["📥 Question / proposed action"]):::i
+P_Scope("🧭 Select allowed scope"):::p
+P_Check("🔒 Check constraints"):::p
+G_OK{"Allowed?"}:::s
+
+P_Retrieve("🔎 Retrieve evidence"):::p
+R_Trace(["🧾 Trace + provenance"]):::r
+P_Verify("✅ Verify"):::p
+O_Out(["✅ Output + audit trail"]):::o
+
+R_Refuse(["🛑 Refuse / escalate (request missing inputs)"]):::r
+
+I_Q --> P_Scope --> P_Check --> G_OK
+G_OK -->|"no"| R_Refuse
+G_OK -->|"yes"| P_Retrieve --> R_Trace --> P_Verify --> O_Out
+
+%% Clickable nodes
+click P_Check "/methodology/constraints/" "Constraints & SHACL"
+click R_Trace "/reasoners/governance/" "Governance"
+click P_Retrieve "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
 
 </div>

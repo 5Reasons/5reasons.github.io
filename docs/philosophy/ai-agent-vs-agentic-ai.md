@@ -70,36 +70,76 @@ description: "Why ‘agent’ is not a product category: the difference between 
 ## Diagram: from tool-use to autonomy
 
 ```mermaid
-flowchart TB;
-  subgraph ToolUse["AI Agent (tool-using)"];
-  direction TB
-    U["User"] --> Q["Question"];
-    Q --> L["LLM"];
-    L --> T["Tools"];
-    T --> L;
-    L --> A["Answer"];
-  end;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-  subgraph Agentic["Agentic AI (system property)"];
-  direction TB
-    G["Goal"] --> P["Plan"];
-    P --> X["Act"];
-    X --> O["Observe"];
-    O --> M["Memory"];
-    M --> P;
-    O --> V["Validate constraints"];
-    V -->|"Fail"| S["Stop / abstain / escalate"];
-    V -->|"Pass"| P;
-  end;
+S_User("👤 User"):::s
+I_Task(["📥 Task / question"]):::i
+P_LLM("🧠 LLM"):::p
+P_Tools("🧰 Tool calls"):::p
+O_Answer(["📝 Answer"]):::o
+
+S_User --> I_Task --> P_LLM
+P_LLM <--> P_Tools
+P_LLM --> O_Answer
+
+I_Line(["— when you add memory + loops + actions —"]):::i
+
+S_Owner("🏢 System owner"):::s
+I_Goal(["🎯 Goal"]):::i
+P_Plan("🗺️ Plan"):::p
+P_Act("⚙️ Act"):::p
+P_Observe("👁️ Observe"):::p
+R_Memory(["🧠 Memory (state + traces)"]):::r
+P_Validate("🔒 Validate constraints"):::p
+G_OK{"Allowed?"}:::s
+O_Stop(["🛑 Stop / abstain / escalate"]):::o
+
+S_Owner --> I_Goal --> P_Plan --> P_Act --> P_Observe --> R_Memory --> P_Plan
+P_Act --> P_Validate --> G_OK
+G_OK -->|"yes"| P_Observe
+G_OK -->|"no"| O_Stop
+
+%% Clickable nodes
+click P_Validate "/methodology/constraints/" "Constraints & SHACL"
+click R_Memory "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click O_Stop "/reasoners/governance/" "Governance"
 ```
 
 ## Diagram: governance gate (the non-negotiable)
 
 ```mermaid
-flowchart LR;
-  A["Proposed action"] --> V["Validate constraints"];
-  V -->|"Pass"| E["Execute"];
-  V -->|"Fail"| S["Stop / escalate"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Action(["📥 Proposed action"]):::i
+P_Validate("🔒 Validate constraints"):::p
+G_OK{"Pass?"}:::s
+P_Exec("⚙️ Execute"):::p
+R_Log(["🧾 Log trace + provenance"]):::r
+O_Done(["✅ Result (audit-ready)"]):::o
+
+R_Refusal(["🛑 Refuse + record reason"]):::r
+P_Esc("🧑‍⚖️ Escalate / ask owner"):::p
+
+I_Action --> P_Validate --> G_OK
+G_OK -->|"yes"| P_Exec --> R_Log --> O_Done
+G_OK -->|"no"| R_Refusal --> P_Esc
+
+%% Clickable nodes
+click P_Validate "/methodology/constraints/" "Constraints & SHACL"
+click R_Log "/reasoners/governance/" "Governance"
+click P_Esc "/services/start/" "Start a conversation"
 ```
 
 ## Practical implication
