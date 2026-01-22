@@ -1,0 +1,49 @@
+%%{init: {"flowchart": {"curve": "linear"}} }%%
+flowchart LR
+  classDef i fill:#eef6ff,stroke:#5b8def,color:#0b1b3a;
+  classDef p fill:#fff5e6,stroke:#ff9f1c,color:#3a2200;
+  classDef r fill:#f3f4f6,stroke:#6b7280,color:#111827;
+  classDef o fill:#ecfdf5,stroke:#10b981,color:#052e1a;
+  classDef s fill:#ffe4e6,stroke:#fb7185,color:#3a0b12;
+
+  D["Unstructured text<br>docs, emails, contracts"]:::i
+  S["Schema & relation vocabulary<br>allowed types; roles"]:::i
+  G["Ground truth definition<br>annotation rules"]:::i
+  C["Chunking policy<br>windowing + overlap"]:::i
+
+  P1["Extraction engine<br>generative / discriminative"]:::p
+  P2["Identity resolution<br>coreference + entity linking"]:::p
+  P3["Validation harness<br>tests + sampling audits"]:::p
+
+  R1[("Asserted KG<br>evidence-linked triples")]:::r
+  R2[("Provenance store<br>span IDs, doc refs")]:::r
+
+  Q{"Meets constraints<br>+ evidence gates?"}:::p
+  A1["Augmentation<br>rules / KB align / constrained LLM"]:::p
+
+  O1["Augmented KG<br>queryable + traceable"]:::o
+  O2["GraphRAG index<br>retrieval + reasoning"]:::o
+
+  F1(["Fragmented entities<br>Party A vs plaintiff"]):::s
+  F2(["Relation loss<br>cross-chunk edges"]):::s
+  F3(["Spurious structure<br>hallucinated nodes/edges"]):::s
+
+  D --> P1
+  S --> P1
+  G --> P3
+  C --> P1
+
+  P1 --> P2
+  P2 --> R1
+  R1 --> R2
+  R1 --> P3
+  P3 --> Q
+
+  Q -- yes --> A1 --> O1 --> O2
+  Q -- no --> F1
+  Q -- no --> F2
+  Q -- no --> F3
+
+  C --> F2
+  P1 --> F3
+  P2 --> F1

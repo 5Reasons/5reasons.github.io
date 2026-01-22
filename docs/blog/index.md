@@ -19,7 +19,7 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
         with explicit uncertainty and falsification ideas.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="posts/temporal-memory-beats-bigger-context/">Read the latest post</a>
+        <a class="md-button md-button--primary" href="posts/why-llms-fail-at-knowledge-graph-extraction/">Read the latest post</a>
         <a class="md-button" href="how-to-read/">How to read posts</a>
       </div>
     </div>
@@ -38,6 +38,10 @@ description: "A feed-style index of causal posts: mechanisms, diagrams, evidence
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><a href="posts/why-llms-fail-at-knowledge-graph-extraction/">Why LLMs Fail at Knowledge Graph Extraction</a></td>
+          <td>Asserted graphs, identity resolution, constrained augmentation, provenance</td>
+        </tr>
         <tr>
           <td><a href="posts/temporal-memory-beats-bigger-context/">Temporal Memory Beats Bigger Context</a></td>
           <td>Temporal validity, supersession, hybrid retrieval, governance</td>

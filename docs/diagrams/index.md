@@ -66,6 +66,12 @@ Source: `mmd/mechanism-executable-causal-graphrag.mmd`
 
 Source: `mmd/hrm-latent-reasoning-needs-verification.mmd`
 
+### Why LLMs Fail at Knowledge Graph Extraction
+
+Source: `mmd/why-llms-fail-at-knowledge-graph-extraction.mmd`
+
+TODO: SVG preview will be rendered to `img/why-llms-fail-at-knowledge-graph-extraction.svg` by the diagram workflow.
+
 !!! note
     The SVGs in this gallery are preview assets. The source of truth lives in the corresponding Mermaid blocks inside posts.
 
