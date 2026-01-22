@@ -307,19 +307,7 @@ Those are causal interventions: they change which memories are eligible to influ
 - For high-stakes tasks, default to conservative memory usage and require traceability.
 - If you cannot audit why a memory was used, you do not have safe memory.
 
-## Appendix
-
-### Sources (workspace)
-
-- `localSource/Analysis/Zep Platforma pre pamäť a kontext AI agentov 23b90bcdd8ae80e3a684ced17a3ec1cd.md` — temporal KG, hybrid retrieval, governance concepts.
-- `docs/blog/posts/memory-needs-identity-governance-and-decay.md` — prior site post framing memory as a governed system.
-
-### Assumptions log
-
-- Assumption: temporal validity features are a dominant driver of stale-context reduction.
-- Assumption: hybrid retrieval improves causal precision in typical enterprise corpora.
-
-### Glossary
+## Glossary
 
 - **Validity window**: time interval during which a fact is treated as true for action.
 - **Supersession**: explicit replacement relation between two incompatible states.

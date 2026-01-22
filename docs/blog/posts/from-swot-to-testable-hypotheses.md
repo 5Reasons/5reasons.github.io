@@ -314,19 +314,7 @@ With governance:
 - Build mechanism modules that survive personnel turnover.
 - Treat evidence quality as a first-class variable, not an afterthought.
 
-## Appendix
-
-### Sources from workspace
-
-- `localSource/Analysis/SWOTs for the brModel 2e890bcdd8ae8127a3b9d179664e9540.md` — domain SWOTs and explicit strengths/weaknesses/opportunities/threats framed as mechanisms.
-- `localSource/Analysis/R&D - Mechanism-Executable Causal GraphRAG for Cog 2e890bcdd8ae8128b6b6ca207f70cb39.md` — specification checklist for “real causal” systems: layers, artifacts, governance.
-
-### Assumptions log
-
-- Assumption: strategy quality can be operationalized as predictable execution + controlled risk.
-- Assumption: governance is feasible to implement incrementally (start small, tighten over time).
-
-### Glossary
+## Glossary
 
 - **Identification:** whether a causal effect can be inferred from data + assumptions.
 - **Governance loop:** a process that updates beliefs and constraints based on evidence.

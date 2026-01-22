@@ -314,19 +314,7 @@ A mechanism-executable GraphRAG must model measurement Transfers (construct → 
 - Score knowledge by fitness against outcomes, not by rhetorical plausibility.
 - Keep subjective optimization (prescriptions) distinct from objective mechanism state.
 
-## Appendix
-
-### Sources (workspace)
-
-- `localSource/Analysis/R&D - Mechanism-Executable Causal GraphRAG for Cog 2e890bcdd8ae8128b6b6ca207f70cb39.md` — brModel-aligned spec checklist, artifacts, layers, two-stream framing.
-- `localSource/Analysis/SWOTs for the brModel 2e890bcdd8ae8127a3b9d179664e9540.md` — strengths/weaknesses and governance risks.
-
-### Assumptions log
-
-- Assumption: executable Transfers can be validated and versioned in practice for target domains.
-- Assumption: governance metrics can be designed to resist Goodhart effects.
-
-### Glossary
+## Glossary
 
 - **GraphRAG**: retrieval-augmented generation with a graph retrieval layer.
 - **Transfer**: an executable mechanism that maps inputs to outputs.

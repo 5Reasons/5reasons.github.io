@@ -331,21 +331,7 @@ If governance is fused into generation, the model will rationalize rather than c
 - Use decay to protect context precision—more memory is not automatically better.
 - Benchmark failure modes (identity collisions, drift, stale facts) deliberately.
 
-## Appendix
-
-### Sources from workspace
-
-- `localSource/Analysis/Zep Platforma pre pamäť a kontext AI agentov 23b90bcdd8ae80e3a684ced17a3ec1cd.md` — product/architecture patterns: temporal graph, context assembly, identity and multi-tenant considerations.
-- `localSource/Analysis/MemEvolve Meta-Evolution of Agent Memory Systems 2db90bcdd8ae80a4ad85c3de04c5501f.md` — modular memory architecture (encode/store/retrieve/manage) and the case for adaptive governance.
-- `localSource/Analysis/Causal Graphs as the Missing Layer Bridging Contex 9315b2bee0c24a078e4e658d06800f10.md` — argument for causal edge filtering + provenance/decision traces.
-
-### Assumptions log
-
-- Assumption: the primary goal of “memory” is reliable behavior over time, not just short-term conversational coherence.
-- Assumption: identity binding errors are more damaging than retrieval ranking errors.
-- Assumption: governance can be operationalized as fitness scoring + rollback, not only policy text.
-
-### Glossary
+## Glossary
 
 - **Temporal validity:** representing when a fact is true (valid-from/valid-to).
 - **Decision trace:** a structured record of evidence and reasoning steps that produced an output.

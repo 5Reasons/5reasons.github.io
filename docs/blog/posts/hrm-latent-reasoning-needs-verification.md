@@ -299,19 +299,7 @@ Those interventions reduce the impact of latent errors even when interpretabilit
 - Make confidence calibration and traceability non-negotiable for high-stakes use.
 - Treat the harness as part of the causal system, not tooling trivia.
 
-## Appendix
-
-### Sources (workspace)
-
-- `localSource/Analysis/Research - HRM je výpočtovo univerzálny, čo zn 23990bcdd8ae8037b4f6f4b27944ac17.md` — HRM mechanism, latent reasoning implications.
-- `localSource/Analysis/The Best AI Coding Assistants August 2025 interest 4f9515fd50a94bee8d86b1073d67bcc0.md` — harness vs model framing, evaluation via tests.
-
-### Assumptions log
-
-- Assumption: latent compute increases algorithmic depth in relevant tasks.
-- Assumption: verification harness improvements are cheaper than perfect interpretability.
-
-### Glossary
+## Glossary
 
 - **Metamorphic testing**: testing via input transformations with predictable output relations.
 - **Adaptive computation depth**: allocating variable internal steps based on difficulty.

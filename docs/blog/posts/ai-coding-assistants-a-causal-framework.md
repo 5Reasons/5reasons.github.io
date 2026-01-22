@@ -325,19 +325,7 @@ Coding assistants amplify whatever your organization already optimizes.
 - Keep high-risk modules behind stricter gates.
 - Expect rankings to drift; design for robustness instead.
 
-## Appendix
-
-### Sources from workspace
-
-- `localSource/Analysis/The Best AI Coding Assistants August 2025 interest 4f9515fd50a94bee8d86b1073d67bcc0.md` — benchmark framing: model vs harness vs prompt; instruction following; unit tests; LLM-as-judge.
-- `localSource/Analysis/SWOTs for the brModel 2e890bcdd8ae8127a3b9d179664e9540.md` — software development SWOT: observability, postmortems, Goodhart risks.
-
-### Assumptions log
-
-- Assumption: organizations can materially strengthen verification loops (tests/CI) without prohibitive cost.
-- Assumption: assistant-generated diffs are reviewable when surfaced as patch sets.
-
-### Glossary
+## Glossary
 
 - **Harness:** the orchestration layer that manages context, file edits, tool execution, and iteration.
 - **Defect escape:** failures that reach production.
