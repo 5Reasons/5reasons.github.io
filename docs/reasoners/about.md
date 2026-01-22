@@ -199,7 +199,7 @@ description: "Who we are and how we work: a logic-first team building causal mem
 
 #### Enterprise software and strategic leadership
 
-- <strong>Ing. Milan Hán</strong> — former executive director of SAP Slovakia; long-term advisor to the bigRing project. Under his leadership, SAP Slovakia reached major scale in enterprise applications; he continues to support strategic direction.
+- <strong>Ing. Milan Hán</strong> — former executive director of SAP Slovakia; long-term advisor to the brModel project. Under his leadership, SAP Slovakia reached major scale in enterprise applications; he continues to support strategic direction.
 
 #### Biomedical and life sciences
 
@@ -228,7 +228,7 @@ description: "Who we are and how we work: a logic-first team building causal mem
 
 - [Laboratórna a medicínska technika | Lambda Life a.s.](https://www.lambda.sk/)
 - [Addressing Network Medicine Challenges: causal examination of potential mechanisms of metformin’s impact on C9orf72-mediated ALS](https://drugrepocentral.scienceopen.com/hosted-document?doi=10.58647/REXPO.23000024.v1)
-- [bigRing ALS case study (PDF)](bigRing_Case_Study_ALS.pdf)
+- [brModel ALS case study (PDF)](brModel_Case_Study_ALS.pdf)
 - [United Synergy](https://unitedsynergy.com/)
 - [O projekte - Zdravotný Kompas](https://www.zdravotnykompas.sk/)
 - [AP2 homepage](https://www.ap2.sk/)

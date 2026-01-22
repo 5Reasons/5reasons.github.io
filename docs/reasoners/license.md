@@ -97,7 +97,7 @@ description: "Licensing terms for using brModel™ and the intellectual content 
 	<div class="landing-card">
 		<p>
 			This page is about licensing <strong>brModel™ and the content published on this website</strong>.
-			The open-source license in the GitHub repository (if any) governs the <strong>source code</strong> in that repository.
+			The open-source license in the GitHub repository governs the <strong>source code</strong> in that repository.
 			It does not grant you rights to reuse the brModel™ methodology or the site’s intellectual content beyond what is stated here.
 		</p>
 	</div>

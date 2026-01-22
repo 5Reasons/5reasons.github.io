@@ -73,9 +73,6 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 			The binding legal terms for using brModel™ and the intellectual content published on this site are defined here:
 			<a href="/reasoners/license/">brModel™ License</a>.
 		</p>
-		<p class="landing-mini">
-			Note: the GitHub repository license (if any) only governs source code in that repository.
-		</p>
 	</div>
 </div>
 
