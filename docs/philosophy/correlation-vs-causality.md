@@ -119,11 +119,11 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_Obs(["📊 Observational world (nobody changes X)"]):::i
-R_Pyx(["📈 Learn $P(Y|X)$"]):::r
+R_Pyx(["📈 Learn P(Y|X)"]):::r
 O_Pred(["✅ Prediction can work (if environment stays similar)"]):::o
 
 I_Do(["🧑‍⚖️ We change X (policy / pricing / treatment)"]):::i
-R_Pydo(["📐 Need $P(Y|do(X))$"]):::r
+R_Pydo(["📐 Need P(Y|do(X))"]):::r
 O_Dec(["✅ Decisions require mechanism + side-effects"]):::o
 
 I_Obs --> R_Pyx --> O_Pred
@@ -161,7 +161,7 @@ R_T4(["↩️ Reverse causality"]):::r
 R_T5(["🔁 Policy feedback"]):::r
 R_T6(["🎯 Goodhart / proxy gaming"]):::r
 
-R_Bad(["❌ Bad path: treat $P(Y|X)$ as decision-grade"]):::s
+R_Bad(["❌ Bad path: treat P(Y|X) as decision-grade"]):::s
 P_Wrong("⚠️ Wrong intervention (do X) + missing side-effects"):::s
 S_Harm(["💥 Bad outcome (unintended harm / wasted spend)"]):::s
 
@@ -172,7 +172,7 @@ P_F4("Time ordering / instruments + structural tests"):::p
 P_F5("Model feedback loops + second-order effects"):::p
 P_F6("Guardrails + mechanism + anticipate adaptation"):::p
 
-P_Good("✅ Guarded path: identify $P(Y|do(X))$ + governance + measurement"):::o
+P_Good("✅ Guarded path: identify P(Y|do(X)) + governance + measurement"):::o
 P_Do("🧪 Run intervention with constraints"):::p
 O_Value(["✅ Better outcome + audit-ready learning"]):::o
 
