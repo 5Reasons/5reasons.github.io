@@ -8,6 +8,21 @@
 .md-header__source {
     display: none !important;
 }
+.md-nav__source {
+    display: none !important;
+}
+
+.md-copyright {
+    width: 100% !important;
+}
+.md-copyright__highlight {
+    position: absolute;
+    right: 20px;
+}
+
+html .md-footer-meta.md-typeset a:not(:focus,:hover) {
+    font-size: 12px;
+}
 
 /* Mermaid label wrapping (fix text overflow)
    Mermaid often renders node/edge labels as HTML inside SVG <foreignObject> and

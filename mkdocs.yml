@@ -3,6 +3,7 @@ site_description: Causal analysis you can argue with—mechanisms, evidence audi
 site_url: https://5reasons.services/
 repo_name: 5Reasons
 repo_url: https://github.com/5Reasons/5reasons.github.io
+copyright: "© 5Reasons — <a href='/reasoners/privacy/' style='font-size: 10px;'>Privacy Policy</a> • <a href='/reasoners/gdpr/' style='font-size: 10px;'>GDPR</a>"
 
 theme:
   name: material
@@ -53,6 +54,8 @@ nav:
     - Governance Approach: reasoners/governance.md
     - FAQ: reasoners/faq.md
     - Terms of Use: reasoners/terms.md
+    - Privacy Policy: reasoners/privacy.md
+    - GDPR & Data Protection: reasoners/gdpr.md
   - Philosophy:
     - Overview: philosophy/index.md
     - Why Probabilistic AI Fails: philosophy/probabilistic-ai.md
@@ -122,8 +125,10 @@ markdown_extensions:
 extra_css:
   - assets/css/extra.css
   - assets/css/landing.css
+  - assets/css/consent.css
 
 extra_javascript:
+  - assets/js/consent.js
   - assets/js/lightbox.js
   - assets/js/diagram-modal.js
   - assets/js/link-fixes.js
