@@ -2,7 +2,7 @@ site_name: 5Reasons
 site_description: Causal analysis you can argue with—mechanisms, evidence audits, and decision-grade diagrams for building reliable reasoning systems.
 # site_url: https://5reasons.services/
 site_url: https://5reasons.github.io/
-repo_url: https://github.com/5Reasons/5reasons.github.io
+# repo_url: https://github.com/5Reasons/5reasons.github.io
 repo_name: 5Reasons
 
 theme:
