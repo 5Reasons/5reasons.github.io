@@ -5,10 +5,6 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008825.png"/>
-</div>
-
 # Biomedicine: Mechanism Discovery
 
 <div class="landing-hero">
@@ -29,7 +25,7 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
   </div>
 </div>
 
-## The causal question
+## The question
 
 <div class="landing-section">
   <div class="landing-card">
@@ -37,6 +33,10 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
       How do we uncover mechanistic chains (not just correlations) around targets like <strong>CA IX</strong> in tumor microenvironments?
     </p>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008825.png"/>
 </div>
 
 ## Why probabilistic search fails (even when it is “honest”)
@@ -67,11 +67,33 @@ description: "How causal pathfinding turns scattered biomedical evidence into au
   </div>
 
 ```mermaid
-flowchart LR;
-  CA["CA IX"] --> PH["Extracellular pH"];
-  PH --> PROT["Proteases"];
-  PROT --> INV["Invasiveness"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["🎯 Causal question<br>(what mechanism explains Y?)"]):::i
+P_G("🧠 Build causal graph + provenance"):::p
+P_Trv("🕸️ Directed pathfinding"):::p
+G_Path{"Path found?"}:::s
+R_Path(["🧬 Candidate mechanism chain<br>(edge-level evidence)"]):::r
+R_Trace(["🧾 Trace package<br>(edges, citations, versions)"]):::r
+O_Lab(["✅ Test plan<br>(what would falsify which link)"]):::o
+S_Abs(["🛑 Abstain + missing evidence list"]):::s
+
+I_Q --> P_G --> P_Trv --> G_Path
+G_Path -->|"yes"| R_Path --> R_Trace --> O_Lab
+G_Path -->|"no"| S_Abs --> R_Trace
+
+%% Clickable nodes
+click P_Trv "/methodology/causalgraphrag/" "CausalGraphRAG"
+click P_G "/methodology/property-and-knowledge-graphs/" "Graphs"
 ```
+
+<p>🧬 The key shift is <strong>directed traversal</strong>: we build <strong>🧠 causal memory</strong>, run <strong>🕸️ pathfinding</strong>, and explicitly decide whether a mechanistic chain exists. Either way, the system outputs a <strong>🧾 trace package</strong> — so the result is falsifiable, not rhetorical.</p>
 
 </div>
 
@@ -80,12 +102,55 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  S["Source (paper / dataset)"] --> C["Claim"];
-  C --> E["Edge assertion"];
-  E --> P["Path candidate"];
-  P --> T["Trace object"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_S(["📄 Source<br>(paper / dataset)"]):::i
+R_C(["🧾 Claim object<br>(who said what, when)"]):::r
+P_E("🔗 Edge assertion"):::p
+R_Ev(["📎 Evidence bundle<br>(citations, snippets, stats)"]):::r
+P_Path("🧭 Path candidate"):::p
+R_T(["🧾 Trace object<br>(path + evidence + assumptions)"]):::r
+O_Out(["✅ Reviewable hypothesis"]):::o
+
+I_S --> R_C --> P_E --> R_Ev --> P_Path --> R_T --> O_Out
 ```
+
+<p>📎 Each edge in the chain is backed by <strong>explicit evidence</strong>, not just a summary. The trace ties <strong>claims</strong> → <strong>edges</strong> → <strong>paths</strong> into an artifact you can challenge and iterate.</p>
+
+</div>
+
+## Diagram: falsification loop (how uncertainty becomes a lab plan)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_Path(["🧬 Candidate mechanism"]):::r
+P_Weak("🔎 Identify weakest link"):::p
+G_Fals{"Falsifiable?"}:::s
+R_Exp(["🧪 Minimal experiment<br>(most informative intervention)"]):::r
+O_Upd(["✅ Update graph + confidence"]):::o
+S_Miss(["🛑 Not falsifiable yet<br>request missing measurements"]):::s
+
+R_Path --> P_Weak --> G_Fals
+G_Fals -->|"yes"| R_Exp --> O_Upd --> R_Path
+G_Fals -->|"no"| S_Miss --> R_Path
+```
+
+<p>🧪 This loop turns “more reading” into <strong>targeted falsification</strong>: find the weakest link, decide if it’s falsifiable, run the smallest experiment that would flip your conclusion, then update the causal memory.</p>
 
 </div>
 

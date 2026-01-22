@@ -7,10 +7,6 @@ description: "How governance constraints prevent policy-violating approvals and 
 
 # Finance: Compliance & Risk
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008834.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -37,6 +33,10 @@ description: "How governance constraints prevent policy-violating approvals and 
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008834.png"/>
+</div>
+
 ## Failure mode to avoid
 
 <div class="landing-section">
@@ -59,11 +59,30 @@ description: "How governance constraints prevent policy-violating approvals and 
   </div>
 
 ```mermaid
-flowchart TB;
-  Q["Proposed decision"] --> V["Validate constraints"];
-  V -->|"Pass"| OK["Approve with trace"];
-  V -->|"Fail"| NO["Reject with rule + evidence"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["📥 Proposed decision"]):::i
+P_V("🔒 Validate constraints"):::p
+G_OK{"Constraints pass?"}:::s
+O_OK(["✅ Approve + trace"]):::o
+S_NO(["🛑 Reject + violations"]):::s
+R_T(["🧾 Trace bundle<br>(rules + evidence + inputs)"]):::r
+
+I_Q --> P_V --> G_OK
+G_OK -->|"yes"| O_OK --> R_T
+G_OK -->|"no"| S_NO --> R_T
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
 ```
+
+<p>💳 The system does not “ask the model to comply”: it runs a <strong>🔒 non-bypassable constraint gate</strong>. The output is either an approval or a rejection — both with a <strong>🧾 trace bundle</strong> showing which rules triggered and what evidence was used.</p>
 
 </div>
 
@@ -72,13 +91,60 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  P["Policies"] --> R1["Role restrictions"];
-  P --> R2["Sector prohibitions"];
-  P --> R3["Evidence requirements"];
-  P --> R4["Threshold limits"];
-  R3 --> C["Citations + provenance"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_P(["📜 Policy library"]):::r
+R1(["👤 Role restrictions"]):::r
+R2(["🚫 Sector prohibitions"]):::r
+R3(["📎 Evidence requirements"]):::r
+R4(["📏 Threshold limits"]):::r
+R_C(["🧾 Citations + provenance"]):::r
+
+R_P --> R1
+R_P --> R2
+R_P --> R3 --> R_C
+R_P --> R4
+
+%% Clickable nodes
+click R_P "/methodology/constraints/" "Constraints"
 ```
+
+<p>📜 “Constraints” are not one thing: finance needs role controls, hard prohibitions, evidence requirements, and numeric limits — each versioned and enforceable, so policy can’t be bypassed by fluent text.</p>
+
+</div>
+
+## Diagram: policy diffs and re-evaluation loop
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Upd(["🧩 Policy update"]):::i
+R_Diff(["🧾 Policy diff<br>(what changed)"]):::r
+P_Reeval("🧪 Re-evaluate impacted decisions"):::p
+G_Flip{"Any outcomes flip?"}:::s
+O_Rep(["✅ Review bundle<br>(before/after + reasons)"]):::o
+S_No(["🛑 No material changes"]):::s
+
+I_Upd --> R_Diff --> P_Reeval --> G_Flip
+G_Flip -->|"yes"| O_Rep
+G_Flip -->|"no"| S_No
+```
+
+<p>🧪 Governance stays stable under change only if policy updates are <strong>diffed</strong> and decisions are <strong>re-evaluated</strong>. This turns “rule drift” into a reviewable artifact, not a silent production risk.</p>
 
 </div>
 

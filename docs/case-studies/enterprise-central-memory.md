@@ -7,11 +7,7 @@ description: "How a governed central memory turns meeting notes and project arti
 
 --8<-- "includes/quicknav.html"
 
-# Enterprise Central Memory: Meetings, Projects, and Decision Traceability
-
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008838.png"/>
-</div>
+# Enterprise Central Memory: Projects, Meetings and Decisions
 
 <div class="landing-hero">
   <div class="landing-hero__grid">
@@ -42,6 +38,10 @@ description: "How a governed central memory turns meeting notes and project arti
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008838.png"/>
+</div>
+
 ## Failure modes to avoid
 
 <div class="landing-section">
@@ -60,14 +60,34 @@ description: "How a governed central memory turns meeting notes and project arti
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  M["Meeting / artifact"] --> X["Extract claims + decisions"];
-  X --> V["Validate constraints + permissions"];
-  V -->|"Pass"| S["Store as graph memory"];
-  V -->|"Fail"| B["Block + request clarification"];
-  S --> Q["Query as causal paths"];
-  Q --> T["Traceable answer"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_M(["📝 Meeting / artifact"]):::i
+P_X("🧾 Extract claims + decisions"):::p
+P_V("🔒 Validate permissions + constraints"):::p
+G_OK{"Gates pass?"}:::s
+P_S("🧠 Store as graph memory"):::p
+P_Q("🕸️ Query as causal paths"):::p
+O_T(["✅ Traceable answer"]):::o
+S_B(["🛑 Block + request clarification"]):::s
+R_Tr(["🧾 Decision trace"]):::r
+
+I_M --> P_X --> P_V --> G_OK
+G_OK -->|"yes"| P_S --> P_Q --> O_T --> R_Tr
+G_OK -->|"no"| S_B --> R_Tr
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
+click P_S "/methodology/property-and-knowledge-graphs/" "Graphs"
 ```
+
+<p>🏢 Central memory is not “better notes”: it is <strong>governed ingestion</strong>. Every extracted claim or decision is validated against <strong>permissions</strong> and <strong>constraints</strong> before it becomes memory, and every answer is backed by a <strong>🧾 trace</strong>.</p>
 
 </div>
 
@@ -76,13 +96,61 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  D["Decision"] --> O["Owner"];
-  D --> A["Assumptions"];
-  D --> E["Evidence (links)"];
-  D --> C["Constraints"];
-  D --> CH["Change log"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_D(["🧾 Decision object"]):::r
+R_O(["👤 Owner"]):::r
+R_A(["🧠 Assumptions"]):::r
+R_E(["📎 Evidence links"]):::r
+R_C(["🔒 Constraints"]):::r
+R_CH(["🕒 Change log"]):::r
+
+R_D --> R_O
+R_D --> R_A
+R_D --> R_E
+R_D --> R_C
+R_D --> R_CH
+
+%% Clickable nodes
+click R_C "/methodology/constraints/" "Constraints"
 ```
+
+<p>🧾 Treat decisions as first-class objects: a decision without an <strong>owner</strong>, <strong>assumptions</strong>, <strong>evidence</strong>, and a <strong>change log</strong> is just a story. This makes accountability computable.</p>
+
+</div>
+
+## Diagram: contradiction detection loop (preventing “organizational amnesia”)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_New(["🧩 New proposal / plan"]):::i
+P_Link("🔗 Link to prior decisions + constraints"):::p
+G_Contr{"Contradiction?"}:::s
+O_OK(["✅ Approve + trace"]):::o
+S_Block(["🛑 Block + request resolution"]):::s
+R_Iss(["🧾 Issue record<br>(what conflicts with what)"]):::r
+
+I_New --> P_Link --> G_Contr
+G_Contr -->|"no"| O_OK
+G_Contr -->|"yes"| S_Block --> R_Iss
+```
+
+<p>🚦 The system does not “smooth over” conflict: it checks whether a new plan contradicts an existing decision or constraint. If yes, it blocks and produces a structured issue record instead of a polite summary.</p>
 
 </div>
 

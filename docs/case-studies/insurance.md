@@ -60,13 +60,32 @@ description: "How constraint-gated reasoning and traceable evidence reduce claim
   </div>
 
 ```mermaid
-flowchart TB;
-  C["Claim / underwriting proposal"] --> E["Evidence set"];
-  E --> P["Policy rules"];
-  P --> V["Constraint gate"];
-  V -->|"Pass"| OK["Approve + trace"];
-  V -->|"Fail"| NO["Reject / escalate + violations"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_C(["📥 Claim / underwriting proposal"]):::i
+R_E(["📎 Evidence set"]):::r
+R_P(["📜 Policy rules"]):::r
+P_V("🔒 Constraint gate"):::p
+G_OK{"Gates pass?"}:::s
+O_OK(["✅ Approve + trace"]):::o
+S_NO(["🛑 Reject / escalate + violations"]):::s
+R_T(["🧾 Trace bundle"]):::r
+
+I_C --> R_E --> R_P --> P_V --> G_OK
+G_OK -->|"yes"| O_OK --> R_T
+G_OK -->|"no"| S_NO --> R_T
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
 ```
+
+<p>🧾 Insurance workflows become decision-grade when <strong>policy</strong> is enforced as a <strong>🔒 gate</strong>. The system either approves or escalates — and always emits a <strong>trace bundle</strong> you can audit.</p>
 
 </div>
 
@@ -75,12 +94,58 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  EV["Evidence"] --> F["Finding"];
-  F --> R["Risk factor"];
-  R --> D["Decision impact"];
-  D --> T["Trace"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_EV(["📎 Evidence"]):::r
+P_F("🔎 Finding"):::p
+P_R("🧭 Risk factor"):::p
+P_D("⚖️ Decision impact"):::p
+R_T(["🧾 Trace"]):::r
+
+R_EV --> P_F --> P_R --> P_D --> R_T
 ```
+
+<p>🧭 This is the unit of accountability: evidence leads to findings, findings to risk factors, and risk factors to decision impact — all captured in a trace so disputes don’t devolve into opinions.</p>
+
+</div>
+
+## Diagram: fraud triage gates (when to escalate)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Cl(["📥 Claim intake"]):::i
+P_Link("🕸️ Link entities<br>(people, vehicles, addresses)"):::p
+R_Sig(["🔎 Fraud signals"]):::r
+G_Ev{"Evidence sufficient?"}:::s
+G_Risk{"High risk?"}:::s
+O_Pay(["✅ Pay / approve"]):::o
+S_Esc(["🛑 Escalate to investigation"]):::s
+R_Tr(["🧾 Trace bundle"]):::r
+
+I_Cl --> P_Link --> R_Sig --> G_Ev
+G_Ev -->|"no"| S_Esc --> R_Tr
+G_Ev -->|"yes"| G_Risk
+
+G_Risk -->|"yes"| S_Esc --> R_Tr
+G_Risk -->|"no"| O_Pay --> R_Tr
+```
+
+<p>🚦 Fraud controls need explicit gates: if evidence is incomplete or risk is high, the system escalates to investigation rather than “auto-paying with confidence”. Every path ends in a trace bundle.</p>
 
 </div>
 

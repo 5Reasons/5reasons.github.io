@@ -55,12 +55,24 @@ description: "How causal graphs connect process steps, sensor signals, and suppl
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  B["Batch"] --> S["Supplier event"];
-  S --> P["Process step"];
-  P --> Q["Quality signal"];
-  Q --> F["Failure"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_B(["📦 Batch"]):::i
+P_S("🏭 Supplier event"):::p
+P_P("⚙️ Process step"):::p
+R_Q(["📈 Quality signal"]):::r
+S_F(["⚠️ Failure"]):::s
+
+I_B --> P_S --> P_P --> R_Q --> S_F
 ```
+
+<p>🏭 Quality failures propagate through systems: batches and supplier events flow into process steps and sensor signals. A causal chain makes that propagation explicit — and auditable.</p>
 
 </div>
 
@@ -69,13 +81,68 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  I["Incident"] --> E["Collect evidence"];
-  E --> P["Generate causal path candidates"];
-  P --> V["Validate constraints + required evidence"];
-  V -->|"Pass"| A["Recommendation + trace"];
-  V -->|"Fail"| X["Abstain + request missing data"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Inc(["⚠️ Incident"]):::i
+P_E("📎 Collect evidence"):::p
+P_Path("🧭 Generate causal paths"):::p
+P_V("🔒 Validate constraints + required evidence"):::p
+G_OK{"Gates pass?"}:::s
+O_A(["✅ Recommendation + trace"]):::o
+S_X(["🛑 Abstain + request missing data"]):::s
+
+I_Inc --> P_E --> P_Path --> P_V --> G_OK
+G_OK -->|"yes"| O_A
+G_OK -->|"no"| S_X
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
+click P_Path "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p>🔁 RCA becomes reproducible when it’s gated: you generate candidate causal paths, then validate required evidence and constraints. If gates fail, the correct output is <strong>abstention</strong> with an explicit missing-data request.</p>
+
+</div>
+
+## Diagram: intervention approval gates (preventing unsafe fixes)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Fix(["🧩 Proposed intervention<br>(tooling, recipe, supplier)"]):::i
+G_Impact{"High impact?"}:::s
+G_Ev{"Evidence sufficient?"}:::s
+G_Safe{"Safety constraints pass?"}:::s
+O_Do(["✅ Execute change + trace"]):::o
+S_Rev(["🛑 Require review / sign-off"]):::s
+R_Tr(["🧾 Change trace bundle"]):::r
+
+I_Fix --> G_Impact
+G_Impact -->|"yes"| G_Ev
+G_Impact -->|"no"| G_Ev
+
+G_Ev -->|"no"| S_Rev --> R_Tr
+G_Ev -->|"yes"| G_Safe
+
+G_Safe -->|"yes"| O_Do --> R_Tr
+G_Safe -->|"no"| S_Rev --> R_Tr
+```
+
+<p>🚦 The fix is also a governed decision: before changing a line, supplier, or process step, the system gates on impact, evidence, and safety constraints. Every intervention produces a trace bundle for later postmortems.</p>
 
 </div>
 

@@ -9,10 +9,6 @@ description: "How traceable causal chains and constraint gates reduce protocol d
 
 # Pharma & Clinical Ops: Trial Decisions With Auditable Evidence
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008833.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -42,6 +38,10 @@ description: "How traceable causal chains and constraint gates reduce protocol d
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008833.png"/>
+</div>
+
 ## Failure modes to avoid
 
 <div class="landing-section">
@@ -60,13 +60,32 @@ description: "How traceable causal chains and constraint gates reduce protocol d
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  Q["Operational question"] --> E["Retrieve evidence"];
-  E --> P["Causal path candidates"];
-  P --> G["Protocol + safety constraints"];
-  G -->|"Pass"| O["Recommendation + trace"];
-  G -->|"Fail"| X["Abstain + request missing data"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["📥 Operational question"]):::i
+P_E("📎 Retrieve evidence"):::p
+R_Path(["🧭 Path candidates<br>(eligibility / safety / ops)"]):::r
+P_G("🔒 Protocol + safety constraints"):::p
+G_OK{"Gates pass?"}:::s
+O_O(["✅ Recommendation + trace"]):::o
+S_X(["🛑 Abstain + request missing data"]):::s
+
+I_Q --> P_E --> R_Path --> P_G --> G_OK
+G_OK -->|"yes"| O_O
+G_OK -->|"no"| S_X
+
+%% Clickable nodes
+click P_G "/methodology/constraints/" "Constraints & SHACL"
+click R_Path "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p>💊 Clinical ops becomes decision-grade when recommendations are forced through <strong>protocol and safety gates</strong>. The system either produces a recommendation with a trace — or refuses and requests the missing evidence.</p>
 
 </div>
 
@@ -75,12 +94,59 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  S["Sources</br>(protocol, logs, reports)"] --> C["Claims"];
-  C --> R["Rules applied"];
-  R --> D["Decision"];
-  D --> T["Trace + inspection bundle"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_S(["📄 Sources<br>(protocol, logs, reports)"]):::i
+R_C(["🧾 Claims"]):::r
+P_R("🔒 Rules applied"):::p
+P_D("⚖️ Decision"):::p
+R_T(["🧾 Trace + inspection bundle"]):::r
+O_Out(["✅ Defensible outcome"]):::o
+
+I_S --> R_C --> P_R --> P_D --> R_T --> O_Out
 ```
+
+<p>🧾 The inspection artifact is explicit: sources produce claims, claims are evaluated under protocol rules, and the outcome is packaged as a trace bundle you can replay during audits and inspections.</p>
+
+</div>
+
+## Diagram: protocol versioning gates (avoid amendment confusion)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Am(["🧩 Protocol amendment / version"]):::i
+P_Map("🧭 Map version to site + time"):::p
+G_Ver{"Correct version selected?"}:::s
+P_Reeval("🧪 Re-evaluate impacted decisions"):::p
+G_Gate{"Gates pass?"}:::s
+O_OK(["✅ Continue operations"]):::o
+S_Stop(["🛑 Block + escalate"]):::s
+R_Tr(["🧾 Inspection bundle<br>(version + decision diffs)"]):::r
+
+I_Am --> P_Map --> G_Ver
+G_Ver -->|"no"| S_Stop --> R_Tr
+G_Ver -->|"yes"| P_Reeval --> G_Gate
+
+G_Gate -->|"yes"| O_OK --> R_Tr
+G_Gate -->|"no"| S_Stop --> R_Tr
+```
+
+<p>🚦 Amendments change what is allowed. This diagram makes the versioning mechanism explicit: select the correct protocol version per site/time, re-evaluate affected decisions, and gate continuation. The trace becomes an inspection-ready diff bundle.</p>
 
 </div>
 

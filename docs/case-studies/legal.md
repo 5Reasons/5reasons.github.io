@@ -7,10 +7,6 @@ description: "Graph-based contract analysis to detect clause contradictions and 
 
 # Legal: Contract Logic Conflicts
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008837.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -37,6 +33,10 @@ description: "Graph-based contract analysis to detect clause contradictions and 
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008837.png"/>
+</div>
+
 ## Why chat summaries fail
 
 <div class="landing-section">
@@ -56,11 +56,25 @@ description: "Graph-based contract analysis to detect clause contradictions and 
   </div>
 
 ```mermaid
-graph LR;
-  A["Clause A: requires X"] --> X["X"];
-  B["Clause B: forbids X"] --> X;
-  A -. "conflict" .-> B;
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_A(["📄 Clause A<br>requires X"]):::r
+R_B(["📄 Clause B<br>forbids X"]):::r
+P_X("🧩 X"):::p
+S_C(["⚠️ Conflict edge"]):::s
+
+R_A --> P_X
+R_B --> P_X
+R_A -. "conflict" .-> R_B
 ```
+
+<p>⚖️ Contracts behave like logic graphs: when two clauses create incompatible constraints on the same object (X), a <strong>conflict edge</strong> becomes computable and reviewable.</p>
 
 </div>
 
@@ -69,13 +83,61 @@ graph LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  C["Clause"] --> T["Type</br>(obligation / prohibition / exception)"];
-  T --> S["Scope + conditions"];
-  S --> L["Link to referenced clauses"];
-  L --> D["Detect conflicts"];
-  D --> R["Risk register + trace"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_C(["📄 Clause"]):::i
+P_T("🏷️ Classify type"):::p
+R_Type(["obligation / prohibition / exception"]):::r
+P_S("🧭 Extract scope + conditions"):::p
+P_L("🔗 Link references"):::p
+P_D("🔎 Detect conflicts"):::p
+R_R(["🧾 Risk register + trace"]):::r
+O_Out(["✅ Reviewable issues"]):::o
+
+I_C --> P_T --> R_Type --> P_S --> P_L --> P_D --> R_R --> O_Out
 ```
+
+<p>🧭 This flow turns prose into structure: classify clause type, extract scope/conditions, link references, then detect conflicts. The output is a <strong>🧾 risk register</strong> with traceable clause paths — not a summary paragraph.</p>
+
+</div>
+
+## Diagram: precedence and exception gates (what overrides what)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["🎯 Question / action"]):::i
+P_Find("🔎 Find relevant clauses"):::p
+R_Set(["📎 Candidate clause set"]):::r
+G_Exc{"Exception applies?"}:::s
+G_Prec{"Precedence clear?"}:::s
+O_OK(["✅ Allowed / required<br>(with clause path)"]):::o
+S_Esc(["🛑 Escalate: ambiguous conflict"]):::s
+R_Tr(["🧾 Trace bundle<br>(clauses + conditions)"]):::r
+
+I_Q --> P_Find --> R_Set --> G_Exc
+G_Exc -->|"yes"| G_Prec
+G_Exc -->|"no"| G_Prec
+
+G_Prec -->|"yes"| O_OK --> R_Tr
+G_Prec -->|"no"| S_Esc --> R_Tr
+```
+
+<p>🚦 The hard part is not finding clauses — it’s deciding whether an <strong>exception</strong> applies and whether <strong>precedence</strong> is unambiguous. When it isn’t, the system must escalate instead of hallucinating certainty.</p>
 
 </div>
 

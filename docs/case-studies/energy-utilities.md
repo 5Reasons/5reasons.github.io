@@ -9,10 +9,6 @@ description: "How governed causal memory supports grid ops decisions with tracea
 
 # Energy & Utilities: Grid Operations Under Constraints
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008836.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -42,6 +38,10 @@ description: "How governed causal memory supports grid ops decisions with tracea
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008836.png"/>
+</div>
+
 ## Failure modes to avoid
 
 <div class="landing-section">
@@ -64,13 +64,31 @@ description: "How governed causal memory supports grid ops decisions with tracea
   </div>
 
 ```mermaid
-flowchart TB;
-  A["Alarm / outage"] --> E["Expand evidence graph"];
-  E --> P["Causal path candidates"];
-  P --> G["Safety + operating constraints"];
-  G -->|"Pass"| R["Recommended plan + trace"];
-  G -->|"Fail"| X["Abstain + escalate"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_A(["🚨 Alarm / outage"]):::i
+P_E("🕸️ Expand evidence graph"):::p
+R_Path(["🧭 Path candidates<br>(fault hypotheses)"]):::r
+P_G("🔒 Safety + operating constraints"):::p
+G_OK{"Gates pass?"}:::s
+O_R(["✅ Recommended plan + trace"]):::o
+S_X(["🛑 Abstain + escalate"]):::s
+
+I_A --> P_E --> R_Path --> P_G --> G_OK
+G_OK -->|"yes"| O_R
+G_OK -->|"no"| S_X
+
+%% Clickable nodes
+click P_G "/methodology/constraints/" "Constraints & SHACL"
 ```
+
+<p>⚡ Grid ops require deterministic safety: evidence expands into hypotheses, then <strong>🔒 safety/operating constraints</strong> gate what plans are allowed. If gates fail, the correct output is escalation with an explicit reason — not a “best effort” plan.</p>
 
 </div>
 
@@ -79,12 +97,60 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  T["Telemetry"] --> F["Fault hypothesis"];
-  F --> C["Constraint check"];
-  C --> S["Switching plan"];
-  S --> TR["Trace"];
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_Tel(["📈 Telemetry"]):::r
+P_F("🧭 Fault hypothesis"):::p
+P_C("🔒 Constraint check"):::p
+P_S("🔀 Switching plan"):::p
+R_TR(["🧾 Trace"]):::r
+
+R_Tel --> P_F --> P_C --> P_S --> R_TR
 ```
+
+<p>🧾 The unit of reliability is a traceable path: telemetry → hypothesis → constraint checks → plan. This is what makes incident review fast and defensible.</p>
+
+</div>
+
+## Diagram: switching plan gates (topology, authorization, constraints)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Plan(["🔀 Proposed switching plan"]):::i
+G_Topo{"Topology correct?"}:::s
+G_Auth{"Authorized?"}:::s
+G_Lim{"Operating limits pass?"}:::s
+O_Do(["✅ Execute / recommend + trace"]):::o
+S_Esc(["🛑 Escalate to operator review"]):::s
+R_Tr(["🧾 Plan trace bundle"]):::r
+
+I_Plan --> G_Topo
+G_Topo -->|"no"| S_Esc --> R_Tr
+G_Topo -->|"yes"| G_Auth
+
+G_Auth -->|"no"| S_Esc --> R_Tr
+G_Auth -->|"yes"| G_Lim
+
+G_Lim -->|"yes"| O_Do --> R_Tr
+G_Lim -->|"no"| S_Esc --> R_Tr
+```
+
+<p>🚦 This is why “AI suggestions” are unsafe by default: a plan must pass gates for topology correctness, authorization, and operating limits. When any gate fails, the system escalates and records the failure reason in the trace bundle.</p>
 
 </div>
 

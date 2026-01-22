@@ -7,10 +7,6 @@ description: "How causal traversal, playbook constraints, and trace objects turn
 
 # SOC Decisions With Evidence Paths
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008835.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -40,6 +36,10 @@ description: "How causal traversal, playbook constraints, and trace objects turn
   </div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008835.png"/>
+</div>
+
 ## Failure modes to avoid
 
 <div class="landing-section">
@@ -58,13 +58,33 @@ description: "How causal traversal, playbook constraints, and trace objects turn
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  A["Alert"] --> E["Expand evidence graph"];
-  E --> P["Causal path candidates"];
-  P --> G["Playbook constraint gate"];
-  G -->|"Pass"| R["Recommended response + trace"];
-  G -->|"Fail"| X["Abstain + escalate"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_A(["🚨 Alert"]):::i
+P_E("🕸️ Expand evidence graph"):::p
+R_Path(["🧭 Path candidates<br>(hypotheses)"]):::r
+P_G("🔒 Playbook constraint gate"):::p
+G_OK{"Gates pass?"}:::s
+O_R(["✅ Recommended response"]):::o
+S_X(["🛑 Abstain + escalate"]):::s
+R_T(["🧾 Incident trace package"]):::r
+
+I_A --> P_E --> R_Path --> P_G --> G_OK
+G_OK -->|"yes"| O_R --> R_T
+G_OK -->|"no"| S_X --> R_T
+
+%% Clickable nodes
+click P_G "/methodology/constraints/" "Constraints & SHACL"
+click P_E "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p>🛡️ The critical change is that response is <strong>gated</strong>: evidence expands into hypotheses, then a <strong>🔒 playbook gate</strong> decides what actions are allowed. Either way, the system emits a <strong>🧾 trace package</strong> you can replay.</p>
 
 </div>
 
@@ -73,13 +93,68 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  T["Incident trace"] --> EV["Evidence (telemetry)"];
-  T --> H["Hypotheses + paths"];
-  T --> RU["Rules applied"];
-  T --> AC["Actions taken / blocked"];
-  T --> TS["Timestamps + scope"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_T(["🧾 Incident trace"]):::r
+R_EV(["📎 Evidence (telemetry)"]):::r
+R_H(["🧭 Hypotheses + paths"]):::r
+R_RU(["🔒 Rules applied"]):::r
+R_AC(["✅ Actions allowed / blocked"]):::r
+R_TS(["🕒 Timestamps + scope"]):::r
+
+R_T --> R_EV
+R_T --> R_H
+R_T --> R_RU
+R_T --> R_AC
+R_T --> R_TS
+
+%% Clickable nodes
+click R_T "/methodology/brcausalgraphrag/" "Trace objects"
 ```
+
+<p>🧾 A trace is not a transcript: it’s a structured artifact that binds <strong>evidence</strong>, <strong>paths</strong>, <strong>rules</strong>, and <strong>actions</strong> with timestamps and scope — so postmortems are reproducible.</p>
+
+</div>
+
+## Diagram: escalation gates (blast radius, authorization, and uncertainty)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Action(["⚙️ Proposed action<br>(contain / block / isolate)"]):::i
+G_Auth{"Authorized?"}:::s
+G_Risk{"High risk?"}:::s
+G_Ev{"Evidence sufficient?"}:::s
+O_Do(["✅ Execute / recommend"]):::o
+S_Esc(["🛑 Escalate to human review"]):::s
+R_Trace(["🧾 Decision trace"]):::r
+
+I_Action --> G_Auth
+G_Auth -->|"no"| S_Esc --> R_Trace
+G_Auth -->|"yes"| G_Risk
+
+G_Risk -->|"yes"| G_Ev
+G_Risk -->|"no"| G_Ev
+
+G_Ev -->|"yes"| O_Do --> R_Trace
+G_Ev -->|"no"| S_Esc --> R_Trace
+```
+
+<p>🚦 These gates prevent dangerous automation: even if a path exists, the system must check <strong>authorization</strong>, <strong>risk/blast radius</strong>, and <strong>evidence sufficiency</strong>. When any gate fails, it escalates — and records why.</p>
 
 </div>
 
