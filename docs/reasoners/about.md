@@ -66,6 +66,48 @@ description: "Who we are and how we work: a logic-first team building causal mem
 
 ## Team & Philosophy
 
+<a id="team-philosophy"></a>
+
+<div class="landing-section">
+    <div class="landing-grid">
+        <div class="landing-card">
+            <h3>Karol Mozsi</h3>
+            <p>🧭 Cognitive Architect</p>
+            <p>
+                Karol designs the conceptual “physics” of brModel™: causal structure, durable semantics, and the constraints that make reasoning auditable.
+            </p>
+            <p class="landing-mini">
+                🔗 <a href="https://www.linkedin.com/in/karolmozsi" target="_blank">LinkedIn</a><br>
+                ✉️ <a href="mailto:karol.mozsi@gmail.com">karol.mozsi@gmail.com</a><br>
+                ☎️ <a href="tel:+421908594591">+421 908 594 591</a>
+            </p>
+        </div>
+        <div class="landing-card">
+            <h3>Ivan Núdzik</h3>
+            <p>🏗️ Software Architect</p>
+            <p>
+                Ivan turns governed models into production systems: architectures that survive real data, real users, and real operational constraints.
+            </p>
+            <p class="landing-mini">
+                🔗 <a href="https://www.linkedin.com/in/inudzik/" target="_blank">LinkedIn</a><br>
+                ✉️ <a href="mailto:ivan.nudzik@gmail.com">ivan.nudzik@gmail.com</a><br>
+                ☎️ <a href="tel:+421918343712">+421 918 343 712</a>
+            </p>
+        </div>
+        <div class="landing-card">
+            <h3>Yevhenii Knizhnytskyi</h3>
+            <p>🤖 Machine Learning Engineer</p>
+            <p>
+                Yevhenii connects ML practice to governed memory: evaluation discipline, retrieval/embedding pipelines, and making model behavior measurable under constraints.
+            </p>
+            <p class="landing-mini">
+                🔗 <a href="https://www.linkedin.com/in/yevhenii-knizhnytskyi-709383210/" target="_blank">LinkedIn</a><br>
+                ✉️ <a href="mailto:evgenijkniznickij@gmail.com">evgenijkniznickij@gmail.com</a>
+            </p>
+        </div>
+    </div>
+</div>
+
 ### Origin story
 
 <div class="landing-section">

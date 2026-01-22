@@ -71,6 +71,11 @@ svg[id^="__mermaid_"] a .nodeLabel * {
   text-decoration-line: none !important;
 }
 
+a {
+    text-decoration: none !important;
+    font-size: 16px;
+}
+
 .mermaid a:link,
 .mermaid a:visited,
 svg[id^="__mermaid_"] a:link,
