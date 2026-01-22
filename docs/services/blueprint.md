@@ -5,10 +5,6 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008829.png"/>
-</div>
-
 # Architecture Blueprint
 
 <div class="landing-hero">
@@ -60,17 +56,42 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 	</div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008829.png"/>
+</div>
+
 ## Diagram: blueprint layers
 
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	D["Domain semantics</br>(ontology + meaning)"] --> C["Constraints</br>(what must never happen)"];
-	C --> I["Ingestion</br>(provenance + validation)"];
-	I --> S["System architecture</br>(services + responsibilities)"];
-	S --> O["Operational metrics</br>(reliability + drift)"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_Domain(["🧩 Domain semantics<br>(ontology + meaning)"]):::r
+R_Constr(["🔒 Constraints<br>(what must never happen)"]):::r
+P_Ingest("📥 Ingestion design"):::p
+R_Prov(["🧾 Provenance + validation gates"]):::r
+P_Arch("🗺️ System architecture"):::p
+R_Roles(["Responsibilities: retrieval, traversal, gate, trace store"]):::r
+P_Ops("📊 Operations"):::p
+O_Metrics(["✅ Metrics + go/no-go gates<br>(reliability, drift, violations)"]):::o
+
+R_Domain --> R_Constr --> P_Ingest --> R_Prov --> P_Arch --> R_Roles --> P_Ops --> O_Metrics
+
+%% Clickable nodes
+click R_Domain "/methodology/core-primitives/" "Core primitives"
+click R_Constr "/methodology/constraints/" "Constraints & SHACL"
+click R_Prov "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click R_Roles "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p>📐 This diagram is the <strong>Blueprint dependency chain</strong>: you first define <strong>🧩 semantics</strong>, then <strong>🔒 constraints</strong>, then the <strong>📥 ingestion</strong> and <strong>🧾 provenance gates</strong> that keep facts auditable, then the system architecture, and finally the <strong>📊 operational metrics</strong> that make reliability measurable.</p>
 
 </div>
 
@@ -83,14 +104,30 @@ flowchart TB;
 	</div>
 
 ```mermaid
-flowchart LR;
-	SEM["Your semantics + constraints"] --> M1["Model A"];
-	SEM --> M2["Model B"];
-	SEM --> M3["Model C"];
-	M1 --> OUT["Decision-grade outputs"];
-	M2 --> OUT;
-	M3 --> OUT;
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+R_SEM(["🧩 Your semantics + 🔒 constraints"]):::r
+P_M1("🧠 Model A"):::p
+P_M2("🧠 Model B"):::p
+P_M3("🧠 Model C"):::p
+O_Out(["✅ Decision-grade outputs<br>(traceable + governed)"]):::o
+
+R_SEM --> P_M1 --> O_Out
+R_SEM --> P_M2 --> O_Out
+R_SEM --> P_M3 --> O_Out
+
+%% Clickable nodes
+click R_SEM "/methodology/" "Methodology"
+click O_Out "/reasoners/governance/" "Governance approach"
 ```
+
+<p>🔁 This diagram is the anti-lock-in mechanism: you can swap models, but you keep <strong>🧩 semantics</strong> and <strong>🔒 constraints</strong> stable — so outputs remain <strong>✅ governed</strong> and comparable across model churn.</p>
 
 </div>
 

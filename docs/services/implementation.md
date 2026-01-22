@@ -5,10 +5,6 @@ description: "From blueprint to production: building a glass-box memory layer, e
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008824.png"/>
-</div>
-
 # Implementation
 
 <div class="landing-hero">
@@ -42,21 +38,53 @@ description: "From blueprint to production: building a glass-box memory layer, e
 	</div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008824.png"/>
+</div>
+
 ## Diagram: the glass-box stack
 
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	U["User"] --> Q["Question"];
-	Q --> R["Retrieve evidence"];
-	R --> P["Traverse causal paths"];
-	P --> G["Constraint gate"];
-	G -->|"Pass"| A["Answer / act"];
-	G -->|"Fail"| X["Abstain + explain"];
-	A --> T["Trace store"];
-	X --> T;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+S_User("👤 User"):::s
+I_Q(["📥 Question / proposed action"]):::i
+
+P_Ret("🔎 Retrieve evidence"):::p
+R_Ev(["📎 Evidence set + provenance"]):::r
+
+P_Trv("🕸️ Traverse causal paths"):::p
+R_Path(["🧭 Candidate path(s) + mechanisms"]):::r
+
+P_Gate("🔒 Constraint gate"):::p
+G_OK{"Pass?"}:::s
+
+O_Act(["✅ Answer / act"]):::o
+S_Abs(["🛑 Abstain + explain"]):::s
+
+R_Trace(["🧾 Trace package<br>(path, evidence, rules, decision)"]):::r
+R_Mem(["✍️ Versioned memory writes (optional)"]):::r
+
+S_User --> I_Q --> P_Ret --> R_Ev --> P_Trv --> R_Path --> P_Gate --> G_OK
+G_OK -->|"yes"| O_Act --> R_Trace
+G_OK -->|"no"| S_Abs --> R_Trace
+R_Trace --> R_Mem
+
+%% Clickable nodes
+click P_Gate "/methodology/constraints/" "Constraints & SHACL"
+click P_Trv "/methodology/causalgraphrag/" "CausalGraphRAG"
+click R_Trace "/methodology/brcausalgraphrag/" "Trace objects"
 ```
+
+<p>🧠 This diagram is the <strong>glass-box execution path</strong>: evidence retrieval and causal traversal propose a path, the <strong>🔒 gate</strong> decides, and the system always emits a <strong>🧾 trace package</strong> (plus optional versioned memory writes) so every action is replayable and auditable.</p>
 
 </div>
 
@@ -69,13 +97,31 @@ flowchart TB;
 	</div>
 
 ```mermaid
-flowchart LR;
-	B["Build"] --> E["Evaluate"];
-	E -->|"Meets gates"| R["Release"];
-	E -->|"Fails"| F["Fix model/data/constraints"];
-	R --> M["Monitor"];
-	M --> E;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+P_Build("🧑‍💻 Build"):::p
+P_Eval("🧪 Evaluate"):::p
+G_Gate{"Gates pass?"}:::s
+O_Rel(["✅ Release"]):::o
+R_Mon(["📊 Monitor (drift, violations, refusal rate)"]):::r
+S_Fix(["🛠️ Fix: data / ontology / constraints / model"]):::s
+
+P_Build --> P_Eval --> G_Gate
+G_Gate -->|"yes"| O_Rel --> R_Mon --> P_Eval
+G_Gate -->|"no"| S_Fix --> P_Eval
+
+%% Clickable nodes
+click P_Eval "/services/epistemic-audit/" "Evaluation mindset"
+click S_Fix "/methodology/constraints/" "Constraints"
 ```
+
+<p>📊 This is how we make reliability <strong>observable</strong>: every change goes through <strong>🧪 evaluation</strong> and explicit gates; monitoring feeds regressions back into fixes (data, ontology, constraints, or model) instead of silently accumulating risk.</p>
 
 </div>
 

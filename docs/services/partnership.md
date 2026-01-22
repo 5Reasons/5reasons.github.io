@@ -43,15 +43,34 @@ description: "A retainer model for continuous governance, model review, system a
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	CH["Change arrives</br>(model / policy / data)"] --> R["Review impact"];
-	R --> U["Update constraints + ontology"];
-	U --> E["Evaluate + red-team"];
-	E -->|"Pass"| D["Deploy"];
-	E -->|"Fail"| F["Fix + re-test"];
-	D --> M["Monitor"];
-	M --> R;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Chg(["🧩 Change arrives<br>(model, policy, data, scope)"]):::i
+P_Review("🔎 Review impact"):::p
+P_Update("🔒 Update constraints + ontology"):::p
+P_Test("🧪 Evaluate + red-team"):::p
+G_OK{"Pass?"}:::s
+O_Deploy(["✅ Deploy safely"]):::o
+S_Fix(["🛠️ Fix + re-test"]):::s
+R_Mon(["📊 Monitor (drift, violations, incidents)"]):::r
+
+I_Chg --> P_Review --> P_Update --> P_Test --> G_OK
+G_OK -->|"yes"| O_Deploy --> R_Mon --> P_Review
+G_OK -->|"no"| S_Fix --> P_Test
+
+%% Clickable nodes
+click P_Update "/methodology/constraints/" "Constraints & SHACL"
+click P_Test "/services/epistemic-audit/" "Audit mindset"
+click R_Mon "/reasoners/operating-model/" "Operating model"
 ```
+
+<p>🔁 This diagram is the <strong>continuous governance loop</strong>: changes are inevitable, so we route them through impact review, updates to <strong>🔒 constraints</strong> and semantics, red-team evaluation, and only then deploy. Monitoring closes the loop and prevents slow reliability decay.</p>
 
 </div>
 
@@ -60,15 +79,34 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-	M["Model update"] --> B["Behavior shift"];
-	B --> G["Governance risk"];
-	B --> E["Evaluation drift"];
-	B --> T["Trace comparability"];
-	G --> A["Gate changes"];
-	E --> A;
-	T --> A;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_M(["🧠 Model update"]):::i
+R_Shift(["🌦️ Behavior shift"]):::r
+R_Gov(["🔒 Governance risk"]):::r
+R_Eval(["🧪 Evaluation drift"]):::r
+R_Trace(["🧾 Trace comparability risk"]):::r
+P_Gates("🚦 Update gates + tests"):::p
+O_Ready(["✅ Change is safe to deploy"]):::o
+
+I_M --> R_Shift
+R_Shift --> R_Gov --> P_Gates
+R_Shift --> R_Eval --> P_Gates
+R_Shift --> R_Trace --> P_Gates
+P_Gates --> O_Ready
+
+%% Clickable nodes
+click P_Gates "/reasoners/governance/" "Governance approach"
+click R_Trace "/methodology/brcausalgraphrag/" "Trace objects"
 ```
+
+<p>🧠 This diagram explains the causal coupling: a model update shifts behavior, which changes governance risk, evaluation baselines, and trace comparability. The fix is never “trust the new model” — it is <strong>🚦 updating gates and tests</strong> so safety remains deterministic.</p>
 
 </div>
 

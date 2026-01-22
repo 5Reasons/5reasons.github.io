@@ -7,10 +7,6 @@ description: "From epistemic audit to causal architecture blueprints to producti
 
 # Services
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-21545.png"/>
-</div>
-
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>
@@ -66,17 +62,108 @@ description: "From epistemic audit to causal architecture blueprints to producti
 	</div>
 </div>
 
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-21545.png"/>
+</div>
+
+### Services map (pages and how they connect)
+
+<div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+S_You("👤 You"):::s
+I_Int(["🎯 What do you need right now?"]):::i
+
+P_Start("📞 Start a conversation"):::p
+P_Audit("🔎 Epistemic Audit"):::p
+P_Blue("📐 Architecture Blueprint"):::p
+P_Impl("🧑‍💻 Implementation"):::p
+P_Partner("🤝 Ongoing Partnership"):::p
+
+R_Road(["🧾 Roadmap + go/no-go gates"]):::r
+R_Arch(["📐 Reference architecture + constraints scope"]):::r
+R_Stack(["🧠 Governed memory + traces + monitoring"]):::r
+O_Safe(["✅ Decision-grade operation"]):::o
+
+R_Red(["🧪 Red-team evaluation sprint"]):::r
+R_Pack(["🔒 Governance & constraints pack"]):::r
+
+M_Method("📐 Methodology"):::p
+M_Constr("🔒 Constraints & SHACL"):::p
+R_Gov("🏛️ Governance approach"):::p
+
+S_You --> I_Int --> P_Start
+P_Start --> P_Audit --> R_Road --> P_Blue --> R_Arch --> P_Impl --> R_Stack --> P_Partner --> O_Safe
+
+P_Audit --> R_Red
+P_Blue --> R_Pack
+
+R_Road -. "de-risks" .-> P_Blue
+R_Arch -. "build plan" .-> P_Impl
+P_Partner -. "keeps safe" .-> P_Impl
+
+P_Audit -. "assesses" .-> R_Gov
+P_Blue -. "encodes" .-> M_Constr
+P_Impl -. "implements" .-> M_Method
+
+%% Clickable nodes
+click P_Start "/services/start/" "Start"
+click P_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click P_Blue "/services/blueprint/" "Architecture Blueprint"
+click P_Impl "/services/implementation/" "Implementation"
+click P_Partner "/services/partnership/" "Ongoing Partnership"
+
+click M_Method "/methodology/" "Methodology"
+click M_Constr "/methodology/constraints/" "Constraints & SHACL"
+click R_Gov "/reasoners/governance/" "Governance"
+```
+
+<p>🧭 This is the <strong>Services router</strong>: start with <strong>📞 intake</strong>, then move from <strong>🔎 diagnosis</strong> → <strong>📐 design</strong> → <strong>🧑‍💻 build</strong> → <strong>🤝 continuous governance</strong>. The yellow boxes are optional accelerators (red-team and constraints pack) that attach to the phase where they are most effective.</p>
+
+</div>
+
 ## Diagram: how engagements fit together
 
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-	S["Start a conversation"] --> A["Epistemic audit"];
-	A --> B["Architecture blueprint"];
-	B --> I["Implementation"];
-	I --> P["Ongoing partnership"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+P_Start("📞 Start"):::p
+P_Audit("🔎 Epistemic Audit"):::p
+R_Find(["🧾 Findings: risks, gaps, gates"]):::r
+P_Blue("📐 Blueprint"):::p
+R_Design(["📐 Design: ontology, constraints, traces"]):::r
+P_Impl("🧑‍💻 Implementation"):::p
+R_Ship(["🧠 Governed system + monitoring"]):::r
+P_Part("🤝 Partnership"):::p
+O_Stable(["✅ Stable decision-grade operation"]):::o
+
+P_Start --> P_Audit --> R_Find --> P_Blue --> R_Design --> P_Impl --> R_Ship --> P_Part --> O_Stable
+
+%% Clickable nodes
+click P_Start "/services/start/" "Start"
+click P_Audit "/services/epistemic-audit/" "Epistemic Audit"
+click P_Blue "/services/blueprint/" "Blueprint"
+click P_Impl "/services/implementation/" "Implementation"
+click P_Part "/services/partnership/" "Partnership"
 ```
+
+<p>🧾 This diagram shows the <strong>engagement sequence</strong> and the artifacts each phase produces: audit findings define the blueprint scope; the blueprint becomes the build plan; implementation ships a governed system; partnership keeps it decision-grade as models, policies, and data evolve.</p>
 
 </div>
 
@@ -85,13 +172,36 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	D["Data reality"] --> M["Memory model + provenance"];
-	M --> G["Constraint gate"];
-	G --> T["Trace objects"];
-	T --> R["Review + measurement"];
-	R --> M;
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Data(["📥 Data reality (files, DBs, policies)"]):::i
+P_Model("🧠 Memory model + provenance"):::p
+P_Gate("🔒 Constraint gate"):::p
+G_OK{"Valid?"}:::s
+R_Trace(["🧾 Trace package (path, evidence, rules)"]):::r
+R_Measure(["📊 Review + measurement (gates, drift, incidents)"]):::r
+O_Improve(["✅ Controlled improvement loop"]):::o
+
+S_Block(["🛑 Refuse + record reason"]):::s
+
+I_Data --> P_Model --> P_Gate --> G_OK
+G_OK -->|"yes"| R_Trace --> R_Measure --> P_Model
+G_OK -->|"no"| S_Block --> R_Measure 
+R_Measure --> O_Improve
+
+%% Clickable nodes
+click P_Gate "/methodology/constraints/" "Constraints & SHACL"
+click R_Trace "/methodology/brcausalgraphrag/" "Trace objects"
+click P_Model "/methodology/property-and-knowledge-graphs/" "Graphs"
 ```
+
+<p>🔁 This is the <strong>risk-reduction flywheel</strong>: improve reliability by enforcing <strong>🔒 constraints</strong>, generating <strong>🧾 trace artifacts</strong>, and turning incidents into measurable model/ontology/constraint updates. Refusal is a first-class outcome, not a bug.</p>
 
 </div>
 
