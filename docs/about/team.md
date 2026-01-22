@@ -11,4 +11,4 @@ description: "This page moved under Reasoners."
 
 The canonical location is now:
 
-- [Reasoners → Team & Philosophy](../reasoners/team.md)
+- [Reasoners → About (Team & Philosophy)](/reasoners/about/#team--philosophy)

@@ -20,7 +20,7 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/services/start/">Licensing / contact</a>
-				<a class="md-button" href="https://github.com/5Reasons/5reasons.github.io/blob/main/LICENSE.md">Repository license</a>
+				<a class="md-button" href="/reasoners/license/">brModel™ license</a>
 			</div>
 		</div>
 	</div>
@@ -70,8 +70,11 @@ description: "Terms of Use for 5Reasons: public access for viewing, but no comme
 <div class="landing-section">
 	<div class="landing-card">
 		<p>
-			The binding legal terms are defined in the repository license file:
-			<a href="https://github.com/5Reasons/5reasons.github.io/blob/main/LICENSE.md">LICENSE.md</a>.
+			The binding legal terms for using brModel™ and the intellectual content published on this site are defined here:
+			<a href="/reasoners/license/">brModel™ License</a>.
+		</p>
+		<p class="landing-mini">
+			Note: the GitHub repository license (if any) only governs source code in that repository.
 		</p>
 	</div>
 </div>

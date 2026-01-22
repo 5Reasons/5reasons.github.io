@@ -18,6 +18,7 @@ description: "Cognitive infrastructure architects building deterministic, audita
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/services/start/">Start a conversation</a>
+				<a class="md-button" href="about/">About - Team - References</a>
 				<a class="md-button" href="vision-2026/">Vision 2026</a>
 				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
@@ -99,5 +100,5 @@ description: "Cognitive infrastructure architects building deterministic, audita
 </div>
 
 <div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008831.png"/>
+    <img class="glightbox" src="/assets/img/br-008840.png"/>
 </div>

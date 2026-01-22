@@ -72,12 +72,12 @@ If you only remember one heuristic, use this:
 <div class="landing-section">
 	<div class="landing-grid">
 		<div class="landing-card">
-			<h3>Blog posts</h3>
-			<p>Posts live in <code>docs/blog/posts/</code>. The Blog index links to them chronologically.</p>
-		</div>
-		<div class="landing-card">
 			<h3>Evergreen pages</h3>
 			<p>Stable concepts live in their section folders (e.g., Methodology, Philosophy). Only truly durable pages go into nav.</p>
+		</div>
+		<div class="landing-card">
+			<h3>Blog posts</h3>
+			<p>Posts live in <code>docs/blog/posts/</code>. The Blog index links to them chronologically.</p>
 		</div>
 		<div class="landing-card">
 			<h3>Experimental drafts</h3>
@@ -117,14 +117,17 @@ H_Sec --> H_Overview --> H_Start --> H_Inquiry --> H_HowWorks
 R_Sec(["🤝 Reasoners"]):::i
 R_Overview("🤝 Overview"):::i
 R_About("ℹ️ About"):::i
-R_Team("👥 Team & Philosophy"):::i
-R_Refs("⭐ References"):::i
+R_AboutTeam("👥 Team & Philosophy"):::i
+R_AboutRefs("⭐ References"):::i
 R_FAQ("❓ FAQ"):::i
 R_Terms("📜 Terms of Use"):::i
+R_License("📄 brModel™ License"):::i
 R_Vision("🗓️ Vision 2026"):::i
 R_Ops("🛰️ Operating Model"):::i
 R_Gov("🏛️ Governance Approach"):::i
-R_Sec --> R_Overview --> R_About --> R_Team --> R_Refs --> R_FAQ --> R_Terms --> R_Vision --> R_Ops --> R_Gov
+R_Sec --> R_Overview --> R_About --> R_License --> R_Vision --> R_Ops --> R_Gov --> R_FAQ --> R_Terms
+R_About -. "chapters" .-> R_AboutTeam
+R_About -. "chapters" .-> R_AboutRefs
 
 %% Philosophy
 PH_Sec(["🧠 Philosophy"]):::i
@@ -209,10 +212,11 @@ click H_HowWorks "/home/how-this-site-works/" "How This Site Works"
 
 click R_Overview "/reasoners/" "Reasoners"
 click R_About "/reasoners/about/" "About"
-click R_Team "/reasoners/team/" "Team & Philosophy"
-click R_Refs "/reasoners/references/" "References"
+click R_AboutTeam "/reasoners/about/#team--philosophy" "Team & Philosophy"
+click R_AboutRefs "/reasoners/about/#references" "References"
 click R_FAQ "/reasoners/faq/" "FAQ"
 click R_Terms "/reasoners/terms/" "Terms of Use"
+click R_License "/reasoners/license/" "brModel License"
 click R_Vision "/reasoners/vision-2026/" "Vision 2026"
 click R_Ops "/reasoners/operating-model/" "Operating Model"
 click R_Gov "/reasoners/governance/" "Governance Approach"

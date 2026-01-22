@@ -1,6 +1,6 @@
 ---
-title: "Team & Philosophy"
-description: "A boutique, logic-first team: why we don’t scale by hiring juniors, and why durable semantics and constraints matter more than model selection."
+title: "Team & Philosophy (Merged)"
+description: "Team & Philosophy is now a chapter inside Reasoners → About. This page remains to preserve old links."
 ---
 
 <!-- markdownlint-disable MD033 MD025 -->
@@ -9,88 +9,6 @@ description: "A boutique, logic-first team: why we don’t scale by hiring junio
 
 # Team & Philosophy
 
-<div class="landing-hero">
-	<div class="landing-hero__grid">
-		<div>
-			<p class="landing-kicker">Reasoners → who we are</p>
-			<h2 class="landing-title">A small, elite team building cognitive infrastructure for high-stakes domains.</h2>
-			<p class="landing-subtitle">
-				We are Reasoners: architects, ontology engineers, and systems builders.
-				We don’t scale by hiring dozens of juniors. We scale by applying rigorous methodology and durable standards.
-			</p>
-			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
-				<a class="md-button" href="/methodology/">Methodology</a>
-				<a class="md-button" href="/reasoners/faq/">FAQ</a>
-			</div>
-		</div>
-	</div>
-</div>
+This page was merged into the consolidated About page:
 
-## Origin story
-
-<div class="landing-section">
-	<div class="landing-card">
-		<p>
-			Many of us started in environments where errors were not acceptable.
-			Our roots reach into biomedical informatics — one of the most complex and highest-risk data domains.
-		</p>
-		<p>
-			Over years of watching companies deploy AI into critical processes, we kept seeing the same sequence:
-			(1) excitement from the demo, (2) frustration in production, (3) fear when real consequences show up.
-		</p>
-		<p>
-			The problem is rarely “the model”. The problem is that systems lack <strong>memory</strong> and <strong>boundaries</strong>.
-			That’s why we build brModel™: infrastructure that makes reasoning auditable and governance enforceable.
-		</p>
-	</div>
-</div>
-
-## Our philosophy: Logic-first
-
-<div class="landing-section">
-	<div class="landing-callout">
-		<p><strong>Most AI work is model-first. We are logic-first.</strong></p>
-		<p class="landing-mini">Models are a commodity. Your domain logic and data reality are not.</p>
-	</div>
-	<div class="landing-grid">
-		<div class="landing-card">
-			<h3>Human-in-the-loop</h3>
-			<p>AI does heavy retrieval and structured reasoning. Humans own decisions and accountability.</p>
-		</div>
-		<div class="landing-card">
-			<h3>No lock-in</h3>
-			<p>We favor open standards (W3C, OWL, RDF) where practical. What we build is yours.</p>
-		</div>
-		<div class="landing-card">
-			<h3>Design for audits</h3>
-			<p>Production systems must explain themselves: constraints, traces, provenance, and clear abstention.</p>
-		</div>
-	</div>
-</div>
-
-## How we scale
-
-<div class="landing-section">
-	<div class="landing-card">
-		<p>Not by volume — by rigor:</p>
-		<ul>
-			<li>Repeatable methodology</li>
-			<li>Durable domain models</li>
-			<li>Enforceable governance</li>
-			<li>Traceable reasoning artifacts</li>
-		</ul>
-	</div>
-</div>
-
-## What we avoid
-
-<div class="landing-section">
-	<div class="landing-card">
-		<ul>
-			<li>Prompt-only safety</li>
-			<li>Model worship</li>
-			<li>Fragile demos that cannot survive audits</li>
-		</ul>
-	</div>
-</div>
+- Go to: [Reasoners → About (Team & Philosophy)](/reasoners/about/#team--philosophy)
