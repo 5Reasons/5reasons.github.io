@@ -47,6 +47,7 @@ nav:
     - Overview: reasoners/index.md
     - About: reasoners/about.md
     - Team & Philosophy: reasoners/team.md
+    - References: reasoners/references.md
     - FAQ: reasoners/faq.md
     - Terms of Use: reasoners/terms.md
     - Vision 2026: reasoners/vision-2026.md
@@ -89,13 +90,7 @@ nav:
     - Blog: blog/index.md
     - How to Read Posts: blog/how-to-read.md
     - Topics: blog/topics.md
-    - "Temporal Memory Beats Bigger Context": blog/posts/temporal-memory-beats-bigger-context.md
-    - "Mechanism-Executable Causal GraphRAG": blog/posts/mechanism-executable-causal-graphrag.md
-    - "HRM’s Latent Reasoning Still Needs Verification": blog/posts/hrm-latent-reasoning-needs-verification.md
-    - "Agent Memory Needs Identity, Governance, and Decay": blog/posts/memory-needs-identity-governance-and-decay.md
-    - "AI Coding Assistants: A Causal Framework": blog/posts/ai-coding-assistants-a-causal-framework.md
-    - "From SWOT to Testable Causal Hypotheses": blog/posts/from-swot-to-testable-hypotheses.md
-    - "Why Small Frictions Cascade into System Failure": blog/posts/why-small-frictions-cascade-into-system-failure.md
+
 
 
 # Zensical note:

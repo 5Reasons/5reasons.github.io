@@ -118,12 +118,13 @@ R_Sec(["🤝 Reasoners"]):::i
 R_Overview("🤝 Overview"):::i
 R_About("ℹ️ About"):::i
 R_Team("👥 Team & Philosophy"):::i
+R_Refs("⭐ References"):::i
 R_FAQ("❓ FAQ"):::i
 R_Terms("📜 Terms of Use"):::i
 R_Vision("🗓️ Vision 2026"):::i
 R_Ops("🛰️ Operating Model"):::i
 R_Gov("🏛️ Governance Approach"):::i
-R_Sec --> R_Overview --> R_About --> R_Team --> R_FAQ --> R_Terms --> R_Vision --> R_Ops --> R_Gov
+R_Sec --> R_Overview --> R_About --> R_Team --> R_Refs --> R_FAQ --> R_Terms --> R_Vision --> R_Ops --> R_Gov
 
 %% Philosophy
 PH_Sec(["🧠 Philosophy"]):::i
@@ -209,6 +210,7 @@ click H_HowWorks "/home/how-this-site-works/" "How This Site Works"
 click R_Overview "/reasoners/" "Reasoners"
 click R_About "/reasoners/about/" "About"
 click R_Team "/reasoners/team/" "Team & Philosophy"
+click R_Refs "/reasoners/references/" "References"
 click R_FAQ "/reasoners/faq/" "FAQ"
 click R_Terms "/reasoners/terms/" "Terms of Use"
 click R_Vision "/reasoners/vision-2026/" "Vision 2026"
