@@ -17,8 +17,8 @@ description: "A retainer model for continuous governance, model review, system a
 				Partnership is how you keep governance, evaluation, and reliability in lockstep — continuously.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
-				<a class="md-button" href="epistemic-audit/">Epistemic Audit</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+				<a class="md-button" href="/services/epistemic-audit/">Epistemic Audit</a>
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
@@ -55,7 +55,7 @@ I_Chg(["🧩 Change arrives<br>(model, policy, data, scope)"]):::i
 P_Review("🔎 Review impact"):::p
 P_Update("🔒 Update constraints + ontology"):::p
 P_Test("🧪 Evaluate + red-team"):::p
-G_OK{"Pass?"}:::s
+G_OK{"Gates pass?"}:::s
 O_Deploy(["✅ Deploy safely"]):::o
 S_Fix(["🛠️ Fix + re-test"]):::s
 R_Mon(["📊 Monitor (drift, violations, incidents)"]):::r
@@ -120,6 +120,6 @@ click R_Trace "/methodology/brcausalgraphrag/" "Trace objects"
 			<li>Clear incident postmortems with trace artifacts</li>
 			<li>A system that stays governable as scope grows</li>
 		</ul>
-		<p><a class="md-button md-button--primary" href="start/">Start a Conversation</a></p>
+		<p><a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a></p>
 	</div>
 </div>

@@ -212,7 +212,7 @@ click H_HowWorks "/home/how-this-site-works/" "How This Site Works"
 
 click R_Overview "/reasoners/" "Reasoners"
 click R_About "/reasoners/about/" "About"
-click R_AboutTeam "/reasoners/about/#team--philosophy" "Team & Philosophy"
+click R_AboutTeam "/reasoners/about/#team-philosophy" "Team & Philosophy"
 click R_AboutRefs "/reasoners/about/#references" "References"
 click R_FAQ "/reasoners/faq/" "FAQ"
 click R_Terms "/reasoners/terms/" "Terms of Use"

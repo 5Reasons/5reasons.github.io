@@ -21,7 +21,7 @@ description: "Frequently asked questions about Reasoners: what we do, what we do
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
 				<a class="md-button" href="/services/epistemic-audit/">Epistemic Audit</a>
-				<a class="md-button" href="/reasoners/about/#team--philosophy">Team &amp; Philosophy</a>
+				<a class="md-button" href="/reasoners/about/#team-philosophy">Team &amp; Philosophy</a>
 			</div>
 		</div>
 	</div>

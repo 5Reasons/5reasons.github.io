@@ -11,4 +11,4 @@ description: "Team & Philosophy is now a chapter inside Reasoners → About. Thi
 
 This page was merged into the consolidated About page:
 
-- Go to: [Reasoners → About (Team & Philosophy)](/reasoners/about/#team--philosophy)
+- Go to: [Reasoners → About (Team & Philosophy)](about.md#team-philosophy)

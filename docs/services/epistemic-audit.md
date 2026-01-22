@@ -18,8 +18,8 @@ description: "A diagnosis of your AI reliability: data reality check, failure-mo
 				We answer it with evidence, not optimism.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
-				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+				<a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
 				<a class="md-button" href="/methodology/llm-tool-rag/">Baseline stack (LLM+Tool+RAG)</a>
 			</div>
 		</div>
@@ -77,8 +77,12 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 I_Dec(["🎯 Target decision(s) + unacceptable errors"]):::i
 I_Data(["📥 Data reality (PDF, SQL, KB, policies)"]):::i
 
+G_Data{"Access available?"}:::s
+
 P_Test("🧪 Probe retrieval and reasoning"):::p
 R_Beh(["🔎 Behavior map (what it retrieves, what it misses)"]):::r
+
+G_Gaps{"Safety-critical gaps?"}:::s
 
 P_Fail("⚠️ Elicit failure modes"):::p
 R_Modes(["🧾 Failure taxonomy (hallucination, drift, policy edges)"]):::r
@@ -92,9 +96,20 @@ R_Meas(["📊 Measurement plan (metrics, tests, drift signals)"]):::r
 P_Road("🗺️ Prioritize into staged roadmap"):::p
 O_Out(["✅ Audit outputs (report + roadmap + next step)"]):::o
 
-I_Dec --> P_Test
-I_Data --> P_Test
-P_Test --> R_Beh --> P_Fail --> R_Modes --> P_Gov --> R_Constr --> P_Eval --> R_Meas --> P_Road --> O_Out
+O_Stop(["🛑 Stop / rescope (missing access or scope)"]):::s
+O_Blue(["📐 Proceed to Blueprint (design)"]):::o
+
+I_Dec --> G_Data
+I_Data --> G_Data
+G_Data -->|"no"| O_Stop
+G_Data -->|"yes"| P_Test
+
+P_Test --> R_Beh --> G_Gaps
+G_Gaps -->|"yes"| P_Fail
+G_Gaps -->|"no"| P_Road
+
+P_Fail --> R_Modes --> P_Gov --> R_Constr --> P_Eval --> R_Meas --> P_Road --> O_Out
+O_Out --> O_Blue
 
 %% Clickable nodes
 click P_Gov "/methodology/constraints/" "Constraints & SHACL"
@@ -102,7 +117,7 @@ click P_Test "/methodology/llm-tool-rag/" "Baseline stack"
 click P_Eval "/reasoners/governance/" "Governance approach"
 ```
 
-<p>🔎 This diagram shows what an <strong>Epistemic Audit</strong> actually produces: it starts from <strong>🎯 decisions + unacceptable errors</strong>, tests real behavior against messy <strong>📥 data reality</strong>, then turns failures into <strong>🔒 governance requirements</strong>, measurable <strong>📏 gates</strong>, and a staged <strong>🗺️ roadmap</strong>.</p>
+<p>🔎 This diagram makes the audit more <strong>decision-grade</strong>: we first gate on <strong>access</strong> (if data/policies aren’t accessible, we must rescope), then test behavior and decide whether gaps are safety-critical. Only then do we convert findings into <strong>🔒 constraints</strong>, <strong>📏 go/no-go gates</strong>, and a <strong>🗺️ roadmap</strong> that cleanly hands off into blueprint design.</p>
 
 </div>
 
@@ -135,12 +150,20 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 P_Audit("🔎 Audit"):::p
 R_Find(["🧾 Findings: risks + gaps + priorities"]):::r
 R_Scope(["🧩 Scope: ontology + constraints + trace needs"]):::r
+G_Scope{"Scope stable?"}:::s
 P_Blue("📐 Blueprint"):::p
 R_Arch(["📐 Reference architecture + gates"]):::r
+G_Go{"Proceed?"}:::s
 P_Impl("🧑‍💻 Implementation"):::p
 O_Ship(["✅ Governed build in production"]):::o
 
-P_Audit --> R_Find --> R_Scope --> P_Blue --> R_Arch --> P_Impl --> O_Ship
+S_Back(["🛑 Go back: gather missing inputs"]):::s
+
+P_Audit --> R_Find --> R_Scope --> G_Scope
+G_Scope -->|"no"| S_Back --> P_Audit
+G_Scope -->|"yes"| P_Blue --> R_Arch --> G_Go
+G_Go -->|"no"| S_Back
+G_Go -->|"yes"| P_Impl --> O_Ship
 
 %% Clickable nodes
 click P_Blue "/services/blueprint/" "Architecture Blueprint"
@@ -148,7 +171,7 @@ click P_Impl "/services/implementation/" "Implementation"
 click R_Scope "/methodology/core-primitives/" "Core primitives"
 ```
 
-<p>🧭 The audit is not an end state: it produces a <strong>scope</strong> (what must be modeled and enforced), which becomes the <strong>Blueprint</strong>, which becomes a buildable <strong>Implementation</strong>. This is how we avoid “pilot purgatory”.</p>
+<p>🚦 This diagram adds the missing <strong>gates</strong>: audit findings become scope, but we only enter blueprint if the scope is stable enough to design. After blueprint, we explicitly decide whether we’re ready to build — otherwise we loop back to collect what’s missing instead of forcing an implementation.</p>
 
 </div>
 
@@ -162,6 +185,6 @@ click R_Scope "/methodology/core-primitives/" "Core primitives"
 			<li>Your data is messy and multi-source.</li>
 			<li>You need a plan that survives model churn.</li>
 		</ul>
-		<p><a class="md-button md-button--primary" href="start/">Start a Conversation</a></p>
+		<p><a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a></p>
 	</div>
 </div>

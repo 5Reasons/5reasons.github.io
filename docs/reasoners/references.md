@@ -9,4 +9,4 @@ description: "References are now a chapter inside Reasoners → About. This page
 
 This page was merged into the consolidated About page:
 
-- Go to: [Reasoners → About (References)](/reasoners/about/#references)
+- Go to: [Reasoners → About (References)](about.md#references)

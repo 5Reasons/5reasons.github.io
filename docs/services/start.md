@@ -18,7 +18,7 @@ description: "A lightweight entry point: what we need to evaluate fit quickly, a
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>
-				<a class="md-button" href="blueprint/">Architecture Blueprint</a>
+				<a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
 				<a class="md-button" href="/methodology/">Methodology</a>
 			</div>
 		</div>
@@ -74,7 +74,7 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 I_In(["📥 Inputs: decision, data reality, constraints"]):::i
 P_Scope("🧭 Clarify scope and risk"):::p
-G_Hi{"High-stakes?"}:::s
+G_Hi{"High stakes?"}:::s
 
 P_Audit("🔎 Epistemic Audit"):::p
 R_Diag(["🧾 Diagnosis: failure modes + roadmap"]):::r
@@ -118,23 +118,30 @@ R_Pol(["🔒 Constraints / policies<br>(what must never happen)"]):::r
 
 O_Map(["🧾 Output: scope map<br>(what we can prove vs what we must abstain)"]):::o
 
-R_Dec --> O_Map
-R_Data --> O_Map
-R_Pol --> O_Map
+G_Min{"Inputs sufficient?"}:::s
+S_Miss(["🛑 Missing inputs (explicit list)"]):::s
+O_Next(["✅ Next step: audit or blueprint"]):::o
+
+R_Dec --> G_Min
+R_Data --> G_Min
+R_Pol --> G_Min
+
+G_Min -->|"no"| S_Miss
+G_Min -->|"yes"| O_Map --> O_Next
 
 %% Clickable nodes
 click R_Pol "/methodology/constraints/" "Constraints & SHACL"
 click O_Map "/services/epistemic-audit/" "Epistemic Audit"
 ```
 
-<p>🧾 “Minimal inputs” are not bureaucracy: they bound the problem. When the system knows the <strong>🎯 decision</strong>, the <strong>📥 data reality</strong>, and the <strong>🔒 constraints</strong>, it can explicitly distinguish what is supported vs what is missing — and design abstention and escalation accordingly.</p>
+<p>🚦 This diagram adds the missing <strong>decision mechanism</strong>: we explicitly check whether the three inputs are sufficient. If not, we can list what’s missing (instead of guessing). If yes, we can produce a <strong>🧾 scope map</strong> that separates what is provable vs what must be handled via abstention/escalation, and route you to the right next step.</p>
 </div>
 
 <div class="landing-card">
 		<p>
-			<a class="md-button md-button--primary" href="epistemic-audit/">Epistemic Audit</a>
-			<a class="md-button" href="blueprint/">Architecture Blueprint</a>
-			<a class="md-button" href="implementation/">Implementation</a>
+			<a class="md-button md-button--primary" href="/services/epistemic-audit/">Epistemic Audit</a>
+			<a class="md-button" href="/services/blueprint/">Architecture Blueprint</a>
+			<a class="md-button" href="/services/implementation/">Implementation</a>
 		</p>
 </div>
 

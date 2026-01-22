@@ -17,7 +17,7 @@ description: "From epistemic audit to causal architecture blueprints to producti
 				Our services are designed to reduce hallucination risk and make outcomes measurable.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
 				<a class="md-button" href="/methodology/">See the methodology</a>
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
@@ -32,32 +32,32 @@ description: "From epistemic audit to causal architecture blueprints to producti
 		<div class="landing-card">
 			<h3>Epistemic Audit</h3>
 			<p>Diagnosis: where hallucinations come from in your stack, and what a decision-grade roadmap looks like.</p>
-			<p><a class="md-button md-button--primary" href="epistemic-audit/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/epistemic-audit/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Architecture Blueprint</h3>
 			<p>Design: ontology, constraints, ingestion strategy, and a client-owned reference architecture.</p>
-			<p><a class="md-button md-button--primary" href="blueprint/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/blueprint/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Red-Team Evaluation Sprint</h3>
 			<p>Stress test: adversarial prompts, policy edge cases, drift scenarios, and “unknown” handling — before it hits production.</p>
-			<p><a class="md-button md-button--primary" href="epistemic-audit/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/epistemic-audit/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Implementation</h3>
 			<p>Execution: build the glass-box memory layer, enforcement gates, traces, monitoring, and team handover.</p>
-			<p><a class="md-button md-button--primary" href="implementation/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/implementation/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Governance &amp; Constraints Pack</h3>
 			<p>Policy-as-code: encode rules, escalation paths, and shape validation so the system can deterministically block violations.</p>
-			<p><a class="md-button md-button--primary" href="blueprint/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/blueprint/">Explore</a></p>
 		</div>
 		<div class="landing-card">
 			<h3>Ongoing Partnership</h3>
 			<p>Retainer: continuous audits, governance updates, model reviews, and reliability tracking.</p>
-			<p><a class="md-button md-button--primary" href="partnership/">Explore</a></p>
+			<p><a class="md-button md-button--primary" href="/services/partnership/">Explore</a></p>
 		</div>
 	</div>
 </div>
@@ -144,16 +144,38 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 P_Start("📞 Start"):::p
+I_Min(["📥 Minimal inputs: decision, data, constraints"]):::i
+G_Enough{"Clarity sufficient?"}:::s
+
 P_Audit("🔎 Epistemic Audit"):::p
 R_Find(["🧾 Findings: risks, gaps, gates"]):::r
+G_GoA{"Proceed?"}:::s
+
 P_Blue("📐 Blueprint"):::p
-R_Design(["📐 Design: ontology, constraints, traces"]):::r
+R_Design(["📐 Design: ontology, constraints, trace schema"]):::r
+G_GoB{"Ready to build?"}:::s
+
 P_Impl("🧑‍💻 Implementation"):::p
 R_Ship(["🧠 Governed system + monitoring"]):::r
+G_Need{"Ongoing governance?"}:::s
+
 P_Part("🤝 Partnership"):::p
 O_Stable(["✅ Stable decision-grade operation"]):::o
+O_Stop(["🛑 Stop / rescope (not a fit yet)"]):::s
 
-P_Start --> P_Audit --> R_Find --> P_Blue --> R_Design --> P_Impl --> R_Ship --> P_Part --> O_Stable
+P_Start --> I_Min --> G_Enough
+G_Enough -->|"no"| P_Audit --> R_Find --> G_GoA
+G_Enough -->|"yes"| P_Blue
+
+G_GoA -->|"no"| O_Stop
+G_GoA -->|"yes"| P_Blue
+
+P_Blue --> R_Design --> G_GoB
+G_GoB -->|"no"| P_Audit
+G_GoB -->|"yes"| P_Impl --> R_Ship --> G_Need
+
+G_Need -->|"yes"| P_Part --> O_Stable
+G_Need -->|"no"| O_Stable
 
 %% Clickable nodes
 click P_Start "/services/start/" "Start"
@@ -163,7 +185,7 @@ click P_Impl "/services/implementation/" "Implementation"
 click P_Part "/services/partnership/" "Partnership"
 ```
 
-<p>🧾 This diagram shows the <strong>engagement sequence</strong> and the artifacts each phase produces: audit findings define the blueprint scope; the blueprint becomes the build plan; implementation ships a governed system; partnership keeps it decision-grade as models, policies, and data evolve.</p>
+<p>🚦 This diagram makes the <strong>decision points</strong> explicit: we start from minimal inputs, decide whether an <strong>🔎 audit</strong> is needed to reach design clarity, gate the move into <strong>📐 blueprint</strong>, and only then commit to <strong>🧑‍💻 implementation</strong>. Partnership is a deliberate choice based on how much ongoing change you expect.</p>
 
 </div>
 
@@ -183,7 +205,7 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 I_Data(["📥 Data reality (files, DBs, policies)"]):::i
 P_Model("🧠 Memory model + provenance"):::p
 P_Gate("🔒 Constraint gate"):::p
-G_OK{"Valid?"}:::s
+G_OK{"Constraints pass?"}:::s
 R_Trace(["🧾 Trace package (path, evidence, rules)"]):::r
 R_Measure(["📊 Review + measurement (gates, drift, incidents)"]):::r
 O_Improve(["✅ Controlled improvement loop"]):::o
@@ -213,6 +235,6 @@ click P_Model "/methodology/property-and-knowledge-graphs/" "Graphs"
 			The fastest start is usually an <strong>Epistemic Audit</strong>.
 			If you already have clarity and sponsorship, go straight to a <strong>Blueprint</strong>.
 		</p>
-		<p><a class="md-button md-button--primary" href="start/">Start a Conversation</a></p>
+		<p><a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a></p>
 	</div>
 </div>

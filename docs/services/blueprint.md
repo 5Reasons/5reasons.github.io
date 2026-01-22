@@ -17,8 +17,8 @@ description: "Designing your domain’s causal memory and governance: ontology, 
 				The goal is straightforward: make reliability a property of the system, not a hope inside prompts.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="start/">Start a Conversation</a>
-				<a class="md-button" href="implementation/">Implementation</a>
+				<a class="md-button md-button--primary" href="/services/start/">Start a Conversation</a>
+				<a class="md-button" href="/services/implementation/">Implementation</a>
 				<a class="md-button" href="/methodology/core-primitives/">Core primitives</a>
 			</div>
 		</div>
@@ -74,15 +74,32 @@ classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
 classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
 R_Domain(["🧩 Domain semantics<br>(ontology + meaning)"]):::r
+G_Sem{"Semantics sufficient?"}:::s
 R_Constr(["🔒 Constraints<br>(what must never happen)"]):::r
+G_Constr{"Constraints sufficient?"}:::s
 P_Ingest("📥 Ingestion design"):::p
 R_Prov(["🧾 Provenance + validation gates"]):::r
+G_Prov{"Evidence replayable?"}:::s
 P_Arch("🗺️ System architecture"):::p
 R_Roles(["Responsibilities: retrieval, traversal, gate, trace store"]):::r
+G_Arch{"Gates + traces complete?"}:::s
 P_Ops("📊 Operations"):::p
 O_Metrics(["✅ Metrics + go/no-go gates<br>(reliability, drift, violations)"]):::o
 
-R_Domain --> R_Constr --> P_Ingest --> R_Prov --> P_Arch --> R_Roles --> P_Ops --> O_Metrics
+S_Work(["🛑 Workshop / modeling iteration"]):::s
+
+R_Domain --> G_Sem
+G_Sem -->|"no"| S_Work --> R_Domain
+G_Sem -->|"yes"| R_Constr --> G_Constr
+
+G_Constr -->|"no"| S_Work --> R_Constr
+G_Constr -->|"yes"| P_Ingest --> R_Prov --> G_Prov
+
+G_Prov -->|"no"| S_Work --> P_Ingest
+G_Prov -->|"yes"| P_Arch --> R_Roles --> G_Arch
+
+G_Arch -->|"no"| S_Work --> P_Arch
+G_Arch -->|"yes"| P_Ops --> O_Metrics
 
 %% Clickable nodes
 click R_Domain "/methodology/core-primitives/" "Core primitives"
@@ -91,7 +108,7 @@ click R_Prov "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 click R_Roles "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
 
-<p>📐 This diagram is the <strong>Blueprint dependency chain</strong>: you first define <strong>🧩 semantics</strong>, then <strong>🔒 constraints</strong>, then the <strong>📥 ingestion</strong> and <strong>🧾 provenance gates</strong> that keep facts auditable, then the system architecture, and finally the <strong>📊 operational metrics</strong> that make reliability measurable.</p>
+<p>🚦 This diagram makes the Blueprint <strong>iterative and gated</strong>: each layer has a decision point (semantics sufficient? constraints sufficient? evidence replayable? gates + traces complete?). If not, we loop into focused modeling work instead of pretending we’re ready to build.</p>
 
 </div>
 
@@ -139,8 +156,8 @@ click O_Out "/reasoners/governance/" "Governance approach"
 			The Blueprint becomes the build plan for a glass-box implementation: enforceable gates, traces, monitoring, and a team-ready handover.
 		</p>
 		<p>
-			<a class="md-button md-button--primary" href="implementation/">Implementation</a>
-			<a class="md-button" href="partnership/">Ongoing Partnership</a>
+			<a class="md-button md-button--primary" href="/services/implementation/">Implementation</a>
+			<a class="md-button" href="/services/partnership/">Ongoing Partnership</a>
 		</p>
 	</div>
 </div>
