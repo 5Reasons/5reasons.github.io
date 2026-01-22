@@ -95,7 +95,7 @@ P_Maint --> R_Change --> P_ArchPlan
 %% Links (process → detailed explanation)
 click P_Orient "/home/start-here/" "Start Here"
 click P_Inquiry "/home/inquiry/" "Inquiry"
-click P_About "/reasoners/about/" "About"
+click P_About "/reasoners/" "About"
 
 click P_Services "/services/" "Services"
 click P_Methodology "/methodology/" "Methodology"
