@@ -7,10 +7,6 @@ description: "A causal operating system for AI memory: structured entities, cons
 
 # brModel™ Methodology
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008818.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -70,6 +66,10 @@ click P_Gov "/reasoners/governance/" "Governance"
 ```
 
 <p><strong>How to read this:</strong> start at <strong>🧭 decision-grade stakes</strong>, then move through <strong>🧩 primitives</strong> and <strong>🕸️ graph semantics</strong> into <strong>🔒 constraints</strong>. From there you can follow the baseline <strong>🧱 LLM + Tool + RAG</strong> path, upgrade to <strong>🧠 CausalGraphRAG</strong>, and land in <strong>✅ brCausalGraphRAG</strong> where outputs become <strong>🧾 trace objects</strong> and <strong>✅ governable behavior</strong>.</p>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008818.png"/>
+</div>
 
 ## Mental model
 

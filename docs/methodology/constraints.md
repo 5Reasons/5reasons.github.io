@@ -5,10 +5,6 @@ description: "How enforceable constraints make policy violations impossible, and
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008823.png"/>
-</div>
-
 # Constraints & SHACL
 
 <div class="landing-hero">
@@ -40,6 +36,10 @@ description: "How enforceable constraints make policy violations impossible, and
 		<div class="landing-card"><h3>Not portable</h3><p>Rules don’t travel cleanly across teams, products, and model upgrades; they decay into prompt folklore.</p></div>
 		<div class="landing-card"><h3>Unclear failure mode</h3><p>When outputs violate policy, you get excuses instead of a crisp violation report tied to a specific rule.</p></div>
 	</div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008823.png"/>
 </div>
 
 ## The constraint approach

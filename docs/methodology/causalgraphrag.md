@@ -7,10 +7,6 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
 
 # CausalGraphRAG
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008809.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -58,6 +54,10 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
       <p>As policies evolve and evidence shifts, constraints and provenance gates keep behavior stable — and make necessary updates explicit instead of silent.</p>
     </div>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008809.png"/>
 </div>
 
 ## Advantages (why this is the future)

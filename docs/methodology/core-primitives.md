@@ -7,10 +7,6 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 
 # Core primitives of the brModel
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/image_4.png"/>
-</div>
-
 <div class="landing-hero">
 	<div class="landing-hero__grid">
 		<div>
@@ -58,6 +54,10 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 			<p>Every domain model reduces to two reusable interaction families: <strong>Edge – Influence</strong> (one thing affects another) and <strong>Edge – Inheritance</strong> (one thing specializes another).</p>
 		</div>
 	</div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/image_4.png"/>
 </div>
 
 ## The meta-ontology (why this is interdisciplinary)
@@ -289,9 +289,9 @@ click R_T "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 <div class="landing-section">
 	<div class="landing-card">
 		<p>
-			<a class="md-button md-button--primary" href="property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a>
-			<a class="md-button" href="llm-tool-rag/">LLM + Tool + RAG</a>
-			<a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
+			<a class="md-button md-button--primary" href="/methodology/property-and-knowledge-graphs/">Property Graphs &amp; Knowledge Graphs</a>
+			<a class="md-button" href="/methodology/llm-tool-rag/">LLM + Tool + RAG</a>
+			<a class="md-button" href="/methodology/causalgraphrag/">CausalGraphRAG</a>
 		</p>
 	</div>
 </div>

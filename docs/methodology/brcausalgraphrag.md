@@ -5,10 +5,6 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
 
 --8<-- "includes/quicknav.html"
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008819.png"/>
-</div>
-
 # brCausalGraphRAG
 
 <div class="landing-hero">
@@ -58,6 +54,10 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
       <p>Updates become first-class events: what changed, why it changed, and which evidence justified the update — so the memory can evolve safely.</p>
     </div>
   </div>
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008819.png"/>
 </div>
 
 ## Why we call this a mental model for “AI consciousness” (without metaphysics)

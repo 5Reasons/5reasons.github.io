@@ -7,10 +7,6 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
 
 # LLM + Tool + RAG
 
-<div class="landing-section">
-    <img class="glightbox" src="/assets/img/br-008807.png"/>
-</div>
-
 <div class="landing-hero">
   <div class="landing-hero__grid">
     <div>
@@ -66,6 +62,10 @@ click P_T "/methodology/llm-tool-rag/" "Tools"
 
 <p><strong>Baseline mechanism:</strong> the <strong>🧠 LLM</strong> loops over <strong>🔎 retrieval</strong> and <strong>🧰 tools</strong>, but whether the system is safe depends on a separate <strong>✅ constraint gate</strong>. Without it, you can get fluent <strong>🗣️ output</strong> with <strong>🛑 silent violation risk</strong>.</p>
 
+</div>
+
+<div class="landing-section">
+    <img class="glightbox" src="/assets/img/br-008807.png"/>
 </div>
 
 ## The missing layer: constraint gate
