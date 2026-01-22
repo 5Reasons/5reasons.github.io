@@ -297,27 +297,49 @@ P_Route(["🎯 What failure is unacceptable? Choose a case study"]):::i
 subgraph G_Reg["Regulated decisions"]
 direction LR
 P_Fin("💳 Finance Constraints that cannot be bypassed"):::p
+O_Fin(["✅ Regulatory Constraint Engine"]):::o
 P_Ins("🛡️ Insurance Policy logic + controlled approvals"):::p
+O_Ins(["✅ Controlled Approval Ledger"]):::o
 P_Legal("⚖️ Legal Clause logic + conflict detection"):::p
+O_Legal(["✅ Clause Conflict Graph"]):::o
 end
 
 subgraph G_Bio["Bio & clinical"]
 direction LR
 P_Bio("🧬 Biomedicine Mechanisms + evidence chains"):::p
+O_Bio(["✅ Mechanism Evidence Chain"]):::o
 P_Pharma("🧪 Pharma & Clinical Ops Traceable decisions in workflows"):::p
+O_Pharma(["✅ Drug Repurposing Target Map"]):::o
 end
 
 subgraph G_Ops["Operational systems"]
 direction LR
 P_Cyber("🧯 Cybersecurity Reasoning under adversarial conditions"):::p
+O_Cyber(["✅ Adversarial Path Attribution"]):::o
 P_Energy("⚡ Energy & Utilities Safety + critical operations"):::p
+O_Energy(["✅ Critical Ops Safety Playbook"]):::o
 P_Manu("🏭 Manufacturing Process constraints + reliability"):::p
+O_Manu(["✅ Process Constraint Twin"]):::o
 end
 
 subgraph G_Org["Enterprise memory"]
 direction LR
 P_ECM("🏢 Enterprise Central Memory Shared semantics + governance"):::p
+O_ECM(["✅ Governed Semantic Memory Spine"]):::o
 end
+
+P_Fin --> O_Fin
+P_Ins --> O_Ins
+P_Legal --> O_Legal
+
+P_Bio --> O_Bio
+P_Pharma --> O_Pharma
+
+P_Cyber --> O_Cyber
+P_Energy --> O_Energy
+P_Manu --> O_Manu
+
+P_ECM --> O_ECM
 
 P_Route --> G_Reg
 P_Route --> G_Bio
@@ -334,9 +356,19 @@ click P_Pharma "/case-studies/pharma-clinical-ops/" "Pharma & Clinical Ops"
 click P_Cyber "/case-studies/cybersecurity/" "Cybersecurity"
 click P_Energy "/case-studies/energy-utilities/" "Energy & Utilities"
 click P_Manu "/case-studies/manufacturing/" "Manufacturing"
+
+click O_ECM "/case-studies/enterprise-central-memory/" "Enterprise Central Memory"
+click O_Fin "/case-studies/finance/" "Finance"
+click O_Ins "/case-studies/insurance/" "Insurance"
+click O_Legal "/case-studies/legal/" "Legal"
+click O_Bio "/case-studies/biomedicine/" "Biomedicine"
+click O_Pharma "/case-studies/pharma-clinical-ops/" "Pharma & Clinical Ops"
+click O_Cyber "/case-studies/cybersecurity/" "Cybersecurity"
+click O_Energy "/case-studies/energy-utilities/" "Energy & Utilities"
+click O_Manu "/case-studies/manufacturing/" "Manufacturing"
 ```
 
-<p>In high-stakes work, “accuracy” is not abstract — it is tied to a <strong>decision</strong> and a <strong>failure mode</strong>. This diagram routes you by domain and shows the kind of <strong>decision-grade artifacts</strong> (yellow) each case study focuses on: mechanism/evidence chains (biomedicine), enforceable constraints (finance), and logical conflict detection (legal).</p>
+<p>In high-stakes work, “accuracy” is not abstract — it is tied to a <strong>decision</strong> and a <strong>failure mode</strong>. This diagram routes you by domain and shows the kind of <strong>decision-grade solution artifacts</strong> (green) each case study produces: evidence chains (biomedicine), enforceable constraint engines (finance), and clause conflict graphs (legal).</p>
 </div>
 
 <div class="landing-section">
