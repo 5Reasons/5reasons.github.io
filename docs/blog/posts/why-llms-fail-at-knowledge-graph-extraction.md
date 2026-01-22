@@ -63,7 +63,7 @@ A language model can explain a contract clause flawlessly—then turn the same p
 - If we hold the model constant but add strict schemas, entity canonicalization, and evidence gates, then spurious structure ($M_3$) decreases and usability ($Y$) increases.
 - If we hold schemas constant but reduce context via aggressive chunking, then relation loss ($M_2$) increases and usability ($Y$) decreases—unless we also add cross-chunk linking and provenance.
 
-## Causal Diagrams (Mermaid)
+## Causal Diagrams
 
 ### A) Primary DAG: Why extraction breaks
 
