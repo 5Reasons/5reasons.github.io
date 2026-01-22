@@ -500,3 +500,17 @@ click O_Inquiry "/home/inquiry/" "Inquiry"
     </div>
   </div>
 </div>
+
+<div class="landing-card" style="margin-top: 14px;">
+  <p>
+    If you’re looking for <strong>causal graph memory</strong>, <strong>GraphRAG</strong>, <strong>knowledge graphs for LLMs</strong>,
+    <strong>enforceable governance constraints</strong>, or <strong>auditable reasoning traces</strong>, start here:
+  </p>
+  <ul>
+    <li><a href="/methodology/">brModel™ methodology overview</a> — the vocabulary and why it survives model churn.</li>
+    <li><a href="/methodology/core-primitives/">Core primitives</a> — Source/Subject/Process/Relation/Object + provenance.</li>
+    <li><a href="/methodology/constraints/">Constraints &amp; SHACL</a> — governance that validates, blocks, and explains.</li>
+    <li><a href="/blog/">Blog</a> — decision-grade posts with causal diagrams and mechanisms.</li>
+    <li><a href="/case-studies/">Case studies</a> — how it applies in finance, legal, cybersecurity, and biomedicine.</li>
+  </ul>
+</div>
