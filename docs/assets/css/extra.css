@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.md-header__source {
+    display: none !important;
+}
+
 /* Mermaid label wrapping (fix text overflow)
    Mermaid often renders node/edge labels as HTML inside SVG <foreignObject> and
    may inject inline styles like `white-space: nowrap; max-width: 200px; display: table-cell;`.

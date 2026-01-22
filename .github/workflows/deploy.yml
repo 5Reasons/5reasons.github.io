@@ -73,6 +73,10 @@ jobs:
           test -f site/blog/index.html
           test -f site/diagrams/index.html
 
+          # Ensure custom domain is applied by GitHub Pages
+          echo "5reasons.services" > site/CNAME
+          test -f site/CNAME
+
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site

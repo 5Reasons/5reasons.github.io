@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://5reasons.github.io/sitemap.xml
+Sitemap: https://5reasons.services/sitemap.xml
