@@ -70,60 +70,146 @@ The causal question this post answers is: **under what conditions do coding assi
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Sustainable engineering productivity"];
+flowchart TB
+  %% Inputs
+  X1["X1: Model capability"]:::i
+  X2["X2: Harness design"]:::i
+  X3["X3: Prompt discipline"]:::i
+  X4["X4: Verification loop strength"]:::i
 
-  X1["X1: Model capability"] --> Y;
-  X2["X2: Harness design"] --> Y;
-  X3["X3: Prompt discipline"] --> Y;
-  X4["X4: Verification loop"] --> Y;
+  C1["C1: Engineer baseline skill"]:::r
+  C2["C2: Codebase health"]:::r
+  C3["C3: Incentives / culture"]:::r
 
-  X2 --> M1["M1: Context fidelity"];
-  X3 --> M1;
-  M1 --> M2["M2: Iteration speed"];
-  M2 --> Y;
+  Z1["Z1: System complexity"]:::r
+  Z2["Z2: Domain risk"]:::r
+  Z3["Z3: Task type"]:::r
 
-  X4 --> M3["M3: Error correction"];
-  M3 --> Y;
-  M2 --> M3;
+  %% Mediators / mechanisms
+  M1["M1: Context fidelity"]:::p
+  M2["M2: Iteration speed"]:::p
+  M3["M3: Error correction"]:::p
 
-  C1["C1: Engineer baseline skill"] --> Y;
-  C1 --> X3;
-  C2["C2: Codebase health"] --> X4;
-  C2 --> Y;
-  C3["C3: Incentives / culture"] --> X4;
-  C3 --> Y;
+  %% Outcome
+  Y["Y: Sustainable engineering productivity"]:::o
 
-  Z1["Z1: System complexity"] -. moderates .-> X2;
-  Z2["Z2: Domain risk"] -. moderates .-> X4;
-  Z3["Z3: Task type"] -. moderates .-> X3;
+  %% Structural links
+  X2 --> M1
+  X3 --> M1
+  M1 --> M2
+
+  X4 --> M3
+  M2 --> M3
+
+  X1 --> Y
+  M2 --> Y
+  M3 --> Y
+
+  C1 --> X3
+  C1 --> Y
+  C2 --> X4
+  C2 --> Y
+  C3 --> X4
+  C3 --> Y
+
+  Z1 -. moderates .-> X2
+  Z2 -. moderates .-> X4
+  Z3 -. moderates .-> X3
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) Feedback loop (Goodhart risk)
 
 ```mermaid
-graph LR;
-  A["Pressure to ship"] --> B["Use assistant for speed"];
-  B --> C["More code changes"];
-  C --> D["Weaker review depth"];
-  D --> E["Higher defect escape"];
-  E --> F["Incidents + rework"];
-  F --> A;
+flowchart TB
+  %% Inputs
+  A["Pressure to ship"]:::i --> B["Use assistant for speed"]:::p
+  B --> C["More code changes"]:::p
 
-  G["Strong tests + CI gates"] --> D;
-  H["Traceable diffs + ownership"] --> D;
+  %% Decision gates
+  G1{"CI passes<br>(tests + lint + build)?"}:::p
+  G2{"Review approves<br>(risk-aware)?"}:::p
+
+  %% Records / artifacts
+  R1["Patch set (diff) + provenance"]:::r
+  R2["CI report (tests/logs)"]:::r
+  R3["Change record + ownership"]:::r
+  R4["Incident record + postmortem"]:::r
+
+  %% Outputs
+  O1["Defects escape"]:::o
+  O2["Incidents + rework"]:::o
+
+  C --> R1 --> G1
+  G1 -- pass --> R2 --> G2
+  G1 -- fail --> O2
+  G2 -- approve --> O1
+  G2 -- reject --> O2
+
+  O1 --> O2 --> A
+  O2 --> R4
+
+  %% Levers that strengthen the gates
+  L1["Strong tests + CI gates"]:::i --> G1
+  L2["Traceable diffs + ownership"]:::i --> G2
+  L3["Risk-based scope limits"]:::i --> G2
+  L2 --> R3
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Intervention map
 
 ```mermaid
-graph TD;
-  L1["Write acceptance tests first"] --> Y;
-  L2["Constrain prompts with invariants"] --> Y;
-  L3["Use harness that shows diffs"] --> Y;
-  L4["Enforce CI and code review"] --> Y;
-  L5["Measure defect escape + rework"] --> Y;
-  L6["Limit scope in high-risk areas"] --> Y;
+flowchart TB
+  %% Inputs / levers
+  L1["Write acceptance tests first"]:::i
+  L2["Constrain prompts with invariants"]:::i
+  L3["Use a harness that shows diffs"]:::i
+  L4["Enforce CI + code review"]:::i
+  L5["Measure defect escape + rework"]:::i
+  L6["Limit scope in high-risk areas"]:::i
+
+  %% Process targets
+  P1["Raise spec clarity"]:::p
+  P2["Increase context fidelity"]:::p
+  P3["Increase verification strength"]:::p
+  P4["Tighten governance loop"]:::p
+
+  %% Records / products
+  R1["Test suite + failure signals"]:::r
+  R2["Diff trace + ownership"]:::r
+  R3["CI evidence bundle"]:::r
+  R4["Quality dashboard (escape + rework)"]:::r
+
+  %% Outcome
+  Y["Sustainable engineering productivity"]:::o
+
+  L1 --> P1 --> R1 --> P3
+  L2 --> P1
+  L3 --> P2 --> R2 --> P4
+  L4 --> P3 --> R3 --> P4
+  L5 --> R4 --> P4
+  L6 --> P4
+
+  P2 --> Y
+  P3 --> Y
+  P4 --> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

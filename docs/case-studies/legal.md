@@ -74,7 +74,7 @@ R_Cla(["📄 Clause objects<br>(id, text, section)"]):::r
 P_Ent("🏷️ Extract entities, terms, modalities"):::p
 R_Terms(["📘 Term graph<br>(definitions + aliases)"]):::r
 G_Def{"Definitions resolved?"}:::s
-S_AskDef(["🛑 Ask for clarification / missing definitions"]):::s
+S_AskDef(["🛑 Ask for clarification / missing definitions"]):::i
 
 P_Link("🔗 Link references + cross-refs"):::p
 R_CG(["🕸️ Clause graph<br>(references, scope)"]):::r
@@ -88,7 +88,7 @@ R_Conf(["⚠️ Conflict candidates<br>(with clause paths)"]):::r
 G_Mat{"Material risk?"}:::s
 
 O_Out(["✅ Review pack<br>(issues + suggested edits)"]):::o
-S_Esc(["🛑 Escalate to counsel review"]):::s
+S_Esc(["🛑 Escalate to counsel review"]):::i
 R_Tr(["🧾 Trace bundle<br>(clause paths + conditions)"]):::r
 
 I_Doc --> P_Seg --> R_Cla --> P_Ent --> R_Terms --> G_Def
@@ -98,11 +98,11 @@ I_Jur --> P_Prec
 G_Def -->|"no"| S_AskDef --> R_Tr
 G_Def -->|"yes"| P_Link --> R_CG --> P_Prec --> R_Prec --> G_Prec
 
-G_Prec -->|"no"| S_Esc --> R_Tr
+G_Prec -->|"no"| S_Esc
 G_Prec -->|"yes"| P_Check --> R_Conf --> G_Mat
 
 G_Mat -->|"yes"| S_Esc --> R_Tr --> O_Out
-G_Mat -->|"no"| R_Tr --> O_Out
+G_Mat -->|"no"| R_Tr
 ```
 
 <p>⚖️ A contract becomes computable when you turn it into artifacts: <strong>clause objects</strong>, a <strong>term/definition graph</strong>, a <strong>precedence map</strong>, and a <strong>trace bundle</strong>. Conflicts aren’t guessed — they are detected through explicit gates (definitions resolved? precedence clear?) and escalated when ambiguity is structural.</p>
@@ -126,13 +126,13 @@ I_C(["📄 Clause text"]):::i
 P_T("🏷️ Classify modality"):::p
 G_Type{"Type clear?"}:::s
 R_Type(["📎 Clause type<br>(obligation/prohibition/exception)"]):::r
-S_EscType(["🛑 Escalate: ambiguous modality"]):::s
+S_EscType(["🛑 Escalate: ambiguous modality"]):::i
 
 P_S("🧭 Extract scope + conditions"):::p
 R_Scope(["🧾 Scope object<br>(who/what/when)"]):::r
 P_Refs("🔗 Resolve defined terms + cross-refs"):::p
 G_Refs{"Refs resolved?"}:::s
-S_Ask(["🛑 Ask: missing definition / reference"]):::s
+S_Ask(["🛑 Ask: missing definition / reference"]):::i
 
 P_Rule("🧩 Translate to rule"):::p
 R_Rule(["📐 Rule node<br>(condition → constraint)"]):::r
@@ -147,7 +147,7 @@ R_Conf(["⚠️ Conflict record<br>(paths + conditions)"]):::r
 G_Prec{"Precedence resolves?"}:::s
 O_OK(["✅ OK (with trace)"]):::o
 O_Iss(["✅ Review issue<br>(with proposed edits)"]):::o
-S_Esc(["🛑 Escalate to counsel"]):::s
+S_Esc(["🛑 Escalate to counsel"]):::i
 R_Tr(["🧾 Trace bundle"]):::r
 
 I_C --> P_T --> G_Type
@@ -196,7 +196,7 @@ P_Out("⚖️ Determine allowed/required"):::p
 G_Risk{"High stakes?"}:::s
 
 O_OK(["✅ Allow / require<br>(with clause path)"]):::o
-S_Esc(["🛑 Escalate: ambiguity / conflict"]):::s
+S_Esc(["🛑 Escalate: ambiguity / conflict"]):::i
 R_Tr(["🧾 Trace bundle<br>(clauses + conditions)"]):::r
 R_Neg(["📝 Negotiation levers<br>(which clause drives risk)"]):::r
 
@@ -208,7 +208,7 @@ P_Prec --> G_Prec
 G_Prec -->|"no"| S_Esc --> R_Tr
 G_Prec -->|"yes"| P_Out --> G_Risk
 
-G_Risk -->|"yes"| S_Esc --> R_Tr
+G_Risk -->|"yes"| S_Esc
 G_Risk -->|"no"| O_OK --> R_Tr
 
 R_Tr --> R_Neg

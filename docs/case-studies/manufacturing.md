@@ -82,7 +82,7 @@ R_Q(["📈 Quality signals<br>(yield, defects)"]):::r
 G_Drift{"Drift detected?"}:::s
 G_Conf{"Confounders controlled?"}:::s
 
-S_F(["⚠️ Failure / deviation"]):::s
+S_F(["⚠️ Failure / deviation"]):::i
 O_R(["✅ Root-cause candidates<br>(with evidence per link)"]):::o
 R_Tr(["🧾 Trace object<br>(batch → signals → causes)"]):::r
 
@@ -135,7 +135,7 @@ G_OK{"Gates pass?"}:::s
 
 O_A(["✅ RCA report + recommendation"]):::o
 R_Tr(["🧾 RCA trace bundle<br>(evidence + paths + gates)"]):::r
-S_X(["🛑 Abstain + request missing data"]):::s
+S_X(["🛑 Abstain + request missing data"]):::i
 
 I_Inc --> P_E --> R_Src --> P_Prov --> G_Prov
 G_Prov -->|"no"| S_X
@@ -186,8 +186,8 @@ O_Do(["✅ Execute change"]):::o
 P_Mon("📈 Monitor outcome"):::p
 G_Reg{"Regression detected?"}:::s
 
-S_Rev(["🛑 Require review / sign-off"]):::s
-S_Stop(["🛑 Stop + rollback"]):::s
+S_Rev(["🛑 Require review / sign-off"]):::i
+S_Stop(["🛑 Stop + rollback"]):::i
 R_Tr(["🧾 Change trace bundle<br>(tests + approvals + results)"]):::r
 
 I_Fix --> G_Impact
@@ -197,13 +197,13 @@ G_Impact -->|"no"| G_Ev
 G_Ev -->|"no"| S_Rev --> R_Tr
 G_Ev -->|"yes"| G_Safe
 
-G_Safe -->|"no"| S_Rev --> R_Tr
+G_Safe -->|"no"| S_Rev 
 G_Safe -->|"yes"| P_Pilot --> G_Pilot
 
-G_Pilot -->|"no"| S_Rev --> R_Tr
+G_Pilot -->|"no"| S_Rev
 G_Pilot -->|"yes"| P_RB --> G_Sign
 
-G_Sign -->|"no"| S_Rev --> R_Tr
+G_Sign -->|"no"| S_Rev
 G_Sign -->|"yes"| O_Do --> P_Mon --> G_Reg
 
 G_Reg -->|"yes"| S_Stop --> R_Tr

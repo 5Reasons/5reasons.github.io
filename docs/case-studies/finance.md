@@ -71,7 +71,7 @@ I_Q(["📥 Proposed decision"]):::i
 P_V("🔒 Validate constraints"):::p
 G_OK{"Constraints pass?"}:::s
 O_OK(["✅ Approve + trace"]):::o
-S_NO(["🛑 Reject + violations"]):::s
+S_NO(["🛑 Reject + violations"]):::i
 R_T(["🧾 Trace bundle<br>(rules + evidence + inputs)"]):::r
 
 I_Q --> P_V --> G_OK
@@ -120,7 +120,7 @@ G_Lim{"Limits pass?"}:::s
 G_Time{"Window ok?"}:::s
 
 O_OK(["✅ Allow + trace"]):::o
-S_No(["🛑 Block / escalate<br>violations"]):::s
+S_No(["🛑 Block / escalate<br>violations"]):::i
 R_Rep(["🧾 Validation report<br>(which checks fired)"]):::r
 
 R_P --> P_Comp --> R_Set
@@ -141,16 +141,16 @@ I_Dec --> P_G --> G_Role
 G_Role -->|"no"| S_No --> R_Rep
 G_Role -->|"yes"| G_Proh
 
-G_Proh -->|"yes"| S_No --> R_Rep
+G_Proh -->|"yes"| S_No
 G_Proh -->|"no"| G_Ev
 
-G_Ev -->|"no"| S_No --> R_Rep
+G_Ev -->|"no"| S_No 
 G_Ev -->|"yes"| G_Lim
 
-G_Lim -->|"no"| S_No --> R_Rep
+G_Lim -->|"no"| S_No 
 G_Lim -->|"yes"| G_Time
 
-G_Time -->|"no"| S_No --> R_Rep
+G_Time -->|"no"| S_No 
 G_Time -->|"yes"| O_OK --> R_Rep
 
 %% Clickable nodes
@@ -188,13 +188,13 @@ P_Pack("🧾 Build review bundles"):::p
 R_Bun(["🧾 Review bundle<br>(before/after + reasons)"]):::r
 
 G_Risk{"High stakes?"}:::s
-S_Sign(["🛑 Require sign-off" ]):::s
+S_Sign(["🛑 Require sign-off" ]):::i
 O_Apply(["✅ Apply updates" ]):::o
 
 P_Log("🕒 Write change log"):::p
 R_Log(["🕒 Governance log<br>(diff + approvals)"]):::r
 
-S_No(["🛑 No material changes" ]):::s
+S_No(["🛑 No material changes" ]):::i
 
 I_Upd --> P_Diff --> R_Diff --> P_Impact
 R_Idx --> P_Impact

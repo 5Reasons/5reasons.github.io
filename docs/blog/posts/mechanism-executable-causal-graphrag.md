@@ -66,61 +66,142 @@ The causal question this post answers is: **what structural changes turn GraphRA
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Safe intervention answers"];
+flowchart LR
+  %% Inputs
+  X1["X1: Mechanism executability"]:::i
+  X2["X2: Clause discipline"]:::i
+  X3["X3: Governance loop"]:::i
+  X4["X4: Retrieval alignment"]:::i
 
-  X1["X1: Mechanism executability"] --> M1["M1: Assumption visibility"];
-  X2["X2: Clause discipline"] --> M1;
-  X3["X3: Governance loop"] --> M2["M2: Contradiction handling"];
-  X3 --> M3["M3: Confidence calibration"];
-  X4["X4: Retrieval alignment"] --> M1;
+  %% Moderators / confounders
+  Z1["Z1: Domain identification quality"]:::r
+  Z2["Z2: Drift"]:::r
+  Z3["Z3: Stakes"]:::r
+  C1["C1: Evidence selection bias"]:::r
+  C2["C2: Measurement error"]:::r
+  C3["C3: Goodhart effects"]:::r
 
-  M1 --> Y;
-  M2 --> Y;
-  M3 --> Y;
+  %% Mediators
+  M1["M1: Assumption visibility"]:::p
+  M2["M2: Contradiction handling"]:::p
+  M3["M3: Confidence calibration"]:::p
 
-  Z1["Z1: Domain identification quality"] -. moderates .-> Y;
-  Z2["Z2: Drift"] -. moderates .-> X3;
-  Z3["Z3: Stakes"] -. moderates .-> Y;
+  %% Records / products
+  R1["Causal clause set<br>(versioned)"]:::r
+  R2["Evidence bundle<br>(per edge)"]:::r
+  R3["Decision trace bundle"]:::r
+  R4["Governance log<br>(approvals/rollbacks)"]:::r
 
-  C1["C1: Evidence selection bias"] --> X4;
-  C1 --> Y;
-  C2["C2: Measurement error"] --> X1;
-  C2 --> Y;
-  C3["C3: Goodhart effects"] --> X3;
-  C3 --> Y;
+  %% Gates
+  G1{"Evidence supports<br>mechanism?"}:::p
+  G2{"Contradiction<br>detected?"}:::p
+
+  %% Outcome
+  Y["Y: Safe intervention answers"]:::o
+
+  %% Links
+  X2 --> R1 --> M1
+  X4 --> R2 --> G1
+  G1 -- yes --> M1
+  G1 -- no --> M3
+
+  X3 --> R4 --> G2
+  G2 -- yes --> M2
+  G2 -- no --> M3
+
+  M1 --> R3 --> Y
+  M2 --> R3 --> Y
+  M3 --> Y
+
+  Z1 -. moderates .-> Y
+  Z2 -. moderates .-> X3
+  Z3 -. moderates .-> Y
+  C1 --> X4
+  C1 --> Y
+  C2 --> X1
+  C2 --> Y
+  C3 --> X3
+  C3 --> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) System loop: drift vs governance
 
 ```mermaid
-graph LR;
-  A["New evidence arrives"] --> B["Graph updates"];
-  B --> C["More mechanisms available"];
-  C --> D["More intervention recommendations"];
-  D --> E["Real-world outcomes"];
-  E --> F["Fitness scoring updates"];
-  F --> B;
+flowchart TB
+  A["New evidence arrives"]:::i --> P1["Extract + normalize"]:::p
+  P1 --> R1["Evidence bundle"]:::r
 
-  G["Non-stationarity"] --> B;
-  G --> E;
+  G1{"Provenance OK?"}:::p
+  R1 --> G1
+  G1 -- yes --> B["Graph updates"]:::p
+  G1 -- no --> S1["Quarantine + notify"]:::o
 
-  H["Quarantine + rollback"] --> B;
-  I["Provenance + audit"] --> F;
+  B --> C["More mechanisms available"]:::p
+  C --> D["More intervention recommendations"]:::p
+  D --> E["Real-world outcomes"]:::o
+  E --> F["Fitness scoring updates"]:::p
+  F --> B
+
+  G["Non-stationarity"]:::r --> B
+  G --> E
+
+  H["Quarantine + rollback"]:::i --> B
+  I["Provenance + audit"]:::i --> F
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Pipeline as a causal system
 
 ```mermaid
-graph TD;
-  S["Sources (papers, logs, policies)"] --> R["brScribe: extraction"];
-  R --> ST["brStatement: causal clause"];
-  ST --> G["brGraph: computed state"];
-  G --> D["brDiagram: debug views"];
-  G --> RP["brReport: human validation"];
+flowchart TB
+  %% Inputs
+  S["Sources<br>(papers, logs, policies)"]:::i
 
-  RP --> GOV["Governance decisions"];
-  GOV --> G;
+  %% Processes
+  P1["brScribe: extraction"]:::p
+  P2["brStatement: causal clause"]:::p
+  P3["brGraph: computed state"]:::p
+  P4["brDiagram: debug views"]:::p
+  P5["brReport: human validation"]:::p
+
+  %% Gates
+  G1{"Clause computable<br>and scoped?"}:::p
+  G2{"Validated for use<br>in interventions?"}:::p
+
+  %% Records / products
+  R1["Clause set (versioned)"]:::r
+  R2["Graph snapshot + provenance"]:::r
+  R3["Review bundle"]:::r
+  R4["Governance log"]:::r
+
+  %% Outputs
+  O1["Intervention-ready<br>mechanism library"]:::o
+
+  S --> P1 --> P2 --> G1
+  G1 -- pass --> R1 --> P3 --> R2
+  G1 -- fail --> R4
+  R2 --> P4
+  R2 --> P5 --> R3 --> G2
+  G2 -- approve --> O1
+  G2 -- reject --> R4
+  R4 --> P3
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

@@ -70,57 +70,138 @@ The causal question this post answers is: **why does adding memory often *increa
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Long-run agent reliability"];
+flowchart LR
+  %% Inputs
+  X1["X1: Temporal validity modeling"]:::i
+  X2["X2: Identity binding quality"]:::i
+  X3["X3: Retrieval policy"]:::i
+  X4["X4: Governance loop strength"]:::i
 
-  X1["X1: Temporal validity modeling"] --> M1["M1: Stale-context rate"];
-  X2["X2: Identity binding quality"] --> M1;
-  X3["X3: Retrieval policy"] --> M2["M2: Context precision"];
-  X4["X4: Governance loop strength"] --> M3["M3: Decision trace quality"];
+  %% Moderators / confounders
+  Z1["Z1: Drift rate"]:::r
+  Z2["Z2: Task stakes"]:::r
+  Z3["Z3: Multi-tenancy complexity"]:::r
+  C1["C1: Selective recording"]:::r
+  C2["C2: Feedback visibility"]:::r
+  C3["C3: Retrieval eval bias"]:::r
 
-  M1 --> Y;
-  M2 --> Y;
-  M3 --> Y;
+  %% Gates
+  G1{"Identity match?"}:::p
+  G2{"Valid now?"}:::p
 
-  Z1["Z1: Drift rate"] -. moderates .-> M1;
-  Z2["Z2: Task stakes"] -. moderates .-> Y;
-  Z3["Z3: Multi-tenancy complexity"] -. moderates .-> X2;
+  %% Mediators
+  M1["M1: Stale-context rate"]:::p
+  M2["M2: Context precision"]:::p
+  M3["M3: Decision trace quality"]:::p
 
-  C1["C1: Selective recording"] --> X3;
-  C1 --> Y;
-  C2["C2: Feedback visibility"] --> X4;
-  C2 --> Y;
-  C3["C3: Retrieval eval bias"] --> X3;
-  C3 --> Y;
+  %% Records / artifacts
+  R1["Memory writes"]:::r
+  R2["Temporal facts<br>(valid-from/valid-to)"]:::r
+  R3["Supersession links"]:::r
+  R4["Decision trace bundle"]:::r
+
+  %% Outcome
+  Y["Y: Long-run agent reliability"]:::o
+
+  %% Links
+  R1 --> G1
+  X2 --> G1
+  X1 --> R2 --> G2
+  R3 --> G2
+
+  G1 -- yes --> M2
+  G1 -- no --> M1
+  G2 -- yes --> M2
+  G2 -- no --> M1
+
+  X3 --> M2
+  X4 --> M3 --> R4 --> Y
+  M1 --> Y
+  M2 --> Y
+
+  Z1 -. moderates .-> M1
+  Z2 -. moderates .-> Y
+  Z3 -. moderates .-> X2
+  C1 --> X3
+  C1 --> Y
+  C2 --> X4
+  C2 --> Y
+  C3 --> X3
+  C3 --> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) Feedback loop / system dynamics view
 
 ```mermaid
-graph LR;
-  A["More memory written"] --> B["More retrieval opportunities"];
-  B --> C["Higher stale-context exposure"];
-  C --> D["Wrong actions"];
-  D --> E["User compensates / stops correcting"];
-  E --> F["Lower-quality feedback"];
-  F --> G["Weaker governance updates"];
-  G --> C;
+flowchart TB
+  A["More memory written"]:::p --> B["More retrieval opportunities"]:::p
 
-  H["Validity windows + decay"] --> C;
-  I["Provenance + decision traces"] --> G;
-  J["Identity boundaries (RBAC)"] --> C;
+  G1{"Eligible memory<br>(identity + time)?"}:::p
+  B --> G1
+
+  G1 -- no --> P1["Lower stale exposure"]:::p
+  G1 -- yes --> C["Higher stale-context exposure"]:::p
+
+  C --> D["Wrong actions"]:::o
+  D --> E["User compensates / stops correcting"]:::p
+  E --> F["Lower-quality feedback"]:::r
+  F --> G["Weaker governance updates"]:::p
+  G --> C
+
+  H["Validity windows + decay"]:::i --> G1
+  I["Provenance + decision traces"]:::i --> G
+  J["Identity boundaries (RBAC)"]:::i --> G1
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Intervention levers
 
 ```mermaid
-graph TD;
-  L1["Validity windows (valid-from / valid-to)"] --> Y;
-  L2["Supersession links (A replaced by B)"] --> Y;
-  L3["Hybrid retrieval + graph traversal"] --> Y;
-  L4["Governance: fitness scoring + quarantine"] --> Y;
-  L5["Audit trails: memory -> decision"] --> Y;
-  L6["Retention + decay policies"] --> Y;
+flowchart LR
+  %% Levers
+  L1["Validity windows<br>(valid-from/valid-to)"]:::i
+  L2["Supersession links<br>(A replaced by B)"]:::i
+  L3["Hybrid retrieval<br>+ graph traversal"]:::i
+  L4["Governance: fitness<br>scoring + quarantine"]:::i
+  L5["Audit trails:<br>memory -> decision"]:::i
+  L6["Retention + decay policies"]:::i
+
+  %% Processes
+  P1["Eligibility enforcement"]:::p
+  P2["Precision retrieval"]:::p
+  P3["Governed updates"]:::p
+
+  %% Products
+  R1["Temporal memory graph"]:::r
+  R2["Supersession registry"]:::r
+  R3["Decision trace bundle"]:::r
+
+  %% Outcome
+  Y["Long-run agent reliability"]:::o
+
+  L1 --> P1 --> R1 --> Y
+  L2 --> P1 --> R2 --> Y
+  L3 --> P2 --> Y
+  L4 --> P3 --> Y
+  L5 --> P3 --> R3 --> Y
+  L6 --> P3
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

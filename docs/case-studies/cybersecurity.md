@@ -80,7 +80,7 @@ R_TL(["🕒 Timeline artifact"]):::r
 P_E("🕸️ Expand evidence graph"):::p
 R_Path(["🧭 Hypothesis paths<br>(evidence per edge)"]):::r
 G_Ev{"Evidence sufficient?"}:::s
-S_Req(["🛑 Request missing telemetry/scope"]):::s
+S_Req(["🛑 Request missing telemetry/scope"]):::i
 
 P_Sel("📋 Select playbook step"):::p
 P_Sim("🧪 Simulate blast radius"):::p
@@ -91,7 +91,7 @@ P_G("🔒 Playbook + constraint gate"):::p
 G_OK{"Gates pass?"}:::s
 
 O_R(["✅ Recommend / execute response"]):::o
-S_X(["🛑 Abstain + escalate"]):::s
+S_X(["🛑 Abstain + escalate"]):::i
 R_T(["🧾 Incident trace package<br>(evidence + rules + actions)"]):::r
 O_IR(["✅ Incident record<br>(postmortem-ready)"]):::o
 
@@ -112,7 +112,7 @@ G_Auth -->|"no"| S_X --> R_T
 G_Auth -->|"yes"| P_G --> G_OK
 
 G_OK -->|"yes"| O_R --> R_T --> O_IR
-G_OK -->|"no"| S_X --> R_T --> O_IR
+G_OK -->|"no"| S_X --> R_T
 
 %% Clickable nodes
 click P_G "/methodology/constraints/" "Constraints & SHACL"
@@ -142,7 +142,7 @@ R_Ev(["📎 Evidence items<br>(with fingerprints)"]):::r
 
 P_Cust("🔐 Bind chain-of-custody"):::p
 G_Cust{"Custody intact?"}:::s
-S_Stop(["🛑 Stop + notify<br>(provenance break)"]):::s
+S_Stop(["🛑 Stop + notify<br>(provenance break)"]):::i
 
 P_Build("🧾 Build trace object"):::p
 R_H(["🧭 Hypotheses + paths"]):::r
@@ -210,7 +210,7 @@ G_App{"Approvals complete?"}:::s
 
 O_Auto(["✅ Auto-execute<br>(low risk)"]):::o
 O_Rec(["✅ Recommend<br>(runbook steps)"]):::o
-S_Esc(["🛑 Escalate to IR lead<br>+ change control"]):::s
+S_Esc(["🛑 Escalate to IR lead<br>+ change control"]):::i
 
 R_Trace(["🧾 Decision trace<br>(gates + reasons)"]):::r
 R_Tkt(["🎫 Case / change ticket<br>(links to trace)"]):::r
@@ -219,16 +219,16 @@ I_Trig --> P_Der --> R_Act --> P_Scope --> R_Scope --> P_Run --> R_Run --> G_Aut
 G_Auth -->|"no"| S_Esc --> R_Trace
 G_Auth -->|"yes"| G_Ev
 
-G_Ev -->|"no"| S_Esc --> R_Trace
+G_Ev -->|"no"| S_Esc
 G_Ev -->|"yes"| G_Risk
 
 G_Risk -->|"yes"| G_Safe
 G_Risk -->|"no"| G_Safe
 
-G_Safe -->|"no"| S_Esc --> R_Trace
+G_Safe -->|"no"| S_Esc
 G_Safe -->|"yes"| P_Approve --> G_App
 
-G_App -->|"no"| S_Esc --> R_Trace
+G_App -->|"no"| S_Esc
 G_App -->|"yes"| O_Auto --> R_Trace
 
 R_Trace --> O_Rec --> R_Tkt

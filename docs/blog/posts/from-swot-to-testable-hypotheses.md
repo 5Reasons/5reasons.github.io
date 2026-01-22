@@ -70,59 +70,128 @@ The causal question this post answers is: **how do we convert SWOT into a set of
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Strategy execution quality"];
+flowchart LR
+  %% Inputs
+  X1["X1: Hypothesis clarity"]:::i
+  X2["X2: Identification strength"]:::i
+  X3["X3: Governance discipline"]:::i
+  X4["X4: Mechanism library maturity"]:::i
 
-  X1["X1: Hypothesis clarity"] --> Y;
-  X2["X2: Identification strength"] --> Y;
-  X3["X3: Governance discipline"] --> Y;
-  X4["X4: Mechanism library maturity"] --> Y;
+  %% Confounders / moderators
+  C1["C1: Incentives"]:::r
+  C2["C2: Selection effects"]:::r
+  C3["C3: Measurement error"]:::r
+  Z1["Z1: Domain stakes"]:::r
+  Z2["Z2: Evidence availability"]:::r
+  Z3["Z3: Market volatility"]:::r
 
-  X1 --> M1["M1: Intervention quality"];
-  X2 --> M1;
-  M1 --> Y;
+  %% Mediators
+  M1["M1: Intervention quality"]:::p
+  M2["M2: Measurement quality"]:::p
+  M3["M3: Learning loop speed"]:::p
 
-  X1 --> M2["M2: Measurement quality"];
-  M2 --> Y;
+  %% Outcome
+  Y["Y: Strategy execution quality"]:::o
 
-  X3 --> M3["M3: Learning loop speed"];
-  M3 --> Y;
+  %% Links
+  X1 --> M1
+  X2 --> M1
+  M1 --> Y
 
-  C1["C1: Incentives"] --> X3;
-  C1 --> Y;
-  C2["C2: Selection effects"] --> X2;
-  C2 --> Y;
-  C3["C3: Measurement error"] --> M2;
-  C3 --> Y;
+  X1 --> M2
+  M2 --> Y
 
-  Z1["Z1: Domain stakes"] -. moderates .-> X3;
-  Z2["Z2: Evidence availability"] -. moderates .-> X2;
-  Z3["Z3: Market volatility"] -. moderates .-> Y;
+  X3 --> M3
+  M3 --> Y
+
+  X2 --> Y
+  X3 --> Y
+  X4 --> Y
+
+  C1 --> X3
+  C1 --> Y
+  C2 --> X2
+  C2 --> Y
+  C3 --> M2
+  C3 --> Y
+
+  Z1 -. moderates .-> X3
+  Z2 -. moderates .-> X2
+  Z3 -. moderates .-> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) “Narrative trap” feedback loop
 
 ```mermaid
-graph LR;
-  A["Write SWOT narrative"] --> B["Feel strategic clarity"];
-  B --> C["Ship without tests"];
-  C --> D["Ambiguous outcomes"];
-  D --> E["Interpretation wars"];
-  E --> A;
+flowchart TB
+  A["Write SWOT narrative"]:::p --> B["Feel strategic clarity"]:::p
+  B --> C["Ship without tests"]:::p
+  C --> D["Ambiguous outcomes"]:::r
+  D --> E["Interpretation wars"]:::p
+  E --> A
 
-  F["Convert to falsifiable hypotheses"] --> C;
-  G["Governance: fitness + rollback"] --> E;
+  %% Exit ramps / gates
+  G1{"Convert to<br>falsifiable hypotheses?"}:::p
+  G2{"Governance update<br>(deprecate/upgrade)?"}:::p
+
+  %% Artifacts that break the loop
+  R1["Hypothesis spec + assumptions"]:::r
+  R2["Test plan + metrics"]:::r
+  R3["Evidence bundle"]:::r
+  R4["Decision log + rollback"]:::r
+
+  B --> G1
+  G1 -- yes --> R1 --> R2 --> R3 --> G2 --> R4 --> E
+  G1 -- no --> C
+  G2 -- update --> A
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Translation pipeline: SWOT → hypothesis → governance
 
 ```mermaid
-graph TD;
-  S["SWOT bullet"] --> H["Causal hypothesis"];
-  H --> T["Test plan + metrics"];
-  T --> R["Result + evidence"];
-  R --> G["Governance update"];
-  G --> H;
+flowchart TB
+  %% Inputs
+  S["SWOT bullet"]:::i --> H["Causal hypothesis<br>(X -> Y, with mechanism)"]:::p
+
+  %% Records / products
+  R1["Hypothesis object<br>(variables + assumptions)"]:::r
+  R2["Identification plan<br>(design + confounders)"]:::r
+  R3["Test plan + metrics"]:::r
+  R4["Result + evidence bundle"]:::r
+  R5["Governance decision log"]:::r
+
+  %% Gates
+  G1{"Identified well<br>(credible test)?"}:::p
+  G2{"Evidence updates<br>belief?"}:::p
+
+  %% Outputs
+  O1["Updated strategy<br>(intervention set)"]:::o
+  O2["Deprecated / revised<br>hypothesis"]:::o
+
+  H --> R1 --> G1
+  G1 -- yes --> R2 --> R3 --> R4 --> G2
+  G1 -- no --> O2
+
+  G2 -- adopt --> O1 --> R5 --> H
+  G2 -- revise --> O2 --> R5 --> H
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

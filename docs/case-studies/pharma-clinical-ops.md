@@ -81,12 +81,12 @@ R_EB(["📎 Evidence bundle<br>(fingerprinted)"]):::r
 
 P_Map("🧭 Map correct version per site/time"):::p
 G_Ver{"Correct version?"}:::s
-S_Stop(["🛑 Block + escalate<br>(version mismatch)"]):::s
+S_Stop(["🛑 Block + escalate<br>(version mismatch)"]):::i
 
 P_Path("🕸️ Build evidence paths"):::p
 R_Path(["🧭 Path candidates<br>(eligibility / safety / ops)"]):::r
 G_Ev{"Evidence sufficient?"}:::s
-S_Req(["🛑 Request missing data"]):::s
+S_Req(["🛑 Request missing data"]):::i
 
 G_Elig{"Eligibility satisfied?"}:::s
 G_SAE{"Safety trigger?"}:::s
@@ -95,7 +95,7 @@ P_G("🔒 Protocol + safety constraints"):::p
 G_OK{"Gates pass?"}:::s
 
 O_O(["✅ Recommendation + trace"]):::o
-S_X(["🛑 Abstain + escalate"]):::s
+S_X(["🛑 Abstain + escalate"]):::i
 R_Tr(["🧾 Inspection bundle<br>(evidence + rules + versions)"]):::r
 
 I_Q --> P_E
@@ -120,7 +120,7 @@ G_SAE -->|"no"| P_G
 
 P_G --> G_OK
 G_OK -->|"yes"| O_O --> R_Tr
-G_OK -->|"no"| S_X --> R_Tr
+G_OK -->|"no"| S_X
 
 %% Clickable nodes
 click P_G "/methodology/constraints/" "Constraints & SHACL"
@@ -156,7 +156,7 @@ R_R(["📎 Rule triggers<br>(protocol + SOP)"]):::r
 
 P_D("⚖️ Decision"):::p
 G_Rev{"High stakes?"}:::s
-S_Rev(["🛑 Require human review"]):::s
+S_Rev(["🛑 Require human review"]):::i
 
 R_T(["🧾 Trace + inspection bundle<br>(claims + rules + versions)"]):::r
 P_Store("🗄️ Store in TMF-ready archive"):::p
@@ -188,7 +188,7 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 I_Am(["🧩 Protocol amendment / version"]):::i
 P_Map("🧭 Map version to site + time"):::p
 G_Ver{"Correct version selected?"}:::s
-S_Stop(["🛑 Block + escalate"]):::s
+S_Stop(["🛑 Block + escalate"]):::i
 
 P_Impact("🧪 Impact analysis"):::p
 R_Aff(["📎 Affected subjects + workflows"]):::r
@@ -206,11 +206,11 @@ I_Am --> P_Map --> G_Ver
 G_Ver -->|"no"| S_Stop --> R_Tr
 G_Ver -->|"yes"| P_Impact --> R_Aff --> P_Diff --> R_Diff --> G_Train
 
-G_Train -->|"no"| S_Stop --> R_Tr
+G_Train -->|"no"| S_Stop 
 G_Train -->|"yes"| P_Reeval --> G_Gate
 
 G_Gate -->|"yes"| O_OK --> R_Tr
-G_Gate -->|"no"| S_Stop --> R_Tr
+G_Gate -->|"no"| S_Stop 
 ```
 
 <p>🚦 Amendments change what is allowed. Versioning must be operational: select the correct version per site/time, run impact analysis, compute decision diffs, verify training updates, and only then re-evaluate and gate continuation. The output is an inspection bundle that shows what changed and why operations stayed compliant.</p>

@@ -1,5 +1,5 @@
 ---
-title: "SK Biomedicine: Mechanism Discovery"
+title: "Biomedicine: Mechanism Discovery"
 description: "How causal pathfinding turns scattered biomedical evidence into auditable mechanistic chains—moving from correlation to explanation."
 ---
 
@@ -82,7 +82,7 @@ G_Path{"Path found?"}:::s
 R_Path(["🧬 Candidate mechanism chain<br>(edge-level evidence)"]):::r
 R_Trace(["🧾 Trace package<br>(edges, citations, versions)"]):::r
 O_Lab(["✅ Test plan<br>(what would falsify which link)"]):::o
-S_Abs(["🛑 Abstain + missing evidence list"]):::s
+S_Abs(["🛑 Abstain + missing evidence list"]):::i
 
 I_Q --> P_G --> P_Trv --> G_Path
 G_Path -->|"yes"| R_Path --> R_Trace --> O_Lab
@@ -117,11 +117,11 @@ R_Src(["📎 Source record<br>(versioned)"]):::r
 P_Extract("🧾 Extract claim"):::p
 R_C(["🧾 Claim object<br>(who said what, when)"]):::r
 G_Q{"Quality sufficient?"}:::s
-S_Down(["🛑 Downweight / flag<br>(low quality)"]):::s
+S_Down(["🛑 Downweight / flag<br>(low quality)"]):::i
 
 P_Map("📐 Map measurements + units"):::p
 G_Meas{"Measurement aligned?"}:::s
-S_Ask(["🛑 Missing measurement details"]):::s
+S_Ask(["🛑 Missing measurement details"]):::i
 
 P_E("🔗 Edge assertion"):::p
 R_Edge(["🔗 Edge object<br>(X → Y, direction)"]):::r
@@ -168,7 +168,7 @@ P_Weak("🔎 Identify weakest link"):::p
 G_Fals{"Falsifiable?"}:::s
 R_Exp(["🧪 Minimal experiment<br>(most informative intervention)"]):::r
 O_Upd(["✅ Update graph + confidence"]):::o
-S_Miss(["🛑 Not falsifiable yet<br>request missing measurements"]):::s
+S_Miss(["🛑 Not falsifiable yet<br>request missing measurements"]):::i
 
 R_Path --> P_Weak --> G_Fals
 G_Fals -->|"yes"| R_Exp --> O_Upd --> R_Path

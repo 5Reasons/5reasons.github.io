@@ -84,22 +84,22 @@ P_Find("🔎 Derive findings"):::p
 R_Find(["📌 Findings<br>(what happened?)"]):::r
 
 G_Ev{"Evidence sufficient?"}:::s
-S_Req(["🛑 Request missing evidence"]):::s
+S_Req(["🛑 Request missing evidence"]):::i
 
 P_Cov("📐 Evaluate coverage + exclusions"):::p
 G_Elig{"Coverage eligible?"}:::s
-S_Deny(["🛑 Deny / decline<br>(with policy triggers)"]):::s
+S_Deny(["🛑 Deny / decline<br>(with policy triggers)"]):::i
 
 P_Fraud("🕵️ Fraud signal evaluation"):::p
 G_Fraud{"Fraud risk high?"}:::s
-S_SIU(["🛑 Escalate to SIU / investigation"]):::s
+S_SIU(["🛑 Escalate to SIU / investigation"]):::i
 
 P_Gate("🔒 Constraint gate"):::p
 G_Auth{"Authorized?"}:::s
 G_OK{"Gates pass?"}:::s
 
 O_OK(["✅ Approve / pay / bind"]):::o
-S_Esc(["🛑 Escalate to adjuster / underwriter"]):::s
+S_Esc(["🛑 Escalate to adjuster / underwriter"]):::i
 R_T(["🧾 Decision trace bundle<br>(evidence + rules + rationale)"]):::r
 O_Pack(["✅ Audit-ready decision pack"]):::o
 
@@ -124,7 +124,7 @@ G_Auth -->|"no"| S_Esc --> R_T
 G_Auth -->|"yes"| G_OK
 
 G_OK -->|"yes"| O_OK --> R_T --> O_Pack
-G_OK -->|"no"| S_Esc --> R_T --> O_Pack
+G_OK -->|"no"| S_Esc
 
 %% Clickable nodes
 click P_Gate "/methodology/constraints/" "Constraints & SHACL"
@@ -163,7 +163,7 @@ R_R(["📈 Risk profile"]):::r
 
 P_D("⚖️ Decision impact"):::p
 G_CF{"Counterfactual stable?"}:::s
-S_Ask(["🛑 Request missing info"]):::s
+S_Ask(["🛑 Request missing info"]):::i
 
 R_T(["🧾 Trace object<br>(evidence → findings → risk)"]):::r
 O_Out(["✅ Decision-ready rationale"]):::o
@@ -178,7 +178,7 @@ G_Alt -->|"no"| P_R
 
 P_R --> R_R --> P_D --> G_CF
 G_CF -->|"no"| S_Ask --> R_T --> O_Out
-G_CF -->|"yes"| R_T --> O_Out
+G_CF -->|"yes"| R_T
 ```
 
 <p>🧭 This is the accountability unit: the system must show how evidence produced findings, how findings produced risk factors, and where uncertainty remains. If alternative explanations exist or counterfactuals aren’t stable, the system asks for data instead of “closing the loop” with confidence.</p>
@@ -207,14 +207,14 @@ P_Sig("🔎 Derive fraud signals"):::p
 R_Sig(["🔎 Signal set<br>(anomalies, contradictions)"]):::r
 
 G_Ev{"Evidence sufficient?"}:::s
-S_Req(["🛑 Request additional documents"]):::s
+S_Req(["🛑 Request additional documents"]):::i
 
 G_Net{"Network risk high?"}:::s
 G_Exp{"Exposure high?"}:::s
 
 O_Pay(["✅ Pay / approve"]):::o
 O_Hold(["⏸️ Hold + verify"]):::o
-S_Esc(["🛑 Escalate to SIU"]):::s
+S_Esc(["🛑 Escalate to SIU"]):::i
 R_Tr(["🧾 Trace bundle<br>(signals + triggers)"]):::r
 
 I_Cl --> P_Link

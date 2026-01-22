@@ -68,53 +68,131 @@ The causal question this post answers is: **what mechanism gives HRM-like models
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Deployed reasoning reliability"];
+flowchart LR
+  %% Inputs
+  X1["X1: Adaptive computation depth"]:::i
+  X2["X2: Hierarchical control"]:::i
+  X3["X3: Verification harness"]:::i
+  X4["X4: Traceability tooling"]:::i
 
-  X1["X1: Adaptive computation depth"] --> M1["M1: Error propagation control"];
-  X2["X2: Hierarchical control"] --> M1;
-  X3["X3: Verification harness"] --> M2["M2: Debuggability"];
-  X3 --> M3["M3: Overconfidence rate"];
-  X4["X4: Traceability tooling"] --> M2;
+  %% Moderators / confounders
+  Z1["Z1: Task structure"]:::r
+  Z2["Z2: Data regime"]:::r
+  Z3["Z3: Stakes"]:::r
+  C1["C1: Benchmark selection"]:::r
+  C2["C2: Training protocol"]:::r
+  C3["C3: Measurement mismatch"]:::r
 
-  M1 --> Y;
-  M2 --> Y;
-  M3 --> Y;
+  %% Mediators
+  M1["M1: Error propagation control"]:::p
+  M2["M2: Debuggability"]:::p
+  M3["M3: Overconfidence rate"]:::p
 
-  Z1["Z1: Task structure"] -. moderates .-> X1;
-  Z2["Z2: Data regime"] -. moderates .-> X2;
-  Z3["Z3: Stakes"] -. moderates .-> Y;
+  %% Records / artifacts
+  R1["Harness: tests + invariants"]:::r
+  R2["Trace bundle<br>(inputs/outputs/metadata)"]:::r
+  R3["Failure taxonomy + triage notes"]:::r
 
-  C1["C1: Benchmark selection"] --> Y;
-  C2["C2: Training protocol"] --> Y;
-  C3["C3: Measurement mismatch"] --> Y;
+  %% Gate
+  G1{"Behavior passes<br>verification?"}:::p
+
+  %% Outcome
+  Y["Y: Deployed reasoning reliability"]:::o
+
+  %% Links
+  X1 --> M1
+  X2 --> M1
+  X3 --> R1 --> G1
+  X4 --> R2 --> M2
+  G1 -- pass --> M2
+  G1 -- fail --> R3 --> M3
+
+  M1 --> Y
+  M2 --> Y
+  M3 --> Y
+
+  Z1 -. moderates .-> X1
+  Z2 -. moderates .-> X2
+  Z3 -. moderates .-> Y
+  C1 --> Y
+  C2 --> Y
+  C3 --> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) Loop: capability without control
 
 ```mermaid
-graph LR;
-  A["More latent compute"] --> B["More capability"];
-  B --> C["More tasks delegated"];
-  C --> D["Higher impact of rare failures"];
-  D --> E["Need for verification"];
-  E --> F["Harness improvements"];
-  F --> C;
+flowchart TB
+  A["More latent compute"]:::p --> B["More capability"]:::p
+  B --> C["More tasks delegated"]:::p
+  C --> D["Higher impact of rare failures"]:::o
 
-  G["Weak observability"] --> D;
-  H["Strong tests + invariants"] --> D;
+  G1{"Verification and traces<br>in place?"}:::p
+  C --> G1
+  G1 -- no --> D
+  G1 -- yes --> P1["Controlled delegation"]:::p
+
+  D --> E["Need for verification"]:::p
+  E --> F["Harness improvements"]:::p
+  F --> G2{"Adopt gates as policy?"}:::p
+  G2 -- yes --> C
+  G2 -- no --> D
+
+  G["Weak observability"]:::r --> D
+  H["Strong tests + invariants"]:::i --> G1
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Intervention levers
 
 ```mermaid
-graph TD;
-  L1["Property-based tests"] --> Y;
-  L2["Invariants + runtime checks"] --> Y;
-  L3["Metamorphic testing"] --> Y;
-  L4["Trace capture (inputs/outputs)"] --> Y;
-  L5["Canarying + rollback"] --> Y;
-  L6["Benchmark diversity + audits"] --> Y;
+flowchart LR
+  %% Levers
+  L1["Property-based tests"]:::i
+  L2["Invariants + runtime checks"]:::i
+  L3["Metamorphic testing"]:::i
+  L4["Trace capture<br>(inputs/outputs)"]:::i
+  L5["Canarying + rollback"]:::i
+  L6["Benchmark diversity + audits"]:::i
+
+  %% Processes
+  P1["Increase failure detection"]:::p
+  P2["Increase containment"]:::p
+  P3["Improve diagnosis"]:::p
+
+  %% Products
+  R1["Verification evidence bundle"]:::r
+  R2["Trace bundle + repro cases"]:::r
+  R3["Deployment gates policy"]:::r
+
+  %% Outcome
+  Y["Deployed reasoning reliability"]:::o
+
+  L1 --> P1
+  L2 --> P1
+  L3 --> P1
+  P1 --> R1 --> Y
+
+  L4 --> P3 --> R2 --> Y
+  L5 --> P2 --> R3 --> Y
+  L6 --> P2
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

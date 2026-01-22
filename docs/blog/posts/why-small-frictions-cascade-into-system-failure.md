@@ -63,33 +63,84 @@ The causal question is simple: *how do minor, local inefficiencies turn into glo
 ### A) Primary DAG
 
 ```mermaid
-flowchart LR
-  X1[Small frictions] --> X2[Delayed / distorted feedback]
-  X2 --> M1[Local workarounds]
-  M1 --> M2[Hidden complexity]
-  M2 --> M3[Operational brittleness]
-  M3 --> Y[System failure risk]
+flowchart TB
+  %% Inputs
+  X1["X1: Small frictions"]:::i
+  C1["C1: Org maturity"]:::r
+  C2["C2: Product complexity"]:::r
+  Z1["Z1: Coupling"]:::r
+  Z2["Z2: Team load"]:::r
 
-  C1[Org maturity] --> X1
+  %% Gates
+  G1{"Feedback is timely<br>and trusted?"}:::p
+  G2{"Workaround becomes<br>default path?"}:::p
+
+  %% Processes
+  X2["X2: Delayed / distorted feedback"]:::p
+  M1["M1: Local workarounds"]:::p
+  M2["M2: Hidden complexity"]:::p
+  M3["M3: Operational brittleness"]:::p
+
+  %% Records / artifacts
+  R1["Exception paths + side channels"]:::r
+  R2["Undocumented invariants<br>+ tribal knowledge"]:::r
+
+  %% Outcome
+  Y["Y: System failure risk"]:::o
+
+  %% Causal chain
+  X1 --> G1
+  G1 -- no --> X2
+  G1 -- yes --> X2
+  X2 --> M1 --> R1 --> G2
+  G2 -- yes --> M2
+  G2 -- no --> M2
+  M2 --> R2 --> M3 --> Y
+
+  %% Context
+  C1 --> X1
   C1 --> Y
-  C2[Product complexity] --> X1
+  C2 --> X1
   C2 --> Y
-  Z1[Coupling] --> M3
-  Z2[Team load] --> M1
+  Z1 --> M3
+  Z2 --> M1
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) Feedback Loop / System Dynamics View
 
 ```mermaid
-flowchart LR
-  A[Friction accumulates] --> B[More workarounds]
-  B --> C[Hidden complexity grows]
-  C --> D[Incidents & interruptions]
-  D --> E[Less time for improvements]
+flowchart TB
+  %% Processes
+  A["Friction accumulates"]:::p --> B["More workarounds"]:::p
+  B --> C["Hidden complexity grows"]:::p
+  C --> D["Incidents + interruptions"]:::o
+  D --> E["Less time for improvements"]:::p
   E --> A
 
-  D --> F[More process / controls]
-  F --> A
+  %% Records that lock-in the loop
+  R1["Patchwork controls + approvals"]:::r
+  R2["Operational debt backlog"]:::r
+
+  %% Gate / leverage
+  G1{"Do we remove<br>workarounds too?"}:::p
+
+  D --> R1 --> A
+  D --> R2 --> E
+  E --> G1
+  G1 -- no --> A
+  G1 -- yes --> C
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

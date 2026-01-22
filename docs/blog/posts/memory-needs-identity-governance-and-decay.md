@@ -70,64 +70,143 @@ The causal question this post answers is: **what *mechanisms* turn memory from a
 ### A) Primary DAG
 
 ```mermaid
-graph TD;
-  Y["Y: Reliable agent behavior"];
+flowchart LR
+  %% Inputs
+  X1["X1: Identity binding quality"]:::i
+  X2["X2: Temporal validity modeling"]:::i
+  X3["X3: Retrieval policy"]:::i
+  X4["X4: Governance loop strength"]:::i
 
-  X1["X1: Identity binding quality"] --> Y;
-  X2["X2: Temporal validity modeling"] --> Y;
-  X3["X3: Retrieval policy"] --> Y;
-  X4["X4: Governance loop strength"] --> Y;
+  %% Confounders / moderators
+  Z1["Z1: Task stakes"]:::r
+  Z2["Z2: Drift rate"]:::r
+  Z3["Z3: Data heterogeneity"]:::r
+  C1["C1: Unobserved preference change"]:::r
+  C2["C2: Selective recording"]:::r
+  C3["C3: Logging quality"]:::r
 
-  X1 --> M1["M1: Context precision"];
-  X2 --> M1;
-  X3 --> M1;
-  M1 --> Y;
+  %% Eligibility gates
+  G1{"Identity match?"}:::p
+  G2{"Still valid<br>at decision time?"}:::p
 
-  X4 --> M2["M2: Decision trace quality"];
-  M2 --> Y;
+  %% Mediators
+  M1["M1: Context precision"]:::p
+  M2["M2: Decision trace quality"]:::p
+  M3["M3: Error propagation"]:::p
 
-  M1 --> M3["M3: Error propagation"];
-  M3 --> Y;
+  %% Records / artifacts
+  R1["Identity registry + bindings"]:::r
+  R2["Validity windows + supersession"]:::r
+  R3["Retrieval eligibility rules"]:::r
+  R4["Memory provenance log"]:::r
+  R5["Decision trace bundle"]:::r
 
-  Z1["Z1: Task stakes"] -. moderates .-> Y;
-  Z2["Z2: Drift rate"] -. moderates .-> X2;
-  Z3["Z3: Data heterogeneity"] -. moderates .-> X3;
+  %% Outcome
+  Y["Y: Reliable agent behavior"]:::o
 
-  C1["C1: Unobserved preference change"] --> X2;
-  C1 --> Y;
-  C2["C2: Selective recording"] --> X3;
-  C2 --> Y;
-  C3["C3: Logging quality"] --> X4;
-  C3 --> Y;
+  %% Links
+  X1 --> R1 --> G1
+  X2 --> R2 --> G2
+  X3 --> R3 --> M1
+  X4 --> R4 --> M2 --> R5
+
+  G1 -- yes --> M1
+  G1 -- no --> M3
+  G2 -- yes --> M1
+  G2 -- no --> M3
+
+  M1 --> Y
+  M2 --> Y
+  M3 --> Y
+
+  %% Context
+  Z1 -. moderates .-> Y
+  Z2 -. moderates .-> X2
+  Z3 -. moderates .-> X3
+
+  C1 --> X2
+  C1 --> Y
+  C2 --> X3
+  C2 --> Y
+  C3 --> X4
+  C3 --> Y
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### B) Feedback loop / system dynamics
 
 ```mermaid
-graph LR;
-  A["More memory written"] --> B["Higher retrieval volume"];
-  B --> C["More opportunities for wrong retrieval"];
-  C --> D["Incorrect agent actions"];
-  D --> E["User workarounds + reduced disclosure"];
-  E --> F["Less clean feedback data"];
-  F --> G["Weaker governance updates"];
-  G --> C;
+flowchart TB
+  %% Process loop
+  A["More memory written"]:::p --> B["Higher retrieval volume"]:::p
+  B --> C["More opportunities for wrong retrieval"]:::p
 
-  H["Governance: quarantine + decay"] --> C;
-  I["Identity controls"] --> C;
-  J["Provenance + decision traces"] --> G;
+  G1{"Eligible memory<br>(identity + validity)?"}:::p
+  C --> G1
+
+  G1 -- yes --> D["Incorrect agent actions"]:::o
+  G1 -- no --> P1["Safer action selection"]:::p
+
+  D --> E["User workarounds + reduced disclosure"]:::p
+  E --> F["Less clean feedback data"]:::r
+  F --> G["Weaker governance updates"]:::p
+  G --> C
+
+  %% Levers / controls
+  H["Governance: quarantine + decay"]:::i --> G1
+  I["Identity controls"]:::i --> G1
+  J["Provenance + decision traces"]:::i --> G
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ### C) Intervention levers
 
 ```mermaid
-graph TD;
-  L1["Bind identity (user/org/session)"] --> Y;
-  L2["Version facts + temporal validity"] --> Y;
-  L3["Separate facts vs interpretations"] --> Y;
-  L4["Provenance + decision traces"] --> Y;
-  L5["Decay/retention + redaction"] --> Y;
-  L6["Fitness scoring + rollback"] --> Y;
+flowchart LR
+  %% Levers
+  L1["Bind identity<br>(user/org/session)"]:::i
+  L2["Version facts<br>+ temporal validity"]:::i
+  L3["Separate facts vs<br>interpretations"]:::i
+  L4["Provenance + decision traces"]:::i
+  L5["Decay/retention<br>+ redaction"]:::i
+  L6["Fitness scoring<br>+ rollback"]:::i
+
+  %% Targeted processes
+  P1["Eligibility enforcement"]:::p
+  P2["Auditability"]:::p
+  P3["Fast correction"]:::p
+
+  %% Products
+  R1["Identity-scoped memory"]:::r
+  R2["Time-valid memory graph"]:::r
+  R3["Decision trace bundle"]:::r
+  R4["Quarantine / rollback record"]:::r
+
+  %% Outcome
+  Y["Reliable agent behavior"]:::o
+
+  L1 --> P1 --> R1 --> Y
+  L2 --> P1 --> R2 --> Y
+  L3 --> P1
+  L4 --> P2 --> R3 --> Y
+  L5 --> P3 --> R4 --> Y
+  L6 --> P3 --> R4
+
+  %% brModel styles
+  classDef i fill:#eef6ff,stroke:#2563eb,stroke-width:1px,color:#0f172a;
+  classDef p fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,color:#052e16;
+  classDef r fill:#fff7ed,stroke:#f97316,stroke-width:1px,color:#431407;
+  classDef o fill:#fdf2f8,stroke:#db2777,stroke-width:1px,color:#500724;
 ```
 
 ## Mechanism Walkthrough

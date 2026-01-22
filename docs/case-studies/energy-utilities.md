@@ -82,7 +82,7 @@ R_Proc(["📜 Switching procedures<br>(approved)"]):::r
 
 P_Rec("🧩 Reconcile state"):::p
 G_State{"State consistent?"}:::s
-S_Ask(["🛑 Request missing data / reconcile conflicts"]):::s
+S_Ask(["🛑 Request missing data / reconcile conflicts"]):::i
 R_State(["🧾 State snapshot<br>(topology + telemetry)"]):::r
 
 P_E("🕸️ Expand evidence graph"):::p
@@ -99,7 +99,7 @@ G_PTW{"Permit conflicts?"}:::s
 G_OK{"Gates pass?"}:::s
 
 O_R(["✅ Recommended plan + trace"]):::o
-S_X(["🛑 Abstain + escalate"]):::s
+S_X(["🛑 Abstain + escalate"]):::i
 R_Tr(["🧾 Plan trace bundle<br>(evidence + sims + limits)"]):::r
 
 I_A --> P_Rec
@@ -240,19 +240,19 @@ G_Iso -->|"yes"| P_BF
 R_Sim --> P_BF
 P_BF --> G_BF
 
-G_BF -->|"yes"| S_Esc --> R_Tr
+G_BF -->|"yes"| S_Esc 
 G_BF -->|"no"| P_PTW
 
 R_PTW --> P_PTW
 P_PTW --> G_PTW
 
-G_PTW -->|"yes"| S_Esc --> R_Tr
+G_PTW -->|"yes"| S_Esc 
 G_PTW -->|"no"| P_Auth
 
 R_Auth --> P_Auth
 P_Auth --> G_Auth
 
-G_Auth -->|"no"| S_Esc --> R_Tr
+G_Auth -->|"no"| S_Esc
 G_Auth -->|"yes"| P_Lim
 
 R_Lim --> P_Lim
@@ -260,7 +260,7 @@ R_Sim --> P_Lim
 P_Lim --> G_Lim
 
 G_Lim -->|"yes"| O_Do --> R_Tr --> O_Check
-G_Lim -->|"no"| S_Esc --> R_Tr
+G_Lim -->|"no"| S_Esc
 ```
 
 <p>🚦 This is why “AI suggestions” are unsafe by default: a plan must pass gates for topology correctness, isolation verification, backfeed risk, permit conflicts, authorization, and operating limits. When any gate fails, escalation is mandatory — and the trace shows exactly which gate failed and why. <strong>Product:</strong> a <strong>plan trace bundle</strong> plus an <strong>operator-ready execution checklist</strong>.</p>
