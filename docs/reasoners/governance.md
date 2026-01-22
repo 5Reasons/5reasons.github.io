@@ -59,9 +59,35 @@ description: "Governance by design: how we encode rules as enforceable constrain
 
 ```mermaid
 flowchart TB
-  Q["Proposed action / answer"] --> V["Validate constraints</br>(governance)"];
-  V -->|"Pass"| T["Attach trace + evidence</br>(audit-ready)"];
-  V -->|"Fail"| A["Abstain / escalate</br>(never guess)"];
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Proposal(["📥 Proposed action / answer"]):::i
+
+P_Policy("📜 Interpret policy (what is allowed)"):::p
+P_Validate("🔒 Validate constraints (enforcement)"):::p
+G_Check{"Valid?"}:::s
+
+R_Evidence(["🔎 Evidence set (sources + provenance)"]):::r
+R_Trace(["🧾 Trace log (who/what/why/when)"]):::r
+O_Commit(["✅ Commit decision (audit-ready output)"]):::o
+
+R_Refusal(["🛑 Refusal record (reason + missing evidence)"]):::r
+P_Escalate("🧑‍⚖️ Escalate to owner (request exception)"):::p
+O_Abstain(["🟨 Abstain safely (no guess)"]):::o
+
+I_Proposal --> P_Policy --> P_Validate --> G_Check
+G_Check -->|"yes"| R_Evidence --> R_Trace --> O_Commit
+G_Check -->|"no"| R_Refusal --> P_Escalate --> O_Abstain
+
+%% Clickable nodes
+click P_Validate "/methodology/constraints/" "Constraints & SHACL"
+click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click P_Escalate "/services/start/" "Start a conversation"
 ```
 
 </div>

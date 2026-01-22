@@ -100,7 +100,7 @@ classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 S_You("👤 You"):::s
 P_Start("🧭 Start Here"):::p
 P_HowWorks("ℹ️ How This Site Works"):::p
-I_Map(["🗺️ Use diagrams as navigation\n(clickable nodes)"]):::i
+I_Map(["🗺️ Use diagrams as navigation (clickable nodes)"]):::i
 
 S_You --> P_Start --> I_Map
 S_You -. "need context" .-> P_HowWorks --> P_Start

@@ -28,6 +28,51 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 ## The engagement loop
 
 <div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+S_Client("🏢 Client team"):::s
+S_Reasoners("🤝 Reasoners"):::s
+
+I_Goal(["🎯 Decision to support + unacceptable errors + constraints"]):::i
+
+P_Clarify("1) Clarify the decision"):::p
+P_Map("2) Map the domain"):::p
+P_Gov("3) Encode governance"):::p
+P_Build("4) Build the memory layer"):::p
+P_Prove("5) Prove it works"):::p
+P_Ops("6) Operationalize"):::p
+
+R_Brief(["🧾 Decision brief"]):::r
+R_Model(["🧩 Domain model"]):::r
+R_Constraints(["🔒 Constraint set"]):::r
+R_Memory(["🧠 Graph memory + traces"]):::r
+R_Eval(["🧪 Evaluation suite"]):::r
+R_Runbook(["📕 Runbook"]):::r
+
+O_System(["✅ Decision-grade system (grounded + governed)"]):::o
+
+S_Client --> I_Goal
+S_Reasoners --> I_Goal
+
+I_Goal --> P_Clarify --> R_Brief --> P_Map --> R_Model --> P_Gov --> R_Constraints --> P_Build --> R_Memory --> P_Prove --> R_Eval --> P_Ops --> R_Runbook --> O_System
+
+O_System -. "monitoring + change" .-> P_Map
+
+%% Clickable nodes
+click P_Gov "/reasoners/governance/" "Governance"
+click R_Constraints "/methodology/constraints/" "Constraints & SHACL"
+click P_Build "/methodology/causalgraphrag/" "CausalGraphRAG"
+click R_Memory "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+```
+
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>1) Clarify the decision</h3>
@@ -75,6 +120,47 @@ description: "How Reasoners work: logic-first discovery, domain modeling, govern
 ## Typical artifacts (deliverables)
 
 <div class="landing-section">
+
+```mermaid
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Sources(["📥 Sources (files + DBs + policies)"]):::i
+
+P_Ingest("Ingest + standardize"):::p
+R_Sheet(["🟨 brSheet (Input matrix)"]):::r
+
+P_Model("Model + compile"):::p
+R_Statement(["🟨 brStatement (Executable causal atom)"]):::r
+R_CD(["🟨 brCD (collection of statements)"]):::r
+
+P_Compute("Compute + persist"):::p
+R_Graph(["🟨 brGraph (Live graph state)"]):::r
+
+P_View("Project views"):::p
+R_Diagram(["🟨 brDiagram (Mermaid / yFiles)"]):::r
+
+P_Narrate("Narrate for humans"):::p
+R_Report(["🟨 brReport (Structured narrative)"]):::r
+
+O_Audit(["✅ Audit-ready delivery (traceable + governed)"]):::o
+
+I_Sources --> P_Ingest --> R_Sheet --> P_Model --> R_Statement --> R_CD --> P_Compute --> R_Graph
+R_Graph --> P_View --> R_Diagram --> O_Audit
+R_Graph --> P_Narrate --> R_Report --> O_Audit
+
+%% Clickable nodes
+click R_Diagram "/diagrams/" "Diagram Gallery"
+click R_Report "/services/epistemic-audit/" "Epistemic Audit"
+click R_Graph "/methodology/property-and-knowledge-graphs/" "Property-Knowledge Graph"
+click R_Statement "/methodology/core-primitives/" "Core Primitives"
+```
+
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Decision brief</h3>
