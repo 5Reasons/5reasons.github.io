@@ -115,6 +115,8 @@ click P_Check "/methodology/constraints/" "Constraints & SHACL"
 click R_Trace "/reasoners/governance/" "Governance"
 ```
 
+<p>🔎 This diagram encodes <strong>Law 1</strong> as an architectural gate: no evidence → refusal; evidence → constraint check; only then does the system emit an audit-ready output.</p>
+
 </div>
 
 ## Diagram: human accountability in the loop
@@ -151,5 +153,7 @@ G_Approve -->|"no"| P_Request --> R_Log
 click R_Log "/reasoners/governance/" "Governance"
 click P_Request "/services/start/" "Start a conversation"
 ```
+
+<p>🧑‍⚖️ This diagram encodes <strong>Law 3</strong>: the system proposes with evidence, but a human owner approves or requests more input, with every choice recorded in an audit log.</p>
 
 </div>

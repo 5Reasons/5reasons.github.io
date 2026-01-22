@@ -19,9 +19,9 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
         The difference matters because governance and meaning live in different layers than traversal and retrieval.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="core-primitives/">Core primitives</a>
-        <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="causalgraphrag/">CausalGraphRAG</a>
+        <a class="md-button md-button--primary" href="/methodology/core-primitives/">Core primitives</a>
+        <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="/methodology/causalgraphrag/">CausalGraphRAG</a>
       </div>
     </div>
   </div>
@@ -57,10 +57,34 @@ description: "Property graphs store rich attributes; knowledge graphs enforce me
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  PG["Property graph</br>(nodes/edges + properties)"] --> KG["Knowledge graph</br>(ontology + constraints + meaning)"];
-  KG --> Q["Queries with validity guarantees"];
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+P_PG("🕸️ Property graph (store + traverse)"):::p
+P_Ont("📚 Ontology (types + meaning)"):::p
+P_Con("🔒 Constraints (SHACL rules)"):::p
+R_KG(["Knowledge graph semantics (typed edges + validity)"]):::r
+ D_Valid{"✅ Valid under rules?"}:::s
+O_Q(["✅ Queries you can trust (valid under rules)"]):::o
+S_Bad(["🛑 Block or return violations"]):::s
+
+P_PG --> R_KG
+P_Ont --> R_KG
+P_Con --> R_KG --> D_Valid
+D_Valid -->|"Yes"| O_Q
+D_Valid -->|"No"| S_Bad
+
+%% Clickable nodes
+click P_Con "/methodology/constraints/" "Constraints & SHACL"
+click P_PG "/methodology/property-and-knowledge-graphs/" "Property & Knowledge Graphs"
 ```
+
+<p><strong>Interpretation:</strong> a property graph gives you <strong>🕸️ storage + traversal</strong>, but “knowledge” emerges only when you add <strong>📚 meaning</strong> and <strong>🔒 constraints</strong>. The <strong>✅ valid under rules?</strong> gate is what turns fast traversal into <strong>✅ queries you can trust</strong> (or <strong>🛑 violations</strong> you can fix).</p>
 
 </div>
 
@@ -116,12 +140,34 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  S["Source document"] --> V["Version + scope"];
-  V --> F["Claim / fact"];
-  F --> E["Edge assertion"];
-  E --> C["Constraint validation"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_S(["📄 Source document"]):::i
+R_V(["⏱️ Version + scope"]):::r
+R_F(["🧾 Claim / fact (provenance-first)"]):::r
+P_E("🔗 Edge assertion (typed relation)"):::p
+P_C("🔒 Constraint validation"):::p
+D_OK{"✅ Allowed?"}:::s
+O_OK(["✅ Commit + auditable graph state"]):::o
+S_NO(["🛑 Block + violation report"]):::i
+
+I_S --> R_V --> R_F --> P_E --> P_C
+P_C --> D_OK
+D_OK -->|"Yes"| O_OK
+D_OK -->|"No"| S_NO
+
+%% Clickable nodes
+click P_C "/methodology/constraints/" "Constraints & SHACL"
+click P_E "/methodology/core-primitives/" "Core primitives"
 ```
+
+<p><strong>Why provenance matters:</strong> edges are not “connections” but <strong>typed assertions</strong> backed by <strong>🧾 claims</strong> tied to <strong>⏱️ versions</strong>. A <strong>✅ allowed?</strong> decision prevents invalid commits and forces explicit <strong>🛑 violation reports</strong> when rules fail.</p>
 
 </div>
 

@@ -111,6 +111,8 @@ click R_Memory "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 click O_Stop "/reasoners/governance/" "Governance"
 ```
 
+<p>🔁 The key shift to “agentic” is a loop: plan → act → observe → memory → plan. Without a hard <strong>constraints gate</strong> and stopping rules, errors compound via feedback.</p>
+
 ## Diagram: governance gate (the non-negotiable)
 
 ```mermaid
@@ -141,6 +143,8 @@ click P_Validate "/methodology/constraints/" "Constraints & SHACL"
 click R_Log "/reasoners/governance/" "Governance"
 click P_Esc "/services/start/" "Start a conversation"
 ```
+
+<p>🔒 This is the non-negotiable safety boundary: every proposed action must pass validation, otherwise the system records a refusal and escalates instead of acting on a wrong belief.</p>
 
 ## Practical implication
 

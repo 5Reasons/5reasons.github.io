@@ -22,8 +22,8 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
       </p>
       <div class="landing-cta">
         <a class="md-button md-button--primary" href="causalgraphrag/">Upgrade to CausalGraphRAG</a>
-        <a class="md-button" href="constraints/">Add constraints &amp; SHACL</a>
-        <a class="md-button" href="core-primitives/">See core primitives</a>
+        <a class="md-button" href="/methodology/constraints/">Add constraints &amp; SHACL</a>
+        <a class="md-button" href="/methodology/core-primitives/">See core primitives</a>
       </div>
     </div>
   </div>
@@ -34,14 +34,37 @@ description: "A pragmatic baseline: how tool-use and retrieval reduce hallucinat
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  U["User"] --> L["LLM"];
-  L -->|"Search / retrieve"| R["RAG"];
-  R --> L;
-  L -->|"Call tools"| T["Tools / APIs"];
-  T --> L;
-  L --> A["Answer"];
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_U(["👤 User"]):::i
+P_L("🧠 LLM"):::p
+P_R("🔎 RAG retrieve"):::p
+P_T("🧰 Tools / APIs"):::p
+D_Gate{"✅ Constraint gate present?"}:::s
+R_Lack(["⚠️ No hard constraints + weak trace"]):::r
+O_A(["🗣️ Output (text/action proposal)"]):::o
+S_Risk(["🛑 Silent violation risk"]):::i
+O_Safe(["✅ Allowed output (traceable)"]):::o
+
+I_U --> P_L
+P_L --> P_R --> P_L
+P_L --> P_T --> P_L
+P_L --> D_Gate
+D_Gate -->|"No"| R_Lack --> O_A --> S_Risk
+D_Gate -->|"Yes"| O_Safe
+
+%% Clickable nodes
+click P_R "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click P_T "/methodology/llm-tool-rag/" "Tools"
 ```
+
+<p><strong>Baseline mechanism:</strong> the <strong>🧠 LLM</strong> loops over <strong>🔎 retrieval</strong> and <strong>🧰 tools</strong>, but whether the system is safe depends on a separate <strong>✅ constraint gate</strong>. Without it, you can get fluent <strong>🗣️ output</strong> with <strong>🛑 silent violation risk</strong>.</p>
 
 </div>
 
@@ -80,11 +103,32 @@ flowchart LR;
   </div>
 
 ```mermaid
-flowchart TB;
-  D["Draft answer / action"] --> V["Validate constraints"];
-  V -->|"Pass"| O["Output / execute"];
-  V -->|"Fail"| X["Abstain + explain"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_D(["🗣️ Draft answer / proposed action"]):::i
+P_V("🔒 Validate constraints (SHACL)"):::p
+R_Report(["🧾 Validation report (violations or conformance)"]):::r
+D_OK{"✅ Conforms?"}:::s
+O_O(["✅ Output / execute + record trace"]):::o
+S_X(["🛑 Abstain / escalate + return violations"]):::i
+
+I_D --> P_V --> R_Report
+R_Report --> D_OK
+D_OK -->|"Yes"| O_O
+D_OK -->|"No"| S_X
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
+click O_O "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
+
+<p><strong>Decision point:</strong> the system produces a <strong>🧾 validation report</strong>, then a <strong>✅ conforms?</strong> gate decides whether to proceed. Passing yields <strong>✅ execute + trace</strong>; failing yields <strong>🛑 abstain/escalate</strong> and returns violations as structured feedback.</p>
 
 </div>
 

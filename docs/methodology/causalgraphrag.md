@@ -21,9 +21,9 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
         CausalGraphRAG retrieves <em>paths</em> in a causal graph — then produces a trace you can audit.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="brcausalgraphrag/">brCausalGraphRAG</a>
-        <a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
-        <a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
+        <a class="md-button md-button--primary" href="/methodology/brcausalgraphrag/">brCausalGraphRAG</a>
+        <a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button" href="/methodology/property-and-knowledge-graphs/">Graphs</a>
       </div>
     </div>
   </div>
@@ -96,12 +96,33 @@ description: "From similarity search to causal traversal: how CausalGraphRAG ret
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  Q["Question"] --> S["Start node(s)"];
-  S --> P["Path search (with constraints)"];
-  P --> T["Trace + evidence"];
-  T --> A["Answer or abstain"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["❓ Question / outcome Y"]):::i
+P_S("🎯 Select start nodes"):::p
+P_Search("🧭 Constrained path search"):::p
+P_Valid("🔒 Validate edges + provenance"):::p
+D_OK{"✅ Valid path?"}:::s
+R_T(["🧾 Trace object (path + evidence + assumptions)"]):::r
+O_A(["✅ Answer with mechanism"]):::o
+S_X(["🛑 Abstain + missing data / violated rule"]):::i
+
+I_Q --> P_S --> P_Search --> P_Valid --> D_OK
+D_OK -->|"Yes"| R_T --> O_A
+D_OK -->|"No"| S_X
+
+%% Clickable nodes
+click P_Valid "/methodology/constraints/" "Constraints & SHACL"
+click R_T "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
+
+<p><strong>Core loop:</strong> start with <strong>❓ outcome Y</strong>, choose <strong>🎯 start nodes</strong>, search <strong>🧭 constrained paths</strong>, then run <strong>🔒 validation</strong>. Only a <strong>✅ valid path</strong> produces a <strong>🧾 trace object</strong> and a <strong>✅ mechanistic answer</strong>; otherwise the system <strong>🛑 abstains</strong> with a concrete failure reason.</p>
 
 </div>
 
@@ -110,12 +131,37 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  RAG["RAG retrieves chunks"] --> TXT["Text synthesis"];
-  CG["Causal graph retrieves paths"] --> PATH["Mechanism chain"];
-  PATH --> TRACE["Trace object"];
-  TRACE --> AUDIT["Auditable decision"];
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Stakes(["Decision context"]):::i
+D_Audit{"✅ Need audit and validity?"}:::s
+
+P_RAG("RAG: retrieve chunks"):::p
+P_TXT("Text synthesis"):::p
+S_Plaus(["⚠️ Plausible narrative (unclear validity)"]):::i
+
+P_CG("Causal graph: retrieve paths"):::p
+R_Path(["Mechanism chain (A → B → C)"]):::r
+R_Trace(["Trace object (evidence + provenance)"]):::r
+O_Audit(["✅ Auditable decision (or refusal)"]):::o
+
+I_Stakes --> D_Audit
+D_Audit -->|"No"| P_RAG --> P_TXT --> S_Plaus
+D_Audit -->|"Yes"| P_CG --> R_Path --> R_Trace --> O_Audit
+
+%% Clickable nodes
+click P_RAG "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
+click P_CG "/methodology/causalgraphrag/" "CausalGraphRAG"
+click R_Trace "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
+
+<p><strong>Why paths beat chunks:</strong> when <strong>✅ audit and validity</strong> matter, you must route through <strong>🧠 causal paths</strong> that yield a <strong>🧾 trace</strong>. When stakes are low, teams often accept <strong>🔎 chunks → text synthesis</strong>, but the output remains <strong>⚠️ plausible</strong> rather than decision-grade.</p>
 
 </div>
 
@@ -124,13 +170,33 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  P["Candidate path"] --> V1["Edge/type validity"];
-  V1 --> V2["Provenance requirements"];
-  V2 --> V3["Policy constraints"];
-  V3 -->|"Pass"| T["Emit trace"];
-  V3 -->|"Fail"| X["Abstain + explain"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_P(["Candidate path"]):::i
+P_V1("Edge + type validity"):::p
+P_V2("Provenance requirements"):::p
+P_V3("Policy + safety constraints"):::p
+D_Pass{"✅ All gates pass?"}:::s
+R_T(["Emit trace (what passed)"]):::r
+O_O(["✅ Continue to answer"]):::o
+S_X(["🛑 Refuse (why it failed)"]):::i
+
+I_P --> P_V1 --> P_V2 --> P_V3 --> D_Pass
+D_Pass -->|"Yes"| R_T --> O_O
+D_Pass -->|"No"| S_X
+
+%% Clickable nodes
+click P_V3 "/methodology/constraints/" "Constraints & SHACL"
+click R_T "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
+
+<p><strong>Deterministic abstention:</strong> validity is enforced as a sequence of gates (types, provenance, policy). If <strong>✅ all gates pass</strong>, the system emits a <strong>trace of what passed</strong> and proceeds; if not, it <strong>🛑 refuses</strong> with the specific gate that failed.</p>
 
 </div>
 

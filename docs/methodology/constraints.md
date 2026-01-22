@@ -21,8 +21,8 @@ description: "How enforceable constraints make policy violations impossible, and
 				SHACL is one practical way to formalize those constraints for graph-shaped data.
 			</p>
 			<div class="landing-cta">
-				<a class="md-button md-button--primary" href="brcausalgraphrag/">brCausalGraphRAG</a>
-				<a class="md-button" href="llm-tool-rag/">LLM + Tool + RAG</a>
+				<a class="md-button md-button--primary" href="/methodology/brcausalgraphrag/">brCausalGraphRAG</a>
+				<a class="md-button" href="/methodology/llm-tool-rag/">LLM + Tool + RAG</a>
 				<a class="md-button" href="/reasoners/governance/">Governance approach</a>
 			</div>
 		</div>
@@ -51,11 +51,32 @@ description: "How enforceable constraints make policy violations impossible, and
 	</div>
 
 ```mermaid
-flowchart TB;
-	D["Draft answer / action"] --> V["Validate constraints"];
-	V -->|"Pass"| O["Output / execute"];
-	V -->|"Fail"| X["Abstain + explain + log trace"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_D(["🗣️ Draft answer / proposed action"]):::i
+P_V("🔒 Validate constraints"):::p
+R_R(["🧾 Validation report (what rule, what edge)"]):::r
+D_OK{"✅ Allowed?"}:::s
+O_O(["✅ Allowed + execute + trace"]):::o
+S_X(["🛑 Block + abstain + explain"]):::i
+
+I_D --> P_V --> R_R
+R_R --> D_OK
+D_OK -->|"Yes"| O_O
+D_OK -->|"No"| S_X
+
+%% Clickable nodes
+click P_V "/methodology/constraints/" "Constraints & SHACL"
+click O_O "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
+
+<p><strong>Decision mechanism:</strong> a proposal becomes a <strong>🧾 validation report</strong>, then the <strong>✅ allowed?</strong> gate decides. Passing yields <strong>✅ execute + trace</strong>; failing yields <strong>🛑 block/abstain</strong> plus an explanation tied to the violated rule and edge.</p>
 
 </div>
 
@@ -95,13 +116,33 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-	G["Graph state"] --> P["Proposed update</br>(claim/edge)"];
-	P --> S["SHACL shapes"];
-	S --> R["Validation report"];
-	R -->|"Conforms"| C["Commit update"];
-	R -->|"Violations"| B["Block + return violations"];
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_G(["🕸️ Graph state"]):::i
+P_U("✍️ Proposed update (claim / edge / action)"):::p
+P_S("📐 SHACL shapes (versioned policy)"):::p
+R_R(["🧾 Validation report"]):::r
+D_Conf{"✅ Conforms?"}:::s
+O_C(["✅ Commit update + audit event"]):::o
+S_B(["🛑 Block + return violations"]):::i
+
+I_G --> P_U --> P_S --> R_R
+R_R --> D_Conf
+D_Conf -->|"Yes"| O_C
+D_Conf -->|"No"| S_B
+
+%% Clickable nodes
+click P_S "/methodology/constraints/" "Constraints & SHACL"
+click R_R "/reasoners/governance/" "Governance"
 ```
+
+<p><strong>Pipeline meaning:</strong> governance is applied to a <strong>✍️ proposed update</strong> using <strong>📐 versioned SHACL shapes</strong>. The result is a <strong>🧾 report</strong> and a <strong>✅ conforms?</strong> decision: either <strong>✅ commit + audit event</strong> or <strong>🛑 block + return violations</strong>.</p>
 
 </div>
 

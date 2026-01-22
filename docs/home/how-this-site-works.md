@@ -268,6 +268,8 @@ click B_P7 "/blog/posts/why-small-frictions-cascade-into-system-failure/" "Post"
 click D_Overview "/diagrams/" "Diagram Gallery"
 ```
 
+<p>🗺️ This diagram is the site’s <strong>information architecture map</strong>: stable top-level sections, index-driven discovery, and clickable nodes that route you to the right depth without inflating navigation.</p>
+
 ## Under the hood (what’s actually implemented)
 
 ### Fast navigation

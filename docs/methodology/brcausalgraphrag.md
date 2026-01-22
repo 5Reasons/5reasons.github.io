@@ -21,7 +21,7 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
         <strong>brCausalGraphRAG</strong> is the discipline: provenance-first primitives, enforceable constraint gates, trace objects, typed identity, and versioned memory writes — with deterministic abstention.
       </p>
       <div class="landing-cta">
-        <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
+        <a class="md-button md-button--primary" href="/methodology/constraints/">Constraints &amp; SHACL</a>
         <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness</a>
         <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       </div>
@@ -143,14 +143,33 @@ description: "CausalGraphRAG with brModel™ primitives: provenance-first graphs
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  Q["Question"] --> S["Select start nodes"];
-  S --> P["Constrained path search"];
-  P --> V["Validate shapes / constraints"];
-  V -->|"Pass"| T["Generate trace object"];
-  T --> A["Answer with evidence"];
-  V -->|"Fail"| X["Abstain / escalate"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Q(["❓ Question / task"]):::i
+P_S("🎯 Select start nodes"):::p
+P_Search("🧭 Constrained path search"):::p
+P_Val("🔒 Validate shapes + constraints"):::p
+D_OK{"✅ Allowed and supported?"}:::s
+R_T(["🧾 Trace object (evidence + provenance + rules)"]):::r
+O_A(["✅ Answer with evidence (or execute)"]):::o
+S_X(["🛑 Abstain / escalate (violation or missing path)"]):::i
+
+I_Q --> P_S --> P_Search --> P_Val --> D_OK
+D_OK -->|"Yes"| R_T --> O_A
+D_OK -->|"No"| S_X
+
+%% Clickable nodes
+click P_Val "/methodology/constraints/" "Constraints & SHACL"
+click R_T "/reasoners/governance/" "Governance"
 ```
+
+<p><strong>What happens here:</strong> the system turns a <strong>❓ question</strong> into a <strong>🧭 constrained path search</strong>, runs a <strong>🔒 validation gate</strong>, then either emits a <strong>🧾 trace object</strong> and a <strong>✅ decision-grade answer</strong> or <strong>🛑 abstains/escalates</strong> with a reason.</p>
 
 </div>
 
@@ -159,16 +178,36 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-  ID["Identity</br>(role + permissions + goals)"] --> Q["Question / task"];
-  Q --> TRV["Traverse causal memory"];
-  TRV --> G["Constraint gate"];
-  G -->|"Pass"| ACT["Act / answer"];
-  G -->|"Fail"| ABS["Abstain + explain"];
-  ACT --> W["Write trace + update memory"];
-  W --> ID;
-  W --> TRV;
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_ID(["🪪 Identity (role + permissions + goals)"]):::i
+I_Q(["❓ Question / task"]):::i
+P_TRV("🕸️ Traverse causal memory"):::p
+P_G("🔒 Constraint gate"):::p
+D_Allow{"✅ Allowed?"}:::s
+O_ACT(["✅ Act / answer"]):::o
+S_ABS(["🛑 Abstain + explain"]):::i
+R_W(["🧾 Write trace + versioned memory update"]):::r
+
+I_ID --> I_Q --> P_TRV --> P_G --> D_Allow
+D_Allow -->|"Yes"| O_ACT --> R_W
+D_Allow -->|"No"| S_ABS --> R_W
+R_W --> I_ID
+R_W --> P_TRV
+
+%% Clickable nodes
+click P_G "/methodology/constraints/" "Constraints & SHACL"
+click R_W "/methodology/core-primitives/" "Core primitives"
+click P_TRV "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p><strong>Mechanism:</strong> <strong>🪪 identity</strong> shapes what is allowed, <strong>🕸️ traversal</strong> proposes an action, the <strong>🔒 gate</strong> decides, and the system always writes a <strong>🧾 trace + memory update</strong> so behavior stays explainable over time.</p>
 
 </div>
 
@@ -177,13 +216,50 @@ flowchart LR;
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-  T["Trace"] --> P["Path (nodes + edges)"];
-  T --> E["Evidence (citations)"];
-  T --> R["Rules applied (constraints)"];
-  T --> D["Decision (answer / abstain)"];
-  T --> M["Memory writes (what changed)"];
+flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_Trigger(["❓ Trigger: question or proposed action"]):::i
+R_Meta(["🧾 Trace header: identity, timestamp, scope"]):::r
+
+P_Path("🧭 Select path"):::p
+R_Path(["Path artifact: nodes, edges, direction"]):::r
+
+P_Ev("📎 Collect evidence"):::p
+R_Ev(["Evidence set: citations, versions, extraction"]):::r
+
+P_Rules("🔒 Evaluate rules"):::p
+R_Rules(["Rules applied: constraints, permissions, thresholds"]):::r
+
+D_Out{"✅ Allowed and supported?"}:::s
+O_Ans(["✅ Output or execute"]):::o
+S_Abs(["🛑 Abstain or escalate"]):::i
+
+P_Write("✍️ Propose memory writes"):::p
+R_Writes(["Write-set: claims, edges, deltas, justification"]):::r
+
+D_Store{"✅ Store and replay?"}:::s
+O_Audit(["✅ Audit-ready trace package (replayable)"]):::o
+S_Skip(["🛑 Do not store (policy or privacy)"]):::i
+
+I_Trigger --> R_Meta --> P_Path --> R_Path --> P_Ev --> R_Ev --> P_Rules --> R_Rules --> D_Out
+D_Out -->|"Yes"| O_Ans --> P_Write --> R_Writes --> D_Store
+D_Out -->|"No"| S_Abs --> P_Write 
+D_Store -->|"Yes"| O_Audit
+D_Store -->|"No"| S_Skip
+
+%% Clickable nodes
+click P_Rules "/methodology/constraints/" "Constraints & SHACL"
+click P_Path "/methodology/causalgraphrag/" "CausalGraphRAG"
+click R_Ev "/methodology/core-primitives/" "Core primitives"
 ```
+
+<p><strong>Stored artifact:</strong> a <strong>🧾 trace package</strong> that ties together <strong>🧭 the path</strong>, <strong>📎 evidence versions</strong>, <strong>🔒 rules evaluated</strong>, the <strong>✅ allowed vs 🛑 abstain</strong> decision, and the <strong>✍️ exact memory writes</strong> (so you can replay, diff, and audit).</p>
 
 </div>
 
@@ -204,7 +280,7 @@ flowchart TB;
 <div class="landing-section">
   <div class="landing-card">
     <p>
-      <a class="md-button md-button--primary" href="constraints/">Constraints &amp; SHACL</a>
+      <a class="md-button md-button--primary" href="/methodology/constraints/">Constraints &amp; SHACL</a>
       <a class="md-button" href="/reasoners/governance/">Governance approach</a>
       <a class="md-button" href="/philosophy/ai-consciousness/">AI consciousness (operational)</a>
     </p>

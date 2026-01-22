@@ -97,6 +97,8 @@ click P_Market "/services/" "Services"
 click P_Product "/methodology/core-primitives/" "Core Primitives"
 ```
 
+<p>🧠 This diagram is the strategy engine: one shared <strong>brModel™ core</strong> is validated in science, proven in deployments, and productized into reusable patterns — each lane strengthening the others.</p>
+
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Lane A: Science (proof-of-quality)</h3>
@@ -159,6 +161,8 @@ click P_Validate "/methodology/constraints/" "Constraints & SHACL"
 click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 click O_Refuse "/reasoners/governance/" "Governance"
 ```
+
+<p>🧭 The “no jargon” version: instead of skimming documents, the system retrieves <strong>causal memory</strong>, checks <strong>constraints</strong>, then ships an <strong>audit-ready trace</strong> — or refuses when it can’t justify the decision.</p>
 
 </div>
 

@@ -71,6 +71,8 @@ click R_Evidence "/philosophy/three-laws/" "Three laws"
 click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
 
+<p>🧠 This diagram explains the governance failure: anthropomorphic framing increases <strong>over-trust</strong>, which enables risky delegation; governance gates, evidence, and traces counteract that mechanism.</p>
+
 <div class="landing-section">
   <div class="landing-grid">
     <div class="landing-card">
@@ -115,7 +117,7 @@ R_Trace(["🧾 Trace + provenance"]):::r
 P_Verify("✅ Verification"):::p
 
 P_Gov("🔒 Governance constraints"):::p
-O_Block(["🛑 Block / refuse"]):::o
+O_Block(["🛑 Block / refuse"]):::i
 
 P_Frame --> R_Trust --> P_Act --> O_Fail
 P_Ev --> P_Verify --> R_Trust
@@ -128,6 +130,8 @@ click P_Gov "/reasoners/governance/" "Governance"
 click P_Ev "/philosophy/three-laws/" "Three laws"
 click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
+
+<p>⚠️ This causal model makes the lever explicit: don’t depend on “consciousness” claims; reduce risk by enforcing <strong>evidence requirements</strong> and <strong>governance constraints</strong> that block action on wrong beliefs.</p>
 
 <p class="landing-mini">The lever is not “prove consciousness”. The lever is: enforce constraints, require evidence, and design for refusal.</p>
 
@@ -175,7 +179,7 @@ R_Trace(["🧾 Trace + provenance"]):::r
 P_Verify("✅ Verify"):::p
 O_Out(["✅ Output + audit trail"]):::o
 
-R_Refuse(["🛑 Refuse / escalate (request missing inputs)"]):::r
+R_Refuse(["🛑 Refuse / escalate (request missing inputs)"]):::i
 
 I_Q --> P_Scope --> P_Check --> G_OK
 G_OK -->|"no"| R_Refuse
@@ -186,6 +190,8 @@ click P_Check "/methodology/constraints/" "Constraints & SHACL"
 click R_Trace "/reasoners/governance/" "Governance"
 click P_Retrieve "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
+
+<p>🧭 This decision flow shows the operational dependency chain: scope → constraints → evidence → trace → verify → output, with a refusal path when the system can’t justify the action.</p>
 
 </div>
 

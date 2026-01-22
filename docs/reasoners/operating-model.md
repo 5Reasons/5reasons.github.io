@@ -73,6 +73,8 @@ click P_Build "/methodology/causalgraphrag/" "CausalGraphRAG"
 click R_Memory "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 ```
 
+<p>🔁 This loop makes the delivery system explicit: each phase produces a concrete <strong>artifact</strong> (brief, model, constraints, traces, eval, runbook), and the work iterates via monitoring and domain change.</p>
+
 	<div class="landing-grid">
 		<div class="landing-card">
 			<h3>1) Clarify the decision</h3>
@@ -160,6 +162,8 @@ click R_Report "/services/epistemic-audit/" "Epistemic Audit"
 click R_Graph "/methodology/property-and-knowledge-graphs/" "Property-Knowledge Graph"
 click R_Statement "/methodology/core-primitives/" "Core Primitives"
 ```
+
+<p>🧾 These are the <strong>deliverable objects</strong> that keep systems auditable: inputs become modeled statements and graphs, which then produce diagrams and reports with traceable provenance.</p>
 
 	<div class="landing-grid">
 		<div class="landing-card">

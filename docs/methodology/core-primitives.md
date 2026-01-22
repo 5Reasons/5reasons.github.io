@@ -22,8 +22,8 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 			</p>
 			<div class="landing-cta">
 				<a class="md-button md-button--primary" href="/methodology/">Methodology overview</a>
-				<a class="md-button" href="constraints/">Constraints &amp; SHACL</a>
-				<a class="md-button" href="property-and-knowledge-graphs/">Graphs</a>
+				<a class="md-button" href="/methodology/constraints/">Constraints &amp; SHACL</a>
+				<a class="md-button" href="/methodology/property-and-knowledge-graphs/">Graphs</a>
 			</div>
 		</div>
 	</div>
@@ -72,7 +72,7 @@ description: "The smallest building blocks of brModel™: entities, processes, r
     <img class="glightbox" src="/assets/img/br-008821.png"/>
 </div>
 
-	<div class="landing-grid">
+<div class="landing-grid">
 		<div class="landing-card">
 			<h3>Element</h3>
 			<p>An abstract “thing” in some categorical state. In the domain layer it becomes Source, Subject, Process, Relation, or Object.</p>
@@ -113,50 +113,90 @@ description: "The smallest building blocks of brModel™: entities, processes, r
 	</div>
 </div>
 
-## Diagram: primitive schema (minimal)
+## Diagram: Meta-Ontology → brGraph
 
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	S["Source"] --> F["Fact (claim)"];
-	F --> E1["Entity"];
-	F --> P["Process / event"];
-	E1 --> R["Relation"];
-	R --> E2["Entity"];
+flowchart LR
+    linkStyle default stroke:#888,stroke-width:2px,color:#111,font-size:9px;
+    classDef e fill:#FFF,stroke:#555,color:#000,font-size:16px,font-weight:bold;
+    classDef m fill:#FFF,stroke:#555,color:#000,font-size:10px;
+    classDef c fill:#FFF,stroke:#555,color:#000,font-size:10px;
+    classDef t fill:#FFF,stroke:#555,color:#000,font-size:8px;
+
+   E["◻ Element - e"]:::e
+   M(["○ Metric - m"]):::m
+   C[/"▶ Cause - c"/]:::c
+   T>"◆ Transfer - t"]:::t
+      C -->|"affect - aff"| E
+      T -->|"input - in"| M
+      T -->|"factor - push"| C
+      M -->|"output - out"| T
+      E -->|"property - diff"| M
+      E -->|"effect - eff"| C
 ```
+
+<p>🧱 <strong>What this diagram encodes:</strong> a deliberately small “physics set” for modeling real domains. Any problem description is reduced to four primitives — <strong>Element</strong>, <strong>Metric</strong>, <strong>Cause</strong>, <strong>Transfer</strong> — and a finite set of relation types (affect/input/output/factor/property/effect). That reduction is what makes problem-solving tractable: you can always <strong>generalize</strong> a messy situation into this bounded model.</p>
+
+<p>📏 <strong>Why it matters for reasoning:</strong> once the vocabulary is finite, the system can keep an explicit accounting of <strong>what is known</strong> vs <strong>what is missing</strong> (which Elements/Metrics/Causes/Transfers are undefined, unmeasured, or unsupported). Even if it “knows nothing”, it still knows <strong>how many pieces are missing</strong>, where the gaps are, and what kind of evidence would fill them.</p>
 
 </div>
 
-## Diagram: meta-ontology → domain DSL
+## Diagram: Meta-Semantics → WisdomGraph
 
 <div class="landing-section">
 
 ```mermaid
-flowchart TB;
-	subgraph Schema[Schema layer (Memory)]
-		E[Element] -->|has| M[Metric];
-		C[Cause] -->|affect| T[Transfer];
-		E -.->|influence| E;
-		E -.->|inheritance| E;
-	end
-	
-	subgraph DSL[DSL layer (WisdomGraph)]
-		Src[Source]:::dsl;
-		Subj[Subject]:::dsl;
-		Proc[Process]:::dsl;
-		Rel[Relation]:::dsl;
-		Obj[Object]:::dsl;
-	end
+flowchart LR
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
 
-	E --> Src;
-	E --> Subj;
-	E --> Proc;
-	E --> Rel;
-	E --> Obj;
+            subgraph info["⬛ Information - i"]
+                direction LR
 
-	classDef dsl fill:#eef,stroke:#99f,stroke-width:1px;
+                information["⬛ Information - i"]:::i
+                energy["🟥 Subjects - s"]:::s
+                time["🟦 Processes - p"]:::p
+                space["🟨 Relations - r"]:::r
+                matter["🟩 Objects - o"]:::o
+                information -->|"⬛⬛ context - ii"| information
+                information -->|"⬛🟥 subject - is"| energy
+                information -->|"⬛🟦 process - ip"| time
+                information -->|"⬛🟨 relation - ir"| space
+                information -->|"⬛🟩 object - io"| matter
+                energy -->|"🟥🟥 role - ss"| energy
+                time -->|"🟦🟦 flow - pp"| time
+                space -->|"🟨🟨 item - rr"| space
+                matter -->|"🟩🟩 portion - oo"| matter
+                energy -->|"🟥🟨 sends - sr"| space
+                energy -->|"🟩🟥 owns - so"| matter
+                space -->|"🟨🟥 receives - rs"| energy
+                time -->|"🟦🟥 requires - ps"| energy
+                energy -->|"🟥🟦 performs - sp"| time
+                matter -->|"🟩🟦 consumes - op"| time
+                space -->|"🟨🟦 realizes - rp"| time
+                time -->|"🟦🟩 produces - po"| matter
+                energy -->|"🟥🟩 controls - so"| matter
+                space -->|"🟨🟩 supplies - ro"| matter
+                matter -->|"🟩🟨 requests - or"| space
+                time -->|"🟦🟨 develops - pr"| space
+                energy -->|"🟥⬛ creator - si"| infoNew
+                time -->|"🟦⬛ create - pi"| infoNew
+                space -->|"🟨⬛ form - ri"| infoNew
+                matter -->|"🟩⬛ matter - oi"| infoNew
+                infoNew["⬛ New Information - i"]:::i
+            end
+
 ```
+
+<p>🧭 <strong>What this diagram encodes:</strong> a domain-facing semantic reduction. Regardless of vocabulary (biomedicine vs finance vs law), domain concepts map to five stable interfaces — <strong>Information</strong>, <strong>Subjects</strong>, <strong>Processes</strong>, <strong>Relations</strong>, <strong>Objects</strong> — and a finite set of composable edge types between them.</p>
+
+<p>🧩 <strong>Why it makes problem-solving manageable:</strong> by limiting the “shape” of a domain to a bounded set of primitives and edges, you prevent unbounded description sprawl. The system can therefore <strong>abstract</strong> and <strong>generalize</strong> consistently, while also tracking gaps explicitly: how much semantic structure is already available, how much is missing, and which specific interface (subject/process/relation/object/context) needs new evidence or modeling work.</p>
 
 </div>
 
@@ -216,12 +256,30 @@ flowchart TB;
 <div class="landing-section">
 
 ```mermaid
-flowchart LR;
-	D["Document / dataset"] --> V["Version + timestamp"];
-	V --> X["Extraction"];
-	X --> C["Claim (fact)"];
-	C --> T["Trace step"];
-	T --> O["Output"];
+ flowchart TB
+%% Styles (brModel Standard)
+classDef i fill:#D3D3D3,stroke-width:0px,color:#000;
+classDef p fill:#B3D9FF,stroke-width:0px,color:#000;
+classDef r fill:#FFFFB3,stroke-width:0px,color:#000;
+classDef o fill:#C1F0C1,stroke-width:0px,color:#000;
+classDef s fill:#FFB3B3,stroke-width:0px,color:#000;
+
+I_D(["📄 Document / dataset"]):::i
+R_V(["⏱️ Version + timestamp"]):::r
+P_X("🧲 Extraction"):::p
+R_C(["🧾 Claim (fact) + provenance"]):::r
+R_T(["🧭 Trace step (why this edge)"]):::r
+P_G("🔒 Constraint validation"):::p
+O_O(["✅ Output + audit trail"]):::o
+S_B(["🛑 Refuse + violation report"]):::i
+
+I_D --> R_V --> P_X --> R_C --> R_T --> P_G
+P_G -->|"Pass"| O_O
+P_G -->|"Fail"| S_B
+
+%% Clickable nodes
+click P_G "/methodology/constraints/" "Constraints & SHACL"
+click R_T "/methodology/brcausalgraphrag/" "brCausalGraphRAG"
 ```
 
 </div>

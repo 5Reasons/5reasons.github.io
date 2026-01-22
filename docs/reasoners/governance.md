@@ -90,6 +90,8 @@ click R_Trace "/methodology/llm-tool-rag/" "LLM + Tool + RAG"
 click P_Escalate "/services/start/" "Start a conversation"
 ```
 
+<p>🔒 The key mechanism is a <strong>validity gate</strong>: proposals must pass enforceable constraints to become actions, and failures produce a first-class <strong>refusal record</strong> plus an explicit escalation path.</p>
+
 </div>
 
 ## Practical design choices

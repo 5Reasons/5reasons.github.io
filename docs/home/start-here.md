@@ -58,6 +58,8 @@ click S_Eng "/home/start-here/#engineer-architect" "Jump to Engineer path"
 click S_Read "/home/start-here/#reader-analyst" "Jump to Reader path"
 click P_HowWorks "/home/how-this-site-works/" "How This Site Works"
 ```
+
+<p>🧭 This diagram is a <strong>role router</strong>: choose your starting identity, then jump directly to the page sequence that minimizes time-to-signal for that role.</p>
 </div>
 
 <div class="landing-section">

@@ -175,6 +175,8 @@ click S_Services "/services/" "Services"
 click S_Start "/services/start/" "Start"
 ```
 
+<p>🧭 This map shows how the <strong>Reasoners</strong> pages connect: overview → operating model → governance and terms, with direct links into the <strong>Methodology</strong> primitives that make enforcement and traces real.</p>
+
 <div class="landing-section">
     <img class="glightbox" src="/assets/img/br-008840.png"/>
 </div>

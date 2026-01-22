@@ -163,6 +163,8 @@ description: "Why high-stakes organizations need causal memory and governance—
   click S_Services "/services/" "Services"
   ```
 
+<p>🧭 This map is a <strong>reading order DAG</strong>: it routes you from probabilistic failure modes to enforceable laws, then into governance and methodology as implementation levers.</p>
+
 ## Where this connects
 
 <div class="landing-section">

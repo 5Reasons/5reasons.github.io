@@ -114,6 +114,8 @@ click P_Validate "/methodology/constraints/" "Constraints & SHACL"
 click R_Trace "/reasoners/governance/" "Governance"
 ```
 
+<p>⚠️ This diagram contrasts <strong>plausible text</strong> with a <strong>decision-grade pipeline</strong>: retrieval → constraint validation → trace → output, with refusal as the safe default when validity fails.</p>
+
 </div>
 
 ## Diagram: where RAG fails
@@ -154,6 +156,8 @@ O_Text -. "risk" .-> P_Fix --> R_Model --> O_Glass
 click R_Model "/methodology/constraints/" "Constraints & SHACL"
 click O_Glass "/reasoners/governance/" "Governance"
 ```
+
+<p>📌 This diagram highlights why naive RAG breaks: it can miss <strong>edge clauses</strong>, fail to enforce <strong>cross-document constraints</strong>, and omit mechanisms — all of which structure fixes.</p>
 
 </div>
 

@@ -56,6 +56,8 @@ click P_Sim "/methodology/causalgraphrag/" "CausalGraphRAG"
 click R_Effects "/methodology/constraints/" "Constraints & SHACL"
 ```
 
+<p>🧭 This diagram separates <strong>prediction</strong> from <strong>intervention</strong>: correlation learns $P(Y|X)$, while decision-making needs mechanisms, counterfactual reasoning, and side-effect constraints.</p>
+
 <div class="landing-section">
   <div class="landing-grid">
     <div class="landing-card">
@@ -107,6 +109,8 @@ I_X -. "observed" .-> R_Naive
 I_Y -. "observed" .-> R_Naive
 ```
 
+<p>🌀 This diagram shows why correlation can lie: a confounder $C$ drives both $X$ and $Y$, making the observed $X$–$Y$ relationship partly (or entirely) spurious.</p>
+
 ## Diagram: interventions change the object
 
 ```mermaid
@@ -134,6 +138,8 @@ R_Pyx -. "not equal" .-> R_Pydo
 %% Clickable nodes
 click R_Pydo "/methodology/causalgraphrag/" "CausalGraphRAG"
 ```
+
+<p>🧪 This diagram captures the core counterfactual shift: observational prediction targets $P(Y|X)$, but interventions require $P(Y|do(X))$ — a different object with different assumptions.</p>
 
 ## Common failure mode
 
@@ -208,6 +214,8 @@ click P_F5 "/philosophy/ai-agent-vs-agentic-ai/" "Agent vs agentic"
 click P_F6 "/reasoners/governance/" "Governance"
 click P_Do "/methodology/constraints/" "Constraints & SHACL"
 ```
+
+<p>🛑 This diagram enumerates the main traps (confounding, selection, drift, reverse causality, feedback, Goodhart) and routes each into a <strong>guarded causal workflow</strong> with governance and measurement.</p>
 
 <div class="landing-section">
   <div class="landing-grid">
