@@ -57,7 +57,7 @@
       banner.innerHTML =
         "<div class=\"br-consent__inner\">" +
           "<div class=\"br-consent__copy\">" +
-            "<strong>Privacy notice.</strong> Analytics is currently enabled for testing. " +
+            "<strong>Privacy notice.</strong> Analytics is currently enabled." +
             "See <a href=\"/reasoners/privacy/\" style=\"font-size: 10px;\">Privacy Policy</a> and <a href=\"/reasoners/gdpr/\" style=\"font-size: 10px;\">GDPR</a>." +
           "</div>" +
           "<div class=\"br-consent__actions\">" +
