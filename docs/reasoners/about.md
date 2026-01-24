@@ -103,6 +103,7 @@ description: "Who we are and how we work: a logic-first team building causal mem
             <p class="landing-mini">
                 🔗 <a href="https://www.linkedin.com/in/yevhenii-knizhnytskyi-709383210/" target="_blank">LinkedIn</a><br>
                 ✉️ <a href="mailto:evgenijkniznickij@gmail.com">evgenijkniznickij@gmail.com</a>
+                ☎️ <a href="tel:+421918343712">+421 951 731 035</a>
             </p>
         </div>
     </div>
