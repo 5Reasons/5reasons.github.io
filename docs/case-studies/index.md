@@ -32,7 +32,7 @@ description: "Where causality beats probability: examples from biomedicine, fina
 		<p><strong>These are representative patterns.</strong></p>
 		<p class="landing-mini">They illustrate the mechanism: provenance → constraints → traces → auditable decisions.</p>
 	</div>
-
+</div>
 <div class="landing-section">
     <img class="glightbox" src="/assets/img/br-008815.png"/>
 </div>
@@ -118,7 +118,7 @@ click P_Primitives "/methodology/" "Methodology"
 	</div>
 </div>
 
-## High-value verticals we also focus on
+## High-value verticals we also focus on 
 
 <div class="landing-section">
 	<div class="landing-grid">
