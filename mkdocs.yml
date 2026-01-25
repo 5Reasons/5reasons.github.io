@@ -80,6 +80,7 @@ nav:
     - Start a Conversation: services/start.md
   - Case Studies:
     - Overview: case-studies/index.md
+    - The Elephant Protocol: case-studies/elephant-protocol.md
     - Enterprise Central Memory: case-studies/enterprise-central-memory.md
     - Biomedicine: case-studies/biomedicine.md
     - Finance: case-studies/finance.md
