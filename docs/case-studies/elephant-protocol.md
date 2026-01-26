@@ -781,8 +781,6 @@ A scientific model must be falsifiable. We propose specific experiments to valid
 
 ### **brDiagram: Molecular Causal Mechanism (Human vs. Elephant)**
 
-Copy this code block into a Notion Mermaid block.
-
 ```mermaid
 flowchart TB
 
@@ -982,8 +980,6 @@ The primary risk of "Elephantization" is **Systemic Toxicity**.
 ---
 
 ### **brDiagram: The p53 Control System & Therapeutic Knobs**
-
-Copy this code block into a Notion Mermaid block.
 
 ```mermaid
 flowchart TB
@@ -1216,8 +1212,6 @@ This brModel mapping is a **mechanistic model**, not a proof. For clinical appli
 ---
 
 ### **brDiagram: The brModel Digital Twin**
-
-Copy this code block into a Notion Mermaid block.
 
 ```mermaid
 flowchart TB
