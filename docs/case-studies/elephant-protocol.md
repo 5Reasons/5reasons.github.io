@@ -3,7 +3,7 @@
 ## **Engineering Synthetic Lethality: How Causal Modeling Translated Evolutionary Logic into a Safer Cancer Therapy**
 
   <audio controls preload="none" style="width: 100%;">
-    <source src="\assets\Reprogramming_Cancer_With_The_Elephant_Protocol.m4a" type="audio/mp4" />
+        <source src="/assets/Reprogramming_Cancer_With_The_Elephant_Protocol.m4a" type="audio/mp4" />
     Your browser does not support the audio element.
   </audio>
 

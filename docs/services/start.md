@@ -145,14 +145,18 @@ click O_Map "/services/epistemic-audit/" "Epistemic Audit"
 		</p>
 </div>
 
-## Contact channel (your call)
+## Contact
 
 <div class="landing-section">
 	<div class="landing-card">
-		<p>
-			Tell me what contact channel you prefer to publish (email address, Calendly link, or another method).
-			I’ll place it here and also mirror it in the About section so it’s easy to find.
-		</p>
-		<iframe src="https://bigring.notion.site/ebd//2ed90bcdd8ae808a91dcffb2a49454e9" width="100%" height="900" frameborder="0" allowfullscreen />
+		<p class="landing-mini"><strong>Prefer a form?</strong> Use the embedded Notion intake below.</p>
+		<iframe
+			src="https://bigring.notion.site/ebd//2ed90bcdd8ae808a91dcffb2a49454e9"
+			width="100%"
+			height="900"
+			style="border:0"
+			loading="lazy"
+			allowfullscreen>
+		</iframe>
 	</div>
 </div>

@@ -61,6 +61,7 @@ subgraph D["Domains"]
 	D1("🧬 Biomedicine"):::p
 	D2("💳 Finance"):::p
 	D3("⚖️ Legal"):::p
+	D10("🐘 Elephant Protocol"):::p
 	D4("🛡️ Cybersecurity"):::p
 	D5("🏭 Manufacturing"):::p
 	D6("⚡ Energy & Utilities"):::p
@@ -72,6 +73,7 @@ end
 D1 --> P_Primitives
 D2 --> P_Primitives
 D3 --> P_Primitives
+D10 --> P_Primitives
 D4 --> P_Primitives
 D5 --> P_Primitives
 D6 --> P_Primitives
@@ -83,6 +85,7 @@ D9 --> P_Primitives
 click D1 "/case-studies/biomedicine/" "Biomedicine"
 click D2 "/case-studies/finance/" "Finance"
 click D3 "/case-studies/legal/" "Legal"
+click D10 "/case-studies/elephant-protocol/" "The Elephant Protocol"
 click D4 "/case-studies/cybersecurity/" "Cybersecurity"
 click D5 "/case-studies/manufacturing/" "Manufacturing"
 click D6 "/case-studies/energy-utilities/" "Energy & Utilities"
@@ -97,6 +100,17 @@ click P_Primitives "/methodology/" "Methodology"
 </div>
 
 ## Curated case studies
+
+<div class="landing-section">
+	<div class="landing-card">
+		<h3>The Elephant Protocol (Deep Case Study)</h3>
+		<p>
+			A long-form, mechanism-first walkthrough: how causal modeling abstracts evolutionary logic into a safer therapeutic strategy,
+			with explicit decision gates and engineered context constraints.
+		</p>
+		<p><a class="md-button md-button--primary" href="/case-studies/elephant-protocol/">Read the full case study</a></p>
+	</div>
+</div>
 
 <div class="landing-section">
 	<div class="landing-grid">
